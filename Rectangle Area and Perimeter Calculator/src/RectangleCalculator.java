@@ -13,6 +13,8 @@ public class RectangleCalculator {
         // Calculate rectangle area
         area = length * width;
 
+
+
         // Calculate rectangle perimeter
         perimeter = 2 * (length + width);
 

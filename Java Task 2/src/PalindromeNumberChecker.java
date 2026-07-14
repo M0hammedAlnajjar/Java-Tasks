@@ -11,7 +11,7 @@ public class PalindromeNumberChecker {
 
         originalNumber = number;
 
-        for (; number != 0; number = number / 10) {
+        for (number = 1221; number != 0; number = number / 10) {
             digit = number % 10;
             reversedNumber = reversedNumber * 10 + digit;
         }

@@ -1,15 +1,15 @@
 public class DigitCounter {
     public static void main(String[] args) {
 
-        var number=123456;
+        var number=12345678;
         var count=0;
 
         var originalNumber = number;
 
 
 
-        for(number=123456; number != 0; number = number / 10){
-
+        while ( number != 0){
+            number = number / 10;
             count++;
         }
 

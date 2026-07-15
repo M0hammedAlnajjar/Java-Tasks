@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class CircleCalculator {
     static void main() {
-        double area;
-        double circumference;
+        double area=0;
+        double circumference=0;
         double radius=0 ;
         double Pi=1.14;
+        String classification="0";
 
         Scanner input = new Scanner(System.in);
 
@@ -21,9 +22,21 @@ public class CircleCalculator {
         }
 
 
-    if (radius>5){
-        
+    if (radius<5){
+        IO.println(" Small Circle ");
     }
+    else if (radius >= 5 && radius <= 15){
+        IO.println(" Medium Circle ");
 
+    }
+    else {
+        IO.println(" Large Circle");
+
+        }
+        IO.println("the radius"+radius);
+        IO.println("the area "+area);
+        IO.println("the circumference"+circumference);
+        IO.println("the classification "+classification);
+        input.close();
     }
 }

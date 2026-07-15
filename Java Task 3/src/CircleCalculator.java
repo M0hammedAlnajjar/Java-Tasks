@@ -9,8 +9,21 @@ public class CircleCalculator {
 
         Scanner input = new Scanner(System.in);
 
-         area =Pi* radius * radius;
+        System.out.print("Enter radius: ");
+        radius = input.nextDouble();
 
+        if (radius<= 0){
+            IO.println(" Invalid radius. Radius must be greater than zero ");
+        }
+        else {
+            area =Pi* radius * radius;
+            circumference = 2 * Pi * radius;
+        }
+
+
+    if (radius>5){
+        
+    }
 
     }
 }

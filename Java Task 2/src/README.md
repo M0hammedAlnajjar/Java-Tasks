@@ -182,7 +182,7 @@ The number is an Armstrong number.
 
 ## Author
 
-**Name:** *Your Name*
+**Name:** *Mohammed Salim Al-najjar *
 
 **Course:** Java Programming
 

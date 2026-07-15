@@ -1,9 +1,15 @@
+import java.util.Scanner;
+
 public class CircleCalculator {
     static void main() {
-        int area;
-        int circumference;
+        double area;
+        double circumference;
+        double radius=0 ;
+        double Pi=1.14;
 
+        Scanner input = new Scanner(System.in);
 
+         area =Pi* radius * radius;
 
 
     }

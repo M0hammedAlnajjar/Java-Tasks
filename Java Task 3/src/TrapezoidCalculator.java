@@ -2,8 +2,8 @@ public class TrapezoidCalculator {
 
     static void main() {
 
-        double area;
-        double perimeter;
+        double area=0;
+        double perimeter=0;
 
 
         String lengthsInput = IO.readln("enter the lengths  : ");
@@ -45,5 +45,28 @@ public class TrapezoidCalculator {
             IO.println("Perimeter = "+perimeter);
         }
 
+        if (perimeter<30)IO.println("Small Trapezoid");
+
+
+
+        else if(perimeter>= 30 && perimeter <= 60) {
+            IO.println("Medium Trapezoid  ");
+
+
+        }
+
+        else {
+            IO.println(" Large Trapezoid  ");
+        }
+
+
+        IO.println("enter the lengths"+ bases1);
+        IO.println("enter the lengths2"+ bases2);
+        IO.println("enter the lengths"+ height);
+        IO.println("enter the lege"+ legs);
+        IO.println("enter the lege"+ legs2);
+
+        IO.println("Area: " + area);
+        IO.println("Perimeter: " + perimeter);
     }
 }

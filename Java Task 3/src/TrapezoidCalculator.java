@@ -25,5 +25,13 @@ public class TrapezoidCalculator {
         String  legsInput2 = IO.readln("enter the legs 2  : ");
         double  legs2 = Double.parseDouble( legsInput2);
 
+
+
+        if (bases1 > 0 && bases2 > 0 && height > 0 && legs > 0 && legs2 > 0) {
+            System.out.println("Valid input.");
+        } else {
+            System.out.println("Invalid input.");
+            return;
+        }
     }
 }

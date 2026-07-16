@@ -33,5 +33,17 @@ public class TrapezoidCalculator {
             System.out.println("Invalid input.");
             return;
         }
+
+
+        if (bases1 <= 0 || bases2 <= 0 || height <= 0 || legs <= 0 || legs2 <= 0) {
+            IO.println("Invalid input. All measurements must be greater than zero.");
+        } else {
+            area = ((bases1 + bases2) * height) / 2;
+             perimeter = bases1 + bases2 + legs + legs2;
+
+            IO.println("Area = " +area);
+            IO.println("Perimeter = "+perimeter);
+        }
+
     }
 }

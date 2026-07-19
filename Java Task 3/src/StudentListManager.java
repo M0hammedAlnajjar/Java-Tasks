@@ -1,11 +1,11 @@
 public class StudentListManager {
     public static void main(String[] args) {
 
-        String[] students = new String[3];
+        String[] students = new String[10];
 
-        students[0] = IO.readln("Enter student name: ");
-        students[1] = IO.readln("Enter student name: ");
-        students[2] = IO.readln("Enter student name: ");
+        for (int i = 0; i < students.length; i++) {
+            students[i] = IO.readln("Enter student name " + (i + 1) + ": ");
+        }
 
         System.out.println("Student List:");
 

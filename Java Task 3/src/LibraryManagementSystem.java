@@ -57,5 +57,61 @@ public class LibraryManagementSystem {
             availabilityStatus.add(true);
 
         }
+
+
+    // Loop to keep displaying menu until user selects Exit
+    do {
+
+        IO.println("\n===== Library Management System =====");
+        IO.println("1: Display all books");
+        IO.println("2: Search for a book");
+        IO.println("3: Borrow a book");
+        IO.println("4: Return a book");
+        IO.println("5: Display library report");
+        IO.println("6: Exit");
+
+        choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+
+        // Menu options using switch case
+        switch (choice) {
+
+            case 1:
+                IO.println("Display all books selected");
+                break;
+
+
+            case 2:
+                IO.println("Search for a book selected");
+                break;
+
+
+            case 3:
+                IO.println("Borrow a book selected");
+                break;
+
+
+            case 4:
+                IO.println("Return a book selected");
+                break;
+
+
+            case 5:
+                IO.println("Display library report selected");
+                break;
+
+
+            case 6:
+                IO.println("Exiting Library System...");
+                break;
+
+
+            default:
+                IO.println("Invalid choice. Please try again.");
+
+        }
+
+
+    }   while (choice != 6);
     }
 

@@ -341,6 +341,70 @@ do {
 
             }
 
+            // Method to calculate account statistics
+            public static void calculateStatistics(List<Double> accountBalances,
+            double specificAmount) {
+
+
+                double totalMoney = 0;
+
+                double highestBalance = accountBalances.get(0);
+
+                double lowestBalance = accountBalances.get(0);
+
+                int accountsAboveAmount = 0;
+
+
+
+                // Loop through account balances
+                for (double balance : accountBalances) {
+
+
+                    // Calculate total money
+                    totalMoney += balance;
+
+
+                    // Find highest balance
+                    if (balance > highestBalance) {
+
+                        highestBalance = balance;
+
+                    }
+
+
+                    // Find lowest balance
+                    if (balance < lowestBalance) {
+
+                        lowestBalance = balance;
+
+                    }
+
+
+                    // Count accounts above specific amount
+                    if (balance > specificAmount) {
+
+                        accountsAboveAmount++;
+
+                    }
+
+                }
+
+
+
+                // Display statistics
+                IO.println("\n===== Account Statistics =====");
+
+                IO.println("Total Money in All Accounts: " + totalMoney);
+
+                IO.println("Highest Account Balance: " + highestBalance);
+
+                IO.println("Lowest Account Balance: " + lowestBalance);
+
+                IO.println("Accounts Above " + specificAmount + ": "
+                        + accountsAboveAmount);
+
+            }
+
         }
 
     }

@@ -302,6 +302,47 @@ do {
 
         }
 
+        // Method to check account balance
+        public static void checkBalance(int accountNumber,
+        List<Integer> accountNumbers,
+        List<Double> accountBalances) {
+
+
+            boolean found = false;
+
+
+            // Loop to search for account
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+                if (accountNumbers.get(i) == accountNumber) {
+
+
+                    IO.println("\nAccount Found");
+
+                    IO.println("Account Number: " + accountNumbers.get(i));
+
+                    IO.println("Current Balance: " + accountBalances.get(i));
+
+
+                    found = true;
+
+                    break;
+
+                }
+
+            }
+
+
+            // If account does not exist
+            if (!found) {
+
+                IO.println("Account not found.");
+
+            }
+
+        }
+
     }
 
 }

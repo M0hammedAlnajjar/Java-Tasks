@@ -18,11 +18,30 @@ public class EmployeeSalaryCalculator {
 
         netSalary = basicSalary + bonusAmount - deductionAmount;
 
+        // Display employee salary details
         IO.println("\nEmployee Salary Details");
+        IO.println("-----------------------");
         IO.println("Employee Name: " + employeeName);
         IO.println("Basic Salary: " + basicSalary);
         IO.println("Bonus Amount: " + bonusAmount);
         IO.println("Deduction Amount: " + deductionAmount);
         IO.println("Net Salary: " + netSalary);
+
+
+        checkSalaryStatus(netSalary);
+    }
+
+
+    public static void checkSalaryStatus(double netSalary) {
+
+        if (netSalary < 500) {
+            IO.println("Salary Status: Low Salary");
+        }
+        else if (netSalary >= 500 && netSalary <= 1500) {
+            IO.println("Salary Status: Medium Salary");
+        }
+        else {
+            IO.println("Salary Status: High Salary");
+        }
     }
 }

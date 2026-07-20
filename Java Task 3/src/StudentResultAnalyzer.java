@@ -37,6 +37,12 @@ public class StudentResultAnalyzer {
         averageMark = calculateAverage(totalMarks, numberOfSubjects);
 
         IO.println("Average Mark: " + averageMark);
+
+
+
+        grade = calculateGrade(averageMark);
+
+        IO.println("Grade: " + grade);
     }
 
 
@@ -64,10 +70,11 @@ public class StudentResultAnalyzer {
     }
 
 
-    public static  double calculateGrade( double averageMark){
+    public static  String calculateGrade( double averageMark){
 
+        return averageMark >= 90 ? "A" : averageMark >= 80 ? "B" : averageMark >= 70 ? "C" : averageMark >= 60 ? "D" : "F";
+        }
 
-        return averageMark;
+    
     }
 
-}

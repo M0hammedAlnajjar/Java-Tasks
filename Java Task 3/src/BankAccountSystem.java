@@ -9,9 +9,6 @@ public class BankAccountSystem {
         int choice;
         int accountNumber;
 
-        String customerName;
-
-        double accountBalance;
         double amount;
 
 
@@ -21,7 +18,7 @@ public class BankAccountSystem {
         List<Double> accountBalances = new ArrayList<>();
 
 
-        // Add 10 customer accounts with predefined data
+        // Add 10 customer accounts
 
         accountNumbers.add(1001);
         customerNames.add("Mohammed");
@@ -72,83 +69,135 @@ public class BankAccountSystem {
         customerNames.add("Khalid");
         accountBalances.add(3000.0);
 
+
+
+        // Display menu until user exits
+        do {
+
+            IO.println("\n===== Bank Account Management System =====");
+
+            IO.println("1: Display all accounts");
+
+            IO.println("2: Deposit money");
+
+            IO.println("3: Withdraw money");
+
+            IO.println("4: Check account balance");
+
+            IO.println("5: Display account statistics");
+
+            IO.println("6: Exit");
+
+
+            choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+
+
+            switch (choice) {
+
+
+                case 1:
+
+                    displayAccounts(accountNumbers,
+                            customerNames,
+                            accountBalances);
+
+                    break;
+
+
+
+                case 2:
+
+                    accountNumber = Integer.parseInt(
+                            IO.readln("Enter account number: ")
+                    );
+
+
+                    amount = Double.parseDouble(
+                            IO.readln("Enter deposit amount: ")
+                    );
+
+
+                    depositMoney(accountNumber,
+                            amount,
+                            accountNumbers,
+                            accountBalances);
+
+                    break;
+
+
+
+                case 3:
+
+                    accountNumber = Integer.parseInt(
+                            IO.readln("Enter account number: ")
+                    );
+
+
+                    amount = Double.parseDouble(
+                            IO.readln("Enter withdrawal amount: ")
+                    );
+
+
+                    withdrawMoney(accountNumber,
+                            amount,
+                            accountNumbers,
+                            accountBalances);
+
+                    break;
+
+
+
+                case 4:
+
+                    accountNumber = Integer.parseInt(
+                            IO.readln("Enter account number: ")
+                    );
+
+
+                    checkBalance(accountNumber,
+                            accountNumbers,
+                            accountBalances);
+
+                    break;
+
+
+
+                case 5:
+
+                    double specificAmount = Double.parseDouble(
+                            IO.readln("Enter comparison amount: ")
+                    );
+
+
+                    calculateStatistics(accountBalances,
+                            specificAmount);
+
+                    break;
+
+
+
+                case 6:
+
+                    IO.println("Exiting Bank System...");
+
+                    break;
+
+
+
+                default:
+
+                    IO.println("Invalid choice. Please try again.");
+
+            }
+
+
+        } while (choice != 6);
+
+
     }
 
-    // Loop to display menu until user exits
-do {
 
-        IO.println("\n===== Bank Account Management System =====");
-        IO.println("1: Display all accounts");
-        IO.println("2: Deposit money");
-        IO.println("3: Withdraw money");
-        IO.println("4: Check account balance");
-        IO.println("5: Display account statistics");
-        IO.println("6: Exit");
-
-
-        choice = Integer.parseInt(IO.readln("Enter your choice: "));
-
-
-        // Control menu using switch case
-        switch (choice) {
-
-
-            case 1:
-
-                IO.println("Display accounts selected");
-
-                break;
-
-
-
-            case 2:
-
-                IO.println("Deposit money selected");
-
-                break;
-
-
-
-            case 3:
-
-                IO.println("Withdraw money selected");
-
-                break;
-
-
-
-            case 4:
-
-                IO.println("Check balance selected");
-
-                break;
-
-
-
-            case 5:
-
-                IO.println("Display statistics selected");
-
-                break;
-
-
-
-            case 6:
-
-                IO.println("Exiting Bank System...");
-
-                break;
-
-
-
-            default:
-
-                IO.println("Invalid choice. Please try again.");
-
-        }
-
-
-    } while (choice != 6);
 
     // Method to display all accounts
     public static void displayAccounts(List<Integer> accountNumbers,
@@ -159,253 +208,225 @@ do {
         IO.println("\n===== Account List =====");
 
 
-        // Loop through all accounts
         for (int i = 0; i < accountNumbers.size(); i++) {
 
 
             IO.println("------------------------");
 
-            IO.println("Account Number: " + accountNumbers.get(i));
+            IO.println("Account Number: "
+                    + accountNumbers.get(i));
 
-            IO.println("Customer Name: " + customerNames.get(i));
+            IO.println("Customer Name: "
+                    + customerNames.get(i));
 
-            IO.println("Account Balance: " + accountBalances.get(i));
-
-        }
-
-        // Method to display all accounts
-        public static void displayAccounts(List<Integer> accountNumbers,
-                List<String> customerNames,
-                List<Double> accountBalances) {
-
-
-            IO.println("\n===== Account List =====");
-
-
-            // Loop through all accounts
-            for (int i = 0; i < accountNumbers.size(); i++) {
-
-
-                IO.println("------------------------");
-
-                IO.println("Account Number: " + accountNumbers.get(i));
-
-                IO.println("Customer Name: " + customerNames.get(i));
-
-                IO.println("Account Balance: " + accountBalances.get(i));
-
-            }
+            IO.println("Account Balance: "
+                    + accountBalances.get(i));
 
         }
 
-// Method to deposit money
-        public static void depositMoney(int accountNumber,
-        double depositAmount,
-        List<Integer> accountNumbers,
-        List<Double> accountBalances) {
+    }
 
 
-            boolean found = false;
+
+    // Method to deposit money
+    public static void depositMoney(int accountNumber,
+                                    double depositAmount,
+                                    List<Integer> accountNumbers,
+                                    List<Double> accountBalances) {
 
 
-            // Loop to search for account
-            for (int i = 0; i < accountNumbers.size(); i++) {
+        boolean found = false;
 
 
-                if (accountNumbers.get(i) == accountNumber) {
+        for (int i = 0; i < accountNumbers.size(); i++) {
 
 
-                    // Add deposit amount to balance
-                    double newBalance = accountBalances.get(i) + depositAmount;
-
-                    accountBalances.set(i, newBalance);
+            if (accountNumbers.get(i) == accountNumber) {
 
 
-                    IO.println("Deposit completed successfully.");
-
-                    IO.println("New Balance: " + newBalance);
-
-
-                    found = true;
-
-                    break;
-
-                }
-
-            }
+                accountBalances.set(i,
+                        accountBalances.get(i) + depositAmount);
 
 
-            // If account does not exist
-            if (!found) {
+                IO.println("Deposit completed successfully.");
 
-                IO.println("Account not found.");
-
-            }
-
-        }
-// Method to withdraw money
-        public static void withdrawMoney(int accountNumber,
-        double withdrawalAmount,
-        List<Integer> accountNumbers,
-        List<Double> accountBalances) {
+                IO.println("New Balance: "
+                        + accountBalances.get(i));
 
 
-            boolean found = false;
+                found = true;
 
-
-            // Loop to search for account
-            for (int i = 0; i < accountNumbers.size(); i++) {
-
-
-                if (accountNumbers.get(i) == accountNumber) {
-
-
-                    found = true;
-
-
-                    // Check if balance is enough
-                    if (accountBalances.get(i) >= withdrawalAmount) {
-
-
-                        double newBalance = accountBalances.get(i) - withdrawalAmount;
-
-
-                        accountBalances.set(i, newBalance);
-
-
-                        IO.println("Withdrawal completed successfully.");
-
-                        IO.println("New Balance: " + newBalance);
-
-
-                    } else {
-
-
-                        IO.println("Insufficient balance.");
-
-                    }
-
-
-                    break;
-
-                }
-
-            }
-
-
-            // If account does not exist
-            if (!found) {
-
-                IO.println("Account not found.");
+                break;
 
             }
 
         }
 
-        // Method to check account balance
-        public static void checkBalance(int accountNumber,
-        List<Integer> accountNumbers,
-        List<Double> accountBalances) {
 
+        if (!found) {
 
-            boolean found = false;
+            IO.println("Account not found.");
 
+        }
 
-            // Loop to search for account
-            for (int i = 0; i < accountNumbers.size(); i++) {
-
-
-                if (accountNumbers.get(i) == accountNumber) {
-
-
-                    IO.println("\nAccount Found");
-
-                    IO.println("Account Number: " + accountNumbers.get(i));
-
-                    IO.println("Current Balance: " + accountBalances.get(i));
-
-
-                    found = true;
-
-                    break;
-
-                }
-
-            }
-
-
-            // If account does not exist
-            if (!found) {
-
-                IO.println("Account not found.");
-
-            }
-
-            // Method to calculate account statistics
-            public static void calculateStatistics(List<Double> accountBalances,
-            double specificAmount) {
-
-
-                double totalMoney = 0;
-
-                double highestBalance = accountBalances.get(0);
-
-                double lowestBalance = accountBalances.get(0);
-
-                int accountsAboveAmount = 0;
+    }
 
 
 
-                // Loop through account balances
-                for (double balance : accountBalances) {
+    // Method to withdraw money
+    public static void withdrawMoney(int accountNumber,
+                                     double withdrawalAmount,
+                                     List<Integer> accountNumbers,
+                                     List<Double> accountBalances) {
 
 
-                    // Calculate total money
-                    totalMoney += balance;
+        boolean found = false;
 
 
-                    // Find highest balance
-                    if (balance > highestBalance) {
-
-                        highestBalance = balance;
-
-                    }
+        for (int i = 0; i < accountNumbers.size(); i++) {
 
 
-                    // Find lowest balance
-                    if (balance < lowestBalance) {
-
-                        lowestBalance = balance;
-
-                    }
+            if (accountNumbers.get(i) == accountNumber) {
 
 
-                    // Count accounts above specific amount
-                    if (balance > specificAmount) {
+                found = true;
 
-                        accountsAboveAmount++;
 
-                    }
+                if (accountBalances.get(i) >= withdrawalAmount) {
+
+
+                    accountBalances.set(i,
+                            accountBalances.get(i)
+                                    - withdrawalAmount);
+
+
+                    IO.println("Withdrawal completed successfully.");
+
+                    IO.println("New Balance: "
+                            + accountBalances.get(i));
+
+
+                } else {
+
+
+                    IO.println("Insufficient balance.");
 
                 }
 
 
-
-                // Display statistics
-                IO.println("\n===== Account Statistics =====");
-
-                IO.println("Total Money in All Accounts: " + totalMoney);
-
-                IO.println("Highest Account Balance: " + highestBalance);
-
-                IO.println("Lowest Account Balance: " + lowestBalance);
-
-                IO.println("Accounts Above " + specificAmount + ": "
-                        + accountsAboveAmount);
+                break;
 
             }
 
         }
+
+
+        if (!found) {
+
+            IO.println("Account not found.");
+
+        }
+
+    }
+
+
+
+    // Method to check account balance
+    public static void checkBalance(int accountNumber,
+                                    List<Integer> accountNumbers,
+                                    List<Double> accountBalances) {
+
+
+        boolean found = false;
+
+
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+            if (accountNumbers.get(i) == accountNumber) {
+
+
+                IO.println("\nAccount Number: "
+                        + accountNumbers.get(i));
+
+                IO.println("Current Balance: "
+                        + accountBalances.get(i));
+
+
+                found = true;
+
+                break;
+
+            }
+
+        }
+
+
+        if (!found) {
+
+            IO.println("Account not found.");
+
+        }
+
+    }
+
+
+
+    // Method to calculate statistics
+    public static void calculateStatistics(List<Double> accountBalances,
+                                           double specificAmount) {
+
+
+        double totalMoney = 0;
+
+        double highestBalance = accountBalances.get(0);
+
+        double lowestBalance = accountBalances.get(0);
+
+        int accountsAboveAmount = 0;
+
+
+
+        for (double balance : accountBalances) {
+
+
+            totalMoney += balance;
+
+
+            if (balance > highestBalance) {
+
+                highestBalance = balance;
+
+            }
+
+
+            if (balance < lowestBalance) {
+
+                lowestBalance = balance;
+
+            }
+
+
+            if (balance > specificAmount) {
+
+                accountsAboveAmount++;
+
+            }
+
+        }
+
+
+
+        IO.println("\n===== Account Statistics =====");
+
+        IO.println("Total Money: " + totalMoney);
+
+        IO.println("Highest Balance: " + highestBalance);
+
+        IO.println("Lowest Balance: " + lowestBalance);
+
+        IO.println("Accounts Above Amount: "
+                + accountsAboveAmount);
 
     }
 

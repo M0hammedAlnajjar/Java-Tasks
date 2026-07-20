@@ -113,5 +113,27 @@ public class LibraryManagementSystem {
 
 
     }   while (choice != 6);
+
+
+
+    // Method to display all books
+    public static void displayBooks(List<String> bookNames,
+                                    List<String> authorNames,
+                                    List<Boolean> availabilityStatus) {
+
+        IO.println("\n===== All Books =====");
+
+        // Loop through all books
+        for (int i = 0; i < bookNames.size(); i++) {
+
+            IO.println("--------------------");
+            IO.println("Book Name: " + bookNames.get(i));
+            IO.println("Author: " + authorNames.get(i));
+
+            String status = availabilityStatus.get(i) ? "Available" : "Unavailable";
+
+            IO.println("Status: " + status);
+        }
+    }
     }
 

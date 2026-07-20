@@ -243,7 +243,64 @@ do {
             }
 
         }
+// Method to withdraw money
+        public static void withdrawMoney(int accountNumber,
+        double withdrawalAmount,
+        List<Integer> accountNumbers,
+        List<Double> accountBalances) {
 
+
+            boolean found = false;
+
+
+            // Loop to search for account
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+                if (accountNumbers.get(i) == accountNumber) {
+
+
+                    found = true;
+
+
+                    // Check if balance is enough
+                    if (accountBalances.get(i) >= withdrawalAmount) {
+
+
+                        double newBalance = accountBalances.get(i) - withdrawalAmount;
+
+
+                        accountBalances.set(i, newBalance);
+
+
+                        IO.println("Withdrawal completed successfully.");
+
+                        IO.println("New Balance: " + newBalance);
+
+
+                    } else {
+
+
+                        IO.println("Insufficient balance.");
+
+                    }
+
+
+                    break;
+
+                }
+
+            }
+
+
+            // If account does not exist
+            if (!found) {
+
+                IO.println("Account not found.");
+
+            }
+
+        }
 
     }
 

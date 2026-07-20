@@ -15,6 +15,9 @@ public class StudentResultAnalyzer {
         String resultStatus;
 
 
+        int numberOfSubjects = 3;
+
+
         IO.println("Student Name: " + studentName);
         IO.println("Math Mark: " + mathMark);
         IO.println("English Mark: " + englishMark);
@@ -29,15 +32,18 @@ public class StudentResultAnalyzer {
         totalMarks = calculateTotalMarks(mathMark, englishMark, scienceMark);
 
         IO.println("Total Marks: " + totalMarks);
-    }
 
+
+        averageMark = calculateAverage(totalMarks, numberOfSubjects);
+
+        IO.println("Average Mark: " + averageMark);
+    }
 
 
     public static String validateMarks(double mark) {
 
         return (mark >= 0 && mark <= 100) ? "Valid Mark" : "Invalid Mark";
     }
-
 
 
     public static double calculateTotalMarks(double mathMark, double englishMark, double scienceMark) {
@@ -47,5 +53,13 @@ public class StudentResultAnalyzer {
         totalMarks = mathMark + englishMark + scienceMark;
 
         return totalMarks;
+    }
+
+    public static double calculateAverage(double totalMarks , double numberOfSubjects) {
+
+        double  AverageMark;
+
+        AverageMark=totalMarks +numberOfSubjects;
+        return AverageMark;
     }
 }

@@ -135,5 +135,82 @@ public class LibraryManagementSystem {
             IO.println("Status: " + status);
         }
     }
+    // Method to search for a book
+    public static void searchBook(String bookName,
+                                  List<String> bookNames,
+                                  List<String> authorNames,
+                                  List<Boolean> availabilityStatus) {
+
+        boolean found = false;
+
+
+        // Loop to search book
+        for (int i = 0; i < bookNames.size(); i++) {
+
+            if (bookNames.get(i).equalsIgnoreCase(bookName)) {
+
+                IO.println("\nBook Found!");
+                IO.println("Book Name: " + bookNames.get(i));
+                IO.println("Author: " + authorNames.get(i));
+
+                String status = availabilityStatus.get(i) ? "Available" : "Unavailable";
+
+                IO.println("Status: " + status);
+
+                found = true;
+                break;
+            }
+        }
+
+
+        // Display if book does not exist
+        if (!found) {
+
+            IO.println("Book not found.");
+
+        }
+
+        // Method to borrow a book
+        public static void borrowBook(String bookName,
+                List<String> bookNames,
+                List<Boolean> availabilityStatus) {
+
+            boolean found = false;
+
+
+            // Loop to find the book
+            for (int i = 0; i < bookNames.size(); i++) {
+
+                if (bookNames.get(i).equalsIgnoreCase(bookName)) {
+
+                    found = true;
+
+
+                    // Check book availability
+                    if (availabilityStatus.get(i)) {
+
+                        availabilityStatus.set(i, false);
+
+                        IO.println("Book borrowed successfully.");
+
+                    } else {
+
+                        IO.println("Book is already unavailable.");
+
+                    }
+
+                    break;
+                }
+            }
+
+
+            // If book does not exist
+            if (!found) {
+
+                IO.println("Book not found.");
+
+            }
+        }
+    }
     }
 

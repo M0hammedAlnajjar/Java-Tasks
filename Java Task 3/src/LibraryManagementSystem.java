@@ -246,6 +246,27 @@ public class LibraryManagementSystem {
             IO.println("Book not found.");
 
         }
+
+        // Method to count available and unavailable books
+        public static int countBooks(List<Boolean> availabilityStatus,
+        boolean status) {
+
+            int count = 0;
+
+
+            // Loop through book status list
+            for (boolean available : availabilityStatus) {
+
+                if (available == status) {
+
+                    count++;
+
+                }
+            }
+
+
+            return count;
+        }
     }
     }
 

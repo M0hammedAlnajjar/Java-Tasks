@@ -44,4 +44,18 @@ public class EmployeeSalaryCalculator {
             IO.println("Salary Status: High Salary");
         }
     }
+
+    public static void displaySalaryDetails(String employeeName, double basicSalary,
+                                            double bonusAmount, double deductionAmount,
+                                            double netSalary, String salaryStatus) {
+        IO.println("\nEmployee Salary Details");
+        IO.println("-----------------------");
+        IO.println("Employee Name: " + employeeName);
+        IO.println("Basic Salary: " + basicSalary);
+        IO.println("Bonus Amount: " + bonusAmount);
+        IO.println("Deduction Amount: " + deductionAmount);
+        IO.println("Net Salary: " + netSalary);
+        IO.println("Salary Status: " + salaryStatus);
+    }
+
 }

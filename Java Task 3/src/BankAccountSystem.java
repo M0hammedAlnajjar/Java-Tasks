@@ -198,7 +198,51 @@ do {
 
         }
 
+// Method to deposit money
+        public static void depositMoney(int accountNumber,
+        double depositAmount,
+        List<Integer> accountNumbers,
+        List<Double> accountBalances) {
 
+
+            boolean found = false;
+
+
+            // Loop to search for account
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+                if (accountNumbers.get(i) == accountNumber) {
+
+
+                    // Add deposit amount to balance
+                    double newBalance = accountBalances.get(i) + depositAmount;
+
+                    accountBalances.set(i, newBalance);
+
+
+                    IO.println("Deposit completed successfully.");
+
+                    IO.println("New Balance: " + newBalance);
+
+
+                    found = true;
+
+                    break;
+
+                }
+
+            }
+
+
+            // If account does not exist
+            if (!found) {
+
+                IO.println("Account not found.");
+
+            }
+
+        }
 
 
     }

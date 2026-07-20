@@ -74,4 +74,80 @@ public class BankAccountSystem {
 
     }
 
+    // Loop to display menu until user exits
+do {
+
+        IO.println("\n===== Bank Account Management System =====");
+        IO.println("1: Display all accounts");
+        IO.println("2: Deposit money");
+        IO.println("3: Withdraw money");
+        IO.println("4: Check account balance");
+        IO.println("5: Display account statistics");
+        IO.println("6: Exit");
+
+
+        choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+
+        // Control menu using switch case
+        switch (choice) {
+
+
+            case 1:
+
+                IO.println("Display accounts selected");
+
+                break;
+
+
+
+            case 2:
+
+                IO.println("Deposit money selected");
+
+                break;
+
+
+
+            case 3:
+
+                IO.println("Withdraw money selected");
+
+                break;
+
+
+
+            case 4:
+
+                IO.println("Check balance selected");
+
+                break;
+
+
+
+            case 5:
+
+                IO.println("Display statistics selected");
+
+                break;
+
+
+
+            case 6:
+
+                IO.println("Exiting Bank System...");
+
+                break;
+
+
+
+            default:
+
+                IO.println("Invalid choice. Please try again.");
+
+        }
+
+
+    } while (choice != 6);
+
 }

@@ -75,6 +75,11 @@ public class StudentResultAnalyzer {
         return averageMark >= 90 ? "A" : averageMark >= 80 ? "B" : averageMark >= 70 ? "C" : averageMark >= 60 ? "D" : "F";
         }
 
-    
+
+
+public static  String checkPerformance(){
+
+    return "";
+}
     }
 

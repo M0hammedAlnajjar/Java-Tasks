@@ -150,4 +150,57 @@ do {
 
     } while (choice != 6);
 
+    // Method to display all accounts
+    public static void displayAccounts(List<Integer> accountNumbers,
+                                       List<String> customerNames,
+                                       List<Double> accountBalances) {
+
+
+        IO.println("\n===== Account List =====");
+
+
+        // Loop through all accounts
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+            IO.println("------------------------");
+
+            IO.println("Account Number: " + accountNumbers.get(i));
+
+            IO.println("Customer Name: " + customerNames.get(i));
+
+            IO.println("Account Balance: " + accountBalances.get(i));
+
+        }
+
+        // Method to display all accounts
+        public static void displayAccounts(List<Integer> accountNumbers,
+                List<String> customerNames,
+                List<Double> accountBalances) {
+
+
+            IO.println("\n===== Account List =====");
+
+
+            // Loop through all accounts
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+                IO.println("------------------------");
+
+                IO.println("Account Number: " + accountNumbers.get(i));
+
+                IO.println("Customer Name: " + customerNames.get(i));
+
+                IO.println("Account Balance: " + accountBalances.get(i));
+
+            }
+
+        }
+
+
+
+
+    }
+
 }

@@ -212,5 +212,40 @@ public class LibraryManagementSystem {
             }
         }
     }
+
+    // Method to return a book
+    public static void returnBook(String bookName,
+                                  List<String> bookNames,
+                                  List<Boolean> availabilityStatus) {
+
+        boolean found = false;
+
+
+        // Loop to find the book
+        for (int i = 0; i < bookNames.size(); i++) {
+
+
+            if (bookNames.get(i).equalsIgnoreCase(bookName)) {
+
+                found = true;
+
+
+                // Update book status
+                availabilityStatus.set(i, true);
+
+                IO.println("Book returned successfully.");
+
+                break;
+            }
+        }
+
+
+        // If book does not exist
+        if (!found) {
+
+            IO.println("Book not found.");
+
+        }
+    }
     }
 

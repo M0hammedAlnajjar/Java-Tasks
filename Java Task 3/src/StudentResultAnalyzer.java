@@ -19,5 +19,20 @@ public class StudentResultAnalyzer {
         IO.println("English Mark: " + englishMark);
         IO.println("Science Mark: " + scienceMark);
 
+
+
+
+    }
+
+    public static void validateMarks(double  mark) {
+
+        if (mark>=0 && mark<=100) {
+            IO.println("true");
+
+        }else{
+            IO.println(" false");
+
+        }
+
     }
 }

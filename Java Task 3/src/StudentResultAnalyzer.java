@@ -62,4 +62,12 @@ public class StudentResultAnalyzer {
         AverageMark=totalMarks +numberOfSubjects;
         return AverageMark;
     }
+
+
+    public static  double calculateGrade( double averageMark){
+
+
+        return averageMark;
+    }
+
 }

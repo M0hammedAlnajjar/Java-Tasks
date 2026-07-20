@@ -5,114 +5,138 @@ public class LibraryManagementSystem {
 
     public static void main(String[] args) {
 
-            // Declare variables
-            int choice;
-            String bookName;
-
-            // Create lists
-            List<String> bookNames = new ArrayList<>();
-            List<String> authorNames = new ArrayList<>();
-            List<Boolean> availabilityStatus = new ArrayList<>();
+        // Declare variables
+        int choice;
+        String bookName;
 
 
-            // Add books
-            bookNames.add("Java Programming");
-            authorNames.add("James Gosling");
-            availabilityStatus.add(true);
-
-            bookNames.add("Clean Code");
-            authorNames.add("Robert C. Martin");
-            availabilityStatus.add(true);
-
-            bookNames.add("The Hobbit");
-            authorNames.add("J.R.R. Tolkien");
-            availabilityStatus.add(false);
-
-            bookNames.add("Harry Potter");
-            authorNames.add("J.K. Rowling");
-            availabilityStatus.add(true);
-
-            bookNames.add("Database Systems");
-            authorNames.add("Thomas Connolly");
-            availabilityStatus.add(true);
-
-            bookNames.add("Computer Networks");
-            authorNames.add("Andrew Tanenbaum");
-            availabilityStatus.add(false);
-
-            bookNames.add("Operating Systems");
-            authorNames.add("Abraham Silberschatz");
-            availabilityStatus.add(true);
-
-            bookNames.add("Data Structures");
-            authorNames.add("Mark Allen Weiss");
-            availabilityStatus.add(true);
-
-            bookNames.add("Artificial Intelligence");
-            authorNames.add("Stuart Russell");
-            availabilityStatus.add(false);
-
-            bookNames.add("Software Engineering");
-            authorNames.add("Ian Sommerville");
-            availabilityStatus.add(true);
-
-        }
+        // Create lists to store book information
+        List<String> bookNames = new ArrayList<>();
+        List<String> authorNames = new ArrayList<>();
+        List<Boolean> availabilityStatus = new ArrayList<>();
 
 
-    // Loop to keep displaying menu until user selects Exit
-    do {
+        // Add 10 books to the lists
+        bookNames.add("Java Programming");
+        authorNames.add("James Gosling");
+        availabilityStatus.add(true);
 
-        IO.println("\n===== Library Management System =====");
-        IO.println("1: Display all books");
-        IO.println("2: Search for a book");
-        IO.println("3: Borrow a book");
-        IO.println("4: Return a book");
-        IO.println("5: Display library report");
-        IO.println("6: Exit");
+        bookNames.add("Clean Code");
+        authorNames.add("Robert Martin");
+        availabilityStatus.add(true);
 
-        choice = Integer.parseInt(IO.readln("Enter your choice: "));
+        bookNames.add("The Hobbit");
+        authorNames.add("J.R.R Tolkien");
+        availabilityStatus.add(false);
 
+        bookNames.add("Harry Potter");
+        authorNames.add("J.K Rowling");
+        availabilityStatus.add(true);
 
-        // Menu options using switch case
-        switch (choice) {
+        bookNames.add("Database Systems");
+        authorNames.add("Thomas Connolly");
+        availabilityStatus.add(true);
 
-            case 1:
-                IO.println("Display all books selected");
-                break;
+        bookNames.add("Computer Networks");
+        authorNames.add("Andrew Tanenbaum");
+        availabilityStatus.add(false);
 
+        bookNames.add("Operating Systems");
+        authorNames.add("Abraham Silberschatz");
+        availabilityStatus.add(true);
 
-            case 2:
-                IO.println("Search for a book selected");
-                break;
+        bookNames.add("Data Structures");
+        authorNames.add("Mark Allen Weiss");
+        availabilityStatus.add(true);
 
+        bookNames.add("Artificial Intelligence");
+        authorNames.add("Stuart Russell");
+        availabilityStatus.add(false);
 
-            case 3:
-                IO.println("Borrow a book selected");
-                break;
-
-
-            case 4:
-                IO.println("Return a book selected");
-                break;
-
-
-            case 5:
-                IO.println("Display library report selected");
-                break;
-
-
-            case 6:
-                IO.println("Exiting Library System...");
-                break;
+        bookNames.add("Software Engineering");
+        authorNames.add("Ian Sommerville");
+        availabilityStatus.add(true);
 
 
-            default:
-                IO.println("Invalid choice. Please try again.");
 
-        }
+        // Display menu until user selects exit
+        do {
+
+            IO.println("\n===== Library Management System =====");
+            IO.println("1: Display all books");
+            IO.println("2: Search for a book");
+            IO.println("3: Borrow a book");
+            IO.println("4: Return a book");
+            IO.println("5: Display library report");
+            IO.println("6: Exit");
 
 
-    }   while (choice != 6);
+            choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+
+            // Menu using switch case
+            switch (choice) {
+
+
+                case 1:
+
+                    displayBooks(bookNames, authorNames, availabilityStatus);
+
+                    break;
+
+
+                case 2:
+
+                    bookName = IO.readln("Enter book name to search: ");
+
+                    searchBook(bookName, bookNames, authorNames, availabilityStatus);
+
+                    break;
+
+
+                case 3:
+
+                    bookName = IO.readln("Enter book name to borrow: ");
+
+                    borrowBook(bookName, bookNames, availabilityStatus);
+
+                    break;
+
+
+                case 4:
+
+                    bookName = IO.readln("Enter book name to return: ");
+
+                    returnBook(bookName, bookNames, availabilityStatus);
+
+                    break;
+
+
+                case 5:
+
+                    displayReport(bookNames, availabilityStatus);
+
+                    break;
+
+
+                case 6:
+
+                    IO.println("Exiting system...");
+
+                    break;
+
+
+                default:
+
+                    IO.println("Invalid choice.");
+
+            }
+
+
+        } while (choice != 6);
+
+
+    }
 
 
 
@@ -121,152 +145,189 @@ public class LibraryManagementSystem {
                                     List<String> authorNames,
                                     List<Boolean> availabilityStatus) {
 
-        IO.println("\n===== All Books =====");
 
-        // Loop through all books
+        IO.println("\n===== Books List =====");
+
+
         for (int i = 0; i < bookNames.size(); i++) {
 
-            IO.println("--------------------");
+
+            IO.println("----------------------");
+
             IO.println("Book Name: " + bookNames.get(i));
+
             IO.println("Author: " + authorNames.get(i));
 
-            String status = availabilityStatus.get(i) ? "Available" : "Unavailable";
+            IO.println("Status: " +
+                    (availabilityStatus.get(i) ? "Available" : "Unavailable"));
 
-            IO.println("Status: " + status);
         }
+
     }
+
+
+
     // Method to search for a book
     public static void searchBook(String bookName,
                                   List<String> bookNames,
                                   List<String> authorNames,
                                   List<Boolean> availabilityStatus) {
 
+
         boolean found = false;
 
 
-        // Loop to search book
         for (int i = 0; i < bookNames.size(); i++) {
+
 
             if (bookNames.get(i).equalsIgnoreCase(bookName)) {
 
-                IO.println("\nBook Found!");
-                IO.println("Book Name: " + bookNames.get(i));
+
+                IO.println("\nBook Found");
+
+                IO.println("Name: " + bookNames.get(i));
+
                 IO.println("Author: " + authorNames.get(i));
 
-                String status = availabilityStatus.get(i) ? "Available" : "Unavailable";
+                IO.println("Status: " +
+                        (availabilityStatus.get(i)
+                                ? "Available"
+                                : "Unavailable"));
 
-                IO.println("Status: " + status);
 
                 found = true;
+
                 break;
+
             }
+
         }
 
 
-        // Display if book does not exist
         if (!found) {
 
             IO.println("Book not found.");
 
         }
 
-        // Method to borrow a book
-        public static void borrowBook(String bookName,
-                List<String> bookNames,
-                List<Boolean> availabilityStatus) {
-
-            boolean found = false;
-
-
-            // Loop to find the book
-            for (int i = 0; i < bookNames.size(); i++) {
-
-                if (bookNames.get(i).equalsIgnoreCase(bookName)) {
-
-                    found = true;
-
-
-                    // Check book availability
-                    if (availabilityStatus.get(i)) {
-
-                        availabilityStatus.set(i, false);
-
-                        IO.println("Book borrowed successfully.");
-
-                    } else {
-
-                        IO.println("Book is already unavailable.");
-
-                    }
-
-                    break;
-                }
-            }
-
-
-            // If book does not exist
-            if (!found) {
-
-                IO.println("Book not found.");
-
-            }
-        }
     }
+
+
+
+    // Method to borrow a book
+    public static void borrowBook(String bookName,
+                                  List<String> bookNames,
+                                  List<Boolean> availabilityStatus) {
+
+
+        for (int i = 0; i < bookNames.size(); i++) {
+
+
+            if (bookNames.get(i).equalsIgnoreCase(bookName)) {
+
+
+                if (availabilityStatus.get(i)) {
+
+
+                    availabilityStatus.set(i, false);
+
+                    IO.println("Book borrowed successfully.");
+
+
+                } else {
+
+
+                    IO.println("Book is unavailable.");
+
+                }
+
+
+                return;
+
+            }
+
+        }
+
+
+        IO.println("Book not found.");
+
+    }
+
+
 
     // Method to return a book
     public static void returnBook(String bookName,
                                   List<String> bookNames,
                                   List<Boolean> availabilityStatus) {
 
-        boolean found = false;
 
-
-        // Loop to find the book
         for (int i = 0; i < bookNames.size(); i++) {
 
 
             if (bookNames.get(i).equalsIgnoreCase(bookName)) {
 
-                found = true;
 
-
-                // Update book status
                 availabilityStatus.set(i, true);
 
                 IO.println("Book returned successfully.");
 
-                break;
-            }
-        }
+                return;
 
-
-        // If book does not exist
-        if (!found) {
-
-            IO.println("Book not found.");
-
-        }
-
-        // Method to count available and unavailable books
-        public static int countBooks(List<Boolean> availabilityStatus,
-        boolean status) {
-
-            int count = 0;
-
-
-            // Loop through book status list
-            for (boolean available : availabilityStatus) {
-
-                if (available == status) {
-
-                    count++;
-
-                }
             }
 
-
-            return count;
         }
-    }
+
+
+        IO.println("Book not found.");
+
     }
 
+
+
+    // Method to count books
+    public static int countBooks(List<Boolean> availabilityStatus,
+                                 boolean status) {
+
+
+        int count = 0;
+
+
+        for (boolean available : availabilityStatus) {
+
+
+            if (available == status) {
+
+                count++;
+
+            }
+
+        }
+
+
+        return count;
+
+    }
+
+
+
+    // Method to display library report
+    public static void displayReport(List<String> bookNames,
+                                     List<Boolean> availabilityStatus) {
+
+
+        int availableBooks = countBooks(availabilityStatus, true);
+
+        int unavailableBooks = countBooks(availabilityStatus, false);
+
+
+        IO.println("\n===== Library Report =====");
+
+        IO.println("Total Number of Books: " + bookNames.size());
+
+        IO.println("Available Books: " + availableBooks);
+
+        IO.println("Unavailable Books: " + unavailableBooks);
+
+    }
+
+}

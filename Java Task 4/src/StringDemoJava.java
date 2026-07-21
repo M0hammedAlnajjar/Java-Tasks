@@ -31,5 +31,15 @@ public class StringDemoJava {
         if (input.isBlank()){
             IO.println("Nmae is reqwied ");
         }
+
+        String email =IO.readln("Enter your eamil : ").strip();
+        IO.println(email.indexOf("@"));
+        IO.println(email.indexOf("$"));
+
+
+
+
+
+
     }
 }

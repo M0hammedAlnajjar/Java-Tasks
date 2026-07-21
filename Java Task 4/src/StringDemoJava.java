@@ -54,5 +54,7 @@ public class StringDemoJava {
 
 String flie = "report.pdf";
 Integer dot= flie.lastIndexOf(".");
+IO.println("file name is "+flie.substring(0,dot));
+IO.println("Fromating is "+ flie.substring(dot +1));
     }
 }

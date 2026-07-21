@@ -8,6 +8,13 @@ public class ArrayData {
         int min = numbers[0];
 
 
+        int positive = 0;
+        int negative = 0;
+        int zero = 0;
+        int even = 0;
+        int odd = 0;
+
+
 
         int[] numbers = {45, 12, -5, 90, 33, 12, 0, 67, -20, 88, 45, 100, 7, -3, 55};
         IO.println("Array Elements:");
@@ -47,6 +54,29 @@ public class ArrayData {
         System.out.println("Average = " + average);
         System.out.println("Maximum = " + max);
         System.out.println("Minimum = " + min);
+// Loop through the array
+        for (int i = 0; i < numbers.length; i++) {
 
+            if (numbers[i] > 0) {
+                positive++;
+            } else if (numbers[i] < 0) {
+                negative++;
+            } else {
+                zero++;
+            }
+
+            if (numbers[i] % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+
+// Display results
+        System.out.println("Positive Numbers: " + positive);
+        System.out.println("Negative Numbers: " + negative);
+        System.out.println("Zeros: " + zero);
+        System.out.println("Even Numbers: " + even);
+        System.out.println("Odd Numbers: " + odd);
     }
 }

@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class ScoreAnalysisAndManagementSystem {
 
 
-
     public class ScoreAnalysis {
 
         public static void main(String[] args) {
@@ -26,5 +25,17 @@ public class ScoreAnalysisAndManagementSystem {
             for (int i = 0; i < scores.size(); i++) {
                 System.out.println("Score " + (i + 1) + ": " + scores.get(i));
             }
+
+            // Display total number of scores
+            System.out.println("Total number of scores: " + scores.size());
+
+
+// Display scores with indexes
+            System.out.println("\nScores with indexes:");
+
+            for (int i = 0; i < scores.size(); i++) {
+                System.out.println("Score " + i + ": " + scores.get(i));
+            }
         }
     }
+}

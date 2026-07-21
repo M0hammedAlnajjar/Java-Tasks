@@ -106,5 +106,24 @@ public class ArrayData {
         } else {
             System.out.println("Number not found.");
         }
+
+
+        // Ask for the index
+        String indexInput = IO.readln("Enter index: ");
+        int index = Integer.parseInt(indexInput);
+
+// Ask for the new value
+        String valueInput = IO.readln("Enter new value: ");
+        int newValue = Integer.parseInt(valueInput);
+
+// Update the array
+        numbers[index] = newValue;
+
+// Display the updated array
+        System.out.println("Updated Array:");
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
     }
 }

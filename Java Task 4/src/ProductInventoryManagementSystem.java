@@ -203,3 +203,41 @@ System.out.println("Total Quantity: " + totalQuantity);
 
 System.out.printf("Inventory Value: %.2f%n", inventoryValue);
 }
+// Stock Status Checking
+
+System.out.println("Low Stock:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        if (productQuantities.get(i) < 5 && productQuantities.get(i) > 0) {
+
+        System.out.println(productNames.get(i));
+
+        }
+        }
+
+
+
+        System.out.println("\nOut of Stock:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        if (productQuantities.get(i) == 0) {
+
+        System.out.println(productNames.get(i));
+
+        }
+        }
+
+
+
+        System.out.println("\nAvailable Stock:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        if (productQuantities.get(i) >= 5) {
+
+        System.out.println(productNames.get(i));
+
+        }
+        }

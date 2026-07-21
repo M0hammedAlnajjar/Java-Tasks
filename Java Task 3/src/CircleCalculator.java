@@ -6,7 +6,7 @@ public class CircleCalculator {
         double circumference=0;
         double radius=0 ;
         double Pi=1.14;
-        String classification="0";
+        String classification=" ";
 
         Scanner input = new Scanner(System.in);
 
@@ -23,14 +23,15 @@ public class CircleCalculator {
 
 
     if (radius<5){
-        IO.println(" Small Circle ");
+        classification=(" Small Circle ");
     }
     else if (radius >= 5 && radius <= 15){
-        IO.println(" Medium Circle ");
+        classification= (" Medium Circle ");
 
     }
     else {
-        IO.println(" Large Circle");
+        classification ="Large Circle ";
+
 
         }
         IO.println("the radius"+radius);

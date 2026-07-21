@@ -70,3 +70,44 @@ System.out.println("Highest Score: " + highestScore);
 System.out.println("Lowest Score: " + lowestScore);
     }
 }
+
+
+// Counters
+int passed = 0;
+int failed = 0;
+int excellent = 0;
+int lowGrades = 0;
+
+
+// Analyze scores
+for (int i = 0; i < scores.size(); i++) {
+
+int score = scores.get(i);
+
+    if (score >= 60) {
+passed++;
+        }
+        else {
+failed++;
+        }
+
+
+        if (score >= 90) {
+excellent++;
+        }
+
+
+        if (score < 50) {
+lowGrades++;
+        }
+        }
+
+
+// Display results
+        System.out.println("Passed: " + passed);
+System.out.println("Failed: " + failed);
+System.out.println("Excellent: " + excellent);
+System.out.println("Low Grades: " + lowGrades);
+
+}
+}

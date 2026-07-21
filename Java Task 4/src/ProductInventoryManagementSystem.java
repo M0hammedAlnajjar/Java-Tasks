@@ -283,3 +283,90 @@ for (int i = 0; i < productNames.size(); i++) {
         System.out.printf("Price: %.2f%n", productPrices.get(i));
 
         }
+
+
+// Sort by Product Name
+
+        for (int i = 0; i < productNames.size() - 1; i++) {
+
+        for (int j = i + 1; j < productNames.size(); j++) {
+
+        if (productNames.get(i).compareTo(productNames.get(j)) > 0) {
+
+
+// Swap names
+String tempName = productNames.get(i);
+            productNames.set(i, productNames.get(j));
+        productNames.set(j, tempName);
+
+
+// Swap quantities
+int tempQuantity = productQuantities.get(i);
+            productQuantities.set(i, productQuantities.get(j));
+        productQuantities.set(j, tempQuantity);
+
+
+// Swap prices
+double tempPrice = productPrices.get(i);
+            productPrices.set(i, productPrices.get(j));
+        productPrices.set(j, tempPrice);
+
+        }
+                }
+                }
+
+
+                System.out.println("Products Sorted By Name:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        System.out.println(
+        productNames.get(i) +
+        " - Quantity: " + productQuantities.get(i) +
+        " - Price: " + productPrices.get(i)
+    );
+            }
+
+
+// Sort by Product Price
+
+            for (int i = 0; i < productPrices.size() - 1; i++) {
+
+        for (int j = i + 1; j < productPrices.size(); j++) {
+
+
+        if (productPrices.get(i) > productPrices.get(j)) {
+
+
+// Swap prices
+double tempPrice = productPrices.get(i);
+            productPrices.set(i, productPrices.get(j));
+        productPrices.set(j, tempPrice);
+
+
+// Swap names
+String tempName = productNames.get(i);
+            productNames.set(i, productNames.get(j));
+        productNames.set(j, tempName);
+
+
+// Swap quantities
+int tempQuantity = productQuantities.get(i);
+            productQuantities.set(i, productQuantities.get(j));
+        productQuantities.set(j, tempQuantity);
+
+        }
+                }
+                }
+
+
+                System.out.println("\nProducts Sorted By Price:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        System.out.println(
+        productNames.get(i) +
+        " - Quantity: " + productQuantities.get(i) +
+        " - Price: " + productPrices.get(i)
+    );
+            }

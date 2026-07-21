@@ -37,16 +37,22 @@ public class StringDemoJava {
 //        IO.println(email.indexOf("$"));
 //
 //
-        String t = "Hello Codeline World";
+//        String t = "Hello Codeline World";
+//
+//        IO.println(t.indexOf("Codeline"));
+//        IO.println(t.indexOf("Java"));
+//        IO.println(t.lastIndexOf("Wo"));
+//        IO.println(t.contains("World"));
+//        IO.println(t.startsWith("Hello"));
+//        IO.println(t.endsWith("World"));
+//
+//
+//        String t = "Hello Codeline World";
+//        IO.println(t.charAt(1));
+//        IO.println(t.substring(6));
+//        IO.println(t.substring(6,13));
 
-        IO.println(t.indexOf("Codeline"));
-        IO.println(t.indexOf("Java"));
-        IO.println(t.lastIndexOf("Wo"));
-        IO.println(t.contains("World"));
-        IO.println(t.startsWith("Hello"));
-        IO.println(t.endsWith("World"));
-
-
-
+String flie = "report.pdf";
+Integer dot= flie.lastIndexOf(".");
     }
 }

@@ -1,51 +1,43 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ScoreAnalysisAndManagementSystem {
 
+    public static void main(String[] args) {
 
-    public class ScoreAnalysis {
-
-        public static void main(String[] args) {
-
-            // Create ArrayList
-            ArrayList<Integer> scores = new ArrayList<>();
-
-            // Ask user to enter 15 scores
-            for (int i = 0; i < 15; i++) {
-
-                String input = IO.readln("Enter score " + (i + 1) + ": ");
-                int score = Integer.parseInt(input);
-
-                scores.add(score);
-            }
-
-            // Display scores
-            System.out.println("\nStudent Scores:");
-
-            for (int i = 0; i < scores.size(); i++) {
-                System.out.println("Score " + (i + 1) + ": " + scores.get(i));
-            }
-
-            // Display total number of scores
-            System.out.println("Total number of scores: " + scores.size());
+        // Create ArrayList
+        ArrayList<Integer> scores = new ArrayList<>();
 
 
-// Display scores with indexes
-            System.out.println("\nScores with indexes:");
+        // 1. Create Score List
+        for (int i = 0; i < 15; i++) {
 
-            for (int i = 0; i < scores.size(); i++) {
-                System.out.println("Score " + i + ": " + scores.get(i));
-            }
+            String input = IO.readln("Enter score " + (i + 1) + ": ");
+            int score = Integer.parseInt(input);
+
+            scores.add(score);
         }
 
-        // Variables for statistics
+
+        // 2. Display Score Information
+        System.out.println("\nStudent Scores:");
+
+        for (int i = 0; i < scores.size(); i++) {
+            System.out.println("Score " + i + ": " + scores.get(i));
+        }
+
+        System.out.println("Total number of scores: " + scores.size());
+
+
+
+        // 3. Calculate Score Statistics
+
         int totalScore = 0;
         int highestScore = scores.get(0);
         int lowestScore = scores.get(0);
 
 
-// Calculate statistics
-for (int i = 0; i < scores.size(); i++) {
+        for (int i = 0; i < scores.size(); i++) {
 
             totalScore += scores.get(i);
 
@@ -59,193 +51,192 @@ for (int i = 0; i < scores.size(); i++) {
         }
 
 
-        // Calculate average using type casting
         double average = (double) totalScore / scores.size();
 
 
-// Display results
-System.out.println("Total Score: " + totalScore);
-System.out.println("Average: " + average);
-System.out.println("Highest Score: " + highestScore);
-System.out.println("Lowest Score: " + lowestScore);
-    }
-}
+        System.out.println("\nStatistics:");
+        System.out.println("Total Score: " + totalScore);
+        System.out.println("Average: " + average);
+        System.out.println("Highest Score: " + highestScore);
+        System.out.println("Lowest Score: " + lowestScore);
 
 
-// Counters
-int passed = 0;
-int failed = 0;
-int excellent = 0;
-int lowGrades = 0;
+
+        // 4. Score Classification
+
+        int passed = 0;
+        int failed = 0;
+        int excellent = 0;
+        int lowGrades = 0;
 
 
-// Analyze scores
-for (int i = 0; i < scores.size(); i++) {
+        for (int i = 0; i < scores.size(); i++) {
 
-int score = scores.get(i);
+            int score = scores.get(i);
 
-    if (score >= 60) {
-passed++;
+
+            if (score >= 60) {
+                passed++;
+            } else {
+                failed++;
+            }
+
+
+            if (score >= 90) {
+                excellent++;
+            }
+
+
+            if (score < 50) {
+                lowGrades++;
+            }
         }
-        else {
-failed++;
-        }
 
 
-        if (score >= 90) {
-excellent++;
-        }
-
-
-        if (score < 50) {
-lowGrades++;
-        }
-        }
-
-
-// Display results
+        System.out.println("\nClassification:");
         System.out.println("Passed: " + passed);
-System.out.println("Failed: " + failed);
-System.out.println("Excellent: " + excellent);
-System.out.println("Low Grades: " + lowGrades);
-
-}
-}
-
-// Ask user for score to search
-String searchInput = IO.readln("Enter score: ");
-int searchScore = Integer.parseInt(searchInput);
+        System.out.println("Failed: " + failed);
+        System.out.println("Excellent: " + excellent);
+        System.out.println("Low Grades: " + lowGrades);
 
 
-// Variables
-int firstPosition = -1;
-int occurrences = 0;
+
+        // 5. Search Score System
+
+        String searchInput = IO.readln("\nEnter score to search: ");
+        int searchScore = Integer.parseInt(searchInput);
 
 
-// Search in ArrayList
-for (int i = 0; i < scores.size(); i++) {
+        int firstPosition = -1;
+        int occurrences = 0;
 
-        if (scores.get(i) == searchScore) {
 
-        if (firstPosition == -1) {
-firstPosition = i;
+        for (int i = 0; i < scores.size(); i++) {
+
+            if (scores.get(i) == searchScore) {
+
+                if (firstPosition == -1) {
+                    firstPosition = i;
+                }
+
+                occurrences++;
+            }
         }
 
-occurrences++;
-        }
-        }
 
-
-// Display result
         if (occurrences > 0) {
 
-        System.out.println("Score found.");
-    System.out.println("First Position: " + firstPosition);
-    System.out.println("Occurrences: " + occurrences);
+            System.out.println("Score found.");
+            System.out.println("First Position: " + firstPosition);
+            System.out.println("Occurrences: " + occurrences);
 
-} else {
+        } else {
 
-        System.out.println("Score not found.");
-}
-
-// Ask user for index
-String indexInput = IO.readln("Enter index: ");
-int index = Integer.parseInt(indexInput);
+            System.out.println("Score not found.");
+        }
 
 
-// Ask user for new score
-String scoreInput = IO.readln("Enter new score: ");
-int newScore = Integer.parseInt(scoreInput);
+
+        // 6. Update Score System
+
+        String indexInput = IO.readln("\nEnter index to update: ");
+        int index = Integer.parseInt(indexInput);
 
 
-// Update score
-if (index >= 0 && index < scores.size()) {
-
-        scores.set(index, newScore);
-
-    System.out.println("Updated Scores:");
-
-    System.out.println(scores);
-
-} else {
-
-        System.out.println("Invalid index.");
-}
+        String newScoreInput = IO.readln("Enter new score: ");
+        int newScore = Integer.parseInt(newScoreInput);
 
 
-// Display before removal
-        System.out.println("Before:");
-System.out.println(scores);
+        if (index >= 0 && index < scores.size()) {
+
+            scores.set(index, newScore);
+
+            System.out.println("Updated Scores:");
+            System.out.println(scores);
+
+        } else {
+
+            System.out.println("Invalid index.");
+        }
 
 
-// Remove score by value
-String valueInput = IO.readln("Enter score to remove: ");
-int removeValue = Integer.parseInt(valueInput);
 
-if (scores.remove(Integer.valueOf(removeValue))) {
-        System.out.println("Score removed.");
-} else {
-        System.out.println("Score not found.");
-}
+        // 7. Remove Score System
+
+        System.out.println("\nBefore Removal:");
+        System.out.println(scores);
 
 
-// Display after removing by value
+        String removeInput = IO.readln("Enter score to remove: ");
+        int removeScore = Integer.parseInt(removeInput);
+
+
+        if (scores.remove(Integer.valueOf(removeScore))) {
+
+            System.out.println("Score removed.");
+
+        } else {
+
+            System.out.println("Score not found.");
+        }
+
+
         System.out.println("After removing value:");
-System.out.println(scores);
+        System.out.println(scores);
 
 
 
-// Remove score by index
-String indexInput = IO.readln("Enter index to remove: ");
-int removeIndex = Integer.parseInt(indexInput);
+        String removeIndexInput = IO.readln("Enter index to remove: ");
+        int removeIndex = Integer.parseInt(removeIndexInput);
 
 
-if (removeIndex >= 0 && removeIndex < scores.size()) {
+        if (removeIndex >= 0 && removeIndex < scores.size()) {
 
-        scores.remove(removeIndex);
+            scores.remove(removeIndex);
 
-    System.out.println("Index removed.");
+            System.out.println("Index removed.");
 
-} else {
+        } else {
 
-        System.out.println("Invalid index.");
-}
+            System.out.println("Invalid index.");
+        }
 
 
-// Display final list
         System.out.println("Final Scores:");
-System.out.println(scores);
-
-// Create a copy of the score list
-ArrayList<Integer> sortedScores = new ArrayList<>(scores);
+        System.out.println(scores);
 
 
-// Sort from smallest to largest
-sortedScores.sort(null);
+
+        // 8. Sorting and Reversing Scores
+
+        ArrayList<Integer> sortedScores = new ArrayList<>(scores);
 
 
-// Display ascending order
-System.out.println("Ascending:");
-System.out.println(sortedScores);
+        Collections.sort(sortedScores);
 
 
-// Reverse the sorted list
-ArrayList<Integer> descendingScores = new ArrayList<>(sortedScores);
-java.util.Collections.reverse(descendingScores);
+        System.out.println("\nAscending:");
+        System.out.println(sortedScores);
 
 
-// Display descending order
-System.out.println("Descending:");
-System.out.println(descendingScores);
-
-// Remove all scores
-scores.clear();
+        Collections.reverse(sortedScores);
 
 
-// Display empty list
-System.out.println("After Clear:");
-System.out.println(scores);
+        System.out.println("Descending:");
+        System.out.println(sortedScores);
 
 
-// Check if list is empty
-System.out.println("Is Empty: " + scores.isEmpty());
+
+        // 9. Clear Score Data
+
+        scores.clear();
+
+
+        System.out.println("\nAfter Clear:");
+        System.out.println(scores);
+
+
+        System.out.println("Is Empty: " + scores.isEmpty());
+
+    }
+}

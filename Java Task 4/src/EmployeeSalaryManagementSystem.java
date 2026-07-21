@@ -139,5 +139,31 @@ public class EmployeeSalaryManagementSystem {
         } else {
             System.out.println("Invalid employee index.");
         }
+
+        // Hardcoded employee index to remove
+        int employeeIndex = 4;
+
+// Check if the index is valid
+        if (employeeIndex >= 0 && employeeIndex < employeeIds.size()) {
+
+            employeeIds.remove(employeeIndex);
+            employeeNames.remove(employeeIndex);
+            employeeSalaries.remove(employeeIndex);
+
+            System.out.println("Employee removed successfully.");
+
+            // Display updated employee list
+            System.out.println("\nUpdated Employee List:");
+            for (int i = 0; i < employeeIds.size(); i++) {
+                System.out.println("Employee " + i + ":");
+                System.out.println("ID: " + employeeIds.get(i));
+                System.out.println("Name: " + employeeNames.get(i));
+                System.out.println("Salary: " + employeeSalaries.get(i));
+                System.out.println();
+            }
+
+        } else {
+            System.out.println("Invalid employee index.");
+        }
     }
 }

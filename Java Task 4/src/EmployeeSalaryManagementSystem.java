@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+
 public class EmployeeSalaryManagementSystem {
 
     public static void main(String[] args) {
@@ -50,63 +50,54 @@ public class EmployeeSalaryManagementSystem {
         employeeNames.add("Mona");
         employeeSalaries.add(950.0);
 
-        // Display employee information
-        System.out.println("Employee List");
-        System.out.println("-------------------------------");
+
+        // 1 & 2 Display Employee Information
+        System.out.println("Employee Information");
+        System.out.println("--------------------");
 
         for (int i = 0; i < employeeIds.size(); i++) {
-            System.out.println(
-                    "ID: " + employeeIds.get(i) +
-                            ", Name: " + employeeNames.get(i) +
-                            ", Salary: $" + employeeSalaries.get(i)
-            );
-
-            System.out.println("Employee Information");
-            System.out.println("----------------------");
-
-            for (int i = 0; i < employeeIds.size(); i++) {
-                System.out.println("Employee " + i + ":");
-                System.out.println("ID: " + employeeIds.get(i));
-                System.out.println("Name: " + employeeNames.get(i));
-                System.out.println("Salary: " + employeeSalaries.get(i));
-                System.out.println();
-            }
-
-            int highSalary = 0;
-            int mediumSalary = 0;
-            int lowSalary = 0;
-
-            for (double salary : employeeSalaries) {
-
-                if (salary > 1000) {
-                    highSalary++;
-                } else if (salary >= 500 && salary <= 1000) {
-                    mediumSalary++;
-                } else {
-                    lowSalary++;
-                }
-            }
-
-            System.out.println("Salary Category Analysis");
-            System.out.println("------------------------");
-            System.out.println("High Salary Employees: " + highSalary);
-            System.out.println("Medium Salary Employees: " + mediumSalary);
-            System.out.println("Low Salary Employees: " + lowSalary);
+            System.out.println("Employee " + i + ":");
+            System.out.println("ID: " + employeeIds.get(i));
+            System.out.println("Name: " + employeeNames.get(i));
+            System.out.println("Salary: " + employeeSalaries.get(i));
+            System.out.println();
         }
 
 
+        // 4 Salary Category Analysis
+        int highSalary = 0;
+        int mediumSalary = 0;
+        int lowSalary = 0;
+
+        for (double salary : employeeSalaries) {
+
+            if (salary > 1000) {
+                highSalary++;
+            } else if (salary >= 500) {
+                mediumSalary++;
+            } else {
+                lowSalary++;
+            }
+        }
+
+        System.out.println("Salary Category Analysis");
+        System.out.println("------------------------");
+        System.out.println("High Salary Employees: " + highSalary);
+        System.out.println("Medium Salary Employees: " + mediumSalary);
+        System.out.println("Low Salary Employees: " + lowSalary);
+        System.out.println();
 
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter employee ID: ");
-        int searchId = input.nextInt();
+        // 5 Search Employee
+        String searchInput = IO.readln("Enter employee ID: ");
+        int searchId = Integer.parseInt(searchInput);
 
         boolean found = false;
 
         for (int i = 0; i < employeeIds.size(); i++) {
 
-            if (employeeIds.get(i) == searchId) {
+            if (employeeIds.get(i).equals(searchId)) {
+
                 System.out.println("Employee Found");
                 System.out.println("Name: " + employeeNames.get(i));
                 System.out.println("Salary: " + employeeSalaries.get(i));
@@ -121,50 +112,62 @@ public class EmployeeSalaryManagementSystem {
             System.out.println("Employee not found.");
         }
 
-        // Hardcoded values
-        int employeeIndex = 2;
-        double newSalary = 1500.0;
 
-// Check if the index is valid
-        if (employeeIndex >= 0 && employeeIndex < employeeSalaries.size()) {
+        // 6 Update Employee Salary
+        String updateInput = IO.readln("Enter Employee Index: ");
+        int updateIndex = Integer.parseInt(updateInput);
 
-            employeeSalaries.set(employeeIndex, newSalary);
+        String salaryInput = IO.readln("Enter New Salary: ");
+        double newSalary = Double.parseDouble(salaryInput);
+
+
+        if (updateIndex >= 0 && updateIndex < employeeSalaries.size()) {
+
+            employeeSalaries.set(updateIndex, newSalary);
 
             System.out.println("Salary updated successfully.");
-            System.out.println("Employee Information:");
-            System.out.println("ID: " + employeeIds.get(employeeIndex));
-            System.out.println("Name: " + employeeNames.get(employeeIndex));
-            System.out.println("Salary: " + employeeSalaries.get(employeeIndex));
+            System.out.println("ID: " + employeeIds.get(updateIndex));
+            System.out.println("Name: " + employeeNames.get(updateIndex));
+            System.out.println("Salary: " + employeeSalaries.get(updateIndex));
 
         } else {
             System.out.println("Invalid employee index.");
         }
 
-        // Hardcoded employee index to remove
-        int employeeIndex = 4;
 
-// Check if the index is valid
-        if (employeeIndex >= 0 && employeeIndex < employeeIds.size()) {
+        // 7 Remove Employee
+        String removeInput = IO.readln("Remove Employee Index: ");
+        int removeIndex = Integer.parseInt(removeInput);
 
-            employeeIds.remove(employeeIndex);
-            employeeNames.remove(employeeIndex);
-            employeeSalaries.remove(employeeIndex);
+
+        if (removeIndex >= 0 && removeIndex < employeeIds.size()) {
+
+            employeeIds.remove(removeIndex);
+            employeeNames.remove(removeIndex);
+            employeeSalaries.remove(removeIndex);
 
             System.out.println("Employee removed successfully.");
 
-            // Display updated employee list
-            System.out.println("\nUpdated Employee List:");
-            for (int i = 0; i < employeeIds.size(); i++) {
-                System.out.println("Employee " + i + ":");
-                System.out.println("ID: " + employeeIds.get(i));
-                System.out.println("Name: " + employeeNames.get(i));
-                System.out.println("Salary: " + employeeSalaries.get(i));
-                System.out.println();
-            }
-
         } else {
             System.out.println("Invalid employee index.");
         }
+
+
+        // Display Updated List
+        System.out.println("\nUpdated Employee List");
+        System.out.println("---------------------");
+
+        for (int i = 0; i < employeeIds.size(); i++) {
+
+            System.out.println("Employee " + i);
+            System.out.println("ID: " + employeeIds.get(i));
+            System.out.println("Name: " + employeeNames.get(i));
+            System.out.println("Salary: " + employeeSalaries.get(i));
+            System.out.println();
+        }
+
+
+        // 9 Bonus Calculation
         System.out.println("Employee Salary Bonus Report");
         System.out.println("----------------------------");
 

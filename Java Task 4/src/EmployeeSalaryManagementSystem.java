@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class EmployeeSalaryManagementSystem {
 
     public static void main(String[] args) {
@@ -92,6 +92,52 @@ public class EmployeeSalaryManagementSystem {
             System.out.println("High Salary Employees: " + highSalary);
             System.out.println("Medium Salary Employees: " + mediumSalary);
             System.out.println("Low Salary Employees: " + lowSalary);
+        }
+
+
+
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter employee ID: ");
+        int searchId = input.nextInt();
+
+        boolean found = false;
+
+        for (int i = 0; i < employeeIds.size(); i++) {
+
+            if (employeeIds.get(i) == searchId) {
+                System.out.println("Employee Found");
+                System.out.println("Name: " + employeeNames.get(i));
+                System.out.println("Salary: " + employeeSalaries.get(i));
+                System.out.println("Position: " + i);
+
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Employee not found.");
+        }
+
+        // Hardcoded values
+        int employeeIndex = 2;
+        double newSalary = 1500.0;
+
+// Check if the index is valid
+        if (employeeIndex >= 0 && employeeIndex < employeeSalaries.size()) {
+
+            employeeSalaries.set(employeeIndex, newSalary);
+
+            System.out.println("Salary updated successfully.");
+            System.out.println("Employee Information:");
+            System.out.println("ID: " + employeeIds.get(employeeIndex));
+            System.out.println("Name: " + employeeNames.get(employeeIndex));
+            System.out.println("Salary: " + employeeSalaries.get(employeeIndex));
+
+        } else {
+            System.out.println("Invalid employee index.");
         }
     }
 }

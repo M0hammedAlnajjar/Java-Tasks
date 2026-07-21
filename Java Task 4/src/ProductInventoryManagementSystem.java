@@ -80,6 +80,18 @@ public class ProductInventoryManagementSystem {
                     );
                 }
             }
+
+            // Display Inventory
+
+System.out.println("Product Inventory:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+                System.out.println("\nProduct " + i + ":");
+                System.out.println("Name: " + productNames.get(i));
+                System.out.println("Quantity: " + productQuantities.get(i));
+                System.out.printf("Price: %.2f%n", productPrices.get(i));
+            }
         }
     }
 }

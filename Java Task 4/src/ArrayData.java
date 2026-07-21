@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class ArrayData {
 
     static void main() {
@@ -137,6 +138,30 @@ public class ArrayData {
         System.out.println("\nReverse:");
 
         for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+
+// Create a copy of the original array
+        int[] copiedArray = Arrays.copyOf(numbers, numbers.length);
+
+// Sort the copied array
+        Arrays.sort(copiedArray);
+
+// Display sorted array
+        System.out.println("Sorted Array:");
+
+        for (int i = 0; i < copiedArray.length; i++) {
+            System.out.print(copiedArray[i] + " ");
+        }
+
+// Compare first and last values
+        System.out.println("\nSmallest value: " + copiedArray[0]);
+        System.out.println("Largest value: " + copiedArray[copiedArray.length - 1]);
+
+// Display original array to prove it is unchanged
+        System.out.println("\nOriginal Array:");
+
+        for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
     }

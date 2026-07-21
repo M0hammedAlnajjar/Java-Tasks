@@ -1,6 +1,85 @@
+import java.util.ArrayList;
 public class ProductInventoryManagementSystem {
 
     static void main() {
-        
+
+
+        public class ProductInventory {
+
+            public static void main(String[] args) {
+
+                // Create ArrayLists
+                ArrayList<String> productNames = new ArrayList<>();
+                ArrayList<Integer> productQuantities = new ArrayList<>();
+                ArrayList<Double> productPrices = new ArrayList<>();
+
+
+                // Add product information
+
+                productNames.add("Laptop");
+                productQuantities.add(5);
+                productPrices.add(750.50);
+
+
+                productNames.add("Phone");
+                productQuantities.add(10);
+                productPrices.add(500.00);
+
+
+                productNames.add("Tablet");
+                productQuantities.add(7);
+                productPrices.add(300.75);
+
+
+                productNames.add("Keyboard");
+                productQuantities.add(15);
+                productPrices.add(45.99);
+
+
+                productNames.add("Mouse");
+                productQuantities.add(20);
+                productPrices.add(25.50);
+
+
+                productNames.add("Monitor");
+                productQuantities.add(8);
+                productPrices.add(220.00);
+
+
+                productNames.add("Printer");
+                productQuantities.add(4);
+                productPrices.add(150.25);
+
+
+                productNames.add("Headphones");
+                productQuantities.add(12);
+                productPrices.add(80.00);
+
+
+                productNames.add("Camera");
+                productQuantities.add(6);
+                productPrices.add(650.99);
+
+
+                productNames.add("Speaker");
+                productQuantities.add(9);
+                productPrices.add(120.50);
+
+
+
+                // Display products
+
+                System.out.println("Product Inventory:");
+
+                for (int i = 0; i < productNames.size(); i++) {
+
+                    System.out.println(
+                            "Product: " + productNames.get(i) +
+                                    ", Quantity: " + productQuantities.get(i) +
+                                    ", Price: " + productPrices.get(i)
+                    );
+                }
+            }
+        }
     }
 }

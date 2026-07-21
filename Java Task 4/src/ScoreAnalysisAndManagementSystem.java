@@ -37,5 +37,36 @@ public class ScoreAnalysisAndManagementSystem {
                 System.out.println("Score " + i + ": " + scores.get(i));
             }
         }
+
+        // Variables for statistics
+        int totalScore = 0;
+        int highestScore = scores.get(0);
+        int lowestScore = scores.get(0);
+
+
+// Calculate statistics
+for (int i = 0; i < scores.size(); i++) {
+
+            totalScore += scores.get(i);
+
+            if (scores.get(i) > highestScore) {
+                highestScore = scores.get(i);
+            }
+
+            if (scores.get(i) < lowestScore) {
+                lowestScore = scores.get(i);
+            }
+        }
+
+
+        // Calculate average using type casting
+        double average = (double) totalScore / scores.size();
+
+
+// Display results
+System.out.println("Total Score: " + totalScore);
+System.out.println("Average: " + average);
+System.out.println("Highest Score: " + highestScore);
+System.out.println("Lowest Score: " + lowestScore);
     }
 }

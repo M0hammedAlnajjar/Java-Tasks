@@ -60,6 +60,17 @@ public class EmployeeSalaryManagementSystem {
                             ", Name: " + employeeNames.get(i) +
                             ", Salary: $" + employeeSalaries.get(i)
             );
+
+            System.out.println("Employee Information");
+            System.out.println("----------------------");
+
+            for (int i = 0; i < employeeIds.size(); i++) {
+                System.out.println("Employee " + i + ":");
+                System.out.println("ID: " + employeeIds.get(i));
+                System.out.println("Name: " + employeeNames.get(i));
+                System.out.println("Salary: " + employeeSalaries.get(i));
+                System.out.println();
+            }
         }
     }
 }

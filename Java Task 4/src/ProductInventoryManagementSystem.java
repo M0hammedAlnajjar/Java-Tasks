@@ -176,5 +176,30 @@ for (int i = 0; i < productNames.size(); i++) {
         System.out.println("Quantity: " + productQuantities.get(i));
         System.out.printf("Price: %.2f%n", productPrices.get(i));
     }
+// Stock Analysis
 
+    int totalProducts = productNames.size();
+    int totalQuantity = 0;
+    double inventoryValue = 0;
+
+
+// Calculate quantity and inventory value
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        totalQuantity += productQuantities.get(i);
+
+        inventoryValue += productQuantities.get(i) * productPrices.get(i);
+    }
+
+
+// Display statistics
+
+System.out.println("Stock Analysis:");
+
+System.out.println("Total Products: " + totalProducts);
+
+System.out.println("Total Quantity: " + totalQuantity);
+
+System.out.printf("Inventory Value: %.2f%n", inventoryValue);
 }

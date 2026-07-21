@@ -63,5 +63,25 @@ public class LibraryBookManagementSystem {
             System.out.println("Available: " + availability.get(i));
             System.out.println();
         }
+
+        // Display Library Books
+
+        System.out.println("Library Books Information");
+        System.out.println("-------------------------");
+
+        for (int i = 0; i < bookTitles.size(); i++) {
+
+            System.out.println("Book " + i + ":");
+            System.out.println("Title: " + bookTitles.get(i));
+            System.out.println("Author: " + authors.get(i));
+
+            if (availability.get(i)) {
+                System.out.println("Available: Yes");
+            } else {
+                System.out.println("Available: No");
+            }
+
+            System.out.println();
+        }
     }
 }

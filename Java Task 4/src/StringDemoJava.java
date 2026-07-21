@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringDemoJava {
 
     public static void main(String[] args) {
@@ -67,14 +69,16 @@ public class StringDemoJava {
 //        for (String p : part) {
 //            IO.println(p);
 //        }
+        String CsvRow = "Mohammed,25,4158749876";
 
-        String CsvRow ="Mohammed ,25 ,4158749876";
-        String [] g= CsvRow.split(",");
+        String[] g = CsvRow.split(",");
+
+        System.out.println(g[0]);
+        System.out.println(g[1]);
+        System.out.println(g[2]);
 
 
-        for (String G : g) {
-            IO.println(G);
-        }
+
 
 
     }}

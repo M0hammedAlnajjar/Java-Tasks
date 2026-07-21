@@ -111,3 +111,39 @@ System.out.println("Low Grades: " + lowGrades);
 
 }
 }
+
+// Ask user for score to search
+String searchInput = IO.readln("Enter score: ");
+int searchScore = Integer.parseInt(searchInput);
+
+
+// Variables
+int firstPosition = -1;
+int occurrences = 0;
+
+
+// Search in ArrayList
+for (int i = 0; i < scores.size(); i++) {
+
+        if (scores.get(i) == searchScore) {
+
+        if (firstPosition == -1) {
+firstPosition = i;
+        }
+
+occurrences++;
+        }
+        }
+
+
+// Display result
+        if (occurrences > 0) {
+
+        System.out.println("Score found.");
+    System.out.println("First Position: " + firstPosition);
+    System.out.println("Occurrences: " + occurrences);
+
+} else {
+
+        System.out.println("Score not found.");
+}

@@ -171,3 +171,47 @@ if (index >= 0 && index < scores.size()) {
 
         System.out.println("Invalid index.");
 }
+
+
+// Display before removal
+        System.out.println("Before:");
+System.out.println(scores);
+
+
+// Remove score by value
+String valueInput = IO.readln("Enter score to remove: ");
+int removeValue = Integer.parseInt(valueInput);
+
+if (scores.remove(Integer.valueOf(removeValue))) {
+        System.out.println("Score removed.");
+} else {
+        System.out.println("Score not found.");
+}
+
+
+// Display after removing by value
+        System.out.println("After removing value:");
+System.out.println(scores);
+
+
+
+// Remove score by index
+String indexInput = IO.readln("Enter index to remove: ");
+int removeIndex = Integer.parseInt(indexInput);
+
+
+if (removeIndex >= 0 && removeIndex < scores.size()) {
+
+        scores.remove(removeIndex);
+
+    System.out.println("Index removed.");
+
+} else {
+
+        System.out.println("Invalid index.");
+}
+
+
+// Display final list
+        System.out.println("Final Scores:");
+System.out.println(scores);

@@ -147,3 +147,27 @@ occurrences++;
 
         System.out.println("Score not found.");
 }
+
+// Ask user for index
+String indexInput = IO.readln("Enter index: ");
+int index = Integer.parseInt(indexInput);
+
+
+// Ask user for new score
+String scoreInput = IO.readln("Enter new score: ");
+int newScore = Integer.parseInt(scoreInput);
+
+
+// Update score
+if (index >= 0 && index < scores.size()) {
+
+        scores.set(index, newScore);
+
+    System.out.println("Updated Scores:");
+
+    System.out.println(scores);
+
+} else {
+
+        System.out.println("Invalid index.");
+}

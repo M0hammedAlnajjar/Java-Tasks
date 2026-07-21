@@ -241,3 +241,45 @@ for (int i = 0; i < productNames.size(); i++) {
 
         }
         }
+
+// Remove Product
+
+String indexInput = IO.readln("Remove Product Index: ");
+int removeIndex = Integer.parseInt(indexInput);
+
+
+// Check index
+
+if (removeIndex >= 0 && removeIndex < productNames.size()) {
+
+
+        // Remove product information from all lists
+
+        productNames.remove(removeIndex);
+    productQuantities.remove(removeIndex);
+    productPrices.remove(removeIndex);
+
+
+    System.out.println("Product removed successfully.");
+
+
+} else {
+
+        System.out.println("Invalid product index.");
+
+}
+
+
+
+// Display updated inventory
+
+        System.out.println("\nUpdated Inventory:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        System.out.println("\nProduct " + i + ":");
+    System.out.println("Name: " + productNames.get(i));
+        System.out.println("Quantity: " + productQuantities.get(i));
+        System.out.printf("Price: %.2f%n", productPrices.get(i));
+
+        }

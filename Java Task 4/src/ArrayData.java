@@ -7,9 +7,11 @@ public class ArrayData {
         // Create and initialize array
         int[] numbers = {45, 12, -5, 90, 33, 12, 0, 67, -20, 88, 45, 100, 7, -3, 55};
 
-        // Create original copy for keeping unchanged
+        // Copy original array
         int[] originalArray = Arrays.copyOf(numbers, numbers.length);
 
+
+        // Variables
         int sum = 0;
         int max = numbers[0];
         int min = numbers[0];
@@ -21,27 +23,29 @@ public class ArrayData {
         int odd = 0;
 
 
-        // Display Array
-        IO.println("Array Elements:");
+        // 1. Display Array
+        System.out.println("Array Elements:");
 
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
 
 
-        // Display array information
+        // 2. Display Array Information
         System.out.println("\n\nTotal number of elements: " + numbers.length);
         System.out.println("First element: " + numbers[0]);
         System.out.println("Last element: " + numbers[numbers.length - 1]);
 
 
-        System.out.println("\nArray Elements with Index:");
+        System.out.println("\nElements with indexes:");
+
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("Index " + i + " = " + numbers[i]);
         }
 
 
-        // Array Statistics
+
+        // 3. Array Statistics
         for (int i = 0; i < numbers.length; i++) {
 
             sum += numbers[i];
@@ -57,6 +61,7 @@ public class ArrayData {
 
         double average = (double) sum / numbers.length;
 
+
         System.out.println("\nStatistics:");
         System.out.println("Sum = " + sum);
         System.out.printf("Average = %.2f%n", average);
@@ -65,7 +70,7 @@ public class ArrayData {
 
 
 
-        // Number Classification
+        // 4. Number Classification
         for (int i = 0; i < numbers.length; i++) {
 
             if (numbers[i] > 0) {
@@ -88,7 +93,7 @@ public class ArrayData {
         }
 
 
-        System.out.println("\nNumber Classification:");
+        System.out.println("\nClassification:");
         System.out.println("Positive Numbers: " + positive);
         System.out.println("Negative Numbers: " + negative);
         System.out.println("Zeros: " + zero);
@@ -97,9 +102,9 @@ public class ArrayData {
 
 
 
-        // Search System
-        String numberInput = IO.readln("\nEnter a number to search: ");
-        int search = Integer.parseInt(numberInput);
+        // 5. Search System
+        String searchInput = IO.readln("\nEnter number to search: ");
+        int search = Integer.parseInt(searchInput);
 
         int firstIndex = -1;
         int count = 0;
@@ -119,18 +124,20 @@ public class ArrayData {
 
 
         if (count > 0) {
+
             System.out.println("Number found.");
             System.out.println("First index: " + firstIndex);
             System.out.println("Occurrences: " + count);
-        }
-        else {
+
+        } else {
+
             System.out.println("Number not found.");
         }
 
 
 
-        // Update Array
-        String indexInput = IO.readln("\nEnter index to update: ");
+        // 6. Update Array
+        String indexInput = IO.readln("\nEnter index: ");
         int index = Integer.parseInt(indexInput);
 
         String valueInput = IO.readln("Enter new value: ");
@@ -147,14 +154,15 @@ public class ArrayData {
                 System.out.print(numbers[i] + " ");
             }
 
-        }
-        else {
+        } else {
+
             System.out.println("Invalid index.");
         }
 
 
 
-        // Reverse Array
+        // 7. Reverse Array
+
         System.out.println("\n\nOriginal Array:");
 
         for (int i = 0; i < originalArray.length; i++) {
@@ -170,24 +178,27 @@ public class ArrayData {
 
 
 
-        // Sorting and Comparison
-        int[] copiedArray = Arrays.copyOf(originalArray, originalArray.length);
+        // 8. Sorting and Comparison
 
-        Arrays.sort(copiedArray);
+        int[] sortedArray = Arrays.copyOf(originalArray, originalArray.length);
+
+        Arrays.sort(sortedArray);
 
 
         System.out.println("\n\nSorted Array:");
 
-        for (int i = 0; i < copiedArray.length; i++) {
-            System.out.print(copiedArray[i] + " ");
+        for (int i = 0; i < sortedArray.length; i++) {
+            System.out.print(sortedArray[i] + " ");
         }
 
 
-        System.out.println("\nSmallest value: " + copiedArray[0]);
-        System.out.println("Largest value: " + copiedArray[copiedArray.length - 1]);
+        System.out.println("\nSmallest value: " + sortedArray[0]);
+        System.out.println("Largest value: " + sortedArray[sortedArray.length - 1]);
 
 
-        // Show original array unchanged
+
+        // Original array remains unchanged
+
         System.out.println("\nOriginal Array (unchanged):");
 
         for (int i = 0; i < originalArray.length; i++) {

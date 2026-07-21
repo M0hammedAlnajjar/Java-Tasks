@@ -237,3 +237,15 @@ java.util.Collections.reverse(descendingScores);
 // Display descending order
 System.out.println("Descending:");
 System.out.println(descendingScores);
+
+// Remove all scores
+scores.clear();
+
+
+// Display empty list
+System.out.println("After Clear:");
+System.out.println(scores);
+
+
+// Check if list is empty
+System.out.println("Is Empty: " + scores.isEmpty());

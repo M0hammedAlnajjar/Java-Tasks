@@ -92,6 +92,39 @@ for (int i = 0; i < productNames.size(); i++) {
                 System.out.println("Quantity: " + productQuantities.get(i));
                 System.out.printf("Price: %.2f%n", productPrices.get(i));
             }
+
         }
+    }// Add New Product
+
+    String name = IO.readln("Enter Product Name: ");
+
+    String quantityInput = IO.readln("Enter Quantity: ");
+    int quantity = Integer.parseInt(quantityInput);
+
+    String priceInput = IO.readln("Enter Price: ");
+    double price = Double.parseDouble(priceInput);
+
+
+// Add product information to lists
+
+productNames.add(name);
+productQuantities.add(quantity);
+productPrices.add(price);
+
+
+System.out.println("Product added successfully.");
+
+
+// Display updated inventory
+
+System.out.println("\nUpdated Inventory:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        System.out.println("\nProduct " + i + ":");
+        System.out.println("Name: " + productNames.get(i));
+        System.out.println("Quantity: " + productQuantities.get(i));
+        System.out.printf("Price: %.2f%n", productPrices.get(i));
     }
+
 }

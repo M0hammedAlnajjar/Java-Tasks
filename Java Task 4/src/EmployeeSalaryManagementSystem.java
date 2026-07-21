@@ -165,5 +165,29 @@ public class EmployeeSalaryManagementSystem {
         } else {
             System.out.println("Invalid employee index.");
         }
+        System.out.println("Employee Salary Bonus Report");
+        System.out.println("----------------------------");
+
+        for (int i = 0; i < employeeNames.size(); i++) {
+
+            double salary = employeeSalaries.get(i);
+            double bonus;
+
+            if (salary >= 1000) {
+                bonus = salary * 0.10;
+            } else if (salary >= 500) {
+                bonus = salary * 0.05;
+            } else {
+                bonus = salary * 0.02;
+            }
+
+            double finalSalary = salary + bonus;
+
+            System.out.println("Employee: " + employeeNames.get(i));
+            System.out.println("Current Salary: " + salary);
+            System.out.println("Bonus: " + bonus);
+            System.out.println("Final Salary: " + finalSalary);
+            System.out.println();
+        }
     }
 }

@@ -127,4 +127,54 @@ for (int i = 0; i < productNames.size(); i++) {
         System.out.printf("Price: %.2f%n", productPrices.get(i));
     }
 
+// Update Product Information
+
+    String indexInput = IO.readln("Enter product index: ");
+    int index = Integer.parseInt(indexInput);
+
+
+// Check index is valid
+if (index >= 0 && index < productNames.size()) {
+
+
+        // Get new product information
+
+        String newName = IO.readln("New Product Name: ");
+
+        String quantityInput = IO.readln("New Quantity: ");
+        int newQuantity = Integer.parseInt(quantityInput);
+
+        String priceInput = IO.readln("New Price: ");
+        double newPrice = Double.parseDouble(priceInput);
+
+
+
+        // Update lists
+
+        productNames.set(index, newName);
+        productQuantities.set(index, newQuantity);
+        productPrices.set(index, newPrice);
+
+
+        System.out.println("Product updated successfully.");
+
+    } else {
+
+        System.out.println("Invalid product index.");
+
+    }
+
+
+// Display updated inventory
+
+System.out.println("\nUpdated Inventory:");
+
+for (int i = 0; i < productNames.size(); i++) {
+
+        System.out.println("\nProduct " + i + ":");
+        System.out.println("Name: " + productNames.get(i));
+        System.out.println("Quantity: " + productQuantities.get(i));
+        System.out.printf("Price: %.2f%n", productPrices.get(i));
+    }
+
 }

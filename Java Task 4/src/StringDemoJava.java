@@ -52,9 +52,29 @@ public class StringDemoJava {
 //        IO.println(t.substring(6));
 //        IO.println(t.substring(6,13));
 
-String flie = "report.pdf";
-Integer dot= flie.lastIndexOf(".");
-IO.println("file name is "+flie.substring(0,dot));
-IO.println("Fromating is "+ flie.substring(dot +1));
-    }
-}
+//String flie = "report.pdf";
+//Integer dot= flie.lastIndexOf(".");
+//IO.println("file name is "+flie.substring(0,dot));
+//IO.println("Fromating is "+ flie.substring(dot +1));
+//
+//        String t = " Hello codeline world";
+//
+//        IO.println(t.replace("o", "0"));
+//        IO.println(t.replace("Hello  ", "Hi"));
+//
+//        String[] part = t.split(" ");
+//
+//        for (String p : part) {
+//            IO.println(p);
+//        }
+
+        String CsvRow ="Mohammed ,25 ,4158749876";
+        String [] g= CsvRow.split(",");
+
+
+        for (String G : g) {
+            IO.println(G);
+        }
+
+
+    }}

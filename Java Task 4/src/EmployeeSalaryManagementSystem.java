@@ -71,6 +71,27 @@ public class EmployeeSalaryManagementSystem {
                 System.out.println("Salary: " + employeeSalaries.get(i));
                 System.out.println();
             }
+
+            int highSalary = 0;
+            int mediumSalary = 0;
+            int lowSalary = 0;
+
+            for (double salary : employeeSalaries) {
+
+                if (salary > 1000) {
+                    highSalary++;
+                } else if (salary >= 500 && salary <= 1000) {
+                    mediumSalary++;
+                } else {
+                    lowSalary++;
+                }
+            }
+
+            System.out.println("Salary Category Analysis");
+            System.out.println("------------------------");
+            System.out.println("High Salary Employees: " + highSalary);
+            System.out.println("Medium Salary Employees: " + mediumSalary);
+            System.out.println("Low Salary Employees: " + lowSalary);
         }
     }
 }

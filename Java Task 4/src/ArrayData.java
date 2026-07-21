@@ -125,5 +125,19 @@ public class ArrayData {
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
+
+        // Display original array
+        System.out.println("Original:");
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+
+// Display reverse array
+        System.out.println("\nReverse:");
+
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
     }
 }

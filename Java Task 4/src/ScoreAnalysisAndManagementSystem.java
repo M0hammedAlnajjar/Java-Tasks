@@ -1,6 +1,30 @@
+import java.util.ArrayList;
+
 public class ScoreAnalysisAndManagementSystem {
 
-    static void main() {
 
+
+    public class ScoreAnalysis {
+
+        public static void main(String[] args) {
+
+            // Create ArrayList
+            ArrayList<Integer> scores = new ArrayList<>();
+
+            // Ask user to enter 15 scores
+            for (int i = 0; i < 15; i++) {
+
+                String input = IO.readln("Enter score " + (i + 1) + ": ");
+                int score = Integer.parseInt(input);
+
+                scores.add(score);
+            }
+
+            // Display scores
+            System.out.println("\nStudent Scores:");
+
+            for (int i = 0; i < scores.size(); i++) {
+                System.out.println("Score " + (i + 1) + ": " + scores.get(i));
+            }
+        }
     }
-}

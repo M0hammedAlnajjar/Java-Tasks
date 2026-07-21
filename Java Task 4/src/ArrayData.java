@@ -78,5 +78,33 @@ public class ArrayData {
         System.out.println("Zeros: " + zero);
         System.out.println("Even Numbers: " + even);
         System.out.println("Odd Numbers: " + odd);
+
+
+
+
+        String numberInput = IO.readln("Enter a number: ");
+        int search = Integer.parseInt(numberInput);
+
+        int firstIndex = -1;
+        int count = 0;
+
+// Search the array
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == search) {
+                if (firstIndex == -1) {
+                    firstIndex = i;
+                }
+                count++;
+            }
+        }
+
+// Display the result
+        if (count > 0) {
+            System.out.println("Number found.");
+            System.out.println("First index: " + firstIndex);
+            System.out.println("Occurrences: " + count);
+        } else {
+            System.out.println("Number not found.");
+        }
     }
 }

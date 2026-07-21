@@ -215,3 +215,25 @@ if (removeIndex >= 0 && removeIndex < scores.size()) {
 // Display final list
         System.out.println("Final Scores:");
 System.out.println(scores);
+
+// Create a copy of the score list
+ArrayList<Integer> sortedScores = new ArrayList<>(scores);
+
+
+// Sort from smallest to largest
+sortedScores.sort(null);
+
+
+// Display ascending order
+System.out.println("Ascending:");
+System.out.println(sortedScores);
+
+
+// Reverse the sorted list
+ArrayList<Integer> descendingScores = new ArrayList<>(sortedScores);
+java.util.Collections.reverse(descendingScores);
+
+
+// Display descending order
+System.out.println("Descending:");
+System.out.println(descendingScores);

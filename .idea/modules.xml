@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java Task 1/Java Task 1.iml" filepath="$PROJECT_DIR$/Java Task 1/Java Task 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Task 2/Java Task 2.iml" filepath="$PROJECT_DIR$/Java Task 2/Java Task 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Task 3/Java Task 3.iml" filepath="$PROJECT_DIR$/Java Task 3/Java Task 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Task 4/Java Task 4.iml" filepath="$PROJECT_DIR$/Java Task 4/Java Task 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-Tasks.iml" filepath="$PROJECT_DIR$/.idea/Java-Tasks.iml" />
+    </modules>
+  </component>
+</project>

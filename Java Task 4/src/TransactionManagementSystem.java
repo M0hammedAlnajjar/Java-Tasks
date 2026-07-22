@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TransactionManagementSystem {
+public class TransactionManagementSystem{
 
     public static void main(String[] args) {
 
@@ -719,7 +719,6 @@ public class TransactionManagementSystem {
 
 
         System.out.println("\n===== Update Account Information =====");
-
 
         int updateIndex =
                 Integer.parseInt(

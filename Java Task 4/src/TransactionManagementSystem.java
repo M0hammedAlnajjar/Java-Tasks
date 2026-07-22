@@ -580,6 +580,89 @@ public class TransactionManagementSystem {
 
 
 
+ id="w74xks";
+// 7. Account Search System
+
+
+        System.out.println("\n===== Account Search =====");
+
+        System.out.println("1. Search by Account Number");
+        System.out.println("2. Search by Customer Name");
+
+        String optionInput = IO.readln("Choose option: ");
+        int option = Integer.parseInt(optionInput);
+
+        boolean found = false;
+
+
+
+// Option 1: Search by Account Number
+
+        if (option == 1) {
+
+            String accountInput = IO.readln("Enter Account Number: ");
+            int accountNumber = Integer.parseInt(accountInput);
+
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+                if (accountNumbers.get(i) == accountNumber) {
+
+                    System.out.println("\nAccount Found");
+                    System.out.println("Account Number: " + accountNumbers.get(i));
+                    System.out.println("Customer Name: " + customerNames.get(i));
+                    System.out.println("Account Type: " + accountTypes.get(i));
+                    System.out.println("Current Balance: " + balances.get(i));
+                    System.out.println("Account Status: " + accountStatus.get(i));
+
+                    found = true;
+                    break;
+                }
+            }
+
+        }
+
+
+
+// Option 2: Search by Customer Name
+
+        else if (option == 2) {
+
+            String customer = IO.readln("Enter Customer Name: ");
+
+            for (int i = 0; i < customerNames.size(); i++) {
+
+                if (customerNames.get(i).equalsIgnoreCase(customer)) {
+
+                    System.out.println("\nAccount Found");
+                    System.out.println("Account Number: " + accountNumbers.get(i));
+                    System.out.println("Customer Name: " + customerNames.get(i));
+                    System.out.println("Account Type: " + accountTypes.get(i));
+                    System.out.println("Current Balance: " + balances.get(i));
+                    System.out.println("Account Status: " + accountStatus.get(i));
+
+                    found = true;
+                    break;
+                }
+            }
+
+        }
+
+        else {
+
+            System.out.println("Invalid option.");
+
+        }
+
+
+
+// Account Not Found
+
+        if (!found) {
+
+            System.out.println("Account not found.");
+
+        }
+
 
 
 

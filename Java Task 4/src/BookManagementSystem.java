@@ -691,6 +691,107 @@ public class BookManagementSystem {
 
         }
 
+        // 9. Remove Order System
+
+
+        System.out.println("\n===== Remove Order =====");
+
+
+// Ask for order index
+
+        System.out.print("Enter order index to remove: ");
+
+        int removeIndex = input.nextInt();
+
+
+
+// Validate index
+
+        if (removeIndex >= 0 && removeIndex < orderIds.size()) {
+
+
+
+            // Remove related data from all ArrayLists
+
+
+            orderIds.remove(removeIndex);
+
+            customers.remove(removeIndex);
+
+            products.remove(removeIndex);
+
+            quantities.remove(removeIndex);
+
+            prices.remove(removeIndex);
+
+            status.remove(removeIndex);
+
+
+
+
+            System.out.println("Order removed successfully!");
+
+
+
+        } else {
+
+
+            System.out.println("Invalid order index.");
+
+        }
+
+
+
+
+
+// Display Updated Order List
+
+
+        System.out.println("\n===== Updated Order List =====");
+
+
+
+        if (orderIds.size() == 0) {
+
+
+            System.out.println("No orders available.");
+
+
+        } else {
+
+
+
+            for (int i = 0; i < orderIds.size(); i++) {
+
+
+
+                double totalPrice = quantities.get(i) * prices.get(i);
+
+
+
+                System.out.println("\nOrder Index: " + i);
+
+                System.out.println("Order ID: " + orderIds.get(i));
+
+                System.out.println("Customer: " + customers.get(i));
+
+                System.out.println("Product: " + products.get(i));
+
+                System.out.println("Quantity: " + quantities.get(i));
+
+                System.out.println("Price: " + prices.get(i));
+
+                System.out.println("Total Price: " + totalPrice);
+
+                System.out.println("Status: " + status.get(i));
+
+                System.out.println("--------------------------");
+
+
+            }
+
+        }
+
     }
 
 

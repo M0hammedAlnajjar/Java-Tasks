@@ -957,7 +957,143 @@ id="n8r5zp"
 
         }
 
+// 12. Sorting Accounts
 
+        System.out.println("\n===== Sorting Accounts =====");
+
+        System.out.println("1. Sort by Balance (Lowest to Highest)");
+        System.out.println("2. Sort by Balance (Highest to Lowest)");
+        System.out.println("3. Sort by Customer Name Alphabetically");
+
+
+        String sortInput = IO.readln("Choose sorting option: ");
+
+        int sortOption = Integer.parseInt(sortInput);
+
+
+// Temporary Lists
+
+        ArrayList<Integer> sortedAccountNumbers = new ArrayList<>(accountNumbers);
+        ArrayList<String> sortedCustomerNames = new ArrayList<>(customerNames);
+        ArrayList<Double> sortedBalances = new ArrayList<>(balances);
+        ArrayList<String> sortedAccountTypes = new ArrayList<>(accountTypes);
+        ArrayList<String> sortedAccountStatus = new ArrayList<>(accountStatus);
+
+
+// Sorting Process
+
+        for (int i = 0; i < sortedBalances.size() - 1; i++) {
+
+            for (int j = i + 1; j < sortedBalances.size(); j++) {
+
+
+                boolean swap = false;
+
+
+                // Sort Balance Low to High
+
+                if (sortOption == 1 &&
+                        sortedBalances.get(i) > sortedBalances.get(j)) {
+
+                    swap = true;
+
+                }
+
+
+                // Sort Balance High to Low
+
+                else if (sortOption == 2 &&
+                        sortedBalances.get(i) < sortedBalances.get(j)) {
+
+                    swap = true;
+
+                }
+
+
+                // Sort Customer Name Alphabetically
+
+                else if (sortOption == 3 &&
+                        sortedCustomerNames.get(i)
+                                .compareToIgnoreCase(sortedCustomerNames.get(j)) > 0) {
+
+                    swap = true;
+
+                }
+
+
+
+                if (swap) {
+
+
+                    // Swap Account Numbers
+
+                    int tempNumber = sortedAccountNumbers.get(i);
+                    sortedAccountNumbers.set(i, sortedAccountNumbers.get(j));
+                    sortedAccountNumbers.set(j, tempNumber);
+
+
+
+                    // Swap Names
+
+                    String tempName = sortedCustomerNames.get(i);
+                    sortedCustomerNames.set(i, sortedCustomerNames.get(j));
+                    sortedCustomerNames.set(j, tempName);
+
+
+
+                    // Swap Balances
+
+                    double tempBalance = sortedBalances.get(i);
+                    sortedBalances.set(i, sortedBalances.get(j));
+                    sortedBalances.set(j, tempBalance);
+
+
+
+                    // Swap Types
+
+                    String tempType = sortedAccountTypes.get(i);
+                    sortedAccountTypes.set(i, sortedAccountTypes.get(j));
+                    sortedAccountTypes.set(j, tempType);
+
+
+
+                    // Swap Status
+
+                    String tempStatus = sortedAccountStatus.get(i);
+                    sortedAccountStatus.set(i, sortedAccountStatus.get(j));
+                    sortedAccountStatus.set(j, tempStatus);
+
+                }
+
+            }
+
+        }
+
+
+
+// Display Sorted Accounts
+
+        System.out.println("\n===== Sorted Account Information =====");
+
+
+        for (int i = 0; i < sortedAccountNumbers.size(); i++) {
+
+
+            System.out.println("\nAccount Index: " + i);
+
+            System.out.println("Account Number: " + sortedAccountNumbers.get(i));
+
+            System.out.println("Customer Name: " + sortedCustomerNames.get(i));
+
+            System.out.println("Balance: " + sortedBalances.get(i));
+
+            System.out.println("Account Type: " + sortedAccountTypes.get(i));
+
+            System.out.println("Status: " + sortedAccountStatus.get(i));
+
+            System.out.println("---------------------------");
+
+        }
 
 
     }

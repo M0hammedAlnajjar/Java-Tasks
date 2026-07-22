@@ -276,6 +276,62 @@ public class BookManagementSystem {
 
         System.out.println("Lowest Order: " + lowestOrder);
 
+
+
+        // 5. Order Status Analysis
+
+
+        System.out.println("\n===== Order Status Analysis =====");
+
+
+// Counters
+
+        int pendingOrders = 0;
+
+        int completedOrders = 0;
+
+        int cancelledOrders = 0;
+
+
+
+
+// Check order status
+
+        for (int i = 0; i < status.size(); i++) {
+
+
+            if (status.get(i).equalsIgnoreCase("Pending")) {
+
+
+                pendingOrders++;
+
+
+            } else if (status.get(i).equalsIgnoreCase("Completed")) {
+
+
+                completedOrders++;
+
+
+            } else if (status.get(i).equalsIgnoreCase("Cancelled")) {
+
+
+                cancelledOrders++;
+
+            }
+
+        }
+
+
+
+
+// Display Results
+
+        System.out.println("Pending Orders: " + pendingOrders);
+
+        System.out.println("Completed Orders: " + completedOrders);
+
+        System.out.println("Cancelled Orders: " + cancelledOrders);
+
     }
 
 

@@ -422,4 +422,296 @@ public class TransactionManagementSystem {
             );
 
         }
+        // 6. Account Search System
+
+
+        System.out.println("\n===== Account Search =====");
+
+
+        System.out.println("1. Search by Account Number");
+        System.out.println("2. Search by Customer Name");
+
+
+        int searchOption =
+                Integer.parseInt(IO.readln("Choose option: "));
+
+
+        boolean searchFound = false;
+
+
+
+// Search by Account Number
+
+        if(searchOption == 1){
+
+
+            int searchAccountNumber =
+                    Integer.parseInt(
+                            IO.readln("Enter Account Number: ")
+                    );
+
+
+
+            for(int i = 0; i < accountNumbers.size(); i++){
+
+
+                if(accountNumbers.get(i).equals(searchAccountNumber)){
+
+
+                    System.out.println("\nAccount Found");
+
+
+                    System.out.println("Account Number: "
+                            + accountNumbers.get(i));
+
+
+                    System.out.println("Customer Name: "
+                            + customerNames.get(i));
+
+
+                    System.out.println("Account Type: "
+                            + accountTypes.get(i));
+
+
+                    System.out.println("Balance: "
+                            + balances.get(i));
+
+
+                    System.out.println("Status: "
+                            + accountStatus.get(i));
+
+
+                    searchFound = true;
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+
+
+// Search by Customer Name
+
+        else if(searchOption == 2){
+
+
+            String searchName =
+                    IO.readln("Enter Customer Name: ");
+
+
+
+            for(int i = 0; i < customerNames.size(); i++){
+
+
+                if(customerNames.get(i)
+                        .equalsIgnoreCase(searchName)){
+
+
+
+                    System.out.println("\nAccount Found");
+
+
+                    System.out.println("Account Number: "
+                            + accountNumbers.get(i));
+
+
+                    System.out.println("Customer Name: "
+                            + customerNames.get(i));
+
+
+                    System.out.println("Account Type: "
+                            + accountTypes.get(i));
+
+
+                    System.out.println("Balance: "
+                            + balances.get(i));
+
+
+                    System.out.println("Status: "
+                            + accountStatus.get(i));
+
+
+
+                    searchFound = true;
+
+                    break;
+
+                }
+
+            }
+
+
+        }
+
+        else{
+
+            System.out.println("Invalid option.");
+
+        }
+
+
+
+        if(!searchFound){
+
+            System.out.println("Account not found.");
+
+        }
+
+
+
+
+// 7. Banking Statistics Report
+
+
+        System.out.println("\n===== Banking Statistics Report =====");
+
+
+        int totalAccounts =
+                accountNumbers.size();
+
+
+        double totalBalance = 0;
+
+
+        double highestBalance =
+                balances.get(0);
+
+
+        double lowestBalance =
+                balances.get(0);
+
+
+
+        for(int i = 0; i < balances.size(); i++){
+
+
+            totalBalance += balances.get(i);
+
+
+
+            if(balances.get(i) > highestBalance){
+
+                highestBalance = balances.get(i);
+
+            }
+
+
+
+            if(balances.get(i) < lowestBalance){
+
+                lowestBalance = balances.get(i);
+
+            }
+
+
+        }
+
+
+
+        double averageBalance =
+                totalBalance / totalAccounts;
+
+
+
+        System.out.println("Total Accounts: "
+                + totalAccounts);
+
+
+        System.out.println("Total Balance: "
+                + totalBalance);
+
+
+        System.out.println("Average Balance: "
+                + averageBalance);
+
+
+        System.out.println("Highest Balance: "
+                + highestBalance);
+
+
+        System.out.println("Lowest Balance: "
+                + lowestBalance);
+
+
+
+
+
+
+// 8. Account Status Analysis
+
+
+        System.out.println("\n===== Account Status Analysis =====");
+
+
+        int activeAccounts = 0;
+
+        int inactiveAccounts = 0;
+
+        int suspendedAccounts = 0;
+
+        int closedAccounts = 0;
+
+
+
+        for(int i = 0; i < accountStatus.size(); i++){
+
+
+
+            if(accountStatus.get(i)
+                    .equalsIgnoreCase("Active")){
+
+
+                activeAccounts++;
+
+            }
+
+
+            else if(accountStatus.get(i)
+                    .equalsIgnoreCase("Inactive")){
+
+
+                inactiveAccounts++;
+
+            }
+
+
+            else if(accountStatus.get(i)
+                    .equalsIgnoreCase("Suspended")){
+
+
+                suspendedAccounts++;
+
+            }
+
+
+            else if(accountStatus.get(i)
+                    .equalsIgnoreCase("Closed")){
+
+
+                closedAccounts++;
+
+            }
+
+
+        }
+
+
+
+        System.out.println("Active Accounts: "
+                + activeAccounts);
+
+
+        System.out.println("Inactive Accounts: "
+                + inactiveAccounts);
+
+
+        System.out.println("Suspended Accounts: "
+                + suspendedAccounts);
+
+
+        System.out.println("Closed Accounts: "
+                + closedAccounts);
 

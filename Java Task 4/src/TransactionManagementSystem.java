@@ -497,6 +497,89 @@ public class TransactionManagementSystem {
 
 
 
+// 6. Transfer Money System
+
+
+        System.out.println("\n===== Transfer Money =====");
+
+
+// Sender Account Number
+
+        String senderInput = IO.readln("Enter Sender Account Number: ");
+        int senderAccount = Integer.parseInt(senderInput);
+
+
+// Receiver Account Number
+
+        String receiverInput = IO.readln("Enter Receiver Account Number: ");
+        int receiverAccount = Integer.parseInt(receiverInput);
+
+
+// Transfer Amount
+
+        String amountInput = IO.readln("Enter Transfer Amount: ");
+        double transferAmount = Double.parseDouble(amountInput);
+
+
+        int senderIndex = -1;
+        int receiverIndex = -1;
+
+
+// Search for Sender and Receiver Accounts
+
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+            if (accountNumbers.get(i) == senderAccount) {
+                senderIndex = i;
+            }
+
+            if (accountNumbers.get(i) == receiverAccount) {
+                receiverIndex = i;
+            }
+
+        }
+
+
+// Validation
+
+        if (senderIndex == -1 || receiverIndex == -1) {
+
+            System.out.println("Error: One or both accounts do not exist.");
+
+        }
+        else if (transferAmount <= 0) {
+
+            System.out.println("Error: Transfer amount must be greater than zero.");
+
+        }
+        else if (balances.get(senderIndex) < transferAmount) {
+
+            System.out.println("Error: Insufficient balance.");
+
+        }
+        else {
+
+            // Update Balances
+
+            balances.set(senderIndex,
+                    balances.get(senderIndex) - transferAmount);
+
+            balances.set(receiverIndex,
+                    balances.get(receiverIndex) + transferAmount);
+
+
+            System.out.println("Transfer completed successfully.");
+
+            System.out.println("Sender Balance: "
+                    + balances.get(senderIndex));
+
+            System.out.println("Receiver Balance: "
+                    + balances.get(receiverIndex));
+
+        }
+
+
+
 
 
 

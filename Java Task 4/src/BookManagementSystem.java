@@ -587,6 +587,110 @@ public class BookManagementSystem {
 
         }
 
+        // 8. Discount Calculation System
+
+
+        System.out.println("\n===== Discount Calculation =====");
+
+
+// Ask for order index
+
+        System.out.print("Enter order index: ");
+
+        int discountIndex = input.nextInt();
+
+
+
+// Validate index
+
+        if (discountIndex >= 0 && discountIndex < orderIds.size()) {
+
+
+
+            // Calculate original total price
+
+            double originalPrice = quantities.get(discountIndex)
+                    * prices.get(discountIndex);
+
+
+
+            double discountPercentage = 0;
+
+
+
+            // Apply discount rules
+
+
+            if (originalPrice >= 5000) {
+
+
+                discountPercentage = 0.15;
+
+
+            } else if (originalPrice >= 2000) {
+
+
+                discountPercentage = 0.10;
+
+
+            } else if (originalPrice >= 1000) {
+
+
+                discountPercentage = 0.05;
+
+
+            } else {
+
+
+                discountPercentage = 0;
+
+            }
+
+
+
+
+            // Calculate discount amount
+
+            double discountAmount = originalPrice * discountPercentage;
+
+
+
+            // Calculate final price
+
+            double finalPrice = originalPrice - discountAmount;
+
+
+
+
+
+            // Display Result
+
+
+            System.out.println("\n===== Discount Report =====");
+
+
+            System.out.println("Original Price: " + originalPrice);
+
+
+            System.out.println("Discount Percentage: "
+                    + (discountPercentage * 100) + "%");
+
+
+            System.out.println("Discount Amount: " + discountAmount);
+
+
+            System.out.println("Final Price: " + finalPrice);
+
+
+
+
+        } else {
+
+
+            System.out.println("Invalid order index.");
+
+        }
+
     }
 
 

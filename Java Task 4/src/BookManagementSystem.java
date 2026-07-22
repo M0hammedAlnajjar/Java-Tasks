@@ -792,6 +792,283 @@ public class BookManagementSystem {
 
         }
 
+        // 10. Sorting Orders
+
+
+        System.out.println("\n===== Sorting Orders =====");
+
+
+
+// Sort by Total Price Lowest to Highest
+
+
+        for (int i = 0; i < orderIds.size() - 1; i++) {
+
+
+            for (int j = i + 1; j < orderIds.size(); j++) {
+
+
+                double total1 = quantities.get(i) * prices.get(i);
+
+                double total2 = quantities.get(j) * prices.get(j);
+
+
+
+                if (total1 > total2) {
+
+
+                    // Swap Order ID
+
+                    int tempId = orderIds.get(i);
+                    orderIds.set(i, orderIds.get(j));
+                    orderIds.set(j, tempId);
+
+
+
+                    // Swap Customer
+
+                    String tempCustomer = customers.get(i);
+                    customers.set(i, customers.get(j));
+                    customers.set(j, tempCustomer);
+
+
+
+                    // Swap Product
+
+                    String tempProduct = products.get(i);
+                    products.set(i, products.get(j));
+                    products.set(j, tempProduct);
+
+
+
+                    // Swap Quantity
+
+                    int tempQuantity = quantities.get(i);
+                    quantities.set(i, quantities.get(j));
+                    quantities.set(j, tempQuantity);
+
+
+
+                    // Swap Price
+
+                    double tempPrice = prices.get(i);
+                    prices.set(i, prices.get(j));
+                    prices.set(j, tempPrice);
+
+
+
+                    // Swap Status
+
+                    String tempStatus = status.get(i);
+                    status.set(i, status.get(j));
+                    status.set(j, tempStatus);
+
+                }
+
+            }
+
+        }
+
+
+
+        System.out.println("\n===== Lowest to Highest Total Price =====");
+
+
+
+        for (int i = 0; i < orderIds.size(); i++) {
+
+
+            double total = quantities.get(i) * prices.get(i);
+
+
+            System.out.println(
+                    orderIds.get(i) +
+                            " - " +
+                            customers.get(i) +
+                            " - Total: " +
+                            total
+            );
+
+        }
+
+
+
+
+
+
+
+// Sort by Total Price Highest to Lowest
+
+
+        for (int i = 0; i < orderIds.size() - 1; i++) {
+
+
+            for (int j = i + 1; j < orderIds.size(); j++) {
+
+
+                double total1 = quantities.get(i) * prices.get(i);
+
+                double total2 = quantities.get(j) * prices.get(j);
+
+
+
+                if (total1 < total2) {
+
+
+                    int tempId = orderIds.get(i);
+                    orderIds.set(i, orderIds.get(j));
+                    orderIds.set(j, tempId);
+
+
+
+                    String tempCustomer = customers.get(i);
+                    customers.set(i, customers.get(j));
+                    customers.set(j, tempCustomer);
+
+
+
+                    String tempProduct = products.get(i);
+                    products.set(i, products.get(j));
+                    products.set(j, tempProduct);
+
+
+
+                    int tempQuantity = quantities.get(i);
+                    quantities.set(i, quantities.get(j));
+                    quantities.set(j, tempQuantity);
+
+
+
+                    double tempPrice = prices.get(i);
+                    prices.set(i, prices.get(j));
+                    prices.set(j, tempPrice);
+
+
+
+                    String tempStatus = status.get(i);
+                    status.set(i, status.get(j));
+                    status.set(j, tempStatus);
+
+
+                }
+
+            }
+
+        }
+
+
+
+        System.out.println("\n===== Highest to Lowest Total Price =====");
+
+
+
+        for (int i = 0; i < orderIds.size(); i++) {
+
+
+            double total = quantities.get(i) * prices.get(i);
+
+
+            System.out.println(
+                    orderIds.get(i) +
+                            " - " +
+                            customers.get(i) +
+                            " - Total: " +
+                            total
+            );
+
+        }
+
+
+
+
+
+
+
+// Sort by Customer Name Alphabetically
+
+
+        for (int i = 0; i < customers.size() - 1; i++) {
+
+
+            for (int j = i + 1; j < customers.size(); j++) {
+
+
+
+                if (customers.get(i)
+                        .compareToIgnoreCase(customers.get(j)) > 0) {
+
+
+
+                    String tempCustomer = customers.get(i);
+
+                    customers.set(i, customers.get(j));
+
+                    customers.set(j, tempCustomer);
+
+
+
+                    int tempId = orderIds.get(i);
+
+                    orderIds.set(i, orderIds.get(j));
+
+                    orderIds.set(j, tempId);
+
+
+
+                    String tempProduct = products.get(i);
+
+                    products.set(i, products.get(j));
+
+                    products.set(j, tempProduct);
+
+
+
+                    int tempQuantity = quantities.get(i);
+
+                    quantities.set(i, quantities.get(j));
+
+                    quantities.set(j, tempQuantity);
+
+
+
+                    double tempPrice = prices.get(i);
+
+                    prices.set(i, prices.get(j));
+
+                    prices.set(j, tempPrice);
+
+
+
+                    String tempStatus = status.get(i);
+
+                    status.set(i, status.get(j));
+
+                    status.set(j, tempStatus);
+
+                }
+
+            }
+
+        }
+
+
+
+
+        System.out.println("\n===== Customer Name Sorted =====");
+
+
+
+        for (int i = 0; i < customers.size(); i++) {
+
+
+            System.out.println(
+                    customers.get(i)
+                            + " - "
+                            + products.get(i)
+            );
+
+        }
+
     }
 
 

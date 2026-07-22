@@ -1068,6 +1068,99 @@ public class BookManagementSystem {
             );
 
         }
+        // 11. Advanced Validation
+
+
+        System.out.println("\n===== Add Order Validation =====");
+
+
+// Quantity Validation
+
+        System.out.print("Enter quantity: ");
+
+        int quantity = input.nextInt();
+
+
+        if (quantity <= 0) {
+
+            System.out.println("Error: Quantity must be greater than zero.");
+
+        }
+
+
+
+// Price Validation
+
+        System.out.print("Enter price: ");
+
+        double price = input.nextDouble();
+
+
+        if (price < 0) {
+
+            System.out.println("Error: Price cannot be negative.");
+
+        }
+
+
+
+
+
+// Status Validation
+
+        System.out.print("Enter order status (Pending / Completed / Cancelled): ");
+
+        String orderStatus = input.next();
+
+
+
+        boolean validStatus =
+                orderStatus.equalsIgnoreCase("Pending") ||
+                        orderStatus.equalsIgnoreCase("Completed") ||
+                        orderStatus.equalsIgnoreCase("Cancelled");
+
+
+
+        if (!validStatus) {
+
+            System.out.println("Error: Invalid order status.");
+
+        }
+
+
+
+
+// Add order only if all data is valid
+
+        if (quantity > 0 && price >= 0 && validStatus) {
+
+
+            int newOrderId = 1000 + orderIds.size() + 1;
+
+
+
+            orderIds.add(newOrderId);
+
+            quantities.add(quantity);
+
+            prices.add(price);
+
+            status.add(orderStatus);
+
+
+
+            System.out.println("Order added successfully!");
+
+            System.out.println("Order ID: " + newOrderId);
+
+
+
+        } else {
+
+
+            System.out.println("Order was not added due to invalid data.");
+
+        }
 
     }
 

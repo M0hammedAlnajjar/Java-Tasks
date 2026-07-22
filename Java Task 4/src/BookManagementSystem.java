@@ -203,5 +203,80 @@ public class BookManagementSystem {
 
         input.close();
 
+
+        // 4. Calculate Order Statistics
+
+
+        System.out.println("\n===== Order Statistics =====");
+
+
+// Total number of orders
+
+        int totalOrders = orderIds.size();
+
+
+
+// Variables for calculations
+
+        double totalSales = 0;
+
+        double highestOrder = prices.get(0) * quantities.get(0);
+
+        double lowestOrder = prices.get(0) * quantities.get(0);
+
+
+
+
+// Calculate sales
+
+        for (int i = 0; i < orderIds.size(); i++) {
+
+
+            double orderValue = prices.get(i) * quantities.get(i);
+
+
+            totalSales += orderValue;
+
+
+
+            if (orderValue > highestOrder) {
+
+                highestOrder = orderValue;
+
+            }
+
+
+
+            if (orderValue < lowestOrder) {
+
+                lowestOrder = orderValue;
+
+            }
+
+        }
+
+
+
+// Average using type casting
+
+        double averageOrder = (double) totalSales / totalOrders;
+
+
+
+
+// Display Report
+
+        System.out.println("Total Orders: " + totalOrders);
+
+        System.out.println("Total Sales: " + totalSales);
+
+        System.out.println("Average Order: " + averageOrder);
+
+        System.out.println("Highest Order: " + highestOrder);
+
+        System.out.println("Lowest Order: " + lowestOrder);
+
     }
+
+
 }

@@ -332,6 +332,155 @@ public class BookManagementSystem {
 
         System.out.println("Cancelled Orders: " + cancelledOrders);
 
+        // 6. Search Order System
+
+
+        System.out.println("\n===== Search Order =====");
+
+
+        System.out.println("1. Search by Order ID");
+
+        System.out.println("2. Search by Customer Name");
+
+
+        System.out.print("Choose option: ");
+
+        int searchOption = input.nextInt();
+
+
+
+        boolean found = false;
+
+
+
+
+// Search by Order ID
+
+        if (searchOption == 1) {
+
+
+            System.out.print("Enter Order ID: ");
+
+            int searchId = input.nextInt();
+
+
+
+            for (int i = 0; i < orderIds.size(); i++) {
+
+
+                if (orderIds.get(i) == searchId) {
+
+
+                    double totalPrice = quantities.get(i) * prices.get(i);
+
+
+
+                    System.out.println("\nOrder Found:");
+
+                    System.out.println("Order Index: " + i);
+
+                    System.out.println("Order ID: " + orderIds.get(i));
+
+                    System.out.println("Customer: " + customers.get(i));
+
+                    System.out.println("Product: " + products.get(i));
+
+                    System.out.println("Quantity: " + quantities.get(i));
+
+                    System.out.println("Price: " + prices.get(i));
+
+                    System.out.println("Total Price: " + totalPrice);
+
+                    System.out.println("Status: " + status.get(i));
+
+
+
+                    found = true;
+
+                    break;
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+// Search by Customer Name
+
+        else if (searchOption == 2) {
+
+
+            System.out.print("Enter Customer Name: ");
+
+            String searchCustomer = input.next();
+
+
+
+            for (int i = 0; i < customers.size(); i++) {
+
+
+                if (customers.get(i).equalsIgnoreCase(searchCustomer)) {
+
+
+                    double totalPrice = quantities.get(i) * prices.get(i);
+
+
+
+                    System.out.println("\nOrder Found:");
+
+                    System.out.println("Order Index: " + i);
+
+                    System.out.println("Order ID: " + orderIds.get(i));
+
+                    System.out.println("Customer: " + customers.get(i));
+
+                    System.out.println("Product: " + products.get(i));
+
+                    System.out.println("Quantity: " + quantities.get(i));
+
+                    System.out.println("Price: " + prices.get(i));
+
+                    System.out.println("Total Price: " + totalPrice);
+
+                    System.out.println("Status: " + status.get(i));
+
+
+
+                    found = true;
+
+                    break;
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+        else {
+
+            System.out.println("Invalid option.");
+
+        }
+
+
+
+
+        if (!found) {
+
+            System.out.println("Order not found.");
+
+        }
+
     }
 
 

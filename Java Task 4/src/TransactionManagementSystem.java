@@ -410,6 +410,90 @@ public class TransactionManagementSystem {
 
         }
 
+// 5. Withdraw Money System
+
+
+        System.out.println("\n===== Withdraw Money =====");
+
+
+// Ask Account Number
+
+        String accountInput = IO.readln("Enter Account Number: ");
+
+        int accountNumber = Integer.parseInt(accountInput);
+
+
+        boolean foundAccount = false;
+
+
+// Search Account
+
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+            if (accountNumbers.get(i) == accountNumber) {
+
+
+                foundAccount = true;
+
+
+                // Ask Withdrawal Amount
+
+                String withdrawInput = IO.readln("Withdrawal Amount: ");
+
+                double withdrawAmount = Double.parseDouble(withdrawInput);
+
+
+
+                // Validation
+
+                if (withdrawAmount <= 0) {
+
+
+                    System.out.println("Error: Withdrawal amount must be greater than zero.");
+
+
+                }
+                else if (withdrawAmount > balances.get(i)) {
+
+
+                    System.out.println("Error: Insufficient balance.");
+
+
+                }
+                else {
+
+
+                    // Update Balance
+
+                    double remainingBalance = balances.get(i) - withdrawAmount;
+
+                    balances.set(i, remainingBalance);
+
+
+                    System.out.println("Withdrawal successful.");
+
+                    System.out.println("Remaining Balance: " + remainingBalance);
+
+                }
+
+
+                break;
+
+            }
+
+        }
+
+
+// Account Not Found
+
+        if (!foundAccount) {
+
+
+            System.out.println("Account not found.");
+
+        }
+
 
 
 

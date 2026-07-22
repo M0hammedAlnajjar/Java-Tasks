@@ -132,6 +132,36 @@ public class TransactionManagementSystem {
         }
 
 
+// 2. Display Account Information
+
+
+        System.out.println("\n===== Account Information =====");
+
+
+
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+            System.out.println("\nAccount Index: " + i);
+
+            System.out.println("Account Number: " + accountNumbers.get(i));
+
+            System.out.println("Customer: " + customerNames.get(i));
+
+            System.out.println("Type: " + accountTypes.get(i));
+
+            System.out.println("Balance: " + balances.get(i));
+
+            System.out.println("Status: " + accountStatus.get(i));
+
+            System.out.println("-----------------------------");
+
+
+        }
+
+
+
+
     }
 
 }

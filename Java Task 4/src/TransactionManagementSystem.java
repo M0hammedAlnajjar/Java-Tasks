@@ -323,6 +323,96 @@ public class TransactionManagementSystem {
         }
 
 
+// 4. Deposit Money System
+
+
+        System.out.println("\n===== Deposit Money =====");
+
+
+// Ask Account Number
+
+        String accountInput = IO.readln("Enter Account Number: ");
+
+        int accountNumber = Integer.parseInt(accountInput);
+
+
+
+        boolean foundAccount = false;
+
+
+
+// Search Account
+
+        for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+
+            if (accountNumbers.get(i) == accountNumber) {
+
+
+                foundAccount = true;
+
+
+
+                // Ask Deposit Amount
+
+                String depositInput = IO.readln("Deposit Amount: ");
+
+                double depositAmount = Double.parseDouble(depositInput);
+
+
+
+
+                // Validation
+
+                if (depositAmount <= 0) {
+
+
+                    System.out.println("Error: Deposit amount must be greater than zero.");
+
+
+                }
+                else {
+
+
+
+                    // Update Balance
+
+                    double newBalance = balances.get(i) + depositAmount;
+
+
+                    balances.set(i, newBalance);
+
+
+
+                    System.out.println("Deposit completed.");
+
+                    System.out.println("New Balance: " + newBalance);
+
+
+                }
+
+
+                break;
+
+            }
+
+        }
+
+
+
+
+        if (!foundAccount) {
+
+
+            System.out.println("Account not found.");
+
+
+        }
+
+
+
+
 
 
 

@@ -719,6 +719,51 @@ public class TransactionManagementSystem {
         System.out.println("Lowest Balance: " + lowestBalance);
 
 
+id="n8r5zp"
+// 9. Account Status Analysis
+
+
+        System.out.println("\n===== Account Status Analysis =====");
+
+
+// Counters
+
+        int activeAccounts = 0;
+        int suspendedAccounts = 0;
+        int closedAccounts = 0;
+
+
+// Count Account Status
+
+        for (int i = 0; i < accountStatus.size(); i++) {
+
+            if (accountStatus.get(i).equalsIgnoreCase("Active")) {
+
+                activeAccounts++;
+
+            }
+            else if (accountStatus.get(i).equalsIgnoreCase("Suspended")) {
+
+                suspendedAccounts++;
+
+            }
+            else if (accountStatus.get(i).equalsIgnoreCase("Closed")) {
+
+                closedAccounts++;
+
+            }
+
+        }
+
+
+// Display Results
+
+        System.out.println("Active Accounts: " + activeAccounts);
+
+        System.out.println("Suspended Accounts: " + suspendedAccounts);
+
+        System.out.println("Closed Accounts: " + closedAccounts);
+
 
 
 

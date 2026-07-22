@@ -766,6 +766,115 @@ id="n8r5zp"
 
 
 
+// 10. Update Account Information
+
+
+        System.out.println("\n===== Update Account Information =====");
+
+
+// Ask for Account Index
+
+        String indexInput = IO.readln("Enter Account Index: ");
+
+        int index = Integer.parseInt(indexInput);
+
+
+
+        if (index >= 0 && index < accountNumbers.size()) {
+
+
+            // Update Customer Name
+
+            String newName = IO.readln("Enter new customer name: ");
+
+
+
+            // Update Account Type
+
+            String newType = IO.readln("Enter new account type (Savings / Current): ");
+
+
+
+            // Update Account Status
+
+            String newStatus = IO.readln("Enter new account status (Active / Suspended / Closed): ");
+
+
+
+            // Validation Account Type
+
+            boolean validType =
+                    newType.equalsIgnoreCase("Savings") ||
+                            newType.equalsIgnoreCase("Current");
+
+
+
+            // Validation Account Status
+
+            boolean validStatus =
+                    newStatus.equalsIgnoreCase("Active") ||
+                            newStatus.equalsIgnoreCase("Suspended") ||
+                            newStatus.equalsIgnoreCase("Closed");
+
+
+
+            if (!validType) {
+
+                System.out.println("Error: Invalid account type.");
+
+            }
+            else if (!validStatus) {
+
+                System.out.println("Error: Invalid account status.");
+
+            }
+            else {
+
+
+                // Update Data
+
+                customerNames.set(index, newName);
+
+                accountTypes.set(index, newType);
+
+                accountStatus.set(index, newStatus);
+
+
+
+                System.out.println("\nAccount updated successfully!");
+
+
+
+                // Display Updated Information
+
+                System.out.println("\n===== Updated Account =====");
+
+                System.out.println("Account Index: " + index);
+
+                System.out.println("Account Number: " + accountNumbers.get(index));
+
+                System.out.println("Customer Name: " + customerNames.get(index));
+
+                System.out.println("Account Type: " + accountTypes.get(index));
+
+                System.out.println("Balance: " + balances.get(index));
+
+                System.out.println("Status: " + accountStatus.get(index));
+
+
+            }
+
+
+
+        }
+        else {
+
+
+            System.out.println("Error: Invalid account index.");
+
+        }
+
+
 
 
 

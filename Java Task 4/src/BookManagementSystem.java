@@ -1,31 +1,23 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BookManagementSystem {
+public class BookManagementSystem{
 
     public static void main(String[] args) {
-
 
         Scanner input = new Scanner(System.in);
 
 
-        // Create Order Lists
-
         ArrayList<Integer> orderIds = new ArrayList<>();
-
         ArrayList<String> customers = new ArrayList<>();
-
         ArrayList<String> products = new ArrayList<>();
-
         ArrayList<Integer> quantities = new ArrayList<>();
-
         ArrayList<Double> prices = new ArrayList<>();
-
         ArrayList<String> status = new ArrayList<>();
 
 
 
-        // Add initial orders
+        // Initial Orders
 
         orderIds.add(1001);
         customers.add("Ali");
@@ -43,7 +35,6 @@ public class BookManagementSystem {
         status.add("Completed");
 
 
-
         orderIds.add(1003);
         customers.add("Sara");
         products.add("Tablet");
@@ -53,347 +44,212 @@ public class BookManagementSystem {
 
 
 
-
-
         // 1. Display Order Information
-
 
         System.out.println("===== Order Information =====");
 
 
-        for (int i = 0; i < orderIds.size(); i++) {
+        for(int i = 0; i < orderIds.size(); i++){
 
-
-            double totalPrice = quantities.get(i) * prices.get(i);
-
+            double total = quantities.get(i) * prices.get(i);
 
 
             System.out.println("\nOrder Index: " + i);
-
             System.out.println("Order ID: " + orderIds.get(i));
-
             System.out.println("Customer: " + customers.get(i));
-
             System.out.println("Product: " + products.get(i));
-
             System.out.println("Quantity: " + quantities.get(i));
-
             System.out.println("Price: " + prices.get(i));
-
-            System.out.println("Total: " + totalPrice);
-
+            System.out.println("Total Price: " + total);
             System.out.println("Status: " + status.get(i));
-
-            System.out.println("--------------------------");
-
 
         }
 
 
 
 
-        // 2. Add New Order
+        // 2. Add New Order With Validation
 
 
         System.out.println("\n===== Add New Order =====");
 
 
-
-        int newOrderId = 1000 + orderIds.size() + 1;
-
-
-
-        System.out.print("Enter customer name: ");
-
+        System.out.print("Customer name: ");
         String customerName = input.next();
 
 
-
-        System.out.print("Enter product name: ");
-
+        System.out.print("Product name: ");
         String productName = input.next();
 
 
-
-        System.out.print("Enter quantity: ");
-
+        System.out.print("Quantity: ");
         int quantity = input.nextInt();
 
 
-
-        System.out.print("Enter price: ");
-
+        System.out.print("Price: ");
         double price = input.nextDouble();
 
 
-
-        System.out.print("Enter order status: ");
-
+        System.out.print("Status (Pending/Completed/Cancelled): ");
         String orderStatus = input.next();
 
 
 
-
-
-        // Add new order to lists
-
-
-        orderIds.add(newOrderId);
-
-        customers.add(customerName);
-
-        products.add(productName);
-
-        quantities.add(quantity);
-
-        prices.add(price);
-
-        status.add(orderStatus);
+        boolean validStatus =
+                orderStatus.equalsIgnoreCase("Pending") ||
+                        orderStatus.equalsIgnoreCase("Completed") ||
+                        orderStatus.equalsIgnoreCase("Cancelled");
 
 
 
+        if(quantity <= 0){
+
+            System.out.println("Error: Quantity must be greater than zero.");
+
+        }
+        else if(price < 0){
+
+            System.out.println("Error: Price cannot be negative.");
+
+        }
+        else if(!validStatus){
+
+            System.out.println("Error: Invalid status.");
+
+        }
+        else {
 
 
-        System.out.println("\nOrder added successfully!");
-
-        System.out.println("New Order ID: " + newOrderId);
-
-        System.out.println("Total Orders: " + orderIds.size());
+            int newOrderId = 1000 + orderIds.size() + 1;
 
 
+            orderIds.add(newOrderId);
+            customers.add(customerName);
+            products.add(productName);
+            quantities.add(quantity);
+            prices.add(price);
+            status.add(orderStatus);
 
 
-
-
-        // 3. Display Updated Orders
-
-
-        System.out.println("\n===== Updated Order List =====");
-
-
-        for (int i = 0; i < orderIds.size(); i++) {
-
-
-            double totalPrice = quantities.get(i) * prices.get(i);
-
-
-
-            System.out.println("\nOrder Index: " + i);
-
-            System.out.println("Order ID: " + orderIds.get(i));
-
-            System.out.println("Customer: " + customers.get(i));
-
-            System.out.println("Product: " + products.get(i));
-
-            System.out.println("Quantity: " + quantities.get(i));
-
-            System.out.println("Price: " + prices.get(i));
-
-            System.out.println("Total: " + totalPrice);
-
-            System.out.println("Status: " + status.get(i));
-
-            System.out.println("--------------------------");
-
+            System.out.println("Order added successfully!");
+            System.out.println("Order ID: " + newOrderId);
 
         }
 
 
 
-        input.close();
-
-
-        // 4. Calculate Order Statistics
+        // 3. Order Statistics
 
 
         System.out.println("\n===== Order Statistics =====");
 
 
-// Total number of orders
-
-        int totalOrders = orderIds.size();
-
-
-
-// Variables for calculations
-
         double totalSales = 0;
 
-        double highestOrder = prices.get(0) * quantities.get(0);
+        double highest = quantities.get(0) * prices.get(0);
 
-        double lowestOrder = prices.get(0) * quantities.get(0);
-
-
-
-
-// Calculate sales
-
-        for (int i = 0; i < orderIds.size(); i++) {
-
-
-            double orderValue = prices.get(i) * quantities.get(i);
-
-
-            totalSales += orderValue;
+        double lowest = quantities.get(0) * prices.get(0);
 
 
 
-            if (orderValue > highestOrder) {
-
-                highestOrder = orderValue;
-
-            }
+        for(int i = 0; i < orderIds.size(); i++){
 
 
+            double total =
+                    quantities.get(i) * prices.get(i);
 
-            if (orderValue < lowestOrder) {
 
-                lowestOrder = orderValue;
+            totalSales += total;
 
-            }
+
+            if(total > highest)
+                highest = total;
+
+
+            if(total < lowest)
+                lowest = total;
 
         }
 
 
 
-// Average using type casting
-
-        double averageOrder = (double) totalSales / totalOrders;
-
+        double average =
+                (double) totalSales / orderIds.size();
 
 
 
-// Display Report
-
-        System.out.println("Total Orders: " + totalOrders);
-
+        System.out.println("Total Orders: " + orderIds.size());
         System.out.println("Total Sales: " + totalSales);
-
-        System.out.println("Average Order: " + averageOrder);
-
-        System.out.println("Highest Order: " + highestOrder);
-
-        System.out.println("Lowest Order: " + lowestOrder);
-
-
-
-        // 5. Order Status Analysis
-
-
-        System.out.println("\n===== Order Status Analysis =====");
-
-
-// Counters
-
-        int pendingOrders = 0;
-
-        int completedOrders = 0;
-
-        int cancelledOrders = 0;
+        System.out.println("Average Order: " + average);
+        System.out.println("Highest Order: " + highest);
+        System.out.println("Lowest Order: " + lowest);
 
 
 
 
-// Check order status
-
-        for (int i = 0; i < status.size(); i++) {
+        // 4. Status Analysis
 
 
-            if (status.get(i).equalsIgnoreCase("Pending")) {
+        int pending = 0;
+        int completed = 0;
+        int cancelled = 0;
 
 
-                pendingOrders++;
 
+        for(String s : status){
 
-            } else if (status.get(i).equalsIgnoreCase("Completed")) {
+            if(s.equalsIgnoreCase("Pending"))
+                pending++;
 
+            else if(s.equalsIgnoreCase("Completed"))
+                completed++;
 
-                completedOrders++;
-
-
-            } else if (status.get(i).equalsIgnoreCase("Cancelled")) {
-
-
-                cancelledOrders++;
-
-            }
+            else if(s.equalsIgnoreCase("Cancelled"))
+                cancelled++;
 
         }
 
 
 
+        System.out.println("\n===== Status Analysis =====");
 
-// Display Results
-
-        System.out.println("Pending Orders: " + pendingOrders);
-
-        System.out.println("Completed Orders: " + completedOrders);
-
-        System.out.println("Cancelled Orders: " + cancelledOrders);
-
-        // 6. Search Order System
+        System.out.println("Pending Orders: " + pending);
+        System.out.println("Completed Orders: " + completed);
+        System.out.println("Cancelled Orders: " + cancelled);
+        // 5. Search Order System
 
 
         System.out.println("\n===== Search Order =====");
 
 
         System.out.println("1. Search by Order ID");
-
         System.out.println("2. Search by Customer Name");
 
 
         System.out.print("Choose option: ");
-
-        int searchOption = input.nextInt();
-
+        int option = input.nextInt();
 
 
         boolean found = false;
 
 
 
-
-// Search by Order ID
-
-        if (searchOption == 1) {
+        if(option == 1){
 
 
             System.out.print("Enter Order ID: ");
-
             int searchId = input.nextInt();
 
 
 
-            for (int i = 0; i < orderIds.size(); i++) {
+            for(int i = 0; i < orderIds.size(); i++){
 
 
-                if (orderIds.get(i) == searchId) {
+                if(orderIds.get(i) == searchId){
 
 
-                    double totalPrice = quantities.get(i) * prices.get(i);
-
-
-
-                    System.out.println("\nOrder Found:");
-
-                    System.out.println("Order Index: " + i);
-
-                    System.out.println("Order ID: " + orderIds.get(i));
-
-                    System.out.println("Customer: " + customers.get(i));
-
-                    System.out.println("Product: " + products.get(i));
-
-                    System.out.println("Quantity: " + quantities.get(i));
-
-                    System.out.println("Price: " + prices.get(i));
-
-                    System.out.println("Total Price: " + totalPrice);
-
-                    System.out.println("Status: " + status.get(i));
-
-
+                    displayOrder(i, orderIds, customers, products,
+                            quantities, prices, status);
 
                     found = true;
 
@@ -404,51 +260,23 @@ public class BookManagementSystem {
             }
 
 
-
         }
-
-
-
-
-// Search by Customer Name
-
-        else if (searchOption == 2) {
+        else if(option == 2){
 
 
             System.out.print("Enter Customer Name: ");
-
-            String searchCustomer = input.next();
-
-
-
-            for (int i = 0; i < customers.size(); i++) {
-
-
-                if (customers.get(i).equalsIgnoreCase(searchCustomer)) {
-
-
-                    double totalPrice = quantities.get(i) * prices.get(i);
+            String searchName = input.next();
 
 
 
-                    System.out.println("\nOrder Found:");
+            for(int i = 0; i < customers.size(); i++){
 
-                    System.out.println("Order Index: " + i);
 
-                    System.out.println("Order ID: " + orderIds.get(i));
+                if(customers.get(i).equalsIgnoreCase(searchName)){
 
-                    System.out.println("Customer: " + customers.get(i));
 
-                    System.out.println("Product: " + products.get(i));
-
-                    System.out.println("Quantity: " + quantities.get(i));
-
-                    System.out.println("Price: " + prices.get(i));
-
-                    System.out.println("Total Price: " + totalPrice);
-
-                    System.out.println("Status: " + status.get(i));
-
+                    displayOrder(i, orderIds, customers, products,
+                            quantities, prices, status);
 
 
                     found = true;
@@ -459,141 +287,79 @@ public class BookManagementSystem {
 
             }
 
-
-
         }
 
 
-
-
-        else {
-
-            System.out.println("Invalid option.");
-
-        }
-
-
-
-
-        if (!found) {
+        if(!found){
 
             System.out.println("Order not found.");
 
         }
 
-        // 7. Update Order System
+
+
+
+
+        // 6. Update Order
 
 
         System.out.println("\n===== Update Order =====");
 
 
-// Ask for order index
-
-        System.out.print("Enter order index to update: ");
+        System.out.print("Enter order index: ");
 
         int updateIndex = input.nextInt();
 
 
 
-// Validate index
-
-        if (updateIndex >= 0 && updateIndex < orderIds.size()) {
+        if(updateIndex >= 0 && updateIndex < orderIds.size()){
 
 
-
-            System.out.print("Enter new customer name: ");
-
-            String newCustomer = input.next();
+            System.out.print("New customer name: ");
+            customers.set(updateIndex, input.next());
 
 
-
-            System.out.print("Enter new product name: ");
-
-            String newProduct = input.next();
+            System.out.print("New product name: ");
+            products.set(updateIndex, input.next());
 
 
-
-            System.out.print("Enter new quantity: ");
-
-            int newQuantity = input.nextInt();
+            System.out.print("New quantity: ");
+            quantities.set(updateIndex, input.nextInt());
 
 
+            System.out.print("New price: ");
+            prices.set(updateIndex, input.nextDouble());
 
-            System.out.print("Enter new price: ");
 
-            double newPrice = input.nextDouble();
+            System.out.print("New status: ");
+            status.set(updateIndex, input.next());
 
 
 
-            System.out.print("Enter new status: ");
-
-            String newStatus = input.next();
+            System.out.println("Order updated successfully!");
 
 
-
-
-            // Update information
-
-
-            customers.set(updateIndex, newCustomer);
-
-            products.set(updateIndex, newProduct);
-
-            quantities.set(updateIndex, newQuantity);
-
-            prices.set(updateIndex, newPrice);
-
-            status.set(updateIndex, newStatus);
+            displayOrder(updateIndex, orderIds, customers, products,
+                    quantities, prices, status);
 
 
 
+        }
+        else{
 
-            // Display Updated Order
-
-
-            double totalPrice = quantities.get(updateIndex) * prices.get(updateIndex);
-
-
-
-            System.out.println("\nOrder Updated Successfully!");
-
-
-
-            System.out.println("\n===== Updated Order Details =====");
-
-
-            System.out.println("Order Index: " + updateIndex);
-
-            System.out.println("Order ID: " + orderIds.get(updateIndex));
-
-            System.out.println("Customer: " + customers.get(updateIndex));
-
-            System.out.println("Product: " + products.get(updateIndex));
-
-            System.out.println("Quantity: " + quantities.get(updateIndex));
-
-            System.out.println("Price: " + prices.get(updateIndex));
-
-            System.out.println("Total Price: " + totalPrice);
-
-            System.out.println("Status: " + status.get(updateIndex));
-
-
-
-        } else {
-
-
-            System.out.println("Invalid order index.");
+            System.out.println("Invalid index.");
 
         }
 
-        // 8. Discount Calculation System
 
 
-        System.out.println("\n===== Discount Calculation =====");
 
 
-// Ask for order index
+        // 7. Discount Calculation
+
+
+        System.out.println("\n===== Discount =====");
+
 
         System.out.print("Enter order index: ");
 
@@ -601,117 +367,71 @@ public class BookManagementSystem {
 
 
 
-// Validate index
-
-        if (discountIndex >= 0 && discountIndex < orderIds.size()) {
+        if(discountIndex >= 0 && discountIndex < orderIds.size()){
 
 
-
-            // Calculate original total price
-
-            double originalPrice = quantities.get(discountIndex)
-                    * prices.get(discountIndex);
+            double total =
+                    quantities.get(discountIndex) *
+                            prices.get(discountIndex);
 
 
 
-            double discountPercentage = 0;
+            double discount = 0;
 
 
 
-            // Apply discount rules
+            if(total >= 5000){
 
+                discount = 0.15;
 
-            if (originalPrice >= 5000) {
+            }
+            else if(total >= 2000){
 
+                discount = 0.10;
 
-                discountPercentage = 0.15;
+            }
+            else if(total >= 1000){
 
-
-            } else if (originalPrice >= 2000) {
-
-
-                discountPercentage = 0.10;
-
-
-            } else if (originalPrice >= 1000) {
-
-
-                discountPercentage = 0.05;
-
-
-            } else {
-
-
-                discountPercentage = 0;
+                discount = 0.05;
 
             }
 
 
 
+            double discountAmount = total * discount;
 
-            // Calculate discount amount
-
-            double discountAmount = originalPrice * discountPercentage;
-
-
-
-            // Calculate final price
-
-            double finalPrice = originalPrice - discountAmount;
+            double finalPrice = total - discountAmount;
 
 
 
-
-
-            // Display Result
-
-
-            System.out.println("\n===== Discount Report =====");
-
-
-            System.out.println("Original Price: " + originalPrice);
-
-
-            System.out.println("Discount Percentage: "
-                    + (discountPercentage * 100) + "%");
-
+            System.out.println("Original Price: " + total);
 
             System.out.println("Discount Amount: " + discountAmount);
-
 
             System.out.println("Final Price: " + finalPrice);
 
 
 
-
-        } else {
-
-
-            System.out.println("Invalid order index.");
-
         }
 
-        // 9. Remove Order System
+
+
+
+
+
+        // 8. Remove Order
 
 
         System.out.println("\n===== Remove Order =====");
 
 
-// Ask for order index
-
-        System.out.print("Enter order index to remove: ");
+        System.out.print("Enter order index: ");
 
         int removeIndex = input.nextInt();
 
 
 
-// Validate index
-
-        if (removeIndex >= 0 && removeIndex < orderIds.size()) {
-
-
-
-            // Remove related data from all ArrayLists
+        if(removeIndex >= 0 && removeIndex < orderIds.size()){
 
 
             orderIds.remove(removeIndex);
@@ -728,15 +448,13 @@ public class BookManagementSystem {
 
 
 
-
             System.out.println("Order removed successfully!");
 
 
+        }
+        else{
 
-        } else {
-
-
-            System.out.println("Invalid order index.");
+            System.out.println("Invalid index.");
 
         }
 
@@ -744,210 +462,34 @@ public class BookManagementSystem {
 
 
 
-// Display Updated Order List
-
-
-        System.out.println("\n===== Updated Order List =====");
-
-
-
-        if (orderIds.size() == 0) {
-
-
-            System.out.println("No orders available.");
-
-
-        } else {
-
-
-
-            for (int i = 0; i < orderIds.size(); i++) {
-
-
-
-                double totalPrice = quantities.get(i) * prices.get(i);
-
-
-
-                System.out.println("\nOrder Index: " + i);
-
-                System.out.println("Order ID: " + orderIds.get(i));
-
-                System.out.println("Customer: " + customers.get(i));
-
-                System.out.println("Product: " + products.get(i));
-
-                System.out.println("Quantity: " + quantities.get(i));
-
-                System.out.println("Price: " + prices.get(i));
-
-                System.out.println("Total Price: " + totalPrice);
-
-                System.out.println("Status: " + status.get(i));
-
-                System.out.println("--------------------------");
-
-
-            }
-
-        }
-
-        // 10. Sorting Orders
+        // 9. Sorting Orders By Total Price
 
 
         System.out.println("\n===== Sorting Orders =====");
 
 
 
-// Sort by Total Price Lowest to Highest
+        for(int i = 0; i < orderIds.size()-1; i++){
 
 
-        for (int i = 0; i < orderIds.size() - 1; i++) {
+            for(int j = i+1; j < orderIds.size(); j++){
 
 
-            for (int j = i + 1; j < orderIds.size(); j++) {
 
+                double total1 =
+                        quantities.get(i) * prices.get(i);
 
-                double total1 = quantities.get(i) * prices.get(i);
 
-                double total2 = quantities.get(j) * prices.get(j);
+                double total2 =
+                        quantities.get(j) * prices.get(j);
 
 
 
-                if (total1 > total2) {
+                if(total1 > total2){
 
 
-                    // Swap Order ID
-
-                    int tempId = orderIds.get(i);
-                    orderIds.set(i, orderIds.get(j));
-                    orderIds.set(j, tempId);
-
-
-
-                    // Swap Customer
-
-                    String tempCustomer = customers.get(i);
-                    customers.set(i, customers.get(j));
-                    customers.set(j, tempCustomer);
-
-
-
-                    // Swap Product
-
-                    String tempProduct = products.get(i);
-                    products.set(i, products.get(j));
-                    products.set(j, tempProduct);
-
-
-
-                    // Swap Quantity
-
-                    int tempQuantity = quantities.get(i);
-                    quantities.set(i, quantities.get(j));
-                    quantities.set(j, tempQuantity);
-
-
-
-                    // Swap Price
-
-                    double tempPrice = prices.get(i);
-                    prices.set(i, prices.get(j));
-                    prices.set(j, tempPrice);
-
-
-
-                    // Swap Status
-
-                    String tempStatus = status.get(i);
-                    status.set(i, status.get(j));
-                    status.set(j, tempStatus);
-
-                }
-
-            }
-
-        }
-
-
-
-        System.out.println("\n===== Lowest to Highest Total Price =====");
-
-
-
-        for (int i = 0; i < orderIds.size(); i++) {
-
-
-            double total = quantities.get(i) * prices.get(i);
-
-
-            System.out.println(
-                    orderIds.get(i) +
-                            " - " +
-                            customers.get(i) +
-                            " - Total: " +
-                            total
-            );
-
-        }
-
-
-
-
-
-
-
-// Sort by Total Price Highest to Lowest
-
-
-        for (int i = 0; i < orderIds.size() - 1; i++) {
-
-
-            for (int j = i + 1; j < orderIds.size(); j++) {
-
-
-                double total1 = quantities.get(i) * prices.get(i);
-
-                double total2 = quantities.get(j) * prices.get(j);
-
-
-
-                if (total1 < total2) {
-
-
-                    int tempId = orderIds.get(i);
-                    orderIds.set(i, orderIds.get(j));
-                    orderIds.set(j, tempId);
-
-
-
-                    String tempCustomer = customers.get(i);
-                    customers.set(i, customers.get(j));
-                    customers.set(j, tempCustomer);
-
-
-
-                    String tempProduct = products.get(i);
-                    products.set(i, products.get(j));
-                    products.set(j, tempProduct);
-
-
-
-                    int tempQuantity = quantities.get(i);
-                    quantities.set(i, quantities.get(j));
-                    quantities.set(j, tempQuantity);
-
-
-
-                    double tempPrice = prices.get(i);
-                    prices.set(i, prices.get(j));
-                    prices.set(j, tempPrice);
-
-
-
-                    String tempStatus = status.get(i);
-                    status.set(i, status.get(j));
-                    status.set(j, tempStatus);
+                    swap(i,j,orderIds,customers,products,
+                            quantities,prices,status);
 
 
                 }
@@ -958,211 +500,166 @@ public class BookManagementSystem {
 
 
 
-        System.out.println("\n===== Highest to Lowest Total Price =====");
+        System.out.println("Lowest To Highest:");
 
 
 
-        for (int i = 0; i < orderIds.size(); i++) {
-
-
-            double total = quantities.get(i) * prices.get(i);
-
-
-            System.out.println(
-                    orderIds.get(i) +
-                            " - " +
-                            customers.get(i) +
-                            " - Total: " +
-                            total
-            );
-
-        }
-
-
-
-
-
-
-
-// Sort by Customer Name Alphabetically
-
-
-        for (int i = 0; i < customers.size() - 1; i++) {
-
-
-            for (int j = i + 1; j < customers.size(); j++) {
-
-
-
-                if (customers.get(i)
-                        .compareToIgnoreCase(customers.get(j)) > 0) {
-
-
-
-                    String tempCustomer = customers.get(i);
-
-                    customers.set(i, customers.get(j));
-
-                    customers.set(j, tempCustomer);
-
-
-
-                    int tempId = orderIds.get(i);
-
-                    orderIds.set(i, orderIds.get(j));
-
-                    orderIds.set(j, tempId);
-
-
-
-                    String tempProduct = products.get(i);
-
-                    products.set(i, products.get(j));
-
-                    products.set(j, tempProduct);
-
-
-
-                    int tempQuantity = quantities.get(i);
-
-                    quantities.set(i, quantities.get(j));
-
-                    quantities.set(j, tempQuantity);
-
-
-
-                    double tempPrice = prices.get(i);
-
-                    prices.set(i, prices.get(j));
-
-                    prices.set(j, tempPrice);
-
-
-
-                    String tempStatus = status.get(i);
-
-                    status.set(i, status.get(j));
-
-                    status.set(j, tempStatus);
-
-                }
-
-            }
-
-        }
-
-
-
-
-        System.out.println("\n===== Customer Name Sorted =====");
-
-
-
-        for (int i = 0; i < customers.size(); i++) {
+        for(int i = 0; i < orderIds.size(); i++){
 
 
             System.out.println(
                     customers.get(i)
                             + " - "
-                            + products.get(i)
+                            + (quantities.get(i)*prices.get(i))
             );
 
         }
-        // 11. Advanced Validation
-
-
-        System.out.println("\n===== Add Order Validation =====");
-
-
-// Quantity Validation
-
-        System.out.print("Enter quantity: ");
-
-        int quantity = input.nextInt();
-
-
-        if (quantity <= 0) {
-
-            System.out.println("Error: Quantity must be greater than zero.");
-
-        }
 
 
 
-// Price Validation
-
-        System.out.print("Enter price: ");
-
-        double price = input.nextDouble();
 
 
-        if (price < 0) {
+        // 10. Sort Customer Name
 
-            System.out.println("Error: Price cannot be negative.");
+
+        for(int i = 0; i < customers.size()-1; i++){
+
+
+            for(int j=i+1; j < customers.size(); j++){
+
+
+                if(customers.get(i)
+                        .compareToIgnoreCase(customers.get(j)) > 0){
+
+
+
+                    swap(i,j,orderIds,customers,products,
+                            quantities,prices,status);
+
+
+                }
+
+            }
 
         }
 
 
 
-
-
-// Status Validation
-
-        System.out.print("Enter order status (Pending / Completed / Cancelled): ");
-
-        String orderStatus = input.next();
+        System.out.println("\nCustomer Name Sorted:");
 
 
 
-        boolean validStatus =
-                orderStatus.equalsIgnoreCase("Pending") ||
-                        orderStatus.equalsIgnoreCase("Completed") ||
-                        orderStatus.equalsIgnoreCase("Cancelled");
+        for(String c : customers){
 
-
-
-        if (!validStatus) {
-
-            System.out.println("Error: Invalid order status.");
+            System.out.println(c);
 
         }
 
 
 
 
-// Add order only if all data is valid
 
-        if (quantity > 0 && price >= 0 && validStatus) {
+        input.close();
 
-
-            int newOrderId = 1000 + orderIds.size() + 1;
-
-
-
-            orderIds.add(newOrderId);
-
-            quantities.add(quantity);
-
-            prices.add(price);
-
-            status.add(orderStatus);
-
-
-
-            System.out.println("Order added successfully!");
-
-            System.out.println("Order ID: " + newOrderId);
-
-
-
-        } else {
-
-
-            System.out.println("Order was not added due to invalid data.");
-
-        }
 
     }
 
+
+
+
+
+    // Display Order Method
+
+
+    public static void displayOrder(
+            int i,
+            ArrayList<Integer> orderIds,
+            ArrayList<String> customers,
+            ArrayList<String> products,
+            ArrayList<Integer> quantities,
+            ArrayList<Double> prices,
+            ArrayList<String> status){
+
+
+
+        double total =
+                quantities.get(i) *
+                        prices.get(i);
+
+
+
+        System.out.println("\nOrder Index: " + i);
+
+        System.out.println("Order ID: " + orderIds.get(i));
+
+        System.out.println("Customer: " + customers.get(i));
+
+        System.out.println("Product: " + products.get(i));
+
+        System.out.println("Quantity: " + quantities.get(i));
+
+        System.out.println("Price: " + prices.get(i));
+
+        System.out.println("Total Price: " + total);
+
+        System.out.println("Status: " + status.get(i));
+
+
+    }
+
+
+
+
+
+    // Swap Method For Sorting
+
+
+    public static void swap(
+            int i,
+            int j,
+            ArrayList<Integer> orderIds,
+            ArrayList<String> customers,
+            ArrayList<String> products,
+            ArrayList<Integer> quantities,
+            ArrayList<Double> prices,
+            ArrayList<String> status){
+
+
+
+        int id = orderIds.get(i);
+        orderIds.set(i, orderIds.get(j));
+        orderIds.set(j,id);
+
+
+
+        String c = customers.get(i);
+        customers.set(i, customers.get(j));
+        customers.set(j,c);
+
+
+
+        String p = products.get(i);
+        products.set(i, products.get(j));
+        products.set(j,p);
+
+
+
+        int q = quantities.get(i);
+        quantities.set(i, quantities.get(j));
+        quantities.set(j,q);
+
+
+
+        double price = prices.get(i);
+        prices.set(i, prices.get(j));
+        prices.set(j,price);
+
+
+
+        String s = status.get(i);
+        status.set(i, status.get(j));
+        status.set(j,s);
+
+    }
 
 }

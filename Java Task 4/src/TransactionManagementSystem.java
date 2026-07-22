@@ -241,6 +241,89 @@ public class TransactionManagementSystem {
 
         }
 
+// 3. Create New Account
+
+
+        System.out.println("\n===== Create New Account =====");
+
+
+
+// Ask Customer Name
+
+        String customerName = IO.readln("Enter customer name: ");
+
+
+
+// Ask Initial Balance
+
+        String balanceInput = IO.readln("Enter initial balance: ");
+
+        double initialBalance = Double.parseDouble(balanceInput);
+
+
+
+// Ask Account Type
+
+        String type = IO.readln("Enter account type (Savings / Current): ");
+
+
+
+
+// Validation
+
+        boolean validType =
+                type.equalsIgnoreCase("Savings") ||
+                        type.equalsIgnoreCase("Current");
+
+
+
+        if (initialBalance < 0) {
+
+
+            System.out.println("Error: Initial balance cannot be negative.");
+
+
+        }
+        else if (!validType) {
+
+
+            System.out.println("Error: Account type must be Savings or Current.");
+
+
+        }
+        else {
+
+
+
+            // Generate unique account number
+
+            int newAccountNumber = 10000 + accountNumbers.size() + 1;
+
+
+
+            // Add new account data
+
+            accountNumbers.add(newAccountNumber);
+
+            customerNames.add(customerName);
+
+            balances.add(initialBalance);
+
+            accountTypes.add(type);
+
+            accountStatus.add("Active");
+
+
+
+            System.out.println("\nAccount created successfully!");
+
+            System.out.println("Generated Account Number: " + newAccountNumber);
+
+
+        }
+
+
+
 
 
 

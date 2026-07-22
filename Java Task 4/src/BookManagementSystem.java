@@ -1,106 +1,207 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BookManagementSystem {
 
     public static void main(String[] args) {
 
 
-        // 1. Create Book Lists
-
-        ArrayList<String> bookTitles = new ArrayList<>();
-
-        ArrayList<String> authors = new ArrayList<>();
-
-        ArrayList<Boolean> availability = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
 
 
+        // Create Order Lists
 
-        // Add 10 Books
+        ArrayList<Integer> orderIds = new ArrayList<>();
 
-        bookTitles.add("Java Programming");
-        authors.add("James Gosling");
-        availability.add(true);
+        ArrayList<String> customers = new ArrayList<>();
 
+        ArrayList<String> products = new ArrayList<>();
 
-        bookTitles.add("Clean Code");
-        authors.add("Robert Martin");
-        availability.add(false);
+        ArrayList<Integer> quantities = new ArrayList<>();
 
+        ArrayList<Double> prices = new ArrayList<>();
 
-        bookTitles.add("Python Basics");
-        authors.add("Mark Lutz");
-        availability.add(true);
-
-
-        bookTitles.add("Database Systems");
-        authors.add("Thomas Connolly");
-        availability.add(true);
-
-
-        bookTitles.add("Artificial Intelligence");
-        authors.add("Stuart Russell");
-        availability.add(false);
-
-
-        bookTitles.add("Web Development");
-        authors.add("Jon Duckett");
-        availability.add(true);
-
-
-        bookTitles.add("Computer Networks");
-        authors.add("Andrew Tanenbaum");
-        availability.add(false);
-
-
-        bookTitles.add("Software Engineering");
-        authors.add("Ian Sommerville");
-        availability.add(true);
-
-
-        bookTitles.add("Data Structures");
-        authors.add("Mark Weiss");
-        availability.add(true);
-
-
-        bookTitles.add("Algorithms");
-        authors.add("Robert Sedgewick");
-        availability.add(false);
+        ArrayList<String> status = new ArrayList<>();
 
 
 
-        // 2. Display Book Information
+        // Add initial orders
 
-        System.out.println("===== Library Books =====");
-
-
-        for (int i = 0; i < bookTitles.size(); i++) {
-
-
-            System.out.println("\nBook Index: " + i);
-
-            System.out.println("Title: " + bookTitles.get(i));
-
-            System.out.println("Author: " + authors.get(i));
+        orderIds.add(1001);
+        customers.add("Ali");
+        products.add("Laptop");
+        quantities.add(2);
+        prices.add(750.0);
+        status.add("Pending");
 
 
-            if (availability.get(i)) {
-
-                System.out.println("Status: Available");
-
-            } else {
-
-                System.out.println("Status: Borrowed");
-
-            }
+        orderIds.add(1002);
+        customers.add("Ahmed");
+        products.add("Phone");
+        quantities.add(1);
+        prices.add(500.0);
+        status.add("Completed");
 
 
-            System.out.println("---------------------");
+
+        orderIds.add(1003);
+        customers.add("Sara");
+        products.add("Tablet");
+        quantities.add(3);
+        prices.add(300.0);
+        status.add("Pending");
+
+
+
+
+
+        // 1. Display Order Information
+
+
+        System.out.println("===== Order Information =====");
+
+
+        for (int i = 0; i < orderIds.size(); i++) {
+
+
+            double totalPrice = quantities.get(i) * prices.get(i);
+
+
+
+            System.out.println("\nOrder Index: " + i);
+
+            System.out.println("Order ID: " + orderIds.get(i));
+
+            System.out.println("Customer: " + customers.get(i));
+
+            System.out.println("Product: " + products.get(i));
+
+            System.out.println("Quantity: " + quantities.get(i));
+
+            System.out.println("Price: " + prices.get(i));
+
+            System.out.println("Total: " + totalPrice);
+
+            System.out.println("Status: " + status.get(i));
+
+            System.out.println("--------------------------");
+
 
         }
 
 
-        System.out.println("\nTotal Books: " + bookTitles.size());
 
+
+        // 2. Add New Order
+
+
+        System.out.println("\n===== Add New Order =====");
+
+
+
+        int newOrderId = 1000 + orderIds.size() + 1;
+
+
+
+        System.out.print("Enter customer name: ");
+
+        String customerName = input.next();
+
+
+
+        System.out.print("Enter product name: ");
+
+        String productName = input.next();
+
+
+
+        System.out.print("Enter quantity: ");
+
+        int quantity = input.nextInt();
+
+
+
+        System.out.print("Enter price: ");
+
+        double price = input.nextDouble();
+
+
+
+        System.out.print("Enter order status: ");
+
+        String orderStatus = input.next();
+
+
+
+
+
+        // Add new order to lists
+
+
+        orderIds.add(newOrderId);
+
+        customers.add(customerName);
+
+        products.add(productName);
+
+        quantities.add(quantity);
+
+        prices.add(price);
+
+        status.add(orderStatus);
+
+
+
+
+
+        System.out.println("\nOrder added successfully!");
+
+        System.out.println("New Order ID: " + newOrderId);
+
+        System.out.println("Total Orders: " + orderIds.size());
+
+
+
+
+
+
+        // 3. Display Updated Orders
+
+
+        System.out.println("\n===== Updated Order List =====");
+
+
+        for (int i = 0; i < orderIds.size(); i++) {
+
+
+            double totalPrice = quantities.get(i) * prices.get(i);
+
+
+
+            System.out.println("\nOrder Index: " + i);
+
+            System.out.println("Order ID: " + orderIds.get(i));
+
+            System.out.println("Customer: " + customers.get(i));
+
+            System.out.println("Product: " + products.get(i));
+
+            System.out.println("Quantity: " + quantities.get(i));
+
+            System.out.println("Price: " + prices.get(i));
+
+            System.out.println("Total: " + totalPrice);
+
+            System.out.println("Status: " + status.get(i));
+
+            System.out.println("--------------------------");
+
+
+        }
+
+
+
+        input.close();
 
     }
 }

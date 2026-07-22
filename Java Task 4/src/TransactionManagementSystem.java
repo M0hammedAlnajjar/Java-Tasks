@@ -664,6 +664,61 @@ public class TransactionManagementSystem {
         }
 
 
+// 8. Banking Statistics Report
+
+
+        System.out.println("\n===== Banking Statistics Report =====");
+
+
+// Total Accounts
+
+        int totalAccounts = accountNumbers.size();
+
+
+// Variables
+
+        double totalBalance = 0;
+
+        double highestBalance = balances.get(0);
+
+        double lowestBalance = balances.get(0);
+
+
+// Calculate Statistics
+
+        for (int i = 0; i < balances.size(); i++) {
+
+            totalBalance += balances.get(i);
+
+            if (balances.get(i) > highestBalance) {
+                highestBalance = balances.get(i);
+            }
+
+            if (balances.get(i) < lowestBalance) {
+                lowestBalance = balances.get(i);
+            }
+
+        }
+
+
+// Average Balance (Type Casting)
+
+        double averageBalance = (double) totalBalance / totalAccounts;
+
+
+// Display Report
+
+        System.out.println("Total Accounts: " + totalAccounts);
+
+        System.out.println("Total Balance: " + totalBalance);
+
+        System.out.println("Average Balance: " + averageBalance);
+
+        System.out.println("Highest Balance: " + highestBalance);
+
+        System.out.println("Lowest Balance: " + lowestBalance);
+
+
 
 
 

@@ -481,6 +481,112 @@ public class BookManagementSystem {
 
         }
 
+        // 7. Update Order System
+
+
+        System.out.println("\n===== Update Order =====");
+
+
+// Ask for order index
+
+        System.out.print("Enter order index to update: ");
+
+        int updateIndex = input.nextInt();
+
+
+
+// Validate index
+
+        if (updateIndex >= 0 && updateIndex < orderIds.size()) {
+
+
+
+            System.out.print("Enter new customer name: ");
+
+            String newCustomer = input.next();
+
+
+
+            System.out.print("Enter new product name: ");
+
+            String newProduct = input.next();
+
+
+
+            System.out.print("Enter new quantity: ");
+
+            int newQuantity = input.nextInt();
+
+
+
+            System.out.print("Enter new price: ");
+
+            double newPrice = input.nextDouble();
+
+
+
+            System.out.print("Enter new status: ");
+
+            String newStatus = input.next();
+
+
+
+
+            // Update information
+
+
+            customers.set(updateIndex, newCustomer);
+
+            products.set(updateIndex, newProduct);
+
+            quantities.set(updateIndex, newQuantity);
+
+            prices.set(updateIndex, newPrice);
+
+            status.set(updateIndex, newStatus);
+
+
+
+
+            // Display Updated Order
+
+
+            double totalPrice = quantities.get(updateIndex) * prices.get(updateIndex);
+
+
+
+            System.out.println("\nOrder Updated Successfully!");
+
+
+
+            System.out.println("\n===== Updated Order Details =====");
+
+
+            System.out.println("Order Index: " + updateIndex);
+
+            System.out.println("Order ID: " + orderIds.get(updateIndex));
+
+            System.out.println("Customer: " + customers.get(updateIndex));
+
+            System.out.println("Product: " + products.get(updateIndex));
+
+            System.out.println("Quantity: " + quantities.get(updateIndex));
+
+            System.out.println("Price: " + prices.get(updateIndex));
+
+            System.out.println("Total Price: " + totalPrice);
+
+            System.out.println("Status: " + status.get(updateIndex));
+
+
+
+        } else {
+
+
+            System.out.println("Invalid order index.");
+
+        }
+
     }
 
 

@@ -1,87 +1,97 @@
 import java.util.ArrayList;
+public class BookManagementSystem {
 
-public class LibraryBookManagementSystem {
+        public class LibraryBookManagementSystem {
 
-    public static void main(String[] args) {
-
-        // Create ArrayLists
-        ArrayList<String> bookTitles = new ArrayList<>();
-        ArrayList<String> authors = new ArrayList<>();
-        ArrayList<Boolean> availability = new ArrayList<>();
-
-        // Add book data
-        bookTitles.add("Java Programming");
-        authors.add("James");
-        availability.add(true);
-
-        bookTitles.add("Python Basics");
-        authors.add("Robert");
-        availability.add(false);
-
-        bookTitles.add("Database Systems");
-        authors.add("Thomas");
-        availability.add(true);
-
-        bookTitles.add("Web Development");
-        authors.add("Sarah");
-        availability.add(true);
-
-        bookTitles.add("Computer Networks");
-        authors.add("Andrew");
-        availability.add(false);
-
-        bookTitles.add("Data Structures");
-        authors.add("Mark");
-        availability.add(true);
-
-        bookTitles.add("Artificial Intelligence");
-        authors.add("David");
-        availability.add(false);
-
-        bookTitles.add("Software Engineering");
-        authors.add("John");
-        availability.add(true);
-
-        bookTitles.add("Operating Systems");
-        authors.add("William");
-        availability.add(true);
-
-        bookTitles.add("Cyber Security");
-        authors.add("Michael");
-        availability.add(false);
+            public static void main(String[] args) {
 
 
-        // Display Book Information
-        System.out.println("Library Book List");
-        System.out.println("-----------------");
+                // 1. Create Book Lists
 
-        for (int i = 0; i < bookTitles.size(); i++) {
+                ArrayList<String> bookTitles = new ArrayList<>();
 
-            System.out.println("Book " + i + ":");
-            System.out.println("Title: " + bookTitles.get(i));
-            System.out.println("Author: " + authors.get(i));
-            System.out.println("Available: " + availability.get(i));
-            System.out.println();
-        }
+                ArrayList<String> authors = new ArrayList<>();
 
-        // Display Library Books
+                ArrayList<Boolean> availability = new ArrayList<>();
 
-        System.out.println("Library Books Information");
-        System.out.println("-------------------------");
 
-        for (int i = 0; i < bookTitles.size(); i++) {
 
-            System.out.println("Book " + i + ":");
-            System.out.println("Title: " + bookTitles.get(i));
-            System.out.println("Author: " + authors.get(i));
+                // Add 10 Books
 
-            if (availability.get(i)) {
-                System.out.println("Available: Yes");
-            } else {
-                System.out.println("Available: No");
+                bookTitles.add("Java Programming");
+                authors.add("James Gosling");
+                availability.add(true);
+
+
+                bookTitles.add("Clean Code");
+                authors.add("Robert Martin");
+                availability.add(false);
+
+
+                bookTitles.add("Python Basics");
+                authors.add("Mark Lutz");
+                availability.add(true);
+
+
+                bookTitles.add("Database Systems");
+                authors.add("Thomas Connolly");
+                availability.add(true);
+
+
+                bookTitles.add("Artificial Intelligence");
+                authors.add("Stuart Russell");
+                availability.add(false);
+
+
+                bookTitles.add("Web Development");
+                authors.add("Jon Duckett");
+                availability.add(true);
+
+
+                bookTitles.add("Computer Networks");
+                authors.add("Andrew Tanenbaum");
+                availability.add(false);
+
+
+                bookTitles.add("Software Engineering");
+                authors.add("Ian Sommerville");
+                availability.add(true);
+
+
+                bookTitles.add("Data Structures");
+                authors.add("Mark Weiss");
+                availability.add(true);
+
+
+                bookTitles.add("Algorithms");
+                authors.add("Robert Sedgewick");
+                availability.add(false);
+
+
+
+                // Display Books
+
+                System.out.println("===== Library Books =====");
+
+
+                for (int i = 0; i < bookTitles.size(); i++) {
+
+
+                    System.out.println("Book " + (i + 1));
+
+                    System.out.println("Title: " + bookTitles.get(i));
+
+                    System.out.println("Author: " + authors.get(i));
+
+                    System.out.println("Available: " + availability.get(i));
+
+                    System.out.println("---------------------");
+
+                }
+
+
             }
-
-            System.out.println();
         }
+
     }
-}
+

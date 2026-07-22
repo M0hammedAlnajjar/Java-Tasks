@@ -873,7 +873,89 @@ id="n8r5zp"
             System.out.println("Error: Invalid account index.");
 
         }
+// 11. Remove Account
 
+        System.out.println("\n===== Remove Account =====");
+
+
+// Ask for Account Index
+
+        String removeInput = IO.readln("Enter Account Index to remove: ");
+
+        int removeIndex = Integer.parseInt(removeInput);
+
+
+// Validate Index
+
+        if (removeIndex >= 0 && removeIndex < accountNumbers.size()) {
+
+
+            // Display account before removing
+
+            System.out.println("\nAccount to be removed:");
+
+            System.out.println("Account Number: " + accountNumbers.get(removeIndex));
+
+            System.out.println("Customer Name: " + customerNames.get(removeIndex));
+
+            System.out.println("Account Type: " + accountTypes.get(removeIndex));
+
+            System.out.println("Balance: " + balances.get(removeIndex));
+
+            System.out.println("Status: " + accountStatus.get(removeIndex));
+
+
+
+            // Remove Account Information from all ArrayLists
+
+            accountNumbers.remove(removeIndex);
+
+            customerNames.remove(removeIndex);
+
+            balances.remove(removeIndex);
+
+            accountTypes.remove(removeIndex);
+
+            accountStatus.remove(removeIndex);
+
+
+
+            System.out.println("\nAccount removed successfully!");
+
+
+
+            // Display Updated Account List
+
+            System.out.println("\n===== Updated Account List =====");
+
+
+            for (int i = 0; i < accountNumbers.size(); i++) {
+
+
+                System.out.println("\nAccount Index: " + i);
+
+                System.out.println("Account Number: " + accountNumbers.get(i));
+
+                System.out.println("Customer Name: " + customerNames.get(i));
+
+                System.out.println("Balance: " + balances.get(i));
+
+                System.out.println("Account Type: " + accountTypes.get(i));
+
+                System.out.println("Status: " + accountStatus.get(i));
+
+                System.out.println("------------------------");
+
+            }
+
+
+        }
+        else {
+
+
+            System.out.println("Error: Invalid account index.");
+
+        }
 
 
 

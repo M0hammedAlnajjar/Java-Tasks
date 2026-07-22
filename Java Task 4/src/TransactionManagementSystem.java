@@ -715,3 +715,383 @@ public class TransactionManagementSystem {
         System.out.println("Closed Accounts: "
                 + closedAccounts);
 
+// 9. Update Account Information
+
+
+        System.out.println("\n===== Update Account Information =====");
+
+
+        int updateIndex =
+                Integer.parseInt(
+                        IO.readln("Enter Account Index: ")
+                );
+
+
+
+        if(updateIndex >= 0 && updateIndex < accountNumbers.size()){
+
+
+
+            String newName =
+                    IO.readln("Enter new customer name: ");
+
+
+
+            String newType =
+                    IO.readln("Enter new account type (Savings / Current): ");
+
+
+
+            String newStatus =
+                    IO.readln("Enter new status (Active / Suspended / Closed): ");
+
+
+
+            boolean validType =
+                    newType.equalsIgnoreCase("Savings") ||
+                            newType.equalsIgnoreCase("Current");
+
+
+
+            boolean validStatus =
+                    newStatus.equalsIgnoreCase("Active") ||
+                            newStatus.equalsIgnoreCase("Suspended") ||
+                            newStatus.equalsIgnoreCase("Closed");
+
+
+
+            if(!validType){
+
+                System.out.println("Invalid account type.");
+
+            }
+
+            else if(!validStatus){
+
+                System.out.println("Invalid account status.");
+
+            }
+
+            else{
+
+
+                customerNames.set(updateIndex,newName);
+
+                accountTypes.set(updateIndex,newType);
+
+                accountStatus.set(updateIndex,newStatus);
+
+
+
+                System.out.println("Account updated successfully.");
+
+            }
+
+
+
+        }
+
+        else{
+
+
+            System.out.println("Invalid account index.");
+
+        }
+
+
+
+
+
+// 10. Remove Account
+
+
+        System.out.println("\n===== Remove Account =====");
+
+
+        int removeIndex =
+                Integer.parseInt(
+                        IO.readln("Enter Account Index: ")
+                );
+
+
+
+        if(removeIndex >= 0 && removeIndex < accountNumbers.size()){
+
+
+
+            accountNumbers.remove(removeIndex);
+
+            customerNames.remove(removeIndex);
+
+            balances.remove(removeIndex);
+
+            accountTypes.remove(removeIndex);
+
+            accountStatus.remove(removeIndex);
+
+
+
+            System.out.println("Account removed successfully.");
+
+
+
+        }
+
+        else{
+
+
+            System.out.println("Invalid account index.");
+
+        }
+
+
+
+
+
+
+// Display Updated Accounts
+
+
+        System.out.println("\n===== Updated Account List =====");
+
+
+
+        for(int i = 0; i < accountNumbers.size(); i++){
+
+
+            System.out.println("\nIndex: " + i);
+
+            System.out.println("Account Number: "
+                    + accountNumbers.get(i));
+
+
+            System.out.println("Customer Name: "
+                    + customerNames.get(i));
+
+
+            System.out.println("Balance: "
+                    + balances.get(i));
+
+
+            System.out.println("Type: "
+                    + accountTypes.get(i));
+
+
+            System.out.println("Status: "
+                    + accountStatus.get(i));
+
+
+        }
+
+
+
+
+
+
+
+// 11. Sorting Accounts
+
+
+        System.out.println("\n===== Sorting Accounts =====");
+
+
+        System.out.println("1. Balance Low to High");
+
+        System.out.println("2. Balance High to Low");
+
+        System.out.println("3. Customer Name Alphabetically");
+
+
+
+        int sortOption =
+                Integer.parseInt(
+                        IO.readln("Choose option: ")
+                );
+
+
+
+
+        for(int i = 0; i < balances.size()-1; i++){
+
+
+            for(int j = i+1; j < balances.size(); j++){
+
+
+
+                boolean swap = false;
+
+
+
+                if(sortOption == 1 &&
+                        balances.get(i) > balances.get(j)){
+
+
+                    swap = true;
+
+                }
+
+
+
+                else if(sortOption == 2 &&
+                        balances.get(i) < balances.get(j)){
+
+
+                    swap = true;
+
+                }
+
+
+
+                else if(sortOption == 3 &&
+                        customerNames.get(i)
+                                .compareToIgnoreCase(customerNames.get(j)) > 0){
+
+
+                    swap = true;
+
+                }
+
+
+
+
+
+                if(swap){
+
+
+
+                    // Account Number Swap
+
+                    int tempNumber =
+                            accountNumbers.get(i);
+
+
+                    accountNumbers.set(i,
+                            accountNumbers.get(j));
+
+
+                    accountNumbers.set(j,
+                            tempNumber);
+
+
+
+
+
+                    // Name Swap
+
+                    String tempName =
+                            customerNames.get(i);
+
+
+                    customerNames.set(i,
+                            customerNames.get(j));
+
+
+                    customerNames.set(j,
+                            tempName);
+
+
+
+
+
+                    // Balance Swap
+
+                    double tempBalance =
+                            balances.get(i);
+
+
+                    balances.set(i,
+                            balances.get(j));
+
+
+                    balances.set(j,
+                            tempBalance);
+
+
+
+
+
+                    // Type Swap
+
+                    String tempType =
+                            accountTypes.get(i);
+
+
+                    accountTypes.set(i,
+                            accountTypes.get(j));
+
+
+                    accountTypes.set(j,
+                            tempType);
+
+
+
+
+
+                    // Status Swap
+
+                    String tempStatus =
+                            accountStatus.get(i);
+
+
+                    accountStatus.set(i,
+                            accountStatus.get(j));
+
+
+                    accountStatus.set(j,
+                            tempStatus);
+
+
+
+                }
+
+
+            }
+
+        }
+
+
+
+
+// Display Sorted Accounts
+
+
+        System.out.println("\n===== Sorted Accounts =====");
+
+
+
+        for(int i = 0; i < accountNumbers.size(); i++){
+
+
+            System.out.println("\nIndex: " + i);
+
+
+            System.out.println("Account Number: "
+                    + accountNumbers.get(i));
+
+
+            System.out.println("Customer Name: "
+                    + customerNames.get(i));
+
+
+            System.out.println("Balance: "
+                    + balances.get(i));
+
+
+            System.out.println("Account Type: "
+                    + accountTypes.get(i));
+
+
+            System.out.println("Status: "
+                    + accountStatus.get(i));
+
+
+            System.out.println("---------------------");
+
+
+        }
+
+
+
+    }
+
+}

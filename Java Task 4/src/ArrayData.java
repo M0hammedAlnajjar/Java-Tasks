@@ -24,23 +24,21 @@ public class ArrayData {
 
 
         // 1. Display Array
-        System.out.println("Array Elements:");
+        IO.println("Array Elements:");
 
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
-        }
+        for (int i = 0; i < numbers.length; i++) IO.println(numbers[i] + " ");
 
 
         // 2. Display Array Information
-        System.out.println("\n\nTotal number of elements: " + numbers.length);
-        System.out.println("First element: " + numbers[0]);
-        System.out.println("Last element: " + numbers[numbers.length - 1]);
+        IO.println("\n\nTotal number of elements: " + numbers.length);
+        IO.println("First element: " + numbers[0]);
+        IO.println("Last element: " + numbers[numbers.length - 1]);
 
 
         System.out.println("\nElements with indexes:");
 
         for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Index " + i + " = " + numbers[i]);
+            IO.println("Index " + i + " = " + numbers[i]);
         }
 
 
@@ -62,32 +60,29 @@ public class ArrayData {
         double average = (double) sum / numbers.length;
 
 
-        System.out.println("\nStatistics:");
-        System.out.println("Sum = " + sum);
-        System.out.printf("Average = %.2f%n", average);
-        System.out.println("Maximum = " + max);
-        System.out.println("Minimum = " + min);
+        IO.println("\nStatistics:");
+        IO.println("Sum = " + sum);
+        IO.println("Average = %.2f%n", average);
+        IO.println("Maximum = " + max);
+        IO.println("Minimum = " + min);
 
 
 
         // 4. Number Classification
-        for (int i = 0; i < numbers.length; i++) {
+        for (int number : numbers) {
 
-            if (numbers[i] > 0) {
+            if (number > 0) {
                 positive++;
-            }
-            else if (numbers[i] < 0) {
+            } else if (number < 0) {
                 negative++;
-            }
-            else {
+            } else {
                 zero++;
             }
 
 
-            if (numbers[i] % 2 == 0) {
+            if (number % 2 == 0) {
                 even++;
-            }
-            else {
+            } else {
                 odd++;
             }
         }
@@ -131,7 +126,7 @@ public class ArrayData {
 
         } else {
 
-            System.out.println("Number not found.");
+            IO.println("Number not found.");
         }
 
 
@@ -163,17 +158,16 @@ public class ArrayData {
 
         // 7. Reverse Array
 
-        System.out.println("\n\nOriginal Array:");
+        IO.println("\n\nOriginal Array:");
 
         for (int i = 0; i < originalArray.length; i++) {
-            System.out.print(originalArray[i] + " ");
+            IO.println(originalArray[i] + " ");
         }
 
-
-        System.out.println("\nReverse Array:");
+        IO.println("\nReverse Array:");
 
         for (int i = originalArray.length - 1; i >= 0; i--) {
-            System.out.print(originalArray[i] + " ");
+            IO.println(originalArray[i] + " ");
         }
 
 
@@ -185,24 +179,24 @@ public class ArrayData {
         Arrays.sort(sortedArray);
 
 
-        System.out.println("\n\nSorted Array:");
+        IO.println("\n\nSorted Array:");
 
         for (int i = 0; i < sortedArray.length; i++) {
-            System.out.print(sortedArray[i] + " ");
+            IO.println(sortedArray[i] + " ");
         }
 
 
-        System.out.println("\nSmallest value: " + sortedArray[0]);
-        System.out.println("Largest value: " + sortedArray[sortedArray.length - 1]);
+        IO.println("\nSmallest value: " + sortedArray[0]);
+        IO.println("Largest value: " + sortedArray[sortedArray.length - 1]);
 
 
 
         // Original array remains unchanged
 
-        System.out.println("\nOriginal Array (unchanged):");
+        IO.println("\nOriginal Array (unchanged):");
 
         for (int i = 0; i < originalArray.length; i++) {
-            System.out.print(originalArray[i] + " ");
+            IO.println(originalArray[i] + " ");
         }
 
     }

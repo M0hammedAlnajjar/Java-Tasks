@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 
-public class TransactionManagementSystem{
+public class TransactionManagementSystem {
 
     public static void main(String[] args) {
 
-
-        // Create Account Data Lists
 
         ArrayList<Integer> accountNumbers = new ArrayList<>();
         ArrayList<String> customerNames = new ArrayList<>();
@@ -14,8 +12,7 @@ public class TransactionManagementSystem{
         ArrayList<String> accountStatus = new ArrayList<>();
 
 
-
-        // Add 10 Customer Accounts
+        // Initial Accounts
 
         accountNumbers.add(10001);
         customerNames.add("Ali");
@@ -112,11 +109,14 @@ public class TransactionManagementSystem{
         System.out.println("\n===== Create New Account =====");
 
 
-        String newCustomerName = IO.readln("Enter customer name: ");
+        String newCustomerName =
+                IO.readln("Enter customer name: ");
 
-        String newBalanceInput = IO.readln("Enter initial balance: ");
 
-        double newBalance = Double.parseDouble(newBalanceInput);
+        double newBalance =
+                Double.parseDouble(
+                        IO.readln("Enter initial balance: ")
+                );
 
 
         String newAccountType =
@@ -132,20 +132,25 @@ public class TransactionManagementSystem{
 
         if(newBalance < 0){
 
-            System.out.println("Error: Balance cannot be negative.");
+            System.out.println(
+                    "Error: Balance cannot be negative."
+            );
 
         }
 
         else if(!validType){
 
-            System.out.println("Error: Invalid account type.");
+            System.out.println(
+                    "Error: Invalid account type."
+            );
 
         }
 
         else{
 
 
-            int newAccountNumber = 10000 + accountNumbers.size() + 1;
+            int newAccountNumber =
+                    accountNumbers.get(accountNumbers.size()-1) + 1;
 
 
             accountNumbers.add(newAccountNumber);
@@ -155,21 +160,27 @@ public class TransactionManagementSystem{
             accountStatus.add("Active");
 
 
-            System.out.println("\nAccount created successfully!");
-            System.out.println("Account Number: " + newAccountNumber);
+            System.out.println(
+                    "Account created successfully!"
+            );
+
+            System.out.println(
+                    "Account Number: " + newAccountNumber
+            );
 
         }
 
-        // 3. Deposit Money System
+
+
+        // 3. Deposit Money
 
         System.out.println("\n===== Deposit Money =====");
 
 
-        String depositInput =
-                IO.readln("Enter Account Number: ");
-
         int depositAccountNumber =
-                Integer.parseInt(depositInput);
+                Integer.parseInt(
+                        IO.readln("Enter Account Number: ")
+                );
 
 
         boolean depositFound = false;
@@ -185,34 +196,37 @@ public class TransactionManagementSystem{
                 depositFound = true;
 
 
-                String amountInput =
-                        IO.readln("Enter Deposit Amount: ");
-
                 double depositAmount =
-                        Double.parseDouble(amountInput);
+                        Double.parseDouble(
+                                IO.readln("Enter Deposit Amount: ")
+                        );
 
 
 
                 if(depositAmount <= 0){
 
-                    System.out.println("Error: Amount must be greater than zero.");
+                    System.out.println(
+                            "Error: Amount must be greater than zero."
+                    );
 
                 }
 
                 else{
 
 
-                    double updatedBalance =
-                            balances.get(i) + depositAmount;
+                    balances.set(
+                            i,
+                            balances.get(i) + depositAmount
+                    );
 
 
-                    balances.set(i, updatedBalance);
+                    System.out.println(
+                            "Deposit successful."
+                    );
 
-
-                    System.out.println("Deposit successful.");
-
-                    System.out.println("New Balance: "
-                            + updatedBalance);
+                    System.out.println(
+                            "New Balance: " + balances.get(i)
+                    );
 
                 }
 
@@ -231,20 +245,15 @@ public class TransactionManagementSystem{
 
         }
 
-
-
-// 4. Withdraw Money System
-
+        // 4. Withdraw Money
 
         System.out.println("\n===== Withdraw Money =====");
 
 
-        String withdrawInput =
-                IO.readln("Enter Account Number: ");
-
         int withdrawAccountNumber =
-                Integer.parseInt(withdrawInput);
-
+                Integer.parseInt(
+                        IO.readln("Enter Account Number: ")
+                );
 
 
         boolean withdrawFound = false;
@@ -260,43 +269,46 @@ public class TransactionManagementSystem{
                 withdrawFound = true;
 
 
-
-                String amountInput =
-                        IO.readln("Enter Withdrawal Amount: ");
-
-
                 double withdrawAmount =
-                        Double.parseDouble(amountInput);
+                        Double.parseDouble(
+                                IO.readln("Enter Withdrawal Amount: ")
+                        );
 
 
 
                 if(withdrawAmount <= 0){
 
-                    System.out.println("Error: Amount must be greater than zero.");
+                    System.out.println(
+                            "Error: Amount must be greater than zero."
+                    );
 
                 }
 
                 else if(withdrawAmount > balances.get(i)){
 
-
-                    System.out.println("Error: Insufficient balance.");
+                    System.out.println(
+                            "Error: Insufficient balance."
+                    );
 
                 }
 
                 else{
 
 
-                    double newBalance =
-                            balances.get(i) - withdrawAmount;
+                    balances.set(
+                            i,
+                            balances.get(i) - withdrawAmount
+                    );
 
 
-                    balances.set(i,newBalance);
+                    System.out.println(
+                            "Withdrawal successful."
+                    );
 
-
-                    System.out.println("Withdrawal successful.");
-
-                    System.out.println("Remaining Balance: "
-                            + newBalance);
+                    System.out.println(
+                            "Remaining Balance: "
+                                    + balances.get(i)
+                    );
 
                 }
 
@@ -317,15 +329,10 @@ public class TransactionManagementSystem{
 
 
 
-// 5. Transfer Money System
 
+        // 5. Transfer Money
 
         System.out.println("\n===== Transfer Money =====");
-
-
-        int senderIndex = -1;
-        int receiverIndex = -1;
-
 
 
         int senderAccount =
@@ -345,6 +352,10 @@ public class TransactionManagementSystem{
                         IO.readln("Enter Transfer Amount: ")
                 );
 
+
+
+        int senderIndex = -1;
+        int receiverIndex = -1;
 
 
 
@@ -370,27 +381,27 @@ public class TransactionManagementSystem{
 
         if(senderIndex == -1 || receiverIndex == -1){
 
-
-            System.out.println("Error: Account not found.");
+            System.out.println(
+                    "Error: Account not found."
+            );
 
         }
-
 
         else if(transferAmount <= 0){
 
-
-            System.out.println("Error: Invalid amount.");
+            System.out.println(
+                    "Error: Invalid amount."
+            );
 
         }
-
 
         else if(balances.get(senderIndex) < transferAmount){
 
-
-            System.out.println("Error: Insufficient balance.");
+            System.out.println(
+                    "Error: Insufficient balance."
+            );
 
         }
-
 
         else{
 
@@ -407,8 +418,10 @@ public class TransactionManagementSystem{
             );
 
 
+            System.out.println(
+                    "Transfer completed successfully."
+            );
 
-            System.out.println("Transfer completed successfully.");
 
             System.out.println(
                     "Sender Balance: "
@@ -422,8 +435,11 @@ public class TransactionManagementSystem{
             );
 
         }
-        // 6. Account Search System
 
+
+
+
+        // 6. Account Search
 
         System.out.println("\n===== Account Search =====");
 
@@ -433,14 +449,14 @@ public class TransactionManagementSystem{
 
 
         int searchOption =
-                Integer.parseInt(IO.readln("Choose option: "));
+                Integer.parseInt(
+                        IO.readln("Choose option: ")
+                );
 
 
         boolean searchFound = false;
 
 
-
-// Search by Account Number
 
         if(searchOption == 1){
 
@@ -455,45 +471,30 @@ public class TransactionManagementSystem{
             for(int i = 0; i < accountNumbers.size(); i++){
 
 
-                if(accountNumbers.get(i).equals(searchAccountNumber)){
+                if(accountNumbers.get(i)
+                        .equals(searchAccountNumber)){
 
 
-                    System.out.println("\nAccount Found");
-
-
-                    System.out.println("Account Number: "
-                            + accountNumbers.get(i));
-
-
-                    System.out.println("Customer Name: "
-                            + customerNames.get(i));
-
-
-                    System.out.println("Account Type: "
-                            + accountTypes.get(i));
-
-
-                    System.out.println("Balance: "
-                            + balances.get(i));
-
-
-                    System.out.println("Status: "
-                            + accountStatus.get(i));
+                    displayAccount(
+                            i,
+                            accountNumbers,
+                            customerNames,
+                            balances,
+                            accountTypes,
+                            accountStatus
+                    );
 
 
                     searchFound = true;
-
                     break;
 
                 }
 
             }
 
+
         }
 
-
-
-// Search by Customer Name
 
         else if(searchOption == 2){
 
@@ -510,33 +511,17 @@ public class TransactionManagementSystem{
                         .equalsIgnoreCase(searchName)){
 
 
-
-                    System.out.println("\nAccount Found");
-
-
-                    System.out.println("Account Number: "
-                            + accountNumbers.get(i));
-
-
-                    System.out.println("Customer Name: "
-                            + customerNames.get(i));
-
-
-                    System.out.println("Account Type: "
-                            + accountTypes.get(i));
-
-
-                    System.out.println("Balance: "
-                            + balances.get(i));
-
-
-                    System.out.println("Status: "
-                            + accountStatus.get(i));
-
+                    displayAccount(
+                            i,
+                            accountNumbers,
+                            customerNames,
+                            balances,
+                            accountTypes,
+                            accountStatus
+                    );
 
 
                     searchFound = true;
-
                     break;
 
                 }
@@ -545,6 +530,7 @@ public class TransactionManagementSystem{
 
 
         }
+
 
         else{
 
@@ -556,169 +542,137 @@ public class TransactionManagementSystem{
 
         if(!searchFound){
 
-            System.out.println("Account not found.");
+            System.out.println(
+                    "Account not found."
+            );
 
         }
 
 
 
 
-// 7. Banking Statistics Report
+        // 7. Banking Statistics Report
 
 
-        System.out.println("\n===== Banking Statistics Report =====");
-
-
-        int totalAccounts =
-                accountNumbers.size();
+        System.out.println(
+                "\n===== Banking Statistics Report ====="
+        );
 
 
         double totalBalance = 0;
 
 
-        double highestBalance =
-                balances.get(0);
+        double highestBalance = balances.get(0);
 
-
-        double lowestBalance =
-                balances.get(0);
+        double lowestBalance = balances.get(0);
 
 
 
-        for(int i = 0; i < balances.size(); i++){
+        for(double b : balances){
 
 
-            totalBalance += balances.get(i);
+            totalBalance += b;
 
 
+            if(b > highestBalance){
 
-            if(balances.get(i) > highestBalance){
-
-                highestBalance = balances.get(i);
+                highestBalance = b;
 
             }
 
 
+            if(b < lowestBalance){
 
-            if(balances.get(i) < lowestBalance){
-
-                lowestBalance = balances.get(i);
+                lowestBalance = b;
 
             }
-
 
         }
 
 
 
-        double averageBalance =
-                totalBalance / totalAccounts;
+        System.out.println(
+                "Total Accounts: " + accountNumbers.size()
+        );
 
 
-
-        System.out.println("Total Accounts: "
-                + totalAccounts);
-
-
-        System.out.println("Total Balance: "
-                + totalBalance);
+        System.out.println(
+                "Total Balance: " + totalBalance
+        );
 
 
-        System.out.println("Average Balance: "
-                + averageBalance);
+        System.out.println(
+                "Average Balance: "
+                        + totalBalance / accountNumbers.size()
+        );
 
 
-        System.out.println("Highest Balance: "
-                + highestBalance);
+        System.out.println(
+                "Highest Balance: " + highestBalance
+        );
 
 
-        System.out.println("Lowest Balance: "
-                + lowestBalance);
+        System.out.println(
+                "Lowest Balance: " + lowestBalance
+        );
 
-
-
-
-
-
-// 8. Account Status Analysis
+        // 8. Account Status Analysis
 
 
         System.out.println("\n===== Account Status Analysis =====");
 
 
         int activeAccounts = 0;
-
         int inactiveAccounts = 0;
-
         int suspendedAccounts = 0;
-
         int closedAccounts = 0;
 
 
 
-        for(int i = 0; i < accountStatus.size(); i++){
+        for(String s : accountStatus){
 
 
-
-            if(accountStatus.get(i)
-                    .equalsIgnoreCase("Active")){
-
+            if(s.equalsIgnoreCase("Active")){
 
                 activeAccounts++;
 
             }
 
-
-            else if(accountStatus.get(i)
-                    .equalsIgnoreCase("Inactive")){
-
+            else if(s.equalsIgnoreCase("Inactive")){
 
                 inactiveAccounts++;
 
             }
 
-
-            else if(accountStatus.get(i)
-                    .equalsIgnoreCase("Suspended")){
-
+            else if(s.equalsIgnoreCase("Suspended")){
 
                 suspendedAccounts++;
 
             }
 
-
-            else if(accountStatus.get(i)
-                    .equalsIgnoreCase("Closed")){
-
+            else if(s.equalsIgnoreCase("Closed")){
 
                 closedAccounts++;
 
             }
 
-
         }
 
 
 
-        System.out.println("Active Accounts: "
-                + activeAccounts);
+        System.out.println("Active Accounts: " + activeAccounts);
+        System.out.println("Inactive Accounts: " + inactiveAccounts);
+        System.out.println("Suspended Accounts: " + suspendedAccounts);
+        System.out.println("Closed Accounts: " + closedAccounts);
 
 
-        System.out.println("Inactive Accounts: "
-                + inactiveAccounts);
 
 
-        System.out.println("Suspended Accounts: "
-                + suspendedAccounts);
-
-
-        System.out.println("Closed Accounts: "
-                + closedAccounts);
-
-// 9. Update Account Information
+        // 9. Update Account Information
 
 
         System.out.println("\n===== Update Account Information =====");
+
 
         int updateIndex =
                 Integer.parseInt(
@@ -727,26 +681,28 @@ public class TransactionManagementSystem{
 
 
 
-        if(updateIndex >= 0 && updateIndex < accountNumbers.size()){
-
+        if(updateIndex >= 0 &&
+                updateIndex < accountNumbers.size()){
 
 
             String newName =
                     IO.readln("Enter new customer name: ");
 
 
-
             String newType =
-                    IO.readln("Enter new account type (Savings / Current): ");
-
+                    IO.readln(
+                            "Enter new account type (Savings / Current): "
+                    );
 
 
             String newStatus =
-                    IO.readln("Enter new status (Active / Suspended / Closed): ");
+                    IO.readln(
+                            "Enter new status (Active / Suspended / Closed): "
+                    );
 
 
 
-            boolean validType =
+            boolean validNewType =
                     newType.equalsIgnoreCase("Savings") ||
                             newType.equalsIgnoreCase("Current");
 
@@ -759,7 +715,7 @@ public class TransactionManagementSystem{
 
 
 
-            if(!validType){
+            if(!validNewType){
 
                 System.out.println("Invalid account type.");
 
@@ -781,17 +737,16 @@ public class TransactionManagementSystem{
                 accountStatus.set(updateIndex,newStatus);
 
 
-
-                System.out.println("Account updated successfully.");
+                System.out.println(
+                        "Account updated successfully."
+                );
 
             }
-
 
 
         }
 
         else{
-
 
             System.out.println("Invalid account index.");
 
@@ -801,7 +756,7 @@ public class TransactionManagementSystem{
 
 
 
-// 10. Remove Account
+        // 10. Remove Account
 
 
         System.out.println("\n===== Remove Account =====");
@@ -814,8 +769,8 @@ public class TransactionManagementSystem{
 
 
 
-        if(removeIndex >= 0 && removeIndex < accountNumbers.size()){
-
+        if(removeIndex >= 0 &&
+                removeIndex < accountNumbers.size()){
 
 
             accountNumbers.remove(removeIndex);
@@ -830,65 +785,25 @@ public class TransactionManagementSystem{
 
 
 
-            System.out.println("Account removed successfully.");
-
+            System.out.println(
+                    "Account removed successfully."
+            );
 
 
         }
 
         else{
 
-
-            System.out.println("Invalid account index.");
-
-        }
-
-
-
-
-
-
-// Display Updated Accounts
-
-
-        System.out.println("\n===== Updated Account List =====");
-
-
-
-        for(int i = 0; i < accountNumbers.size(); i++){
-
-
-            System.out.println("\nIndex: " + i);
-
-            System.out.println("Account Number: "
-                    + accountNumbers.get(i));
-
-
-            System.out.println("Customer Name: "
-                    + customerNames.get(i));
-
-
-            System.out.println("Balance: "
-                    + balances.get(i));
-
-
-            System.out.println("Type: "
-                    + accountTypes.get(i));
-
-
-            System.out.println("Status: "
-                    + accountStatus.get(i));
-
+            System.out.println(
+                    "Invalid account index."
+            );
 
         }
 
 
 
 
-
-
-
-// 11. Sorting Accounts
+        // 11. Sorting Accounts
 
 
         System.out.println("\n===== Sorting Accounts =====");
@@ -909,12 +824,10 @@ public class TransactionManagementSystem{
 
 
 
-
         for(int i = 0; i < balances.size()-1; i++){
 
 
             for(int j = i+1; j < balances.size(); j++){
-
 
 
                 boolean swap = false;
@@ -930,7 +843,6 @@ public class TransactionManagementSystem{
                 }
 
 
-
                 else if(sortOption == 2 &&
                         balances.get(i) < balances.get(j)){
 
@@ -940,10 +852,11 @@ public class TransactionManagementSystem{
                 }
 
 
-
                 else if(sortOption == 3 &&
                         customerNames.get(i)
-                                .compareToIgnoreCase(customerNames.get(j)) > 0){
+                                .compareToIgnoreCase(
+                                        customerNames.get(j)
+                                ) > 0){
 
 
                     swap = true;
@@ -952,97 +865,83 @@ public class TransactionManagementSystem{
 
 
 
-
-
                 if(swap){
 
-
-
-                    // Account Number Swap
 
                     int tempNumber =
                             accountNumbers.get(i);
 
+                    accountNumbers.set(
+                            i,
+                            accountNumbers.get(j)
+                    );
 
-                    accountNumbers.set(i,
-                            accountNumbers.get(j));
+                    accountNumbers.set(
+                            j,
+                            tempNumber
+                    );
 
 
-                    accountNumbers.set(j,
-                            tempNumber);
-
-
-
-
-
-                    // Name Swap
 
                     String tempName =
                             customerNames.get(i);
 
+                    customerNames.set(
+                            i,
+                            customerNames.get(j)
+                    );
 
-                    customerNames.set(i,
-                            customerNames.get(j));
+                    customerNames.set(
+                            j,
+                            tempName
+                    );
 
 
-                    customerNames.set(j,
-                            tempName);
-
-
-
-
-
-                    // Balance Swap
 
                     double tempBalance =
                             balances.get(i);
 
+                    balances.set(
+                            i,
+                            balances.get(j)
+                    );
 
-                    balances.set(i,
-                            balances.get(j));
+                    balances.set(
+                            j,
+                            tempBalance
+                    );
 
 
-                    balances.set(j,
-                            tempBalance);
-
-
-
-
-
-                    // Type Swap
 
                     String tempType =
                             accountTypes.get(i);
 
+                    accountTypes.set(
+                            i,
+                            accountTypes.get(j)
+                    );
 
-                    accountTypes.set(i,
-                            accountTypes.get(j));
+                    accountTypes.set(
+                            j,
+                            tempType
+                    );
 
 
-                    accountTypes.set(j,
-                            tempType);
-
-
-
-
-
-                    // Status Swap
 
                     String tempStatus =
                             accountStatus.get(i);
 
+                    accountStatus.set(
+                            i,
+                            accountStatus.get(j)
+                    );
 
-                    accountStatus.set(i,
-                            accountStatus.get(j));
-
-
-                    accountStatus.set(j,
-                            tempStatus);
-
-
+                    accountStatus.set(
+                            j,
+                            tempStatus
+                    );
 
                 }
-
 
             }
 
@@ -1050,46 +949,69 @@ public class TransactionManagementSystem{
 
 
 
-
-// Display Sorted Accounts
-
-
         System.out.println("\n===== Sorted Accounts =====");
-
 
 
         for(int i = 0; i < accountNumbers.size(); i++){
 
 
-            System.out.println("\nIndex: " + i);
-
-
-            System.out.println("Account Number: "
-                    + accountNumbers.get(i));
-
-
-            System.out.println("Customer Name: "
-                    + customerNames.get(i));
-
-
-            System.out.println("Balance: "
-                    + balances.get(i));
-
-
-            System.out.println("Account Type: "
-                    + accountTypes.get(i));
-
-
-            System.out.println("Status: "
-                    + accountStatus.get(i));
-
-
-            System.out.println("---------------------");
-
+            displayAccount(
+                    i,
+                    accountNumbers,
+                    customerNames,
+                    balances,
+                    accountTypes,
+                    accountStatus
+            );
 
         }
 
 
+    }
+
+
+
+
+    // Display Account Method
+
+
+    public static void displayAccount(
+            int i,
+            ArrayList<Integer> accountNumbers,
+            ArrayList<String> customerNames,
+            ArrayList<Double> balances,
+            ArrayList<String> accountTypes,
+            ArrayList<String> accountStatus){
+
+
+        System.out.println("\nAccount Index: " + i);
+
+        System.out.println(
+                "Account Number: "
+                        + accountNumbers.get(i)
+        );
+
+        System.out.println(
+                "Customer Name: "
+                        + customerNames.get(i)
+        );
+
+        System.out.println(
+                "Balance: "
+                        + balances.get(i)
+        );
+
+        System.out.println(
+                "Account Type: "
+                        + accountTypes.get(i)
+        );
+
+        System.out.println(
+                "Status: "
+                        + accountStatus.get(i)
+        );
+
+        System.out.println("----------------------");
 
     }
 

@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TypeClassifier {
-
-    static void main() {
+public class  TypeClassifier {
+    public static void main(String[] args) {
 
         List<String> fileNames = new ArrayList<>();
 
@@ -14,9 +13,12 @@ public class TypeClassifier {
         fileNames.add("document.docx");
         fileNames.add("data.csv");
         fileNames.add("program.java");
-        fileNames.add("README"); // No extension
+        fileNames.add("README");
 
-        System.out.println(fileNames);
-
+        // Counters
+        int documentCount = 0;
+        int imageCount = 0;
+        int codeCount = 0;
+        int otherCount = 0;
     }
 }

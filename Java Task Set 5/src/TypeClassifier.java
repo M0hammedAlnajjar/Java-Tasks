@@ -20,5 +20,20 @@ public class  TypeClassifier {
         int imageCount = 0;
         int codeCount = 0;
         int otherCount = 0;
+
+
+        for (String fileName : fileNames) {
+
+            int dotIndex = fileName.lastIndexOf('.');
+
+            if (dotIndex == -1) {
+                otherCount++;
+                continue;
+            }
+
+            String extension = fileName.substring(dotIndex + 1).toLowerCase();
+
+            // Compare the extension here
+        }
     }
 }

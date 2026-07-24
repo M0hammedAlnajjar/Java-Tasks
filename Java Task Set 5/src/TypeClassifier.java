@@ -1,73 +1,73 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class  TypeClassifier {
+public class  TypeClassifier{
+
     public static void main(String[] args) {
 
+        // Store file names
         List<String> fileNames = new ArrayList<>();
 
         fileNames.add("report.pdf");
         fileNames.add("photo.jpg");
-        fileNames.add("music.mp3");
-        fileNames.add("video.mp4");
-        fileNames.add("document.docx");
-        fileNames.add("data.csv");
         fileNames.add("program.java");
         fileNames.add("README");
 
-        // Counters
+        // File type counters
         int documentCount = 0;
         int imageCount = 0;
         int codeCount = 0;
         int otherCount = 0;
 
-
+        // Check every file
         for (String fileName : fileNames) {
+
+            String type = "Other";
 
             int dotIndex = fileName.lastIndexOf('.');
 
-            if (dotIndex == -1) {
-                otherCount++;
-                continue;
-            }
+            // Check file extension
+            if (dotIndex != -1) {
 
-            String extension = fileName.substring(dotIndex + 1).toLowerCase();
+                String extension = fileName.substring(dotIndex + 1).toLowerCase();
 
-            // Compare the extension here
-        }
+                if (extension.equals("txt") ||
+                        extension.equals("pdf") ||
+                        extension.equals("docx")) {
 
-        for (String fileName : fileNames) {
+                    type = "Document";
+                    documentCount++;
 
-            int dotIndex = fileName.lastIndexOf('.');
+                } else if (extension.equals("jpg") ||
+                        extension.equals("png")) {
 
-            if (dotIndex == -1) {
-                otherCount++;
-                continue;
-            }
+                    type = "Image";
+                    imageCount++;
 
-            String extension = fileName.substring(dotIndex + 1).toLowerCase();
+                } else if (extension.equals("java") ||
+                        extension.equals("py") ||
+                        extension.equals("js")) {
 
-            if (extension.equals("txt") ||
-                    extension.equals("pdf") ||
-                    extension.equals("docx")) {
+                    type = "Code";
+                    codeCount++;
 
-                documentCount++;
-
-            } else if (extension.equals("jpg") ||
-                    extension.equals("png")) {
-
-                imageCount++;
-
-            } else if (extension.equals("java") ||
-                    extension.equals("py") ||
-                    extension.equals("js")) {
-
-                codeCount++;
+                } else {
+                    otherCount++;
+                }
 
             } else {
-
                 otherCount++;
             }
+
+            // Print file and its category
+            System.out.println(fileName + " -> " + type);
         }
+
+        // Print summary
+        System.out.println("\nTotal Files: " + fileNames.size());
+        System.out.println("Document: " + documentCount);
+        System.out.println("Image: " + imageCount);
+        System.out.println("Code: " + codeCount);
+        System.out.println("Other: " + otherCount);
     }
 }

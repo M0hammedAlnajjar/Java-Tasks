@@ -35,5 +35,39 @@ public class  TypeClassifier {
 
             // Compare the extension here
         }
+
+        for (String fileName : fileNames) {
+
+            int dotIndex = fileName.lastIndexOf('.');
+
+            if (dotIndex == -1) {
+                otherCount++;
+                continue;
+            }
+
+            String extension = fileName.substring(dotIndex + 1).toLowerCase();
+
+            if (extension.equals("txt") ||
+                    extension.equals("pdf") ||
+                    extension.equals("docx")) {
+
+                documentCount++;
+
+            } else if (extension.equals("jpg") ||
+                    extension.equals("png")) {
+
+                imageCount++;
+
+            } else if (extension.equals("java") ||
+                    extension.equals("py") ||
+                    extension.equals("js")) {
+
+                codeCount++;
+
+            } else {
+
+                otherCount++;
+            }
+        }
     }
 }

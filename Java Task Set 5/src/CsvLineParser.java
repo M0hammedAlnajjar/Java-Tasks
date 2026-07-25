@@ -2,28 +2,38 @@ public class CsvLineParser {
 
     public static void main(String[] args) {
 
+        // Read CSV line
         String read = IO.readln("Enter your name, age and city in one line: ");
 
         // Split data using comma
-        String[] data = read.split(",");
+        String[] fields = read.split(",");
 
-        // Get fields
-        String name = data[0].trim();
-        int age = Integer.parseInt(data[1].trim());
-        String city = data[2].trim();
+        // Check if there are exactly 3 fields
+        if (fields.length != 3) {
+            System.out.println("Invalid record.");
+            return;
+        }
 
-        // Display information
+        // Trim each field
+        String name = fields[0].trim();
+        int age = Integer.parseInt(fields[1].trim());
+        String city = fields[2].trim();
+
+        // Classify age
+        String ageGroup;
+
+        if (age < 18) {
+            ageGroup = "Minor";
+        } else if (age <= 64) {
+            ageGroup = "Adult";
+        } else {
+            ageGroup = "Senior";
+        }
+
+        // Print information
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("City: " + city);
-
-        // Classify age
-        if (age < 18) {
-            System.out.println("Classification: Minor");
-        } else if (age < 60) {
-            System.out.println("Classification: Adult");
-        } else {
-            System.out.println("Classification: Senior");
-        }
+        System.out.println("Age Group: " + ageGroup);
     }
 }

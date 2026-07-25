@@ -2,21 +2,21 @@ public class FileInventoryReport {
 
     public static void main(String[] args) {
 
-        // Store CSV file records
+        // CSV file records: fileName,sizeInKb
         String[] files = {
                 "photo.png,340",
+                "app.java,8",
                 "report.pdf,120",
-                "music.mp3,500",
-                "Main.java,80",
+                "song.mp3,5000",
+                "notes.txt,50",
                 "data.xlsx,200",
-                "unknown.xyz,50"
+                "unknown.xyz,70",
+                "wrongRecord"
         };
 
-
-        // Total size
         int totalSize = 0;
 
-        // File type counters
+        // Category counters
         int documentCount = 0;
         int imageCount = 0;
         int audioCount = 0;
@@ -43,88 +43,77 @@ public class FileInventoryReport {
             String fileName = parts[0].trim();
             int size = Integer.parseInt(parts[1].trim());
 
-        }
 
-        // Get file extension
-        String extension = "";
+            // Get file extension
+            String extension = "";
 
-        int dotIndex = fileName.lastIndexOf(".");
+            int dotIndex = fileName.lastIndexOf(".");
 
-        if (dotIndex != -1) {
-            extension = fileName.substring(dotIndex + 1).toLowerCase();
-        }
-
+            if (dotIndex != -1) {
+                extension = fileName.substring(dotIndex + 1).toLowerCase();
+            }
 
 
-        // Classify file type
-        String type;
+            // Classify file type
+            String type;
 
-        switch (extension) {
+            switch (extension) {
 
-            case "txt":
-            case "pdf":
-            case "docx":
-            case "xlsx":
-                type = "Document";
-                documentCount++;
-                break;
+                case "txt":
+                case "pdf":
+                case "docx":
+                case "xlsx":
+                    type = "Document";
+                    documentCount++;
+                    break;
 
-            case "jpg":
-            case "png":
-            case "gif":
-                type = "Image";
-                imageCount++;
-                break;
+                case "jpg":
+                case "png":
+                case "gif":
+                    type = "Image";
+                    imageCount++;
+                    break;
 
-            case "mp3":
-            case "wav":
-                type = "Audio";
-                audioCount++;
-                break;
+                case "mp3":
+                case "wav":
+                    type = "Audio";
+                    audioCount++;
+                    break;
 
-            case "java":
-            case "py":
-            case "js":
-                type = "Code";
-                codeCount++;
-                break;
+                case "java":
+                case "py":
+                case "js":
+                    type = "Code";
+                    codeCount++;
+                    break;
 
-            default:
-                type = "Other";
-                otherCount++;
-        }
-
-
-        // Add size to total
-        totalSize += size;
+                default:
+                    type = "Other";
+                    otherCount++;
+            }
 
 
-        // Find largest file
-        if (size > largestSize) {
-            largestSize = size;
-            largestFile = fileName;
-        }
+            // Add size to total
+            totalSize += size;
 
 
-        // Print file details
-        System.out.println("File Name: " + fileName);
-        System.out.println("Extension: " + extension);
-        System.out.println("Type: " + type);
-        System.out.println("Size: " + size + " KB");
-        System.out.println("----------------------");
-    }
+            // Find largest file
+            if (size > largestSize) {
+                largestSize = size;
+                largestFile = fileName;
+            }
 
 
-    // Print file details
+            // Print file details
             System.out.println("File Name: " + fileName);
             System.out.println("Extension: " + extension);
             System.out.println("Type: " + type);
             System.out.println("Size: " + size + " KB");
             System.out.println("----------------------");
+        }
 
 
-
-    // Summary report
+        // Summary report
         System.out.println("\n===== File Inventory Summary =====");
 
         System.out.println("Total Files: " + (files.length - 1));
@@ -140,6 +129,5 @@ public class FileInventoryReport {
         System.out.println("\nLargest File:");
         System.out.println("Name: " + largestFile);
         System.out.println("Size: " + largestSize + " KB");
-
-
-}}
+    }
+}

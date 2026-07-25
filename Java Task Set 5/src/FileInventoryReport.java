@@ -54,4 +54,44 @@ public class FileInventoryReport {
             extension = fileName.substring(dotIndex + 1).toLowerCase();
         }
 
+
+
+        // Classify file type
+        String type;
+
+        switch (extension) {
+
+            case "txt":
+            case "pdf":
+            case "docx":
+            case "xlsx":
+                type = "Document";
+                documentCount++;
+                break;
+
+            case "jpg":
+            case "png":
+            case "gif":
+                type = "Image";
+                imageCount++;
+                break;
+
+            case "mp3":
+            case "wav":
+                type = "Audio";
+                audioCount++;
+                break;
+
+            case "java":
+            case "py":
+            case "js":
+                type = "Code";
+                codeCount++;
+                break;
+
+            default:
+                type = "Other";
+                otherCount++;
+        }
+
     }}

@@ -44,4 +44,14 @@ public class FileInventoryReport {
             int size = Integer.parseInt(parts[1].trim());
 
         }
+
+        // Get file extension
+        String extension = "";
+
+        int dotIndex = fileName.lastIndexOf(".");
+
+        if (dotIndex != -1) {
+            extension = fileName.substring(dotIndex + 1).toLowerCase();
+        }
+
     }}

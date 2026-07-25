@@ -123,4 +123,23 @@ public class FileInventoryReport {
             System.out.println("----------------------");
 
 
+
+    // Summary report
+        System.out.println("\n===== File Inventory Summary =====");
+
+        System.out.println("Total Files: " + (files.length - 1));
+        System.out.println("Total Size: " + totalSize + " KB");
+
+        System.out.println("\nCategory Counts:");
+        System.out.println("Documents: " + documentCount);
+        System.out.println("Images: " + imageCount);
+        System.out.println("Audio: " + audioCount);
+        System.out.println("Code: " + codeCount);
+        System.out.println("Other: " + otherCount);
+
+        System.out.println("\nLargest File:");
+        System.out.println("Name: " + largestFile);
+        System.out.println("Size: " + largestSize + " KB");
+
+
 }}

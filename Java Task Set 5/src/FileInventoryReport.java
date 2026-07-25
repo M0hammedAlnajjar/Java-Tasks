@@ -16,16 +16,32 @@ public class FileInventoryReport {
         // Total size
         int totalSize = 0;
 
-// File type counters
+        // File type counters
         int documentCount = 0;
         int imageCount = 0;
         int audioCount = 0;
         int codeCount = 0;
         int otherCount = 0;
 
-// Largest file information
+        // Largest file information
         String largestFile = "";
         int largestSize = 0;
 
-    }
-}
+
+        // Process every CSV record
+        for (String record : files) {
+
+            String[] parts = record.split(",");
+
+            // Check if record has two fields
+            if (parts.length != 2) {
+                System.out.println("Invalid record skipped: " + record);
+                continue;
+            }
+
+
+            String fileName = parts[0].trim();
+            int size = Integer.parseInt(parts[1].trim());
+
+        }
+    }}

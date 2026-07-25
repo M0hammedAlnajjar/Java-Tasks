@@ -16,5 +16,26 @@ public class PathSplitter {
         // Replace backslash with slash
         path = path.replace("\\", "/");
 
+
+
+        // Get folder and file name
+        int lastSlash = path.lastIndexOf("/");
+
+        String folder = path.substring(0, lastSlash);
+        String fileName = path.substring(lastSlash + 1);
+
+        // Get extension
+        int dotIndex = fileName.lastIndexOf(".");
+
+        String extension;
+
+        if (dotIndex != -1) {
+            extension = fileName.substring(dotIndex + 1);
+        } else {
+            extension = "none";
+        }
+
     }
+
+
 }

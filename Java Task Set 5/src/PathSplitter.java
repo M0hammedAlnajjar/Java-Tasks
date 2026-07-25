@@ -1,13 +1,14 @@
 public class PathSplitter {
 
-    static void main() {
+    public static void main(String[] args) {
 
-        String NameFile = IO.readln("Enter the NameFile : ");
-        double base = Double.parseDouble(NameFile);
+        String path = IO.readln("Enter the file path: ");
+
+        // Check if path is blank
+        if (path.trim().isEmpty()) {
+            System.out.println("Invalid path.");
+            return;
+        }
 
     }
-
-
-
-
 }

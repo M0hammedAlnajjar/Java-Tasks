@@ -35,6 +35,26 @@ public class PathSplitter {
             extension = "none";
         }
 
+
+
+        // Decide path style
+        String pathStyle;
+
+        if (isWindows) {
+            pathStyle = "Windows Path";
+        } else {
+            pathStyle = "Unix Path";
+        }
+
+        // Print result
+        System.out.println("Path: " + path);
+        System.out.println("Folder: " + folder);
+        System.out.println("File Name: " + fileName);
+        System.out.println("Extension: " + extension);
+        System.out.println("Path Style: " + pathStyle);
+    }
+}
+
     }
 
 

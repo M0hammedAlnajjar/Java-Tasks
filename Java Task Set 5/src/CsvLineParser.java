@@ -21,5 +21,15 @@ public class CsvLineParser {
         System.out.println("City: " + city);
 
     }
+
+
+    // Classify age
+        if (age < 18) {
+        System.out.println("Classification: Minor");
+    } else if (age < 60) {
+        System.out.println("Classification: Adult");
+    } else {
+        System.out.println("Classification: Senior");
+    }
 }
 

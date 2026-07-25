@@ -115,4 +115,12 @@ public class FileInventoryReport {
     }
 
 
+    // Print file details
+            System.out.println("File Name: " + fileName);
+            System.out.println("Extension: " + extension);
+            System.out.println("Type: " + type);
+            System.out.println("Size: " + size + " KB");
+            System.out.println("----------------------");
+
+
 }}

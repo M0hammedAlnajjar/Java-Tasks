@@ -10,5 +10,11 @@ public class PathSplitter {
             return;
         }
 
+        // Check original path type
+        boolean isWindows = path.contains("\\");
+
+        // Replace backslash with slash
+        path = path.replace("\\", "/");
+
     }
 }

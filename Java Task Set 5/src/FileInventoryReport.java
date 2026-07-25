@@ -94,4 +94,25 @@ public class FileInventoryReport {
                 otherCount++;
         }
 
-    }}
+
+        // Add size to total
+        totalSize += size;
+
+
+        // Find largest file
+        if (size > largestSize) {
+            largestSize = size;
+            largestFile = fileName;
+        }
+
+
+        // Print file details
+        System.out.println("File Name: " + fileName);
+        System.out.println("Extension: " + extension);
+        System.out.println("Type: " + type);
+        System.out.println("Size: " + size + " KB");
+        System.out.println("----------------------");
+    }
+
+
+}}

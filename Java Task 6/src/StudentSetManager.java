@@ -23,8 +23,17 @@ public class StudentSetManager {
         IO.println(" Enter your stdent ID : "+ a1);
 
 
+        if (A1<=0) IO.println("Invalid number of students. ");
+        else {
+            IO.println(" student ID "+a1);
+            studentScores.add((int) A1);
+        }
+//        else  (a1=a1);
+//        IO.println("Duplicate ID detected. ID was not added. ");
 
 
+
+        IO.println(studentScores);
 
     }
 }

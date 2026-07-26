@@ -1,7 +1,10 @@
+import java.util.HashSet;
+
 public class ProductInventorySet {
 
 
-    static void main() {
+    public static void main(String args[]) {
+
 
     }
 }

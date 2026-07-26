@@ -11,6 +11,8 @@ public class StudentSetManager {
         studentScores.add("Reship");
 
         IO.println(studentScores);
+        IO.println(studentScores.remove("Ali"));
+        IO.println(studentScores);
 
 
         IO.println("Ali's score: " + studentScores.contains("Ali"));

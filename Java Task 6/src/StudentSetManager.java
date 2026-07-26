@@ -4,36 +4,39 @@ public class StudentSetManager {
 
     public static void main(String[] args) {
 
-        HashSet<Integer> studentScores = new HashSet<>();
+        HashSet<Integer> studentIDs = new HashSet<>();
 
-        studentScores.add(12);
-        studentScores.add(13);
-        studentScores.add(152);
+        // Read number of students
+        String n = IO.readln("Enter number of students: ");
+        int numberOfStudents = Integer.parseInt(n);
 
-        IO.println(studentScores);
-        IO.println(studentScores.remove(13));
-        IO.println(studentScores);
+        // Validate
+        if (numberOfStudents <= 0) {
 
+            IO.println("Invalid number of students.");
 
-        IO.println("Ali's score: " + studentScores.contains("Ali"));
+        } else {
 
-        String a1  =IO.readln("Enter your stdent ID : ");
-        double A1=Double.parseDouble(a1);
+            // Read student IDs
+            for (int i = 1; i <= numberOfStudents; i++) {
 
-        IO.println(" Enter your stdent ID : "+ a1);
+                String s = IO.readln("Enter Student ID " + i + ": ");
+                int id = Integer.parseInt(s);
 
+                if (studentIDs.add(id)) {
 
-        if (A1<=0) IO.println("Invalid number of students. ");
-        else {
-            IO.println(" student ID "+a1);
-            studentScores.add((int) A1);
+                    IO.println("ID added successfully.");
+
+                } else {
+
+                    IO.println("Duplicate ID detected. ID was not added.");
+
+                }
+            }
+
+            IO.println("Student IDs:");
+            IO.println(studentIDs);
         }
-//        else  (a1=a1);
-//        IO.println("Duplicate ID detected. ID was not added. ");
-
-
-
-        IO.println(studentScores);
 
     }
 }

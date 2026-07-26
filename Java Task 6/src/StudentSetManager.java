@@ -4,14 +4,14 @@ public class StudentSetManager {
 
     public static void main(String[] args) {
 
-        HashSet<String> studentScores = new HashSet<>();
+        HashSet<Integer> studentScores = new HashSet<>();
 
-        studentScores.add("Mohammed");
-        studentScores.add("Ali");
-        studentScores.add("Reship");
+        studentScores.add(12);
+        studentScores.add(13);
+        studentScores.add(152);
 
         IO.println(studentScores);
-        IO.println(studentScores.remove("Ali"));
+        IO.println(studentScores.remove(13));
         IO.println(studentScores);
 
 

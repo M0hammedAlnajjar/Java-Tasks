@@ -34,8 +34,38 @@ public class StudentSetManager {
                 }
             }
 
-            IO.println("Student IDs:");
-            IO.println(studentIDs);
+
+            // Count unique IDs
+            int uniqueIDs = studentIDs.size();
+
+
+            // Classification
+            String classification;
+
+            if (uniqueIDs < 5) {
+
+                classification = "Small Registration";
+
+            } else if (uniqueIDs <= 10) {
+
+                classification = "Medium Registration";
+
+            } else {
+
+                classification = "Large Registration";
+
+            }
+
+
+            // Display Report
+            System.out.println("Total IDs entered: " + numberOfStudents);
+
+            System.out.println("Total unique student IDs: " + uniqueIDs);
+
+            System.out.println("All unique student IDs: " + studentIDs);
+
+            System.out.println("Registration classification: " + classification);
+
         }
 
     }

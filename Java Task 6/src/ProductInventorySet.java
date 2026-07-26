@@ -9,5 +9,11 @@ public class ProductInventorySet {
         String number = IO.readln("Enter number of products: ");
         int totalProducts = Integer.parseInt(number);
 
+    if(totalProducts<=0){
+            IO.println("Invalid number of products ");
+
+
+
+    }
     }
 }

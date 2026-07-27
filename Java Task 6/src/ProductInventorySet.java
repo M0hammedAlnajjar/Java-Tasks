@@ -27,5 +27,13 @@ public class ProductInventorySet {
             }
 
         }
+
+        if (productIDs.contains(totalProducts)){
+            IO.println(" Product found in inventory");
+        }
+        else {
+            IO.println("Product not found in inventory");
+        }
     }
 }
+

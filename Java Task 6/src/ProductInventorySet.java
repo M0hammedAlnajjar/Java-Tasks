@@ -12,8 +12,12 @@ public class ProductInventorySet {
     if(totalProducts<=0){
             IO.println("Invalid number of products ");
 
-
-
     }
+    else {
+        for (int i = 1; i <= totalProducts; i++){
+
+        }
+
+        }
     }
 }

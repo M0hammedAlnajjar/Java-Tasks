@@ -12,10 +12,15 @@ public class CourseEnrollmentSet {
             IO.println("Invalid number of courses ");
         }
         else {
-            for(int i= 1 ; i<= b1; i++){
+            for(int i= 1 ; i<= b1; i++) {
 
                 String a = IO.readln("Enter course name  " + i + ": ");
                 int id = Integer.parseInt(a);
+
+            if (CourseNames.add(id)){
+
+
+            }
 
             }
         }

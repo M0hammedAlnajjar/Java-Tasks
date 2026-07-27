@@ -34,6 +34,9 @@ public class ProductInventorySet {
         else {
             IO.println("Product not found in inventory");
         }
+        String inventory = totalProducts < 5 ? "Small Inventory" : totalProducts <= 10 ? "Medium Inventory" : "Large Inventory";
+
+        IO.println("The inventoryType it is : ");
     }
 }
 

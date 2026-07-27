@@ -39,6 +39,7 @@ public class ProductInventorySet {
         IO.println("The inventoryType it is : " +inventory);
 
         IO.println("Total IDs entered  "+number);
+        IO.println("Total unique student IDs  "+productIDs);
     }
 }
 

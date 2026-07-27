@@ -36,7 +36,7 @@ public class ProductInventorySet {
         }
         String inventory = totalProducts < 5 ? "Small Inventory" : totalProducts <= 10 ? "Medium Inventory" : "Large Inventory";
 
-        IO.println("The inventoryType it is : ");
+        IO.println("The inventoryType it is : " +inventory);
     }
 }
 

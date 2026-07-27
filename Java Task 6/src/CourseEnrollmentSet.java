@@ -37,10 +37,10 @@ public class CourseEnrollmentSet {
         String  classification = uniqueIDs <4? "Small Course Catalog":uniqueIDs<=10?"Medium Registration":" Large Registration ";
 
 
-        IO.println("Total IDs entered " + courseNames);
-        IO.println("Total unique student IDs  "+ uniqueIDs);
-        IO.print("All unique student IDs  "+courses);
-        IO.println("Registration classification "+ classification);
+        IO.println("Total IDs entered : " + courseNames);
+        IO.println("Total unique student IDs : "+ uniqueIDs);
+        IO.print("All unique student IDs : "+courses);
+        IO.println("Registration classification :"+ classification);
 
     }
 }

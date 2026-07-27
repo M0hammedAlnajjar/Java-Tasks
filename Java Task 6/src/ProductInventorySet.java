@@ -34,12 +34,17 @@ public class ProductInventorySet {
         else {
             IO.println("Product not found in inventory");
         }
+
+
+        int uniqueIDs = productIDs.size();
         String inventory = totalProducts < 5 ? "Small Inventory" : totalProducts <= 10 ? "Medium Inventory" : "Large Inventory";
 
         IO.println("The inventoryType it is : " +inventory);
 
         IO.println("Total IDs entered  "+number);
         IO.println("Total unique student IDs  "+productIDs);
+        IO.println(" All unique student IDs "+uniqueIDs);
+
     }
 }
 

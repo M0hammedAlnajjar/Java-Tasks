@@ -15,6 +15,8 @@ public class ProductInventorySet {
     }
     else {
         for (int i = 1; i <= totalProducts; i++){
+            String b1 =IO.readln("Enter  your totalProducts :");
+            int Num=Integer.parseInt(b1);
 
         }
 

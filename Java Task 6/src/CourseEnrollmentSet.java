@@ -18,8 +18,11 @@ public class CourseEnrollmentSet {
                 int id = Integer.parseInt(a);
 
             if (CourseNames.add(id)){
+                IO.println("Course already exists");
 
-
+            }
+            else {
+                IO.println(" Duplicate entries are not allowed");
             }
 
             }

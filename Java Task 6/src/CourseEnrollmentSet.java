@@ -33,5 +33,11 @@ public class CourseEnrollmentSet {
                 IO.println("Course not found.");
             }
         }
+        int uniqueIDs = courseNames.size();
+        String  classification = uniqueIDs <4? "Small Course Catalog":uniqueIDs<=10?"Medium Registration":" Large Registration ";
+
+
+        IO.println();
+
     }
 }

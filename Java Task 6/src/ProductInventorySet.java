@@ -6,7 +6,7 @@ public class ProductInventorySet {
 
         HashSet<Integer> productIDs = new HashSet<>();
 
-        String number = IO.readln("Enter number of products: ");
+        String number = IO.readln("Enter numbers of products: ");
         int totalProducts = Integer.parseInt(number);
 
         if (totalProducts <= 0) {
@@ -37,6 +37,8 @@ public class ProductInventorySet {
         String inventory = totalProducts < 5 ? "Small Inventory" : totalProducts <= 10 ? "Medium Inventory" : "Large Inventory";
 
         IO.println("The inventoryType it is : " +inventory);
+
+        IO.println("Total IDs entered  "+number);
     }
 }
 

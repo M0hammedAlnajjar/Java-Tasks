@@ -11,6 +11,11 @@ public class CourseEnrollmentSet {
         if (b1<=0){
             IO.println("Invalid number of courses ");
         }
+        else {
+            for(int i= 1 ; i<= b1; i++){
+
+            }
+        }
 
     }
 }

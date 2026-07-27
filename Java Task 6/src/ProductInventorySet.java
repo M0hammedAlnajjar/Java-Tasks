@@ -16,9 +16,16 @@ public class ProductInventorySet {
     else {
         for (int i = 1; i <= totalProducts; i++){
             String b1 =IO.readln("Enter  your totalProducts :");
-            int Num=Integer.parseInt(b1);
+            int n1=Integer.parseInt(b1);
+
+
+            if (productIDs.add(n1)){
+            IO.println("Product already exists");
 
         }
+            else {
+                if
+            }
 
         }
     }

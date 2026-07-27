@@ -14,6 +14,9 @@ public class CourseEnrollmentSet {
         else {
             for(int i= 1 ; i<= b1; i++){
 
+                String a = IO.readln("Enter course name  " + i + ": ");
+                int id = Integer.parseInt(a);
+
             }
         }
 

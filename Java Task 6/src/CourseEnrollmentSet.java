@@ -39,7 +39,8 @@ public class CourseEnrollmentSet {
 
         IO.println("Total IDs entered " + courseNames);
         IO.println("Total unique student IDs  "+ uniqueIDs);
-        IO.print("All unique student IDs  "+classification);
+        IO.print("All unique student IDs  "+courses);
+        IO.println("Registration classification "+ classification);
 
     }
 }

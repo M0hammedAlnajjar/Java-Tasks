@@ -5,5 +5,8 @@ public class CourseEnrollmentSet {
 
         HashSet<Integer>  CourseNames = new HashSet<>();
 
+        String courses =IO.readln("Enter the number of courses  : ");
+        Integer b1 =Integer.parseInt(courses);
+
     }
 }

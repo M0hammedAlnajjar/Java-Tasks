@@ -24,5 +24,16 @@ public class UniversityCourseRegistrationSystem {
         if (numberOfStudents <= 0) {
 
             System.out.println("Invalid number of students.");
-    }
+
+        } else {
+
+
+            // Add students and courses
+            for (int i = 0; i < numberOfStudents; i++) {
+
+
+                String id = IO.readln("Enter student ID " + (i + 1) + ": ");
+                studentId = Integer.parseInt(id);
+
+            }
 }

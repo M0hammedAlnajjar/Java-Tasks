@@ -53,6 +53,18 @@ public class LibraryBookTracker {
             // Search for a book
             String searchId = IO.readln("Enter book ID to search: ");
             searchBookId = Integer.parseInt(searchId);
+            // Check if book exists
+            if (bookTitles.containsKey(searchBookId)) {
+
+                System.out.println("Book ID: " + searchBookId);
+                System.out.println("Book Title: " + bookTitles.get(searchBookId));
+
+            } else {
+
+                System.out.println("Book not found.");
+
+            }
+
 
 
         }

@@ -16,7 +16,22 @@ public class EmployeeDirectoryMap {
         String searchResult;
         String companyClassification;
 
+        // Check if number of employees is valid
+        if (numberOfEmployees <= 0) {
+
+            System.out.println("Invalid number of employees.");
+
+        } else {
+
+            // Read employee records
+            for (int i = 0; i < numberOfEmployees; i++) {
+
+                String id = IO.readln("Enter employee ID " + (i + 1) + ": ");
+                employeeId = Integer.parseInt(id);
+
+                employeeName = IO.readln("Enter employee name: ");
 
 
-    }
+
+            }
 }

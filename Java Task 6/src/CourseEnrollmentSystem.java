@@ -26,5 +26,17 @@ public class CourseEnrollmentSystem {
         if (numberOfStudents <= 0) {
 
         System.out.println("Invalid number of students.");
+    } else
 
-}
+    {
+
+        // Read student records
+        for (int i = 0; i < numberOfStudents; i++) {
+
+            String id = IO.readln("Enter student ID " + (i + 1) + ": ");
+            studentId = Integer.parseInt(id);
+
+            courseName = IO.readln("Enter course name: ");
+
+        }
+    }}

@@ -20,5 +20,9 @@ public class UniversityCourseRegistrationSystem {
         String courseName;
 
 
+        // Check number of students
+        if (numberOfStudents <= 0) {
+
+            System.out.println("Invalid number of students.");
     }
 }

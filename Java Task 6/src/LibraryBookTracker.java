@@ -39,4 +39,15 @@ public class LibraryBookTracker {
 
                     System.out.println("Duplicate Book ID. Record not added.");
     }
+            } else {
+
+                // Add book ID to HashSet
+                bookIds.add(bookId);
+
+                // Add ID and title to HashMap
+                bookTitles.put(bookId, bookTitle);
+
+            }
+
+        }
 }

@@ -44,4 +44,17 @@ public class CourseEnrollmentSystem {
         if (studentIds.contains(studentId)) {
 
             System.out.println("Student ID already exists. Record not added.");
-    }}
+
+        } else {
+
+            // Add student ID to HashSet
+            studentIds.add(studentId);
+
+            // Add student ID and course to HashMap
+            studentCourses.put(studentId, courseName);
+
+        }
+
+    }
+
+}}

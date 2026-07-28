@@ -268,7 +268,6 @@ public class EmployeeSalaryManager {
 
 
 
-
                     case 6:
 
                         // Display salary statistics

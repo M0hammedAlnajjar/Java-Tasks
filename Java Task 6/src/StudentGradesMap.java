@@ -53,5 +53,16 @@ public class StudentGradesMap {
                     newGrade = Double.parseDouble(newG);
                 }
             }
+            // Replace old grade
+            studentGrades.replace(updateStudentId, newGrade);
+
+            System.out.println("Grade updated successfully.");
+
+        } else {
+
+            System.out.println("Student ID not found.");
+
         }
-    }}
+
+    }
+    }

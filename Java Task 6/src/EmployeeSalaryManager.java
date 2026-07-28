@@ -120,7 +120,6 @@ public class EmployeeSalaryManager {
                         break;
 
 
-
                     case 2:
 
                         // Search employee

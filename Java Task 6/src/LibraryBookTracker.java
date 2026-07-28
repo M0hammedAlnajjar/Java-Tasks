@@ -65,7 +65,20 @@ public class LibraryBookTracker {
 
             }
 
+            // Classify library size
+            if (bookIds.size() < 5) {
 
+                libraryClassification = "Small Library";
+
+            } else if (bookIds.size() <= 10) {
+
+                libraryClassification = "Medium Library";
+
+            } else {
+
+                libraryClassification = "Large Library";
+
+            }
 
         }
 }

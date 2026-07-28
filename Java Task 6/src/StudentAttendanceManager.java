@@ -277,7 +277,6 @@ public class StudentAttendanceManager {
 
 
 
-
                 case 5:
 
                     // Display all attendance records

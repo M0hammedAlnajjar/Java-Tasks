@@ -94,4 +94,16 @@ public class CourseEnrollmentSystem {
 
     }
 
+    // Display results
+            System.out.println("\n----- Course Enrollment Report -----");
+            System.out.println("Total student records entered: " + numberOfStudents);
+            System.out.println("Total unique students: " + studentIds.size());
+            System.out.println("All student IDs: " + studentIds);
+            System.out.println("Student IDs with courses: " + studentCourses);
+            System.out.println("Enrollment classification: " + enrollmentClassification);
+
+}
+
+    } }
+
 }}

@@ -63,6 +63,15 @@ public class StudentGradesMap {
             System.out.println("Student ID not found.");
 
         }
+        // Calculate average grade
+        for (double studentGrade : studentGrades.values()) {
+
+            totalGrades += studentGrade;
+
+        }
+
+        averageGrade = totalGrades / studentGrades.size();
+
 
     }
     }

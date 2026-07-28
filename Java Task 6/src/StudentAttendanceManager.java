@@ -184,7 +184,6 @@ public class StudentAttendanceManager {
 
 
 
-
                 case 3:
 
                     // Update attendance

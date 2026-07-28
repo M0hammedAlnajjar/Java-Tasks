@@ -45,7 +45,6 @@ public class UniversityCourseRegistrationSystem {
 
             } else {
 
-
                 studentIds.add(studentId);
 
 

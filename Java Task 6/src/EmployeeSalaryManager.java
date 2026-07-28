@@ -242,7 +242,6 @@ public class EmployeeSalaryManager {
 
 
 
-
                     case 5:
 
                         // Display all employees

@@ -32,7 +32,18 @@ public class StudentGradesMap {
 
                 String g = IO.readln("Enter student grade: ");
                 grade = Double.parseDouble(g);
+// Check for duplicate ID
+                if (studentGrades.containsKey(studentId)) {
 
+                    System.out.println("Student ID already exists. Record not added.");
+
+                } else {
+
+                    studentGrades.put(studentId, grade);
+
+                }
+
+            }
             }
         }
     }}

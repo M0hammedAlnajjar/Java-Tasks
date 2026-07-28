@@ -158,7 +158,6 @@ public class UniversityCourseRegistrationSystem {
                     break;
 
 
-
                 case 3:
 
                     // Remove course

@@ -67,4 +67,15 @@ public class CourseEnrollmentSystem {
 
         newCourseName = IO.readln("Enter new course name: ");
 
+        // Update course using replace()
+        studentCourses.replace(updateStudentId, newCourseName);
+
+        System.out.println("Course updated successfully.");
+
+    } else {
+
+        System.out.println("Student ID not found.");
+
+    }
+
 }}

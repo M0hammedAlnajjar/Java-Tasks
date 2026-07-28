@@ -46,7 +46,20 @@ public class CityDirectorySet {
                     searchResult = "City not found in the directory.";
 
                 }
+                    // Classify directory
+                if (cityDirectory.size() < 5) {
 
+                    directoryClassification = "Small Directory";
+
+                } else if (cityDirectory.size() <= 10) {
+
+                    directoryClassification = "Medium Directory";
+
+                } else {
+
+                    directoryClassification = "Large Directory";
+
+                }
             }
         }
     }}

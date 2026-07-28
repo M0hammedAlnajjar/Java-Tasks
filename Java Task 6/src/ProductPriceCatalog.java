@@ -79,4 +79,18 @@ public class ProductPriceCatalog {
             searchResult = "Product not found.";
 
         }
+        // Classify inventory
+        if (productCatalog.size() < 5) {
+
+            inventoryClassification = "Small Inventory";
+
+        } else if (productCatalog.size() <= 10) {
+
+            inventoryClassification = "Medium Inventory";
+
+        } else {
+
+            inventoryClassification = "Large Inventory";
+
+        }
             }}

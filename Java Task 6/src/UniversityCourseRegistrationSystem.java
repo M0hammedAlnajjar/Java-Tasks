@@ -55,3 +55,19 @@ public class UniversityCourseRegistrationSystem {
                 HashSet<String> courses = new HashSet<>();
 
             }
+
+            // Add courses
+            for (int j = 0; j < numberOfCourses; j++) {
+
+                courseName = IO.readln("Enter course name: ");
+
+                courses.add(courseName);
+
+            }
+
+
+            studentCourses.put(studentId, courses);
+
+        }
+
+    }

@@ -17,6 +17,22 @@ public class StudentGradesMap {
         double totalGrades = 0;
         double averageGrade;
         String classPerformance;
+        // Check if number of students is valid
+        if (numberOfStudents <= 0) {
 
-    }
-}
+            System.out.println("Invalid number of students.");
+
+        } else {
+
+            // Read student records
+            for (int i = 0; i < numberOfStudents; i++) {
+
+                String id = IO.readln("Enter student ID " + (i + 1) + ": ");
+                studentId = Integer.parseInt(id);
+
+                String g = IO.readln("Enter student grade: ");
+                grade = Double.parseDouble(g);
+
+            }
+        }
+    }}

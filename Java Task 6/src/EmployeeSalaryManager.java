@@ -155,7 +155,6 @@ public class EmployeeSalaryManager {
 
 
 
-
                     case 3:
 
                         // Update salary

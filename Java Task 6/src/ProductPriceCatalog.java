@@ -48,4 +48,20 @@ public class ProductPriceCatalog {
             productCatalog.put(productName, productPrice);
 
         }
-    }}
+
+
+        // Search for a product
+        searchProduct = IO.readln("Enter product name to search: ");
+
+        if (productCatalog.containsKey(searchProduct)) {
+
+            System.out.println("Current price: " + productCatalog.get(searchProduct));
+
+            updateChoice = IO.readln("Do you want to update the price? (Y/N): ");
+
+            if (updateChoice.equalsIgnoreCase("Y")) {
+
+                String price = IO.readln("Enter new price: ");
+                newPrice = Double.parseDouble(price);
+
+            }}

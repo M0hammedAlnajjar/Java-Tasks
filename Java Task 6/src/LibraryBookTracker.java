@@ -49,5 +49,11 @@ public class LibraryBookTracker {
 
             }
 
+
+            // Search for a book
+            String searchId = IO.readln("Enter book ID to search: ");
+            searchBookId = Integer.parseInt(searchId);
+
+
         }
 }

@@ -46,5 +46,10 @@ public class EmployeeDirectoryMap {
 
             }
 
+
+            // Search for an employee
+            String searchId = IO.readln("Enter employee ID to search: ");
+            searchEmployeeId = Integer.parseInt(searchId);
+
         }
     }}

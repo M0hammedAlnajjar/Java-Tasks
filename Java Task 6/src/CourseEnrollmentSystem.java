@@ -78,4 +78,20 @@ public class CourseEnrollmentSystem {
 
     }
 
+
+    // Classify enrollment size
+            if (studentIds.size() < 5) {
+
+        enrollmentClassification = "Small Enrollment";
+
+    } else if (studentIds.size() <= 15) {
+
+        enrollmentClassification = "Medium Enrollment";
+
+    } else {
+
+        enrollmentClassification = "Large Enrollment";
+
+    }
+
 }}

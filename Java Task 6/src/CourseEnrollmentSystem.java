@@ -62,4 +62,9 @@ public class CourseEnrollmentSystem {
 
     }
 
+    // Check if student exists
+            if (studentCourses.containsKey(updateStudentId)) {
+
+        newCourseName = IO.readln("Enter new course name: ");
+
 }}

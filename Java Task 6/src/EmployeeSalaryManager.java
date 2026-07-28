@@ -16,5 +16,11 @@ public class EmployeeSalaryManager {
         int choice;
 
 
+        // Check if number of employees is valid
+        if (numberOfEmployees <= 0) {
+
+            System.out.println("Invalid number of employees.");
+
+        }
     }
 }

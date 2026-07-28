@@ -36,4 +36,23 @@ public class UniversityCourseRegistrationSystem {
                 studentId = Integer.parseInt(id);
 
             }
-}
+
+
+            // Check duplicate student ID
+            if (studentIds.contains(studentId)) {
+
+                System.out.println("Student ID already exists. Record skipped.");
+
+            } else {
+
+
+                studentIds.add(studentId);
+
+
+                String courseNumber = IO.readln("Enter number of courses: ");
+                int numberOfCourses = Integer.parseInt(courseNumber);
+
+
+                HashSet<String> courses = new HashSet<>();
+
+            }

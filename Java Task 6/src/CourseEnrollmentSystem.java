@@ -8,7 +8,8 @@ public class CourseEnrollmentSystem {
         // Create HashSet to store unique student IDs
         HashSet<Integer> studentIds = new HashSet<>();
 
-
+        // Create HashMap to store student IDs and course names
+        HashMap<Integer, String> studentCourses = new HashMap<>();
 
     }
 

@@ -60,6 +60,13 @@ public class CityDirectorySet {
                     directoryClassification = "Large Directory";
 
                 }
+                // Display results
+                System.out.println("\n----- City Directory Report -----");
+                System.out.println("Total cities entered: " + numberOfCities);
+                System.out.println("Total unique cities: " + cityDirectory.size());
+                System.out.println("Cities in alphabetical order: " + cityDirectory);
+                System.out.println("Search result: " + searchResult);
+                System.out.println("Directory classification: " + directoryClassification);
             }
         }
     }}

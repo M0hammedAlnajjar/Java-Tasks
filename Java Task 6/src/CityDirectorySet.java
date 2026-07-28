@@ -6,6 +6,16 @@ public class CityDirectorySet {
         // Create TreeSet to store unique city names
         TreeSet<String> cityDirectory = new TreeSet<>();
 
+        // Declare variables
+        String n = IO.readln("Enter number of cities: ");
+        int numberOfCities = Integer.parseInt(n);
+
+        String cityName;
+        String searchCity;
+        String searchResult;
+        String directoryClassification;
+
+
 
     }
 }

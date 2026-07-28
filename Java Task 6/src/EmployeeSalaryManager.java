@@ -2,11 +2,14 @@ import java.util.HashMap;
 
 public class EmployeeSalaryManager {
 
-
     public static void main() {
+
+
         // Create HashMap to store employee IDs and salaries
         HashMap<Integer, Double> employeeSalaries = new HashMap<>();
-// Declare variables
+
+
+        // Declare variables
         String n = IO.readln("Enter number of employees: ");
         int numberOfEmployees = Integer.parseInt(n);
 
@@ -16,42 +19,48 @@ public class EmployeeSalaryManager {
         int choice;
 
 
+
         // Check if number of employees is valid
         if (numberOfEmployees <= 0) {
 
             System.out.println("Invalid number of employees.");
- else {
+
+        } else {
 
 
-                // Add initial employee records
-                for (int i = 0; i < numberOfEmployees; i++) {
+            // Add initial employee records
+            for (int i = 0; i < numberOfEmployees; i++) {
 
 
-                    String id = IO.readln("Enter employee ID " + (i + 1) + ": ");
-                    employeeId = Integer.parseInt(id);
+                String id = IO.readln("Enter employee ID " + (i + 1) + ": ");
+                employeeId = Integer.parseInt(id);
 
 
-                    String salaryInput = IO.readln("Enter employee salary: ");
-                    salary = Double.parseDouble(salaryInput);
+                String salaryInput = IO.readln("Enter employee salary: ");
+                salary = Double.parseDouble(salaryInput);
+
+
+
+                // Check duplicate employee ID
+                if (employeeSalaries.containsKey(employeeId)) {
+
+
+                    System.out.println(
+                            "Employee ID already exists. Record not added.");
+
+
+                } else {
+
+
+                    employeeSalaries.put(employeeId, salary);
 
 
                 }
-    }
 
-            // Check duplicate employee ID
-            if (employeeSalaries.containsKey(employeeId)) {
-
-
-                System.out.println(
-                        "Employee ID already exists. Record not added.");
-
-
-            } else {
-
-
-                employeeSalaries.put(employeeId, salary);
 
             }
+
+
 
             // Menu system
             do {
@@ -120,6 +129,7 @@ public class EmployeeSalaryManager {
                         break;
 
 
+
                     case 2:
 
                         // Search employee
@@ -152,6 +162,7 @@ public class EmployeeSalaryManager {
 
 
                         break;
+
 
 
 
@@ -205,6 +216,7 @@ public class EmployeeSalaryManager {
 
 
 
+
                     case 4:
 
                         // Remove employee
@@ -242,6 +254,7 @@ public class EmployeeSalaryManager {
 
 
 
+
                     case 5:
 
                         // Display all employees
@@ -265,6 +278,7 @@ public class EmployeeSalaryManager {
 
 
                         break;
+
 
 
 
@@ -367,7 +381,3 @@ public class EmployeeSalaryManager {
     }
 
 }
-
-        }
-
-    }

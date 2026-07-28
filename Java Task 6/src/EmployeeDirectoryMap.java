@@ -32,6 +32,19 @@ public class EmployeeDirectoryMap {
                 employeeName = IO.readln("Enter employee name: ");
 
 
+            }
+
+
+            // Check if employee ID already exists
+            if (employeeDirectory.containsKey(employeeId)) {
+
+                System.out.println("Employee ID already exists. Please enter a unique ID.");
+
+            } else {
+
+                employeeDirectory.put(employeeId, employeeName);
 
             }
-}
+
+        }
+    }}

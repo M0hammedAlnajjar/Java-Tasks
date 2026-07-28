@@ -34,6 +34,9 @@ public class LibraryBookTracker {
                 bookId = Integer.parseInt(id);
 
                 bookTitle = IO.readln("Enter book title: ");
+// Check if book ID already exists
+                if (bookIds.contains(bookId)) {
 
+                    System.out.println("Duplicate Book ID. Record not added.");
     }
 }

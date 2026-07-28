@@ -63,5 +63,20 @@ public class ProductPriceCatalog {
 
                 String price = IO.readln("Enter new price: ");
                 newPrice = Double.parseDouble(price);
+                // Update product price
+                productCatalog.replace(searchProduct, newPrice);
 
+                searchResult = "Price updated successfully.";
+
+            } else {
+
+                searchResult = "Price was not updated.";
+
+            }
+
+        } else {
+
+            searchResult = "Product not found.";
+
+        }
             }}

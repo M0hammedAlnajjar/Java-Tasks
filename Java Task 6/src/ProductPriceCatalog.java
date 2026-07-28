@@ -93,4 +93,13 @@ public class ProductPriceCatalog {
             inventoryClassification = "Large Inventory";
 
         }
+
+
+        // Display results
+        System.out.println("\n----- Product Price Catalog Report -----");
+        System.out.println("Total products entered: " + numberOfProducts);
+        System.out.println("Total unique products: " + productCatalog.size());
+        System.out.println("Product Catalog: " + productCatalog);
+        System.out.println("Search/Update Result: " + searchResult);
+        System.out.println("Inventory classification: " + inventoryClassification);
             }}

@@ -34,6 +34,19 @@ public class CityDirectorySet {
 
                 }
 
+                // Search for a city
+                searchCity = IO.readln("Enter city name to search: ");
+
+                if (cityDirectory.contains(searchCity)) {
+
+                    searchResult = "City found in the directory.";
+
+                } else {
+
+                    searchResult = "City not found in the directory.";
+
+                }
+
             }
         }
     }}

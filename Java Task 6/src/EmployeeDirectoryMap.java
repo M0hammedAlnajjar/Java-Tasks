@@ -63,4 +63,20 @@ public class EmployeeDirectoryMap {
             searchResult = "Employee ID not found.";
 
         }
+
+        // Classify company
+        if (employeeDirectory.size() < 5) {
+
+            companyClassification = "Small Company";
+
+        } else if (employeeDirectory.size() <= 10) {
+
+            companyClassification = "Medium Company";
+
+        } else {
+
+            companyClassification = "Large Company";
+
+        }
+
     }}

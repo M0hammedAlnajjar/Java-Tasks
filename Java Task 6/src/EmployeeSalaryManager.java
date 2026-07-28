@@ -51,7 +51,6 @@ public class EmployeeSalaryManager {
 
                 employeeSalaries.put(employeeId, salary);
 
-
             }
 
 

@@ -6,5 +6,9 @@ public class UniversityCourseRegistrationSystem {
 
     public static void main() {
 
+        // Store unique student IDs
+        HashSet<Integer> studentIds = new HashSet<>();
+
+
     }
 }

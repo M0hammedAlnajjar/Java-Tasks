@@ -39,4 +39,9 @@ public class CourseEnrollmentSystem {
             courseName = IO.readln("Enter course name: ");
 
         }
+
+        // Check if student ID already exists
+        if (studentIds.contains(studentId)) {
+
+            System.out.println("Student ID already exists. Record not added.");
     }}

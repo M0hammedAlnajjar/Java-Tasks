@@ -99,7 +99,6 @@ public class StudentAttendanceManager {
             switch (choice) {
 
 
-
                 case 1:
 
                     // Add student record

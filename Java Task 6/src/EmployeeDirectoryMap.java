@@ -52,4 +52,15 @@ public class EmployeeDirectoryMap {
             searchEmployeeId = Integer.parseInt(searchId);
 
         }
+
+        // Check if employee exists
+        if (employeeDirectory.containsKey(searchEmployeeId)) {
+
+            searchResult = "Employee Found: " + employeeDirectory.get(searchEmployeeId);
+
+        } else {
+
+            searchResult = "Employee ID not found.";
+
+        }
     }}

@@ -12,6 +12,14 @@ public class LibraryBookTracker {
         HashMap<Integer, String> bookTitles = new HashMap<>();
 
 
+// Declare variables
+        String n = IO.readln("Enter number of books: ");
+        int numberOfBooks = Integer.parseInt(n);
+
+        int bookId;
+        String bookTitle;
+        int searchBookId;
+        String libraryClassification;
 
     }
 }

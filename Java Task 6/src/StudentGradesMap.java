@@ -87,5 +87,12 @@ public class StudentGradesMap {
             classPerformance = "Excellent Performance";
 
         }
+        // Display results
+        System.out.println("\n----- Student Grades Report -----");
+        System.out.println("Total student records: " + studentGrades.size());
+        System.out.println("Student Grades: " + studentGrades);
+        System.out.println("Average grade: " + averageGrade);
+        System.out.println("Class performance: " + classPerformance);
+
     }
     }

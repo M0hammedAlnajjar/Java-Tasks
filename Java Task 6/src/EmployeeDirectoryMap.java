@@ -79,4 +79,14 @@ public class EmployeeDirectoryMap {
 
         }
 
+        // Display results
+        System.out.println("\n----- Employee Directory Report -----");
+        System.out.println("Total employee records entered: " + numberOfEmployees);
+        System.out.println("Total unique employees: " + employeeDirectory.size());
+        System.out.println("Employee Directory: " + employeeDirectory);
+        System.out.println("Search result: " + searchResult);
+        System.out.println("Company classification: " + companyClassification);
+
+
+
     }}

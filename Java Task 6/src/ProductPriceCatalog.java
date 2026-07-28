@@ -24,8 +24,17 @@ public class ProductPriceCatalog {
 
         System.out.println("Invalid number of products.");
 
-    } else {
+    } else
 
-    }
+    {
 
-}
+        // Read product names and prices
+        for (int i = 0; i < numberOfProducts; i++) {
+
+            productName = IO.readln("Enter product name " + (i + 1) + ": ");
+
+            String price = IO.readln("Enter product price: ");
+            productPrice = Double.parseDouble(price);
+
+        }
+    }}

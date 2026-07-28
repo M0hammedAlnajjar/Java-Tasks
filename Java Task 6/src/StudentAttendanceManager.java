@@ -237,7 +237,6 @@ public class StudentAttendanceManager {
 
 
 
-
                 case 4:
 
                     // Remove student record

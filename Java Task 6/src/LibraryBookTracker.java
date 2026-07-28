@@ -80,5 +80,15 @@ public class LibraryBookTracker {
 
             }
 
+
+            // Display library report
+            System.out.println("\n----- Library Book Report -----");
+            System.out.println("Total book records entered: " + numberOfBooks);
+            System.out.println("Total unique books: " + bookIds.size());
+            System.out.println("All book IDs: " + bookIds);
+            System.out.println("Book IDs with titles: " + bookTitles);
+            System.out.println("Library classification: " + libraryClassification);
+
+
         }
 }

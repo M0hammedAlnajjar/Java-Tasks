@@ -20,7 +20,21 @@ public class EmployeeSalaryManager {
         if (numberOfEmployees <= 0) {
 
             System.out.println("Invalid number of employees.");
+ else {
 
-        }
+
+                // Add initial employee records
+                for (int i = 0; i < numberOfEmployees; i++) {
+
+
+                    String id = IO.readln("Enter employee ID " + (i + 1) + ": ");
+                    employeeId = Integer.parseInt(id);
+
+
+                    String salaryInput = IO.readln("Enter employee salary: ");
+                    salary = Double.parseDouble(salaryInput);
+
+
+                }
     }
 }

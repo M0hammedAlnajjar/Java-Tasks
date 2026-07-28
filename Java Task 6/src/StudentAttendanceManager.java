@@ -148,7 +148,6 @@ public class StudentAttendanceManager {
 
 
 
-
                 case 2:
 
                     // Search student attendance

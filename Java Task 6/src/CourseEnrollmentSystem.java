@@ -55,6 +55,11 @@ public class CourseEnrollmentSystem {
 
         }
 
+
+        // Update student course
+        String updateId = IO.readln("Enter student ID to update course: ");
+        updateStudentId = Integer.parseInt(updateId);
+
     }
 
 }}

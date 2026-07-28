@@ -37,4 +37,24 @@ public class EmployeeSalaryManager {
 
                 }
     }
-}
+
+            // Check duplicate employee ID
+            if (employeeSalaries.containsKey(employeeId)) {
+
+
+                System.out.println(
+                        "Employee ID already exists. Record not added.");
+
+
+            } else {
+
+
+                employeeSalaries.put(employeeId, salary);
+
+
+            }
+
+
+        }
+
+    }

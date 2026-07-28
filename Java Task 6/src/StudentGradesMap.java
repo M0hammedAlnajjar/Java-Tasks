@@ -43,7 +43,15 @@ public class StudentGradesMap {
 
                 }
 
-            }
+                // Update student grade
+                String updateId = IO.readln("Enter student ID to update: ");
+                updateStudentId = Integer.parseInt(updateId);
+
+                if (studentGrades.containsKey(updateStudentId)) {
+
+                    String newG = IO.readln("Enter new grade: ");
+                    newGrade = Double.parseDouble(newG);
+                }
             }
         }
     }}

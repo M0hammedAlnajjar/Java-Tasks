@@ -1,4 +1,5 @@
 import java.util.HashMap;
+
 public class EmployeeDirectoryMap {
 
     public static void main() {
@@ -6,7 +7,7 @@ public class EmployeeDirectoryMap {
         // Create HashMap to store employee IDs and names
         HashMap<Integer, String> employeeDirectory = new HashMap<>();
 
-
+        // Declare variables
         String n = IO.readln("Enter number of employees: ");
         int numberOfEmployees = Integer.parseInt(n);
 
@@ -31,62 +32,59 @@ public class EmployeeDirectoryMap {
 
                 employeeName = IO.readln("Enter employee name: ");
 
+                // Check if employee ID already exists
+                if (employeeDirectory.containsKey(employeeId)) {
+
+                    System.out.println("Employee ID already exists. Please enter a unique ID.");
+
+                } else {
+
+                    employeeDirectory.put(employeeId, employeeName);
+
+                }
 
             }
-
-
-            // Check if employee ID already exists
-            if (employeeDirectory.containsKey(employeeId)) {
-
-                System.out.println("Employee ID already exists. Please enter a unique ID.");
-
-            } else {
-
-                employeeDirectory.put(employeeId, employeeName);
-
-            }
-
 
             // Search for an employee
             String searchId = IO.readln("Enter employee ID to search: ");
             searchEmployeeId = Integer.parseInt(searchId);
 
+            // Check if employee exists
+            if (employeeDirectory.containsKey(searchEmployeeId)) {
+
+                searchResult = "Employee Found: " + employeeDirectory.get(searchEmployeeId);
+
+            } else {
+
+                searchResult = "Employee ID not found.";
+
+            }
+
+            // Classify company
+            if (employeeDirectory.size() < 5) {
+
+                companyClassification = "Small Company";
+
+            } else if (employeeDirectory.size() <= 10) {
+
+                companyClassification = "Medium Company";
+
+            } else {
+
+                companyClassification = "Large Company";
+
+            }
+
+            // Display results
+            System.out.println("\n----- Employee Directory Report -----");
+            System.out.println("Total employee records entered: " + numberOfEmployees);
+            System.out.println("Total unique employees: " + employeeDirectory.size());
+            System.out.println("Employee Directory: " + employeeDirectory);
+            System.out.println("Search result: " + searchResult);
+            System.out.println("Company classification: " + companyClassification);
+
         }
 
-        // Check if employee exists
-        if (employeeDirectory.containsKey(searchEmployeeId)) {
+    }
 
-            searchResult = "Employee Found: " + employeeDirectory.get(searchEmployeeId);
-
-        } else {
-
-            searchResult = "Employee ID not found.";
-
-        }
-
-        // Classify company
-        if (employeeDirectory.size() < 5) {
-
-            companyClassification = "Small Company";
-
-        } else if (employeeDirectory.size() <= 10) {
-
-            companyClassification = "Medium Company";
-
-        } else {
-
-            companyClassification = "Large Company";
-
-        }
-
-        // Display results
-        System.out.println("\n----- Employee Directory Report -----");
-        System.out.println("Total employee records entered: " + numberOfEmployees);
-        System.out.println("Total unique employees: " + employeeDirectory.size());
-        System.out.println("Employee Directory: " + employeeDirectory);
-        System.out.println("Search result: " + searchResult);
-        System.out.println("Company classification: " + companyClassification);
-
-
-
-    }}
+}

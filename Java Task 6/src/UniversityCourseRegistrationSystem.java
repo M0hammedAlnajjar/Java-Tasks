@@ -9,6 +9,9 @@ public class UniversityCourseRegistrationSystem {
         // Store unique student IDs
         HashSet<Integer> studentIds = new HashSet<>();
 
+        // Store student IDs and their registered courses
+        HashMap<Integer, HashSet<String>> studentCourses = new HashMap<>();
+
 
     }
 }

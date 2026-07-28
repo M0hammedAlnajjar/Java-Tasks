@@ -20,6 +20,10 @@ public class LibraryBookTracker {
         String bookTitle;
         int searchBookId;
         String libraryClassification;
+// Check if number of books is valid
+        if (numberOfBooks <= 0) {
+
+            System.out.println("Invalid number of books.");
 
     }
 }

@@ -16,9 +16,27 @@ public class CityDirectorySet {
         String directoryClassification;
 
 
+        // Check if number is valid
+        if (numberOfCities <= 0) {
 
-    }
-}
+            System.out.println("Invalid number of cities.");
+
+        } else {
+
+            // Read city names
+            for (int i = 0; i < numberOfCities; i++) {
+
+                cityName = IO.readln("Enter city name " + (i + 1) + ": ");
+
+                if (!cityDirectory.add(cityName)) {
+
+                    System.out.println("City already exists. Duplicate entries are not allowed.");
+
+                }
+
+            }
+        }
+    }}
 
 
 

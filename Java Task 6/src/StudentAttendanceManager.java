@@ -16,5 +16,13 @@ public class StudentAttendanceManager {
         int attendanceDays;
         int choice;
 
+        // Check if number of students is valid
+        if (numberOfStudents <= 0) {
+
+
+            System.out.println("Invalid number of students.");
+
+
+        }
     }
 }

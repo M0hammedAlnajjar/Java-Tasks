@@ -22,4 +22,9 @@ public class CourseEnrollmentSystem {
         String enrollmentClassification;
     }
 
+    // Check if number of students is valid
+        if (numberOfStudents <= 0) {
+
+        System.out.println("Invalid number of students.");
+
 }

@@ -25,5 +25,15 @@ public class LibraryBookTracker {
 
             System.out.println("Invalid number of books.");
 
+        } else {
+
+            // Read book records
+            for (int i = 0; i < numberOfBooks; i++) {
+
+                String id = IO.readln("Enter book ID " + (i + 1) + ": ");
+                bookId = Integer.parseInt(id);
+
+                bookTitle = IO.readln("Enter book title: ");
+
     }
 }

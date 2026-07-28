@@ -19,5 +19,13 @@ public class ProductPriceCatalog {
         String inventoryClassification;
 
     }
+    // Check if number of products is valid
+        if (numberOfProducts <= 0) {
+
+        System.out.println("Invalid number of products.");
+
+    } else {
+
+    }
 
 }

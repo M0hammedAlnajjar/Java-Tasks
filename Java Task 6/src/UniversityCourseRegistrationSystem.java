@@ -234,7 +234,6 @@ public class UniversityCourseRegistrationSystem {
 
 
 
-
                 case 5:
 
                     // Registration statistics

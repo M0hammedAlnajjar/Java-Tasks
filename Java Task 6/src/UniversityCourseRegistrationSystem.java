@@ -208,7 +208,6 @@ public class UniversityCourseRegistrationSystem {
 
 
 
-
                 case 4:
 
                     // Display all students

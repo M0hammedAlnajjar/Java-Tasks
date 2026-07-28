@@ -73,5 +73,19 @@ public class StudentGradesMap {
         averageGrade = totalGrades / studentGrades.size();
 
 
+        // Classify class performance
+        if (averageGrade < 60) {
+
+            classPerformance = "Needs Improvement";
+
+        } else if (averageGrade <= 84) {
+
+            classPerformance = "Good Performance";
+
+        } else {
+
+            classPerformance = "Excellent Performance";
+
+        }
     }
     }

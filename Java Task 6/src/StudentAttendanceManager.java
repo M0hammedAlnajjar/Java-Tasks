@@ -329,7 +329,6 @@ public class StudentAttendanceManager {
 
 
 
-
                     // Use entrySet to process records
                     for (var entry :
                             attendanceRecords.entrySet()) {

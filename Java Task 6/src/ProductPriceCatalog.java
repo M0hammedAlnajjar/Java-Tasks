@@ -37,4 +37,15 @@ public class ProductPriceCatalog {
             productPrice = Double.parseDouble(price);
 
         }
+
+        // Check for duplicate product
+        if (productCatalog.containsKey(productName)) {
+
+            System.out.println("Product already exists. Record not added.");
+
+        } else {
+
+            productCatalog.put(productName, productPrice);
+
+        }
     }}

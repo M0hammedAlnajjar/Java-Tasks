@@ -5,6 +5,7 @@ public class LibraryBookTracker {
 
 
     public static void main() {
-
+        // Create HashSet to store unique book IDs
+        HashSet<Integer> bookIds = new HashSet<>();
     }
 }

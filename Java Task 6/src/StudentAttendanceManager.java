@@ -306,7 +306,6 @@ public class StudentAttendanceManager {
 
 
 
-
                 case 6:
 
                     // Display attendance statistics

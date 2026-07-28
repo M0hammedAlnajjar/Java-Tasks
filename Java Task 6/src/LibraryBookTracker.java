@@ -3,16 +3,15 @@ import java.util.HashSet;
 
 public class LibraryBookTracker {
 
-
     public static void main() {
+
         // Create HashSet to store unique book IDs
         HashSet<Integer> bookIds = new HashSet<>();
 
         // Create HashMap to store book IDs and titles
         HashMap<Integer, String> bookTitles = new HashMap<>();
 
-
-// Declare variables
+        // Declare variables
         String n = IO.readln("Enter number of books: ");
         int numberOfBooks = Integer.parseInt(n);
 
@@ -20,7 +19,8 @@ public class LibraryBookTracker {
         String bookTitle;
         int searchBookId;
         String libraryClassification;
-// Check if number of books is valid
+
+        // Check if number of books is valid
         if (numberOfBooks <= 0) {
 
             System.out.println("Invalid number of books.");
@@ -34,25 +34,29 @@ public class LibraryBookTracker {
                 bookId = Integer.parseInt(id);
 
                 bookTitle = IO.readln("Enter book title: ");
-// Check if book ID already exists
+
+                // Check if book ID already exists
                 if (bookIds.contains(bookId)) {
 
                     System.out.println("Duplicate Book ID. Record not added.");
-    }
-            } else {
 
-                // Add book ID to HashSet
-                bookIds.add(bookId);
+                } else {
 
-                // Add ID and title to HashMap
-                bookTitles.put(bookId, bookTitle);
+                    // Add book ID to HashSet
+                    bookIds.add(bookId);
+
+                    // Add ID and title to HashMap
+                    bookTitles.put(bookId, bookTitle);
+
+                }
 
             }
-
 
             // Search for a book
             String searchId = IO.readln("Enter book ID to search: ");
             searchBookId = Integer.parseInt(searchId);
+
+
             // Check if book exists
             if (bookTitles.containsKey(searchBookId)) {
 
@@ -64,6 +68,7 @@ public class LibraryBookTracker {
                 System.out.println("Book not found.");
 
             }
+
 
             // Classify library size
             if (bookIds.size() < 5) {
@@ -89,6 +94,8 @@ public class LibraryBookTracker {
             System.out.println("Book IDs with titles: " + bookTitles);
             System.out.println("Library classification: " + libraryClassification);
 
-
         }
+
+    }
+
 }

@@ -104,7 +104,34 @@ public class StudentNameManager {
                         break;
 
                     case 3:
-                        IO.println("Update Student Name");
+
+                        String oldName = IO.readln("Enter existing student name: ");
+                        String newName = IO.readln("Enter new student name: ");
+
+                        boolean updated = false;
+
+                        for (int i = 0; i < student.length; i++) {
+
+                            if (student[i] != null && student[i].equals(oldName)) {
+
+                                student[i] = newName;
+                                updated = true;
+                                break;
+
+                            }
+
+                        }
+
+                        if (updated) {
+
+                            IO.println("Student name updated successfully.");
+
+                        } else {
+
+                            IO.println("Student not found.");
+
+                        }
+
                         break;
 
                     case 4:

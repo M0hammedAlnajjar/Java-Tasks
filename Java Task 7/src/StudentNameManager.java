@@ -230,9 +230,55 @@ public class StudentNameManager {
                         break;
 
                     case 6:
-                        IO.println("Compare Two Names");
-                        break;
 
+                        String firstName = IO.readln("Enter first student name: ");
+                        String secondName = IO.readln("Enter second student name: ");
+
+
+                        // equals()
+                        if (firstName.equals(secondName)) {
+
+                            IO.println("equals(): Names are exactly the same.");
+
+                        } else {
+
+                            IO.println("equals(): Names are different.");
+
+                        }
+
+
+                        // equalsIgnoreCase()
+                        if (firstName.equalsIgnoreCase(secondName)) {
+
+                            IO.println("equalsIgnoreCase(): Names are the same ignoring case.");
+
+                        } else {
+
+                            IO.println("equalsIgnoreCase(): Names are different.");
+
+                        }
+
+
+                        // compareTo()
+                        int result = firstName.compareTo(secondName);
+
+
+                        if (result == 0) {
+
+                            IO.println("compareTo(): Names are equal.");
+
+                        } else if (result > 0) {
+
+                            IO.println("compareTo(): First name comes after second name.");
+
+                        } else {
+
+                            IO.println("compareTo(): First name comes before second name.");
+
+                        }
+
+
+                        break;
                     case 7:
                         IO.println("Goodbye!");
                         break;

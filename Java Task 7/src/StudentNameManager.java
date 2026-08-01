@@ -135,7 +135,20 @@ public class StudentNameManager {
                         break;
 
                     case 4:
-                        IO.println("Display All Student Names");
+
+                        int number = 1;
+
+                        for (int i = 0; i < student.length; i++) {
+
+                            if (student[i] != null) {
+
+                                IO.println(number + ". " + student[i]);
+                                number++;
+
+                            }
+
+                        }
+
                         break;
 
                     case 5:

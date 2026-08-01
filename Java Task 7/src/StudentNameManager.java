@@ -18,7 +18,92 @@ public class StudentNameManager {
                 student[i] = IO.readln("Enter student name " + (i + 1) + ": ");
 
             }
+            int choice;
 
+            do {
+
+                IO.println("\n===== Student Name Manager =====");
+                IO.println("1. Add Student Name");
+                IO.println("2. Search Student Name");
+                IO.println("3. Update Student Name");
+                IO.println("4. Display All Student Names");
+                IO.println("5. Analyze Names");
+                IO.println("6. Compare Two Names");
+                IO.println("7. Exit");
+
+                choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+                switch (choice) {
+
+                    case 1:
+
+                        String newName = IO.readln("Enter student name: ");
+
+                        boolean exists = false;
+
+                        for (int i = 0; i < student.length; i++) {
+
+                            if (student[i] != null && student[i].equals(newName)) {
+
+                                exists = true;
+                                break;
+
+                            }
+
+                        }
+
+                        if (exists) {
+
+                            IO.println("Student name already exists.");
+
+                        } else {
+
+                            for (int i = 0; i < student.length; i++) {
+
+                                if (student[i] == null) {
+
+                                    student[i] = newName;
+                                    IO.println("Student name added successfully.");
+                                    break;
+
+                                }
+
+                            }
+
+                        }
+
+                        break;
+
+                    case 2:
+                        IO.println("Search Student Name");
+                        break;
+
+                    case 3:
+                        IO.println("Update Student Name");
+                        break;
+
+                    case 4:
+                        IO.println("Display All Student Names");
+                        break;
+
+                    case 5:
+                        IO.println("Analyze Names");
+                        break;
+
+                    case 6:
+                        IO.println("Compare Two Names");
+                        break;
+
+                    case 7:
+                        IO.println("Goodbye!");
+                        break;
+
+                    default:
+                        IO.println("Invalid choice.");
+
+                }
+
+            } while (choice != 7);
         }
     }
 }

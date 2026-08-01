@@ -150,9 +150,83 @@ public class StudentNameManager {
                         }
 
                         break;
-
                     case 5:
-                        IO.println("Analyze Names");
+
+                        int totalStudents = 0;
+                        int totalCharacters = 0;
+
+                        String longestName = "";
+                        String shortestName = "";
+
+                        int startWithA = 0;
+                        int endWithA = 0;
+
+
+                        for (int i = 0; i < student.length; i++) {
+
+                            if (student[i] != null) {
+
+                                totalStudents++;
+
+                                int length = student[i].length();
+
+                                totalCharacters += length;
+
+
+                                // Find longest name
+                                if (student[i].length() > longestName.length()) {
+
+                                    longestName = student[i];
+
+                                }
+
+
+                                // Find shortest name
+                                if (shortestName.equals("") || student[i].length() < shortestName.length()) {
+
+                                    shortestName = student[i];
+
+                                }
+
+
+                                // Names starting with A
+                                if (student[i].startsWith("A")) {
+
+                                    startWithA++;
+
+                                }
+
+
+                                // Names ending with a
+                                if (student[i].endsWith("a")) {
+
+                                    endWithA++;
+
+                                }
+
+                            }
+
+                        }
+
+
+                        double averageLength = 0;
+
+                        if (totalStudents > 0) {
+
+                            averageLength = (double) totalCharacters / totalStudents;
+
+                        }
+
+
+                        IO.println("Total number of students: " + totalStudents);
+                        IO.println("Longest student name: " + longestName);
+                        IO.println("Shortest student name: " + shortestName);
+                        IO.println("Total characters: " + totalCharacters);
+                        IO.println("Average name length: " + averageLength);
+                        IO.println("Names starting with A: " + startWithA);
+                        IO.println("Names ending with a: " + endWithA);
+
+
                         break;
 
                     case 6:

@@ -289,6 +289,65 @@ public class StudentNameManager {
                 }
 
             } while (choice != 7);
+
+            do {
+
+                IO.println("1. Add Student Name");
+                IO.println("2. Search Student Name");
+                IO.println("3. Update Student Name");
+                IO.println("4. Display All Student Names");
+                IO.println("5. Analyze Names");
+                IO.println("6. Compare Two Names");
+                IO.println("7. Exit");
+
+
+                choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+
+                switch (choice) {
+
+                    case 1:
+                        // Add Student Name
+                        break;
+
+
+                    case 2:
+                        // Search Student Name
+                        break;
+
+
+                    case 3:
+                        // Update Student Name
+                        break;
+
+
+                    case 4:
+                        // Display All Student Names
+                        break;
+
+
+                    case 5:
+                        // Analyze Names
+                        break;
+
+
+                    case 6:
+                        // Compare Two Names
+                        break;
+
+
+                    case 7:
+                        IO.println("Exit program.");
+                        break;
+
+
+                    default:
+                        IO.println("Invalid choice.");
+
+                }
+
+
+            } while (choice != 7);
         }
     }
 }

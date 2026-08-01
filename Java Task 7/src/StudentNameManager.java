@@ -75,7 +75,32 @@ public class StudentNameManager {
                         break;
 
                     case 2:
-                        IO.println("Search Student Name");
+
+                        String searchName = IO.readln("Enter student name to search: ");
+
+                        boolean found = false;
+
+                        for (int i = 0; i < student.length; i++) {
+
+                            if (student[i] != null && student[i].equals(searchName)) {
+
+                                found = true;
+                                break;
+
+                            }
+
+                        }
+
+                        if (found) {
+
+                            IO.println("Student found.");
+
+                        } else {
+
+                            IO.println("Student not found.");
+
+                        }
+
                         break;
 
                     case 3:

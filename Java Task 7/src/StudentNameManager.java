@@ -1,14 +1,24 @@
 public class StudentNameManager {
 
-    static void main() {
+    public static void main(String[] args) {
 
-        String [] student ={"mohammed ", "Ali", "noor"};
+        String Student = IO.readln("Enter the number of students: ");
+        int d1 = Integer.parseInt(Student);
 
-        String Student=IO.readln("Enter the numbers of students ");
-        int d1=Integer.parseInt(Student);
+        if (d1 <= 0) {
 
-        if (d1 <=0){
-            IO.println("Invalid number of students");
+            IO.println("Invalid number of students.");
+
+        } else {
+
+            String[] student = new String[d1];
+
+            for (int i = 0; i < d1; i++) {
+
+                student[i] = IO.readln("Enter student name " + (i + 1) + ": ");
+
+            }
+
         }
     }
 }

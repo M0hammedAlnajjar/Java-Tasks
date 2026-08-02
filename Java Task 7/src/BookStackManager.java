@@ -63,7 +63,19 @@ public class BookStackManager {
                             System.out.println("Top book: " + books.peek());
                         }
                         break;
+// Search Book
+                    case 4:
+                        String SearchBook = IO.readln("Enter book title to search : ");
 
+                        int position = books.search(SearchBook);
+
+                        if (position != -1) {
+                            System.out.println("Book position from top: " + position);
+                        }
+                        else {
+                            System.out.println("Book not found.");
+                        }
+                        break;
                 } while (choice != 7);
         }
 

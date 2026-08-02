@@ -26,6 +26,13 @@ public class PasswordStrengthChecker {
 
             choice = Integer.parseInt(IO.readln("Enter your choice: "));
 
+
+            if (choice == 1) {
+                password = IO.readln("Enter a new password: ");
+                IO.println("Password saved successfully.");
+            }
+
+
         } while (choice != 7);
     }
 }

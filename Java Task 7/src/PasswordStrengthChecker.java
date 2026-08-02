@@ -13,6 +13,7 @@ public class PasswordStrengthChecker {
         }
 
         int choice = 0;
+
         do {
 
             IO.println("\n===== Password Manager =====");
@@ -43,7 +44,8 @@ public class PasswordStrengthChecker {
                     }
                     break;
 
-                case 3:
+                case 3: {
+
                     int uppercase = 0;
                     int lowercase = 0;
                     int digits = 0;
@@ -69,7 +71,10 @@ public class PasswordStrengthChecker {
                     IO.println("Special characters: " + special);
 
                     break;
-                case 4:
+                }
+
+                case 4: {
+
                     boolean hasUppercase = false;
                     boolean hasLowercase = false;
                     boolean hasDigit = false;
@@ -120,7 +125,93 @@ public class PasswordStrengthChecker {
                     }
 
                     break;
+                }
+
+                case 5:
+
+                    IO.println("Uppercase Password: " + password.toUpperCase());
+                    IO.println("Lowercase Password: " + password.toLowerCase());
+
+                    break;
+
+
+                case 6: {
+
+                    int uppercase = 0;
+                    int lowercase = 0;
+                    int digits = 0;
+                    int special = 0;
+
+                    for (int i = 0; i < password.length(); i++) {
+
+                        char ch = password.charAt(i);
+
+                        if (ch >= 'A' && ch <= 'Z') {
+                            uppercase++;
+                        } else if (ch >= 'a' && ch <= 'z') {
+                            lowercase++;
+                        } else if (ch >= '0' && ch <= '9') {
+                            digits++;
+                        } else {
+                            special++;
+                        }
+                    }
+
+                    String strength;
+
+                    int reportScore = 0;
+
+                    if (uppercase > 0) {
+                        reportScore++;
+                    }
+
+                    if (lowercase > 0) {
+                        reportScore++;
+                    }
+
+                    if (digits > 0) {
+                        reportScore++;
+                    }
+
+                    if (special > 0) {
+                        reportScore++;
+                    }
+
+                    if (password.length() >= 8) {
+                        reportScore++;
+                    }
+
+                    if (reportScore <= 2) {
+                        strength = "Weak Password";
+                    } else if (reportScore <= 4) {
+                        strength = "Medium Password";
+                    } else {
+                        strength = "Strong Password";
+                    }
+
+
+                    IO.println("Password Report:");
+                    IO.println("Password length: " + password.length());
+                    IO.println("First character: " + password.charAt(0));
+                    IO.println("Last character: " + password.charAt(password.length() - 1));
+                    IO.println("Number of uppercase letters: " + uppercase);
+                    IO.println("Number of lowercase letters: " + lowercase);
+                    IO.println("Number of digits: " + digits);
+                    IO.println("Number of special characters: " + special);
+                    IO.println("Password strength level: " + strength);
+
+                    break;
+                }
+
+                case 7:
+                    IO.println("Exit Password Manager.");
+                    break;
+
+                default:
+                    IO.println("Invalid choice.");
             }
+
         } while (choice != 7);
 
-}}
+    }
+}

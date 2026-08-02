@@ -21,8 +21,32 @@ public class BookStackManager {
                 books.push(BookTitle);
 
             }
+
+            int choice;
+
+            do {
+
+                IO.println("1. Add Book");
+                IO.println("2. Remove Top Book");
+                IO.println("3. View Top Book");
+                IO.println("4. Search Book");
+                IO.println("5. Display All Books");
+                IO.println("6. Display Stack Statistics");
+                IO.println("7. Exit");
+
+                choice = Integer.parseInt(IO.readln("Enter your choice : "));
+
+                switch (choice) {
+                // Add Book
+                case 1:
+                    String NewBook = IO.readln("Enter book title : ");
+                    books.push(NewBook);
+                    System.out.println("Book added successfully.");
+                    break;
+
+            } while (choice != 7);
         }
 
 
     }
-}
+}}

@@ -92,7 +92,10 @@ public class UndoActionManager {
                     System.out.println("All actions have been cleared.");
                     break;
 
-
+                // Exit
+                case 8:
+                    System.out.println("Exiting...");
+                    break;
 
 
             }

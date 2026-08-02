@@ -99,6 +99,14 @@ public class BookStackManager {
                         break;
 
 
+                    // Exit
+                    case 7:
+                        System.out.println("Exit");
+                        break;
+
+
+                    default:
+                        System.out.println("Invalid choice.");
 
                 } while (choice != 7);
         }

@@ -74,7 +74,18 @@ public class UndoActionManager {
                     System.out.println(stack);
                     break;
 
+                // Display Action Statistics
+                case 6:
+                    System.out.println("Total number of actions: " + stack.size());
 
+                    if (stack.isEmpty()) {
+                        System.out.println("Most recent action: None");
+                    } else {
+                        System.out.println("Most recent action: " + stack.peek());
+                    }
+
+                    System.out.println("Stack is empty: " + stack.isEmpty());
+                    break;
 
 
             }

@@ -68,6 +68,15 @@ public class UndoActionManager {
                     }
                     break;
 
+                // Display All Actions
+                case 5:
+                    System.out.println("All Actions:");
+                    System.out.println(stack);
+                    break;
+
+
+
+
             }
         } while (choice != 8);
     }

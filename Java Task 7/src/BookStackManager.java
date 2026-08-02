@@ -52,7 +52,19 @@ public class BookStackManager {
                             System.out.println("Removed book: " + books.pop());
                         }
                         break;
-            } while (choice != 7);
+
+
+                    // View Top Book
+                    case 3:
+                        if (books.isEmpty()) {
+                            System.out.println("No books available.");
+                        }
+                        else {
+                            System.out.println("Top book: " + books.peek());
+                        }
+                        break;
+
+                } while (choice != 7);
         }
 
 

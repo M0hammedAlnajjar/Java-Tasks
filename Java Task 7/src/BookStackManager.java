@@ -43,7 +43,15 @@ public class BookStackManager {
                     books.push(NewBook);
                     System.out.println("Book added successfully.");
                     break;
-
+                    // Remove Top Book
+                    case 2:
+                        if (books.isEmpty()) {
+                            System.out.println("No books available.");
+                        }
+                        else {
+                            System.out.println("Removed book: " + books.pop());
+                        }
+                        break;
             } while (choice != 7);
         }
 

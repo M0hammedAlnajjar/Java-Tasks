@@ -47,6 +47,14 @@ public class UndoActionManager {
                         System.out.println("Removed action: " + stack.pop());
                     }
                     break;
+                // View Last Action
+                case 3:
+                    if (stack.isEmpty()) {
+                        System.out.println("No actions available.");
+                    } else {
+                        System.out.println("Last action: " + stack.peek());
+                    }
+                    break;
 
             }
         } while (choice != 8);

@@ -8,6 +8,10 @@ public class UndoActionManager {
         Integer number=Integer.parseInt(actions);
 
 
+        if (number<=0){
+            IO.println("Invalid number of actions.");
+
+        }
 
 
     }

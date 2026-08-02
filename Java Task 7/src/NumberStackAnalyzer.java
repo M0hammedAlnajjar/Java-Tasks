@@ -7,7 +7,10 @@ public class NumberStackAnalyzer {
         Integer  number=Integer.parseInt(values);
 
 
+    if (number<= 0){
+        IO.println("Invalid number of values");
 
+    }
 
 
     }

@@ -10,12 +10,15 @@ public class BookStackManager {
 
         Stack<String> books = new Stack<>();
 
+        // Check number of books
         if (BookStack <= 0) {
-            IO.println("Invalid number of books");
+            System.out.println("Invalid number of books");
         }
 
         else {
-            for (int i =0;i<BookStack ; i++){
+
+            // Add initial books to stack
+            for (int i = 0; i < BookStack; i++) {
 
                 String BookTitle = IO.readln("Enter book title : ");
                 books.push(BookTitle);
@@ -24,25 +27,31 @@ public class BookStackManager {
 
             int choice;
 
+            // Display menu
             do {
 
-                IO.println("1. Add Book");
-                IO.println("2. Remove Top Book");
-                IO.println("3. View Top Book");
-                IO.println("4. Search Book");
-                IO.println("5. Display All Books");
-                IO.println("6. Display Stack Statistics");
-                IO.println("7. Exit");
+                System.out.println("1. Add Book");
+                System.out.println("2. Remove Top Book");
+                System.out.println("3. View Top Book");
+                System.out.println("4. Search Book");
+                System.out.println("5. Display All Books");
+                System.out.println("6. Display Stack Statistics");
+                System.out.println("7. Exit");
 
                 choice = Integer.parseInt(IO.readln("Enter your choice : "));
 
+
+                // Process menu selection
                 switch (choice) {
-                // Add Book
-                case 1:
-                    String NewBook = IO.readln("Enter book title : ");
-                    books.push(NewBook);
-                    System.out.println("Book added successfully.");
-                    break;
+
+                    // Add Book
+                    case 1:
+                        String NewBook = IO.readln("Enter book title : ");
+                        books.push(NewBook);
+                        System.out.println("Book added successfully.");
+                        break;
+
+
                     // Remove Top Book
                     case 2:
                         if (books.isEmpty()) {
@@ -63,7 +72,9 @@ public class BookStackManager {
                             System.out.println("Top book: " + books.peek());
                         }
                         break;
-// Search Book
+
+
+                    // Search Book
                     case 4:
                         String SearchBook = IO.readln("Enter book title to search : ");
 
@@ -108,9 +119,12 @@ public class BookStackManager {
                     default:
                         System.out.println("Invalid choice.");
 
-                } while (choice != 7);
+                }
+
+            } while (choice != 7);
+
         }
 
 
     }
-}}
+}

@@ -56,6 +56,18 @@ public class UndoActionManager {
                     }
                     break;
 
+                // Search Action
+                case 4:
+                    String searchAction = IO.readln("Enter action to search: ");
+                    int position = stack.search(searchAction);
+
+                    if (position == -1) {
+                        System.out.println("Action not found.");
+                    } else {
+                        System.out.println("Position from top: " + position);
+                    }
+                    break;
+
             }
         } while (choice != 8);
     }

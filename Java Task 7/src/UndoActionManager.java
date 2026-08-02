@@ -86,6 +86,13 @@ public class UndoActionManager {
 
                     System.out.println("Stack is empty: " + stack.isEmpty());
                     break;
+                // Clear All Actions
+                case 7:
+                    stack.clear();
+                    System.out.println("All actions have been cleared.");
+                    break;
+
+
 
 
             }

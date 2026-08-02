@@ -76,6 +76,13 @@ public class BookStackManager {
                             System.out.println("Book not found.");
                         }
                         break;
+
+
+                    // Display All Books
+                    case 5:
+                        System.out.println("Books in stack: " + books);
+                        break;
+
                 } while (choice != 7);
         }
 

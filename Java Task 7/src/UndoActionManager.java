@@ -31,7 +31,14 @@ public class UndoActionManager {
             IO.println("8. Exit");
 
             choice = Integer.parseInt(IO.readln("Enter your choice:"));
+            switch (choice) {
 
+                // Add Action
+                case 1:
+                    String action = IO.readln("Enter action: ");
+                    stack.push(action);
+                    System.out.println("Action added.");
+                    break;}
         } while (choice != 8);
     }
 }

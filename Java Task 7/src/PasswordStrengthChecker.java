@@ -1,6 +1,6 @@
 public class PasswordStrengthChecker {
 
-    static void main() {
+    public static void main(String[] args) {
 
         String password = IO.readln("Enter a password using :");
 
@@ -11,5 +11,21 @@ public class PasswordStrengthChecker {
                 IO.println("Character " + (i + 1) + ": " + password.charAt(i));
             }
         }
+
+        int choice = 0;
+        do {
+
+            IO.println("\n===== Password Manager =====");
+            IO.println("1. Enter Password");
+            IO.println("2. Check Password Length");
+            IO.println("3. Analyze Password Characters");
+            IO.println("4. Check Password Strength");
+            IO.println("5. Convert Password Format");
+            IO.println("6. Display Password Report");
+            IO.println("7. Exit");
+
+            choice = Integer.parseInt(IO.readln("Enter your choice: "));
+
+        } while (choice != 7);
     }
 }

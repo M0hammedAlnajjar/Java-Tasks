@@ -38,7 +38,17 @@ public class UndoActionManager {
                     String action = IO.readln("Enter action: ");
                     stack.push(action);
                     System.out.println("Action added.");
-                    break;}
+                    break;
+                // Undo Last Action
+                case 2:
+                    if (stack.isEmpty()) {
+                        System.out.println("No actions available.");
+                    } else {
+                        System.out.println("Removed action: " + stack.pop());
+                    }
+                    break;
+
+            }
         } while (choice != 8);
     }
 }

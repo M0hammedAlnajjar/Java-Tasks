@@ -69,6 +69,57 @@ public class PasswordStrengthChecker {
                     IO.println("Special characters: " + special);
 
                     break;
+                case 4:
+                    boolean hasUppercase = false;
+                    boolean hasLowercase = false;
+                    boolean hasDigit = false;
+                    boolean hasSpecial = false;
+
+                    for (int i = 0; i < password.length(); i++) {
+                        char ch = password.charAt(i);
+
+                        if (ch >= 'A' && ch <= 'Z') {
+                            hasUppercase = true;
+                        } else if (ch >= 'a' && ch <= 'z') {
+                            hasLowercase = true;
+                        } else if (ch >= '0' && ch <= '9') {
+                            hasDigit = true;
+                        } else {
+                            hasSpecial = true;
+                        }
+                    }
+
+                    int score = 0;
+
+                    if (hasUppercase) {
+                        score++;
+                    }
+
+                    if (hasLowercase) {
+                        score++;
+                    }
+
+                    if (hasDigit) {
+                        score++;
+                    }
+
+                    if (hasSpecial) {
+                        score++;
+                    }
+
+                    if (password.length() >= 8) {
+                        score++;
+                    }
+
+                    if (score <= 2) {
+                        IO.println("Weak Password");
+                    } else if (score <= 4) {
+                        IO.println("Medium Password");
+                    } else {
+                        IO.println("Strong Password");
+                    }
+
+                    break;
             }
         } while (choice != 7);
 

@@ -83,6 +83,23 @@ public class BookStackManager {
                         System.out.println("Books in stack: " + books);
                         break;
 
+
+                    // Display Stack Statistics
+                    case 6:
+                        System.out.println("Total number of books: " + books.size());
+
+                        if (books.isEmpty()) {
+                            System.out.println("Top book: No books available.");
+                        }
+                        else {
+                            System.out.println("Top book: " + books.peek());
+                        }
+
+                        System.out.println("Stack is empty: " + books.isEmpty());
+                        break;
+
+
+
                 } while (choice != 7);
         }
 

@@ -26,12 +26,24 @@ public class PasswordStrengthChecker {
 
             choice = Integer.parseInt(IO.readln("Enter your choice: "));
 
+            switch (choice) {
 
-            if (choice == 1) {
-                password = IO.readln("Enter a new password: ");
-                IO.println("Password saved successfully.");
+                case 1:
+                    password = IO.readln("Enter a new password: ");
+                    IO.println("Password saved successfully.");
+                    break;
+
+                case 2:
+                    IO.println("Total number of characters: " + password.length());
+
+                    if (password.length() < 8) {
+                        IO.println("Password is too short.");
+                    } else {
+                        IO.println("Password length is acceptable.");
+                    }
+                    break;
+
             }
-
 
         } while (choice != 7);
     }

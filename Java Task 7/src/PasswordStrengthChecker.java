@@ -143,28 +143,11 @@ public class PasswordStrengthChecker {
 
                     int score = 0;
 
-
-                    if (hasUppercase) {
-                        score++;
-                    }
-
-                    if (hasLowercase) {
-                        score++;
-                    }
-
-                    if (hasDigit) {
-                        score++;
-                    }
-
-                    if (hasSpecial) {
-                        score++;
-                    }
-
-                    if (password.length() >= 8) {
-                        score++;
-                    }
-
-
+                    score += hasUppercase ? 1 : 0;
+                    score += hasLowercase ? 1 : 0;
+                    score += hasDigit ? 1 : 0;
+                    score += hasSpecial ? 1 : 0;
+                    score += password.length() >= 8 ? 1 : 0;
 
                     IO.println("\nPassword Strength:");
 

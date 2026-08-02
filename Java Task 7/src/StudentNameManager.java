@@ -106,7 +106,7 @@ public class StudentNameManager {
                     case 3:
 
                         String oldName = IO.readln("Enter existing student name: ");
-                        String newName = IO.readln("Enter new student name: ");
+                         newName = IO.readln("Enter new student name: ");
 
                         boolean updated = false;
 

@@ -98,6 +98,10 @@ public class UndoActionManager {
                     break;
 
 
+
+                // Invalid choice
+                default:
+                    System.out.println("Invalid choice.");
             }
         } while (choice != 8);
     }

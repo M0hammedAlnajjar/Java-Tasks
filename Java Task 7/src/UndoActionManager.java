@@ -17,5 +17,21 @@ public class UndoActionManager {
                 stack.push(action);
             }
         }
+        int choice;
+
+        do {
+            IO.println("\nMenu");
+            IO.println("1. Add Action");
+            IO.println("2. Undo Last Action");
+            IO.println("3. View Last Action");
+            IO.println("4. Search Action");
+            IO.println("5. Display All Actions");
+            IO.println("6. Display Action Statistics");
+            IO.println("7. Clear All Actions");
+            IO.println("8. Exit");
+
+            choice = Integer.parseInt(IO.readln("Enter your choice:"));
+
+        } while (choice != 8);
     }
 }

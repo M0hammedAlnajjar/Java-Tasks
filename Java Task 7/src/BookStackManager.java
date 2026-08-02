@@ -12,7 +12,7 @@ public class BookStackManager {
 
         // Check number of books
         if (BookStack <= 0) {
-            System.out.println("Invalid number of books");
+            IO.println("Invalid number of books");
         }
 
         else {
@@ -48,17 +48,17 @@ public class BookStackManager {
                     case 1:
                         String NewBook = IO.readln("Enter book title : ");
                         books.push(NewBook);
-                        System.out.println("Book added successfully.");
+                        IO.println("Book added successfully.");
                         break;
 
 
                     // Remove Top Book
                     case 2:
                         if (books.isEmpty()) {
-                            System.out.println("No books available.");
+                            IO.println("No books available.");
                         }
                         else {
-                            System.out.println("Removed book: " + books.pop());
+                            IO.println("Removed book: " + books.pop());
                         }
                         break;
 
@@ -66,10 +66,10 @@ public class BookStackManager {
                     // View Top Book
                     case 3:
                         if (books.isEmpty()) {
-                            System.out.println("No books available.");
+                            IO.println("No books available.");
                         }
                         else {
-                            System.out.println("Top book: " + books.peek());
+                            IO.println("Top book: " + books.peek());
                         }
                         break;
 
@@ -81,43 +81,43 @@ public class BookStackManager {
                         int position = books.search(SearchBook);
 
                         if (position != -1) {
-                            System.out.println("Book position from top: " + position);
+                            IO.println("Book position from top: " + position);
                         }
                         else {
-                            System.out.println("Book not found.");
+                            IO.println("Book not found.");
                         }
                         break;
 
 
                     // Display All Books
                     case 5:
-                        System.out.println("Books in stack: " + books);
+                        IO.println("Books in stack: " + books);
                         break;
 
 
                     // Display Stack Statistics
                     case 6:
-                        System.out.println("Total number of books: " + books.size());
+                        IO.println("Total number of books: " + books.size());
 
                         if (books.isEmpty()) {
-                            System.out.println("Top book: No books available.");
+                            IO.println("Top book: No books available.");
                         }
                         else {
-                            System.out.println("Top book: " + books.peek());
+                            IO.println("Top book: " + books.peek());
                         }
 
-                        System.out.println("Stack is empty: " + books.isEmpty());
+                        IO.println("Stack is empty: " + books.isEmpty());
                         break;
 
 
                     // Exit
                     case 7:
-                        System.out.println("Exit");
+                        IO.println("Exit");
                         break;
 
 
                     default:
-                        System.out.println("Invalid choice.");
+                        IO.println("Invalid choice.");
 
                 }
 

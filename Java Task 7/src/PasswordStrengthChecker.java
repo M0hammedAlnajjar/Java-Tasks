@@ -48,6 +48,7 @@ public class PasswordStrengthChecker {
 
 
 
+
                 case 3: {
 
                     int uppercase = 0;
@@ -61,15 +62,27 @@ public class PasswordStrengthChecker {
                         char ch = password.charAt(i);
 
 
-                        if (ch >= 'A' && ch <= 'Z') {
+                        String classification;
+
+                        classification = (ch >= 'A' && ch <= 'Z') ? "Uppercase Letter" :
+                                (ch >= 'a' && ch <= 'z') ? "Lowercase Letter" :
+                                        (ch >= '0' && ch <= '9') ? "Digit" :
+                                                "Special Character";
+
+
+                        IO.println(ch + " is a " + classification);
+
+
+
+                        if (classification.equals("Uppercase Letter")) {
 
                             uppercase++;
 
-                        } else if (ch >= 'a' && ch <= 'z') {
+                        } else if (classification.equals("Lowercase Letter")) {
 
                             lowercase++;
 
-                        } else if (ch >= '0' && ch <= '9') {
+                        } else if (classification.equals("Digit")) {
 
                             digits++;
 
@@ -77,6 +90,7 @@ public class PasswordStrengthChecker {
 
                             special++;
                         }
+
                     }
 
 
@@ -92,7 +106,6 @@ public class PasswordStrengthChecker {
 
 
 
-
                 case 4: {
 
                     boolean hasUppercase = false;
@@ -101,7 +114,9 @@ public class PasswordStrengthChecker {
                     boolean hasSpecial = false;
 
 
+
                     for (int i = 0; i < password.length(); i++) {
+
 
                         char ch = password.charAt(i);
 
@@ -122,6 +137,7 @@ public class PasswordStrengthChecker {
 
                             hasSpecial = true;
                         }
+
                     }
 
 
@@ -171,8 +187,6 @@ public class PasswordStrengthChecker {
 
 
 
-
-
                 case 5:
 
 
@@ -210,7 +224,6 @@ public class PasswordStrengthChecker {
 
 
 
-
                     if (password.startsWith("A")) {
 
                         IO.println("Password starts with A.");
@@ -219,8 +232,6 @@ public class PasswordStrengthChecker {
 
                         IO.println("Password does not start with A.");
                     }
-
-
 
 
 
@@ -239,9 +250,6 @@ public class PasswordStrengthChecker {
 
 
 
-
-
-
                 case 6: {
 
 
@@ -251,7 +259,6 @@ public class PasswordStrengthChecker {
 
                         break;
                     }
-
 
 
                     int uppercase = 0;
@@ -265,6 +272,7 @@ public class PasswordStrengthChecker {
 
 
                         char ch = password.charAt(i);
+
 
 
                         if (ch >= 'A' && ch <= 'Z') {
@@ -287,43 +295,31 @@ public class PasswordStrengthChecker {
                     }
 
 
-
-                    String strength;
-
                     int score = 0;
 
 
-
                     if (uppercase > 0) {
-
                         score++;
-
                     }
 
                     if (lowercase > 0) {
-
                         score++;
-
                     }
 
                     if (digits > 0) {
-
                         score++;
-
                     }
 
                     if (special > 0) {
-
                         score++;
-
                     }
 
                     if (password.length() >= 8) {
-
                         score++;
-
                     }
 
+
+                    String strength;
 
 
 
@@ -339,8 +335,6 @@ public class PasswordStrengthChecker {
 
                         strength = "Strong Password";
                     }
-
-
 
 
 
@@ -372,15 +366,11 @@ public class PasswordStrengthChecker {
 
 
 
-
-
                 case 7:
 
                     IO.println("Exit Password Manager.");
 
                     break;
-
-
 
 
 
@@ -393,6 +383,7 @@ public class PasswordStrengthChecker {
 
 
         } while (choice != 7);
+
 
     }
 

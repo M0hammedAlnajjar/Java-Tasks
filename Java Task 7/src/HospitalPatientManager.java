@@ -24,6 +24,71 @@ public class HospitalPatientManager {
 
                 PatientNames.add(patient);
             }
+
+
+            int option;
+
+            do {
+                // Display hospital menu
+                IO.println("\n----- Hospital Patient Menu -----");
+                IO.println("1. Add Patient");
+                IO.println("2. Treat Patient");
+                IO.println("3. View Next Patient");
+                IO.println("4. Undo Last Treatment");
+                IO.println("5. Search Patient");
+                IO.println("6. Display Waiting Patients");
+                IO.println("7. Display Treated Patients");
+                IO.println("8. Display Hospital Statistics");
+                IO.println("9. Exit");
+
+                // Read user's choice
+                String choice = IO.readln("Enter your choice: ");
+                option = Integer.parseInt(choice);
+
+                // Process menu selection
+                switch (option) {
+
+                    case 1:
+                        IO.println("Add Patient selected.");
+                        break;
+
+                    case 2:
+                        IO.println("Treat Patient selected.");
+                        break;
+
+                    case 3:
+                        IO.println("View Next Patient selected.");
+                        break;
+
+                    case 4:
+                        IO.println("Undo Last Treatment selected.");
+                        break;
+
+                    case 5:
+                        IO.println("Search Patient selected.");
+                        break;
+
+                    case 6:
+                        IO.println("Display Waiting Patients selected.");
+                        break;
+
+                    case 7:
+                        IO.println("Display Treated Patients selected.");
+                        break;
+
+                    case 8:
+                        IO.println("Display Hospital Statistics selected.");
+                        break;
+
+                    case 9:
+                        IO.println("Exiting Hospital Patient System.");
+                        break;
+
+                    default:
+                        IO.println("Invalid option. Please try again.");
+                }
+
+            } while (option != 9);
         }
     }
 }

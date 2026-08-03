@@ -100,7 +100,32 @@ public class TicketQueueManager {
                             }
                             break;
                         case 6:
-                            IO.println("Display Queue Statistics selected.");
+                            // Display queue statistics
+                            IO.println("\n----- Queue Statistics -----");
+
+                            // Display total number of customers using size()
+                            IO.println("Total number of customers: " + CustomerNames.size());
+
+                            // Check if queue is empty
+                            if (CustomerNames.isEmpty()) {
+                                IO.println("First customer in queue: None");
+                                IO.println("Last customer in queue: None");
+                            } else {
+                                // Display first customer using element()
+                                IO.println("First customer in queue: " + CustomerNames.element());
+
+                                // Find and display the last customer
+                                String lastCustomer = "";
+                                for (String customer : CustomerNames) {
+                                    lastCustomer = customer;
+                                }
+
+                                IO.println("Last customer in queue: " + lastCustomer);
+                            }
+
+                            // Display whether the queue is empty
+                            IO.println("Queue is empty: " + CustomerNames.isEmpty());
+
                             break;
 
                         case 7:

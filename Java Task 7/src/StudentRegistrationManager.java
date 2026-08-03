@@ -167,14 +167,16 @@ public class StudentRegistrationManager {
 
                     IO.println("Stack is empty: " + CompletedRegistrations.isEmpty());
 
-                    break;
                 case 9:
+                    // Exit program
                     IO.println("Exiting Student Registration System.");
                     break;
+
 
                 default:
                     IO.println("Invalid option. Please try again.");
             }
+
 
         } while (option != 9);
     }

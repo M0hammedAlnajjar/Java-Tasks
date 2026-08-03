@@ -10,5 +10,11 @@ public class PrintQueueManager {
         String  jobs = IO.readln("Enter the number of print jobs : ");
         int number =Integer.parseInt(jobs);
 
+
+        if (number<=0){
+            IO.println("Invalid number of print jobs ");
+
+        }
+
     }
 }

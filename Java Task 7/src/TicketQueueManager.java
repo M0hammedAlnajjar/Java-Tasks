@@ -34,6 +34,7 @@ public class TicketQueueManager {
                     String choice = IO.readln("Enter your choice: ");
                     option = Integer.parseInt(choice);
 
+
                     // Process menu options using switch-case
                     switch (option) {
 

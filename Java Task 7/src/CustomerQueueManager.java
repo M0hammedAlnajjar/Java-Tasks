@@ -11,6 +11,12 @@ public class CustomerQueueManager {
 
     if (number<=0){
         IO.print(" Invalid number of customers ");
+
+    }else {
+        for (int i=0 ; i< number ; i ++ ){
+            String name = IO.readln("Enter customer name");
+            customerQueue.add(name);
+        }
     }
 
 

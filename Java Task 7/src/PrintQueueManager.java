@@ -79,6 +79,17 @@ public class PrintQueueManager {
                         }
                         break;
 
+                    // Remove a specific print job
+                    case 5:
+                        String removeJob = IO.readln("Enter print job name to remove: ");
+
+                        if (jobname.remove(removeJob)) {
+                            IO.println("Print job removed successfully.");
+                        } else {
+                            IO.println("Print job not found.");
+                        }
+                        break;
+
 
 
 

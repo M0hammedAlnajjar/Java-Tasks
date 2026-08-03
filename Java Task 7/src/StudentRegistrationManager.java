@@ -13,7 +13,9 @@ public class StudentRegistrationManager {
         String students=IO.readln("Enter  the number of students waiting for registration :");
         int number =Integer.parseInt(students);
 
-
+    if (number<= 0){
+        IO.println("Invalid number of students");
+    }
 
     }
 }

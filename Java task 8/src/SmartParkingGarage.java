@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class SmartParkingGarage {
 
     public static void main(String[] args) {
-
+        int totalParked = 0;
         Queue<String> waitingVehicles = new LinkedList<>();
         Stack<String> parkedVehicles = new Stack<>();
         HashSet<String> licensePlates = new HashSet<>();
@@ -62,23 +62,30 @@ public class SmartParkingGarage {
                     break;
 
                 case 2:
-                    if (parkedVehicles.size() < maximum) {
-
-                        if (!waitingVehicles.isEmpty()) {
-                            String vehicle = waitingVehicles.remove();
-                            parkedVehicles.push(vehicle);
-                            System.out.println(vehicle + " parked successfully.");
-                        }
-                        else {
-                            System.out.println("Waiting queue is empty.");
-                        }
-
+                    // Check if waiting queue is empty
+                    if (waitingVehicles.isEmpty()) {
+                        System.out.println("No vehicles in waiting queue.");
                     }
-                    else {
+
+                    // Check if garage is full
+                    else if (parkedVehicles.size() >= maximum) {
                         System.out.println("Parking garage is full.");
                     }
-                    break;
 
+                    else {
+                        // Remove first vehicle from waiting queue
+                        String vehicle = waitingVehicles.remove();
+
+                        // Push vehicle onto parking stack
+                        parkedVehicles.push(vehicle);
+
+                        // Increase total parked counter
+                        totalParked++;
+
+                        // Display parked vehicle
+                        System.out.println("Vehicle parked successfully: " + vehicle);
+                    }
+                    break;
 
                 case 3:
                     if (!parkedVehicles.isEmpty()) {

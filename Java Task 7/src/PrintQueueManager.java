@@ -90,6 +90,19 @@ public class PrintQueueManager {
                         }
                         break;
 
+                    // Display all print jobs
+                    case 6:
+                        if (jobname.isEmpty()) {
+                            IO.println("No print jobs in the queue.");
+                        } else {
+                            IO.println("All Print Jobs:");
+
+                            for (String job : jobname) {
+                                IO.println(job);
+                            }
+                        }
+                        break;
+
 
 
 

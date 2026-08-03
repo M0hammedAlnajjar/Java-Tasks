@@ -65,8 +65,19 @@ public class NumberStackAnalyzer {
                         }
 
                         break;
+
                     case 3:
-                        IO.println("View Top Number");
+
+                        if (stack.isEmpty()) {
+
+                            IO.println("Stack is empty.");
+
+                        } else {
+
+                            IO.println("Top number: " + stack.peek());
+
+                        }
+
                         break;
 
                     case 4:

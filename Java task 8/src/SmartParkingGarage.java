@@ -201,17 +201,26 @@ public class SmartParkingGarage {
 
                     break;
 
-
                 case 9:
-                    System.out.println("Garage Statistics:");
-                    System.out.println("Parked vehicles: "
+                    int occupancyPercentage =
+                            (parkedVehicles.size() * 100) / maximum;
+
+                    System.out.println("\n========= Garage Statistics =========");
+                    System.out.println("Maximum Capacity : " + maximum);
+                    System.out.println("Currently Parked : "
                             + parkedVehicles.size());
-                    System.out.println("Waiting vehicles: "
+                    System.out.println("Waiting Vehicles : "
                             + waitingVehicles.size());
-                    System.out.println("Total vehicles: "
-                            + licensePlates.size());
-                    System.out.println("Available spaces: "
+                    System.out.println("Available Spaces : "
                             + (maximum - parkedVehicles.size()));
+                    System.out.println("Vehicles Parked Today : "
+                            + totalParked);
+                    System.out.println("Vehicles Departed Today : "
+                            + totalDeparted);
+                    System.out.println("Total Vehicles Processed : "
+                            + (totalParked + totalDeparted));
+                    System.out.println("Occupancy : "
+                            + occupancyPercentage + "%");
                     break;
 
 

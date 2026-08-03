@@ -7,6 +7,8 @@ public class SmartParkingGarage {
 
     public static void main(String[] args) {
         int totalParked = 0;
+        int totalDeparted = 0;
+
         Queue<String> waitingVehicles = new LinkedList<>();
         Stack<String> parkedVehicles = new Stack<>();
         HashSet<String> licensePlates = new HashSet<>();
@@ -86,15 +88,36 @@ public class SmartParkingGarage {
                         System.out.println("Vehicle parked successfully: " + vehicle);
                     }
                     break;
-
                 case 3:
-                    if (!parkedVehicles.isEmpty()) {
-                        String removed = parkedVehicles.pop();
-                        licensePlates.remove(removed);
-                        System.out.println(removed + " removed from parking garage.");
+                    // Check if parking garage is empty
+                    if (parkedVehicles.isEmpty()) {
+                        System.out.println("No parked vehicles to remove.");
                     }
+
                     else {
-                        System.out.println("No parked vehicles.");
+                        // Remove top vehicle from parking stack
+                        String removedVehicle = parkedVehicles.pop();
+
+                        // Increase total departed counter
+                        totalDeparted++;
+
+                        // Remove from license plate set
+                        licensePlates.remove(removedVehicle);
+
+                        // Display removed vehicle
+                        System.out.println("Vehicle removed from garage: "
+                                + removedVehicle);
+
+                        // Automatically park next waiting vehicle
+                        if (!waitingVehicles.isEmpty()) {
+
+                            String nextVehicle = waitingVehicles.remove();
+
+                            parkedVehicles.push(nextVehicle);
+
+                            System.out.println("Next waiting vehicle parked automatically: "
+                                    + nextVehicle);
+                        }
                     }
                     break;
 

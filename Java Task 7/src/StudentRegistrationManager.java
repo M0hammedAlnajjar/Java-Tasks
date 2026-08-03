@@ -8,18 +8,22 @@ public class StudentRegistrationManager {
 
         Queue<String> StudentsWaiting = new LinkedList<>();
 
-        Stack<String> CompletedRegistrations  = new Stack<>();
+        Stack<String> CompletedRegistrations = new Stack<>();
 
-        String students=IO.readln("Enter  the number of students waiting for registration :");
-        int number =Integer.parseInt(students);
+        String students = IO.readln("Enter the number of students waiting for registration: ");
+        int number = Integer.parseInt(students);
 
-    if (number<= 0){
-        IO.println("Invalid number of students");
-    }else {
-        for (int i = 0; i< number;i++){
+        if (number <= 0) {
+            IO.println("Invalid number of students");
 
+        } else {
+
+            for (int i = 0; i < number; i++) {
+
+                String studentName = IO.readln("Enter student name: ");
+
+                StudentsWaiting.offer(studentName);
+            }
         }
-    }
-
     }
 }

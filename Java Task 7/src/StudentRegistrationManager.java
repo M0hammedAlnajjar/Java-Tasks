@@ -111,10 +111,22 @@ public class StudentRegistrationManager {
                         IO.println("Student not found.");
                     }
                     break;
-                case 6:
-                    IO.println("Display Waiting Students selected.");
-                    break;
 
+                case 6:
+                    // Display waiting students
+                    if (StudentsWaiting.isEmpty()) {
+
+                        IO.println("No waiting students.");
+
+                    } else {
+
+                        IO.println("Waiting Students:");
+
+                        for (String student : StudentsWaiting) {
+                            IO.println(student);
+                        }
+                    }
+                    break;
                 case 7:
                     IO.println("Display Registered Students selected.");
                     break;

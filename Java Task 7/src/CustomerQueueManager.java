@@ -1,3 +1,4 @@
+import java.util.Queue;
 public class CustomerQueueManager {
 
     static void main(String[] args) {

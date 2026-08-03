@@ -24,6 +24,7 @@ public class PrintQueueManager {
 
             int option;
 
+
             do {
 
                 IO.println("\n----- Print Queue Menu -----");
@@ -40,6 +41,13 @@ public class PrintQueueManager {
                 option = Integer.parseInt(choice);
 
                 switch (option) {
+
+                    // Add a new print job
+                    case 1:
+                        String newJob = IO.readln("Enter print job name: ");
+                        jobname.offer(newJob);
+                        IO.println("Print job added successfully.");
+                        break;
 
 
 

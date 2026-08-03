@@ -149,7 +149,29 @@ public class HospitalPatientManager {
 
 
                     case 8:
-                        IO.println("Display Hospital Statistics selected.");
+                        // Display hospital statistics
+                        IO.println("\n----- Hospital Statistics -----");
+
+                        IO.println("Total waiting patients: " + PatientNames.size());
+
+                        IO.println("Total treated patients: " + CompletedPatient.size());
+
+                        if (PatientNames.isEmpty()) {
+                            IO.println("Next patient waiting: None");
+                        } else {
+                            IO.println("Next patient waiting: " + PatientNames.peek());
+                        }
+
+                        if (CompletedPatient.isEmpty()) {
+                            IO.println("Last treated patient: None");
+                        } else {
+                            IO.println("Last treated patient: " + CompletedPatient.peek());
+                        }
+
+                        IO.println("Queue is empty: " + PatientNames.isEmpty());
+
+                        IO.println("Stack is empty: " + CompletedPatient.isEmpty());
+
                         break;
 
                     case 9:

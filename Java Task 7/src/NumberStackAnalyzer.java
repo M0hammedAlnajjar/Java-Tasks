@@ -81,7 +81,23 @@ public class NumberStackAnalyzer {
                         break;
 
                     case 4:
-                        IO.println("Display All Numbers");
+
+                        if (stack.isEmpty()) {
+
+                            IO.println("Stack is empty.");
+
+                        } else {
+
+                            IO.println("Numbers in the stack:");
+
+                            for (int number : stack) {
+
+                                IO.println(String.valueOf(number));
+
+                            }
+
+                        }
+
                         break;
 
                     case 5:

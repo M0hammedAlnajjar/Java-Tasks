@@ -39,6 +39,17 @@ public class PrintQueueManager {
                 String choice = IO.readln("Enter your choice: ");
                 option = Integer.parseInt(choice);
 
+                switch (option) {
+
+
+
+
+
+
+
+
+                }
+
             } while (option != 8);
         }
     }

@@ -28,45 +28,51 @@ public class NumberStackAnalyzer {
 
             do {
 
-                System.out.println("\n===== Number Stack Analyzer =====");
-                System.out.println("1. Add Number");
-                System.out.println("2. Remove Top Number");
-                System.out.println("3. View Top Number");
-                System.out.println("4. Display All Numbers");
-                System.out.println("5. Analyze Numbers");
-                System.out.println("6. Exit");
+                IO.println("\n===== Number Stack Analyzer =====");
+                IO.println("1. Add Number");
+                IO.println("2. Remove Top Number");
+                IO.println("3. View Top Number");
+                IO.println("4. Display All Numbers");
+                IO.println("5. Analyze Numbers");
+                IO.println("6. Exit");
 
-                System.out.print("Enter your choice: ");
-                choice = scanner.nextInt();
+                String choiceInput = IO.readln("Enter your choice: ");
+                choice = Integer.parseInt(choiceInput);
 
                 switch (choice) {
 
                     case 1:
-                        System.out.println("Add Number");
+
+                        String newNumberInput = IO.readln("Enter a new integer: ");
+                        int newNumber = Integer.parseInt(newNumberInput);
+
+                        stack.push(newNumber);
+
+                        IO.println("Number added successfully.");
                         break;
 
                     case 2:
-                        System.out.println("Remove Top Number");
+                        IO.println("Remove Top Number");
                         break;
 
                     case 3:
-                        System.out.println("View Top Number");
+                        IO.println("View Top Number");
                         break;
 
                     case 4:
-                        System.out.println("Display All Numbers");
+                        IO.println("Display All Numbers");
                         break;
 
                     case 5:
-                        System.out.println("Analyze Numbers");
+                        IO.println("Analyze Numbers");
                         break;
 
                     case 6:
-                        System.out.println("Exiting program...");
+                        IO.println("Exiting program...");
                         break;
 
                     default:
-                        System.out.println("Invalid choice.");
+                        IO.println("Invalid choice.");
 
                 }
 

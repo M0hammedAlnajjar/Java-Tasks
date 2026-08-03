@@ -133,22 +133,33 @@ public class SmartParkingGarage {
                                 + waitingVehicles.peek());
                     }
                     break;
-
                 case 5:
-                    if (!parkedVehicles.isEmpty()) {
+                    // Check if parking stack is empty
+                    if (parkedVehicles.isEmpty()) {
+                        System.out.println("No parked vehicles.");
+                    }
+
+                    else {
+                        // Display top vehicle without removing it
                         System.out.println("Last parked vehicle: "
                                 + parkedVehicles.peek());
                     }
+                    break;
+                case 6:
+                    // Check if waiting queue is empty
+                    if (waitingVehicles.isEmpty()) {
+                        System.out.println("No vehicles are waiting.");
+                    }
+
                     else {
-                        System.out.println("No parked vehicles.");
+                        // Display waiting vehicles
+                        System.out.println("Waiting vehicles: " + waitingVehicles);
+
+                        // Display total waiting vehicles
+                        System.out.println("Total waiting vehicles: "
+                                + waitingVehicles.size());
                     }
                     break;
-
-
-                case 6:
-                    System.out.println("Waiting Queue: " + waitingVehicles);
-                    break;
-
 
                 case 7:
                     System.out.println("Parked Vehicles: " + parkedVehicles);

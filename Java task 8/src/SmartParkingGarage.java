@@ -225,8 +225,21 @@ public class SmartParkingGarage {
 
 
                 case 10:
-                    waitingVehicles.clear();
-                    System.out.println("Waiting queue cleared.");
+                    String confirm = IO.readln(
+                            "Are you sure you want to clear the waiting queue? (Y/N): "
+                    );
+
+                    if (confirm.equalsIgnoreCase("Y")) {
+
+                        waitingVehicles.clear();
+
+                        System.out.println("Waiting queue cleared successfully.");
+                    }
+
+                    else {
+                        System.out.println("Clear waiting queue cancelled.");
+                    }
+
                     break;
 
 

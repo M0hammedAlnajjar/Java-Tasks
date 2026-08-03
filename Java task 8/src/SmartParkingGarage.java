@@ -33,20 +33,33 @@ public class SmartParkingGarage {
             int choice = Integer.parseInt(IO.readln("Choose an option: "));
 
             switch (choice) {
-
                 case 1:
-                    String plate = IO.readln("Enter license plate: ");
+                    String plate;
 
-                    if (licensePlates.contains(plate)) {
-                        System.out.println("Error: Vehicle already exists.");
-                    }
-                    else {
-                        licensePlates.add(plate);
-                        waitingVehicles.add(plate);
-                        System.out.println("Vehicle added to waiting queue.");
+                    while (true) {
+                        plate = IO.readln("Enter vehicle number: ");
+
+                        // Validate empty input
+                        if (plate.isEmpty()) {
+                            System.out.println("Error: Vehicle number cannot be empty.");
+                        }
+
+                        // Validate duplicate vehicle
+                        else if (licensePlates.contains(plate)) {
+                            System.out.println("Error: Vehicle already exists.");
+                        }
+
+                        else {
+                            // Add vehicle to waiting queue
+                            waitingVehicles.add(plate);
+                            licensePlates.add(plate);
+
+                            System.out.println("Vehicle " + plate
+                                    + " added to waiting queue successfully.");
+                            break;
+                        }
                     }
                     break;
-
 
                 case 2:
                     if (parkedVehicles.size() < maximum) {

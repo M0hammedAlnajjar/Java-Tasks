@@ -38,12 +38,10 @@ public class SmartParkingGarage {
             // Validate menu input
             while (true) {
                 try {
-                    choice = Integer.parseInt(
-                            IO.readln("Choose an option: "));
+                    choice = Integer.parseInt(IO.readln("Choose an option: "));
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println(
-                            "Error: Please enter a valid number.");
+                    System.out.println("Error: Please enter a valid number.");
                 }
             }
 

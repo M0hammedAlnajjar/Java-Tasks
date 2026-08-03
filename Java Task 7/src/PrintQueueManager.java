@@ -102,6 +102,11 @@ public class PrintQueueManager {
                         }
                         break;
 
+                    // Exit the program
+                    case 8:
+                        IO.println("Exiting Print Queue Manager.");
+                        break;
+
 
 
 

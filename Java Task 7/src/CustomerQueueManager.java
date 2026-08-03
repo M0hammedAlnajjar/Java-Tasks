@@ -6,10 +6,12 @@ public class CustomerQueueManager {
 
         Queue<String> customerQueue = new LinkedList<>();
 
-        String customers =IO.readln("Enter the number of customers");
+        String customers =IO.readln("Enter the number of customers : ");
         int number =Integer.parseInt(customers);
 
-
+    if (number<=0){
+        IO.print(" Invalid number of customers ");
+    }
 
 
     }

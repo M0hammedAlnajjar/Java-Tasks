@@ -115,10 +115,22 @@ public class HospitalPatientManager {
                             IO.println("Patient not found.");
                         }
                         break;
-                    case 6:
-                        IO.println("Display Waiting Patients selected.");
-                        break;
 
+                    case 6:
+                        // Display waiting patients
+                        if (PatientNames.isEmpty()) {
+
+                            IO.println("No waiting patients.");
+
+                        } else {
+
+                            IO.println("Waiting Patients:");
+
+                            for (String patient : PatientNames) {
+                                IO.println(patient);
+                            }
+                        }
+                        break;
                     case 7:
                         IO.println("Display Treated Patients selected.");
                         break;

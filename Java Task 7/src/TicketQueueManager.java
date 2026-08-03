@@ -63,9 +63,16 @@ public class TicketQueueManager {
                             break;
 
                         case 3:
-                            IO.println("View Next Customer selected.");
-                            break;
+                            // Check if the queue is empty
+                            if (CustomerNames.isEmpty()) {
+                                IO.println("Queue is empty.");
+                            } else {
+                                // Display the next customer using element()
+                                String nextCustomer = CustomerNames.element();
 
+                                IO.println("Next customer: " + nextCustomer);
+                            }
+                            break;
                         case 4:
                             IO.println("Search Customer selected.");
                             break;

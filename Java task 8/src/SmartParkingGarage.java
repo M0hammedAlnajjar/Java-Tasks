@@ -12,8 +12,9 @@ public class SmartParkingGarage {
 
         HashSet<String> plateNumber=new  HashSet<>();
 
-
         int  maximum=10;
+
+        String  license =IO.readln("Enter plate number");
 
 
 

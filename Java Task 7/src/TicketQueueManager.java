@@ -38,10 +38,16 @@ public class TicketQueueManager {
                     // Process menu options using switch-case
                     switch (option) {
 
-                        case 1:
-                            IO.println("Add Customer selected.");
-                            break;
 
+                        case 1:
+                            // Read and add a new customer
+                            String newCustomer = IO.readln("Enter customer name: ");
+
+                            // Add customer using add()
+                            CustomerNames.add(newCustomer);
+
+                            IO.println("Customer added successfully.");
+                            break;
                         case 2:
                             IO.println("Serve Customer selected.");
                             break;

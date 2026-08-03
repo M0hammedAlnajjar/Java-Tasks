@@ -58,6 +58,16 @@ public class PrintQueueManager {
                         }
                         break;
 
+                    // View the next print job
+                    case 3:
+                        if (jobname.isEmpty()) {
+                            IO.println("No print jobs in the queue.");
+                        } else {
+                            IO.println("Next print job: " + jobname.peek());
+                        }
+                        break;
+
+
 
 
 

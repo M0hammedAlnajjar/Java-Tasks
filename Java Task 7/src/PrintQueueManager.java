@@ -68,6 +68,18 @@ public class PrintQueueManager {
                         break;
 
 
+                    // Search for a print job
+                    case 4:
+                        String searchJob = IO.readln("Enter print job name to search: ");
+
+                        if (jobname.contains(searchJob)) {
+                            IO.println("Print job found.");
+                        } else {
+                            IO.println("Print job not found.");
+                        }
+                        break;
+
+
 
 
 

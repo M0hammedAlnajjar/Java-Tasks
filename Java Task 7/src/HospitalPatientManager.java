@@ -6,30 +6,33 @@ public class HospitalPatientManager {
 
     static void main(String[] args) {
 
+        // Create patient waiting queue and treated patient stack
         Queue<String> PatientNames = new LinkedList<>();
-
         Stack<String> CompletedPatient = new Stack<>();
 
         String patients = IO.readln("Enter the number of patients waiting: ");
         int number = Integer.parseInt(patients);
 
+        // Check if number of patients is valid
         if (number <= 0) {
+
             IO.println("Invalid number of patients");
 
         } else {
 
+            // Add initial patients to queue
             for (int i = 0; i < number; i++) {
 
-                String patient = IO.readln("Enter the patient name: ");
+                String patient = IO.readln("Enter patient name: ");
 
-                PatientNames.add(patient);
+                PatientNames.offer(patient);
             }
-
 
             int option;
 
+            // Display menu until user chooses exit
             do {
-                // Display hospital menu
+
                 IO.println("\n----- Hospital Patient Menu -----");
                 IO.println("1. Add Patient");
                 IO.println("2. Treat Patient");
@@ -41,7 +44,6 @@ public class HospitalPatientManager {
                 IO.println("8. Display Hospital Statistics");
                 IO.println("9. Exit");
 
-                // Read user's choice
                 String choice = IO.readln("Enter your choice: ");
                 option = Integer.parseInt(choice);
 
@@ -49,7 +51,7 @@ public class HospitalPatientManager {
                 switch (option) {
 
                     case 1:
-                        // Add patient to waiting queue
+                        // Add patient to queue
                         String newPatient = IO.readln("Enter patient name: ");
 
                         PatientNames.offer(newPatient);
@@ -59,7 +61,7 @@ public class HospitalPatientManager {
 
 
                     case 2:
-                        // Treat patient and move to treatment stack
+                        // Treat patient and move to stack
                         if (PatientNames.isEmpty()) {
 
                             IO.println("No patients waiting for treatment.");
@@ -73,8 +75,10 @@ public class HospitalPatientManager {
                             IO.println("Patient treatment completed successfully.");
                         }
                         break;
+
+
                     case 3:
-                        // View next patient in queue
+                        // View next patient
                         if (PatientNames.isEmpty()) {
 
                             IO.println("No patients available.");
@@ -84,6 +88,7 @@ public class HospitalPatientManager {
                             IO.println("Next patient: " + PatientNames.peek());
                         }
                         break;
+
 
                     case 4:
                         // Undo last treatment
@@ -98,8 +103,10 @@ public class HospitalPatientManager {
                             IO.println("Treatment undone for patient: " + undoPatient);
                         }
                         break;
+
+
                     case 5:
-                        // Search patient in queue and stack
+                        // Search patient
                         String searchPatient = IO.readln("Enter patient name to search: ");
 
                         if (PatientNames.contains(searchPatient)) {
@@ -116,6 +123,7 @@ public class HospitalPatientManager {
                         }
                         break;
 
+
                     case 6:
                         // Display waiting patients
                         if (PatientNames.isEmpty()) {
@@ -131,6 +139,8 @@ public class HospitalPatientManager {
                             }
                         }
                         break;
+
+
                     case 7:
                         // Display treated patients
                         if (CompletedPatient.isEmpty()) {
@@ -157,14 +167,20 @@ public class HospitalPatientManager {
                         IO.println("Total treated patients: " + CompletedPatient.size());
 
                         if (PatientNames.isEmpty()) {
+
                             IO.println("Next patient waiting: None");
+
                         } else {
+
                             IO.println("Next patient waiting: " + PatientNames.peek());
                         }
 
                         if (CompletedPatient.isEmpty()) {
+
                             IO.println("Last treated patient: None");
+
                         } else {
+
                             IO.println("Last treated patient: " + CompletedPatient.peek());
                         }
 
@@ -174,6 +190,7 @@ public class HospitalPatientManager {
 
                         break;
 
+
                     case 9:
                         // Exit program
                         IO.println("Exiting Hospital Patient System.");
@@ -181,6 +198,7 @@ public class HospitalPatientManager {
 
 
                     default:
+                        // Invalid menu option
                         IO.println("Invalid option. Please try again.");
                 }
 

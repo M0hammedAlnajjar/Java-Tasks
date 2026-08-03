@@ -6,5 +6,8 @@ public class TicketQueueManager {
 
         Queue<String> CustomerNames = new LinkedList<>();
 
+        String  customers =IO.readln("Enter the number of customers : ");
+        int number =Integer.parseInt(customers);
+
     }
 }

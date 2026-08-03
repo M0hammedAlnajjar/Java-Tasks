@@ -89,7 +89,6 @@ public class PrintQueueManager {
                             IO.println("Print job not found.");
                         }
                         break;
-
                     // Display all print jobs
                     case 6:
                         if (jobname.isEmpty()) {

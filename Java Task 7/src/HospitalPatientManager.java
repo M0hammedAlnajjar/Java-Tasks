@@ -98,11 +98,23 @@ public class HospitalPatientManager {
                             IO.println("Treatment undone for patient: " + undoPatient);
                         }
                         break;
-
                     case 5:
-                        IO.println("Search Patient selected.");
-                        break;
+                        // Search patient in queue and stack
+                        String searchPatient = IO.readln("Enter patient name to search: ");
 
+                        if (PatientNames.contains(searchPatient)) {
+
+                            IO.println("Patient is waiting for treatment.");
+
+                        } else if (CompletedPatient.search(searchPatient) != -1) {
+
+                            IO.println("Patient treatment completed.");
+
+                        } else {
+
+                            IO.println("Patient not found.");
+                        }
+                        break;
                     case 6:
                         IO.println("Display Waiting Patients selected.");
                         break;

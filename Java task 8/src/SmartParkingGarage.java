@@ -18,30 +18,29 @@ public class SmartParkingGarage {
 
         while (true) {
 
-            System.out.println("\n========= Smart Parking Garage =========");
-            System.out.println("1. Add Vehicle to Waiting Queue");
-            System.out.println("2. Park Next Vehicle");
-            System.out.println("3. Remove Parked Vehicle");
-            System.out.println("4. View Next Waiting Vehicle");
-            System.out.println("5. View Last Parked Vehicle");
-            System.out.println("6. Display Waiting Queue");
-            System.out.println("7. Display Parked Vehicles");
-            System.out.println("8. Search Vehicle");
-            System.out.println("9. Display Garage Statistics");
-            System.out.println("10. Clear Waiting Queue");
-            System.out.println("11. Clear Parking Garage");
-            System.out.println("12. Reset Entire System");
-            System.out.println("13. Exit");
+            IO.println("\n========= Smart Parking Garage =========");
+            IO.println("1. Add Vehicle to Waiting Queue");
+            IO.println("2. Park Next Vehicle");
+            IO.println("3. Remove Parked Vehicle");
+            IO.println("4. View Next Waiting Vehicle");
+            IO.println("5. View Last Parked Vehicle");
+            IO.println("6. Display Waiting Queue");
+            IO.println("7. Display Parked Vehicles");
+            IO.println("8. Search Vehicle");
+            IO.println("9. Display Garage Statistics");
+            IO.println("10. Clear Waiting Queue");
+            IO.println("11. Clear Parking Garage");
+            IO.println("12. Reset Entire System");
+            IO.println("13. Exit");
 
             int choice;
 
-            // Validate menu input
             while (true) {
                 try {
                     choice = Integer.parseInt(IO.readln("Choose an option: "));
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println("Error: Please enter a valid number.");
+                    IO.println("Error: Please enter a valid number.");
                 }
             }
 
@@ -54,17 +53,14 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        plate = IO.readln(
-                                "Enter vehicle number: ").trim();
+                        plate = IO.readln("Enter vehicle number: ").trim();
 
                         if (plate.isEmpty()) {
-                            System.out.println(
-                                    "Error: Vehicle number cannot be empty.");
+                            IO.println("Error: Vehicle number cannot be empty.");
                         }
 
                         else if (licensePlates.contains(plate)) {
-                            System.out.println(
-                                    "Error: Vehicle already exists.");
+                            IO.println("Error: Vehicle already exists.");
                         }
 
                         else {
@@ -72,9 +68,7 @@ public class SmartParkingGarage {
                             waitingVehicles.add(plate);
                             licensePlates.add(plate);
 
-                            System.out.println(
-                                    "Vehicle " + plate +
-                                            " added to waiting queue successfully.");
+                            IO.println("Vehicle " + plate + " added to waiting queue successfully.");
 
                             break;
                         }
@@ -88,30 +82,25 @@ public class SmartParkingGarage {
 
                     if (waitingVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No vehicles in waiting queue.");
+                        IO.println("No vehicles in waiting queue.");
 
                     }
 
                     else if (parkedVehicles.size() >= maximum) {
 
-                        System.out.println(
-                                "Parking garage is full.");
+                        IO.println("Parking garage is full.");
 
                     }
 
                     else {
 
-                        String vehicle =
-                                waitingVehicles.remove();
+                        String vehicle = waitingVehicles.remove();
 
                         parkedVehicles.push(vehicle);
 
                         totalParked++;
 
-                        System.out.println(
-                                "Vehicle parked successfully: "
-                                        + vehicle);
+                        IO.println("Vehicle parked successfully: " + vehicle);
                     }
 
                     break;
@@ -122,38 +111,32 @@ public class SmartParkingGarage {
 
                     if (parkedVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No parked vehicles to remove.");
+                        IO.println("No parked vehicles to remove.");
 
                     }
 
                     else {
 
-                        String removedVehicle =
-                                parkedVehicles.pop();
+                        String removedVehicle = parkedVehicles.pop();
 
                         totalDeparted++;
 
                         licensePlates.remove(removedVehicle);
 
 
-                        System.out.println(
-                                "Vehicle removed from garage: "
-                                        + removedVehicle);
+                        IO.println("Vehicle removed from garage: "
+                                + removedVehicle);
 
 
                         if (!waitingVehicles.isEmpty()
                                 && parkedVehicles.size() < maximum) {
 
-                            String nextVehicle =
-                                    waitingVehicles.remove();
+                            String nextVehicle = waitingVehicles.remove();
 
                             parkedVehicles.push(nextVehicle);
 
 
-                            System.out.println(
-                                    "Next waiting vehicle parked automatically: "
-                                            + nextVehicle);
+                            IO.println("Next waiting vehicle parked automatically: " + nextVehicle);
                         }
                     }
 
@@ -165,36 +148,29 @@ public class SmartParkingGarage {
 
                     if (waitingVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No vehicles are waiting.");
+                        IO.println("No vehicles are waiting.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Next waiting vehicle: "
-                                        + waitingVehicles.peek());
+                        IO.println("Next waiting vehicle: " + waitingVehicles.peek());
                     }
 
                     break;
-
 
 
                 case 5:
 
                     if (parkedVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No parked vehicles.");
+                        IO.println("No parked vehicles.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Last parked vehicle: "
-                                        + parkedVehicles.peek());
+                        IO.println("Last parked vehicle: " + parkedVehicles.peek());
                     }
 
                     break;
@@ -205,20 +181,15 @@ public class SmartParkingGarage {
 
                     if (waitingVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No vehicles are waiting.");
+                        IO.println("No vehicles are waiting.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Waiting vehicles: "
-                                        + waitingVehicles);
+                        IO.println("Waiting vehicles: " + waitingVehicles);
 
-                        System.out.println(
-                                "Total waiting vehicles: "
-                                        + waitingVehicles.size());
+                        IO.println("Total waiting vehicles: " + waitingVehicles.size());
                     }
 
                     break;
@@ -229,79 +200,61 @@ public class SmartParkingGarage {
 
                     if (parkedVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "No vehicles are parked.");
+                        IO.println("No vehicles are parked.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Parked vehicles (Newest to Oldest): "
-                                        + parkedVehicles);
+                        IO.println("Parked vehicles (Newest to Oldest): " + parkedVehicles);
 
-                        System.out.println(
-                                "Garage Capacity: "
-                                        + maximum);
+                        IO.println("Garage Capacity: " + maximum);
 
-                        System.out.println(
-                                "Occupied Spaces: "
-                                        + parkedVehicles.size());
+                        IO.println("Occupied Spaces: " + parkedVehicles.size());
 
-                        System.out.println(
-                                "Available Spaces: "
-                                        + (maximum - parkedVehicles.size()));
+                        IO.println("Available Spaces: " + (maximum - parkedVehicles.size()));
                     }
 
                     break;
 
 
 
+
+
                 case 8:
 
-                    if (waitingVehicles.isEmpty()
-                            && parkedVehicles.isEmpty()) {
+                    if (waitingVehicles.isEmpty() && parkedVehicles.isEmpty()) {
 
-                        System.out.println(
-                                "System is empty. No vehicles to search.");
+                        IO.println("System is empty. No vehicles to search.");
 
                     }
 
                     else {
 
-                        String searchVehicle =
-                                IO.readln(
-                                                "Enter vehicle number to search: ")
-                                        .trim();
+                        String searchVehicle = IO.readln("Enter vehicle number to search: ").trim();
 
 
                         if (searchVehicle.isEmpty()) {
 
-                            System.out.println(
-                                    "Error: Vehicle number cannot be empty.");
+                            IO.println("Error: Vehicle number cannot be empty.");
 
                         }
 
                         else if (waitingVehicles.contains(searchVehicle)) {
 
-                            System.out.println(
-                                    "Vehicle " + searchVehicle
-                                            + " is waiting in queue.");
+                            IO.println("Vehicle " + searchVehicle + " is waiting in queue.");
 
                         }
 
                         else if (parkedVehicles.contains(searchVehicle)) {
 
-                            System.out.println(
-                                    "Vehicle " + searchVehicle
-                                            + " is parked.");
+                            IO.println("Vehicle " + searchVehicle + " is parked.");
 
                         }
 
                         else {
 
-                            System.out.println(
-                                    "Vehicle not found.");
+                            IO.println("Vehicle not found.");
                         }
                     }
 
@@ -311,45 +264,26 @@ public class SmartParkingGarage {
 
                 case 9:
 
-                    int occupancy =
-                            (parkedVehicles.size() * 100)
-                                    / maximum;
+                    int occupancy = (parkedVehicles.size() * 100) / maximum;
 
 
-                    System.out.println(
-                            "\n========= Garage Statistics =========");
+                    IO.println("\n========= Garage Statistics =========");
 
-                    System.out.println(
-                            "Maximum Capacity: "
-                                    + maximum);
+                    IO.println("Maximum Capacity: " + maximum);
 
-                    System.out.println(
-                            "Currently Parked: "
-                                    + parkedVehicles.size());
+                    IO.println("Currently Parked: " + parkedVehicles.size());
 
-                    System.out.println(
-                            "Waiting Vehicles: "
-                                    + waitingVehicles.size());
+                    IO.println("Waiting Vehicles: " + waitingVehicles.size());
 
-                    System.out.println(
-                            "Available Spaces: "
-                                    + (maximum - parkedVehicles.size()));
+                    IO.println("Available Spaces: " + (maximum - parkedVehicles.size()));
 
-                    System.out.println(
-                            "Vehicles Parked Today: "
-                                    + totalParked);
+                    IO.println("Vehicles Parked Today: " + totalParked);
 
-                    System.out.println(
-                            "Vehicles Departed Today: "
-                                    + totalDeparted);
+                    IO.println("Vehicles Departed Today: " + totalDeparted);
 
-                    System.out.println(
-                            "Total Vehicles Processed: "
-                                    + (totalParked + totalDeparted));
+                    IO.println("Total Vehicles Processed: " + (totalParked + totalDeparted));
 
-                    System.out.println(
-                            "Occupancy: "
-                                    + occupancy + "%");
+                    IO.println("Occupancy: " + occupancy + "%");
 
                     break;
 
@@ -361,9 +295,7 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        confirm = IO.readln(
-                                        "Clear waiting queue? (Y/N): ")
-                                .trim();
+                        confirm = IO.readln("Clear waiting queue? (Y/N): ").trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
@@ -372,8 +304,7 @@ public class SmartParkingGarage {
 
                         }
 
-                        System.out.println(
-                                "Please enter Y or N.");
+                        IO.println("Please enter Y or N.");
                     }
 
 
@@ -381,15 +312,12 @@ public class SmartParkingGarage {
 
                         waitingVehicles.clear();
 
-                        System.out.println(
-                                "Waiting queue cleared successfully.");
+                        IO.println("Waiting queue cleared successfully.");
 
                     }
 
                     else {
-
-                        System.out.println(
-                                "Operation cancelled.");
+                        IO.println("Operation cancelled.");
                     }
 
                     break;
@@ -403,9 +331,7 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        confirm = IO.readln(
-                                        "Clear parking garage? (Y/N): ")
-                                .trim();
+                        confirm = IO.readln("Clear parking garage? (Y/N): ").trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
@@ -413,8 +339,7 @@ public class SmartParkingGarage {
                             break;
                         }
 
-                        System.out.println(
-                                "Please enter Y or N.");
+                        IO.println("Please enter Y or N.");
                     }
 
 
@@ -422,15 +347,13 @@ public class SmartParkingGarage {
 
                         parkedVehicles.clear();
 
-                        System.out.println(
-                                "Parking garage cleared successfully.");
+                        IO.println("Parking garage cleared successfully.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Operation cancelled.");
+                        IO.println("Operation cancelled.");
                     }
 
                     break;
@@ -444,9 +367,7 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        confirm = IO.readln(
-                                        "Reset entire system? (Y/N): ")
-                                .trim();
+                        confirm = IO.readln("Reset entire system? (Y/N): ").trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
@@ -454,8 +375,7 @@ public class SmartParkingGarage {
                             break;
                         }
 
-                        System.out.println(
-                                "Please enter Y or N.");
+                        IO.println("Please enter Y or N.");
                     }
 
 
@@ -469,15 +389,13 @@ public class SmartParkingGarage {
                         totalDeparted = 0;
 
 
-                        System.out.println(
-                                "System successfully reset.");
+                        IO.println("System successfully reset.");
 
                     }
 
                     else {
 
-                        System.out.println(
-                                "Operation cancelled.");
+                        IO.println("Operation cancelled.");
                     }
 
                     break;
@@ -487,8 +405,7 @@ public class SmartParkingGarage {
 
                 case 13:
 
-                    System.out.println(
-                            "Thank you for using Smart Parking Garage.");
+                    IO.println("Thank you for using Smart Parking Garage.");
 
                     System.exit(0);
 
@@ -498,8 +415,7 @@ public class SmartParkingGarage {
 
                 default:
 
-                    System.out.println(
-                            "Invalid option. Choose between 1-13.");
+                    IO.println("Invalid option. Choose between 1-13.");
             }
         }
     }

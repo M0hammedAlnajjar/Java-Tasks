@@ -162,19 +162,44 @@ public class SmartParkingGarage {
                     break;
 
                 case 7:
-                    System.out.println("Parked Vehicles: " + parkedVehicles);
-                    break;
-
-
-                case 8:
-                    String search = IO.readln("Enter license plate to search: ");
-
-                    if (licensePlates.contains(search)) {
-                        System.out.println("Vehicle found: " + search);
+                    // Check if parking garage is empty
+                    if (parkedVehicles.isEmpty()) {
+                        System.out.println("No vehicles are parked.");
                     }
+
+                    else {
+                        // Display parked vehicles from newest to oldest
+                        System.out.println("Parked vehicles (Newest to Oldest): "
+                                + parkedVehicles);
+
+                        // Display garage information
+                        System.out.println("Garage Capacity : " + maximum);
+                        System.out.println("Occupied Spaces : "
+                                + parkedVehicles.size());
+                        System.out.println("Available Spaces : "
+                                + (maximum - parkedVehicles.size()));
+                    }
+                    break;
+                case 8:
+                    String searchVehicle = IO.readln("Enter vehicle number to search: ");
+
+                    // Check if vehicle is waiting
+                    if (waitingVehicles.contains(searchVehicle)) {
+                        System.out.println("Vehicle " + searchVehicle
+                                + " is waiting in queue.");
+                    }
+
+                    // Check if vehicle is parked
+                    else if (parkedVehicles.contains(searchVehicle)) {
+                        System.out.println("Vehicle " + searchVehicle
+                                + " is parked.");
+                    }
+
+                    // Vehicle not found
                     else {
                         System.out.println("Vehicle not found.");
                     }
+
                     break;
 
 

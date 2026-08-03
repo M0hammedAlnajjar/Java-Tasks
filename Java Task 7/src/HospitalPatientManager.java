@@ -86,7 +86,17 @@ public class HospitalPatientManager {
                         break;
 
                     case 4:
-                        IO.println("Undo Last Treatment selected.");
+                        // Undo last treatment
+                        if (CompletedPatient.isEmpty()) {
+
+                            IO.println("No completed treatments available.");
+
+                        } else {
+
+                            String undoPatient = CompletedPatient.pop();
+
+                            IO.println("Treatment undone for patient: " + undoPatient);
+                        }
                         break;
 
                     case 5:

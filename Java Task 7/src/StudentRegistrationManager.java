@@ -83,9 +83,16 @@ public class StudentRegistrationManager {
                     break;
 
                 case 4:
-                    IO.println("Undo Last Registration selected.");
-                    break;
+                    // Undo last registration
+                    if (CompletedRegistrations.isEmpty()) {
+                        IO.println("No registrations to undo.");
+                    } else {
 
+                        String removedStudent = CompletedRegistrations.pop();
+
+                        IO.println("Removed registration: " + removedStudent);
+                    }
+                    break;
                 case 5:
                     IO.println("Search Student selected.");
                     break;

@@ -50,11 +50,21 @@ public class NumberStackAnalyzer {
 
                         IO.println("Number added successfully.");
                         break;
-
                     case 2:
-                        IO.println("Remove Top Number");
-                        break;
 
+                        if (stack.isEmpty()) {
+
+                            IO.println("Stack is empty.");
+
+                        } else {
+
+                            int removedNumber = stack.pop();
+
+                            IO.println("Removed number: " + removedNumber);
+
+                        }
+
+                        break;
                     case 3:
                         IO.println("View Top Number");
                         break;

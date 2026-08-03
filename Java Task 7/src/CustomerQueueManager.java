@@ -48,6 +48,15 @@ public class CustomerQueueManager {
                         System.out.println("Served Customer: " + servedCustomer);
                     }
                     break;
+
+
+                case 3:
+                    if (customerQueue.isEmpty()) {
+                        System.out.println("No customers in the queue.");
+                    } else {
+                        System.out.println("Next Customer: " + customerQueue.peek());
+                    }
+                    break;
             }
 
 

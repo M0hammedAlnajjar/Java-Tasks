@@ -10,6 +10,9 @@ public class StudentRegistrationManager {
 
         Stack<String> CompletedRegistrations  = new Stack<>();
 
+        String students=IO.readln("Enter  the number of students waiting for registration :");
+        int number =Integer.parseInt(students);
+
 
 
     }

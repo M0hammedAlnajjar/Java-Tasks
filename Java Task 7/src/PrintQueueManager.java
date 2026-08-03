@@ -108,6 +108,9 @@ public class PrintQueueManager {
                         break;
 
 
+                    // Handle invalid menu choices
+                    default:
+                        IO.println("Invalid option. Please try again.");
 
 
 

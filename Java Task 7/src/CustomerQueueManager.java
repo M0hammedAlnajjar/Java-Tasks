@@ -1,113 +1,199 @@
 import java.util.Queue;
 import java.util.LinkedList;
+
 public class CustomerQueueManager {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
+        // Create a queue to store customer names
         Queue<String> customerQueue = new LinkedList<>();
 
-        String customers =IO.readln("Enter the number of customers : ");
-        int number =Integer.parseInt(customers);
+        // Get the number of initial customers
+        String customers = IO.readln("Enter the number of customers: ");
+        int number = Integer.parseInt(customers);
 
-    if (number<=0){
-        IO.print(" Invalid number of customers ");
+        // Check if the number of customers is valid
+        if (number <= 0) {
 
-    }else {
-        for (int i=0 ; i< number ; i ++ ){
-            String name = IO.readln("Enter customer name");
-            customerQueue.add(name);
+            IO.println("Invalid number of customers.");
+
+        } else {
+
+            // Add initial customers into the queue
+            for (int i = 0; i < number; i++) {
+
+                String name = IO.readln("Enter customer name: ");
+                customerQueue.offer(name);
+            }
         }
-    }
+
 
         int option;
+
+        // Repeat menu until the user chooses exit
         do {
-            System.out.println("1. Add Customer");
-            System.out.println("2. Serve Customer");
-            System.out.println("3. View Next Customer");
-            System.out.println("4. Search Customer");
-            System.out.println("5. Display All Customers");
-            System.out.println("6. Display Queue Statistics");
-            System.out.println("7. Exit");
 
-            String choice = IO.readln("Enter your choice");
-             option = Integer.parseInt(choice);
+            // Display menu options
+            IO.println("\n----- Customer Queue Menu -----");
+            IO.println("1. Add Customer");
+            IO.println("2. Serve Customer");
+            IO.println("3. View Next Customer");
+            IO.println("4. Search Customer");
+            IO.println("5. Display All Customers");
+            IO.println("6. Display Queue Statistics");
+            IO.println("7. Exit");
 
+            String choice = IO.readln("Enter your choice: ");
+            option = Integer.parseInt(choice);
+
+
+            // Use switch-case to process user's choice
             switch (option) {
+
+
+                // Add a new customer to the queue
                 case 1:
-                    String name = IO.readln("Enter customer name");
+
+                    String name = IO.readln("Enter customer name: ");
                     customerQueue.offer(name);
-                    System.out.println("Customer added successfully.");
+
+                    IO.println("Customer added successfully.");
+
                     break;
 
 
+
+                // Serve and remove the first customer
                 case 2:
+
                     if (customerQueue.isEmpty()) {
-                        System.out.println("No customers in the queue.");
+
+                        IO.println("No customers in the queue.");
+
                     } else {
+
                         String servedCustomer = customerQueue.poll();
-                        System.out.println("Served Customer: " + servedCustomer);
+
+                        IO.println("Served Customer: " + servedCustomer);
                     }
+
                     break;
 
 
+
+                // View the next customer without removing
                 case 3:
+
                     if (customerQueue.isEmpty()) {
-                        System.out.println("No customers in the queue.");
+
+                        IO.println("No customers in the queue.");
+
                     } else {
-                        System.out.println("Next Customer: " + customerQueue.peek());
+
+                        IO.println("Next Customer: " + customerQueue.peek());
                     }
+
                     break;
 
 
+
+                // Search for a customer in the queue
                 case 4:
-                    String search = IO.readln("Enter customer name to search");
+
+                    String search = IO.readln("Enter customer name to search: ");
 
                     if (customerQueue.contains(search)) {
-                        System.out.println("Customer found.");
+
+                        IO.println("Customer found.");
+
                     } else {
-                        System.out.println("Customer not found.");
+
+                        IO.println("Customer not found.");
                     }
+
                     break;
 
 
+
+                // Display all customers in the queue
                 case 5:
+
                     if (customerQueue.isEmpty()) {
-                        System.out.println("No customers in the queue.");
+
+                        IO.println("No customers in the queue.");
+
                     } else {
+
+                        IO.println("\nCustomers in Queue:");
+
                         for (String customer : customerQueue) {
-                            System.out.println(customer);
+
+                            IO.println(customer);
                         }
                     }
+
                     break;
 
-                case 6:
-                    System.out.println("Queue Statistics:");
 
-                    System.out.println("Total number of customers: " + customerQueue.size());
+
+                // Display queue statistics
+                case 6:
+
+                    IO.println("\n----- Queue Statistics -----");
+
+                    IO.println("Total number of customers: "
+                            + customerQueue.size());
+
 
                     if (customerQueue.isEmpty()) {
-                        System.out.println("First customer in the queue: None");
-                        System.out.println("Last customer in the queue: None");
+
+                        IO.println("First customer in the queue: None");
+                        IO.println("Last customer in the queue: None");
+
                     } else {
-                        System.out.println("First customer in the queue: " + customerQueue.peek());
+
+                        IO.println("First customer in the queue: "
+                                + customerQueue.peek());
+
 
                         String lastCustomer = "";
+
+                        // Find the last customer in the queue
                         for (String customer : customerQueue) {
+
                             lastCustomer = customer;
                         }
 
-                        System.out.println("Last customer in the queue: " + lastCustomer);
+
+                        IO.println("Last customer in the queue: "
+                                + lastCustomer);
                     }
 
-                    System.out.println("Queue is empty: " + customerQueue.isEmpty());
+
+                    IO.println("Queue is empty: "
+                            + customerQueue.isEmpty());
+
                     break;
+
+
+
+                // Exit the program
+                case 7:
+
+                    IO.println("Exiting program...");
+
+                    break;
+
+
+
+                // Handle invalid choices
+                default:
+
+                    IO.println("Invalid option. Please try again.");
             }
 
 
-
-
         } while (option != 7);
-
 
     }
 }

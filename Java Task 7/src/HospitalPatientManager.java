@@ -57,10 +57,22 @@ public class HospitalPatientManager {
                         IO.println("Patient added successfully.");
                         break;
 
-                    case 2:
-                        IO.println("Treat Patient selected.");
-                        break;
 
+                    case 2:
+                        // Treat patient and move to treatment stack
+                        if (PatientNames.isEmpty()) {
+
+                            IO.println("No patients waiting for treatment.");
+
+                        } else {
+
+                            String treatedPatient = PatientNames.poll();
+
+                            CompletedPatient.push(treatedPatient);
+
+                            IO.println("Patient treatment completed successfully.");
+                        }
+                        break;
                     case 3:
                         IO.println("View Next Patient selected.");
                         break;

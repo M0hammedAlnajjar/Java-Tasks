@@ -49,11 +49,27 @@ public class StudentRegistrationManager {
             switch (option) {
 
                 case 1:
-                    IO.println("Add Student to Queue selected.");
+                    // Add student to queue
+                    String newStudent = IO.readln("Enter student name: ");
+
+                    StudentsWaiting.add(newStudent);
+
+                    IO.println("Student added to registration queue successfully.");
                     break;
 
+
                 case 2:
-                    IO.println("Process Student Registration selected.");
+                    // Process student registration
+                    if (StudentsWaiting.isEmpty()) {
+                        IO.println("No students waiting for registration.");
+                    } else {
+
+                        String registeredStudent = StudentsWaiting.remove();
+
+                        CompletedRegistrations.push(registeredStudent);
+
+                        IO.println("Student registration completed.");
+                    }
                     break;
 
                 case 3:

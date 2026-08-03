@@ -29,6 +29,7 @@ public class TicketQueueManager {
                     IO.println("6. Display Queue Statistics");
                     IO.println("7. Exit");
 
+
                     // Read user's menu choice
                     String choice = IO.readln("Enter your choice: ");
                     option = Integer.parseInt(choice);

@@ -19,6 +19,21 @@ public class CustomerQueueManager {
         }
     }
 
+        int option;
+        do {
+            System.out.println("1. Add Customer");
+            System.out.println("2. Serve Customer");
+            System.out.println("3. View Next Customer");
+            System.out.println("4. Search Customer");
+            System.out.println("5. Display All Customers");
+            System.out.println("6. Display Queue Statistics");
+            System.out.println("7. Exit");
+
+            String choice = IO.readln("Enter your choice");
+             option = Integer.parseInt(choice);
+
+        } while (option != 7);
+
 
     }
 }

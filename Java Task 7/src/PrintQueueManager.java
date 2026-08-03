@@ -5,17 +5,20 @@ public class PrintQueueManager {
 
     static void main(String[] args) {
 
+        // Create a queue to store print jobs
         Queue<String> jobname = new LinkedList<>();
 
         String jobs = IO.readln("Enter the number of print jobs: ");
         int number = Integer.parseInt(jobs);
 
+        // Check if the number of print jobs is valid
         if (number <= 0) {
 
             IO.println("Invalid number of print jobs");
 
         } else {
 
+            // Add initial print jobs to the queue
             for (int i = 0; i < number; i++) {
 
                 String jobName = IO.readln("Enter print job name: ");
@@ -24,7 +27,7 @@ public class PrintQueueManager {
 
             int option;
 
-
+            // Display menu until user chooses exit
             do {
 
                 IO.println("\n----- Print Queue Menu -----");
@@ -40,6 +43,7 @@ public class PrintQueueManager {
                 String choice = IO.readln("Enter your choice: ");
                 option = Integer.parseInt(choice);
 
+                // Process menu selection
                 switch (option) {
 
                     // Add a new print job
@@ -48,6 +52,7 @@ public class PrintQueueManager {
                         jobname.offer(newJob);
                         IO.println("Print job added successfully.");
                         break;
+
                     // Process the next print job
                     case 2:
                         if (jobname.isEmpty()) {
@@ -66,7 +71,6 @@ public class PrintQueueManager {
                             IO.println("Next print job: " + jobname.peek());
                         }
                         break;
-
 
                     // Search for a print job
                     case 4:
@@ -89,6 +93,7 @@ public class PrintQueueManager {
                             IO.println("Print job not found.");
                         }
                         break;
+
                     // Display all print jobs
                     case 6:
                         if (jobname.isEmpty()) {
@@ -102,22 +107,28 @@ public class PrintQueueManager {
                         }
                         break;
 
+                    // Display queue statistics
+                    case 7:
+                        IO.println("Queue Statistics:");
+                        IO.println("Total number of print jobs: " + jobname.size());
+
+                        if (jobname.isEmpty()) {
+                            IO.println("Next print job: None");
+                        } else {
+                            IO.println("Next print job: " + jobname.peek());
+                        }
+
+                        IO.println("Queue is empty: " + jobname.isEmpty());
+                        break;
+
                     // Exit the program
                     case 8:
                         IO.println("Exiting Print Queue Manager.");
                         break;
 
-
                     // Handle invalid menu choices
                     default:
                         IO.println("Invalid option. Please try again.");
-
-
-
-
-
-
-
                 }
 
             } while (option != 8);

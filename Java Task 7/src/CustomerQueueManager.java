@@ -32,6 +32,15 @@ public class CustomerQueueManager {
             String choice = IO.readln("Enter your choice");
              option = Integer.parseInt(choice);
 
+            switch (option) {
+                case 1:
+                    String name = IO.readln("Enter customer name");
+                    customerQueue.offer(name);
+                    System.out.println("Customer added successfully.");
+                    break;
+            }
+
+
         } while (option != 7);
 
 

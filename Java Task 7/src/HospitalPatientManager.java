@@ -175,8 +175,10 @@ public class HospitalPatientManager {
                         break;
 
                     case 9:
+                        // Exit program
                         IO.println("Exiting Hospital Patient System.");
                         break;
+
 
                     default:
                         IO.println("Invalid option. Please try again.");

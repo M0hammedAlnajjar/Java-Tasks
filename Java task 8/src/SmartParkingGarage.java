@@ -17,6 +17,9 @@ public class SmartParkingGarage {
         int  maximum=10;
 
         String  license =IO.readln("Enter plate number");
+        if (licensePlates.contains(license)){
+            IO.println(" System.out.println(\"Vehicle already exists. License plate must be unique.\");");
+        }
 
 
 

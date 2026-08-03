@@ -132,8 +132,21 @@ public class HospitalPatientManager {
                         }
                         break;
                     case 7:
-                        IO.println("Display Treated Patients selected.");
+                        // Display treated patients
+                        if (CompletedPatient.isEmpty()) {
+
+                            IO.println("No treated patients.");
+
+                        } else {
+
+                            IO.println("Treated Patients:");
+
+                            for (String patient : CompletedPatient) {
+                                IO.println(patient);
+                            }
+                        }
                         break;
+
 
                     case 8:
                         IO.println("Display Hospital Statistics selected.");

@@ -7,5 +7,8 @@ public class PrintQueueManager {
 
         Queue<String>  jobname = new LinkedList<>();
 
+        String  jobs = IO.readln("Enter the number of print jobs : ");
+        int number =Integer.parseInt(jobs);
+
     }
 }

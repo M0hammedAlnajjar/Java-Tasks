@@ -93,10 +93,24 @@ public class StudentRegistrationManager {
                         IO.println("Removed registration: " + removedStudent);
                     }
                     break;
-                case 5:
-                    IO.println("Search Student selected.");
-                    break;
 
+                case 5:
+                    // Search student
+                    String searchStudent = IO.readln("Enter student name to search: ");
+
+                    if (StudentsWaiting.contains(searchStudent)) {
+
+                        IO.println("Student is waiting for registration.");
+
+                    } else if (CompletedRegistrations.search(searchStudent) != -1) {
+
+                        IO.println("Student is already registered.");
+
+                    } else {
+
+                        IO.println("Student not found.");
+                    }
+                    break;
                 case 6:
                     IO.println("Display Waiting Students selected.");
                     break;

@@ -87,9 +87,18 @@ public class TicketQueueManager {
                             break;
 
                         case 5:
-                            IO.println("Display All Customers selected.");
-                            break;
+                            // Check if the queue is empty
+                            if (CustomerNames.isEmpty()) {
+                                IO.println("Queue is empty.");
+                            } else {
+                                // Display all customers using a for-each loop
+                                IO.println("All Customers in Queue:");
 
+                                for (String customer : CustomerNames) {
+                                    IO.println(customer);
+                                }
+                            }
+                            break;
                         case 6:
                             IO.println("Display Queue Statistics selected.");
                             break;

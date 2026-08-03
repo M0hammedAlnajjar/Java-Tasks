@@ -73,8 +73,17 @@ public class TicketQueueManager {
                                 IO.println("Next customer: " + nextCustomer);
                             }
                             break;
+
                         case 4:
-                            IO.println("Search Customer selected.");
+                            // Read customer name to search
+                            String searchCustomer = IO.readln("Enter customer name to search: ");
+
+                            // Check if customer exists using contains()
+                            if (CustomerNames.contains(searchCustomer)) {
+                                IO.println("Customer found in queue.");
+                            } else {
+                                IO.println("Customer not found.");
+                            }
                             break;
 
                         case 5:

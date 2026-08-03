@@ -126,9 +126,21 @@ public class StudentRegistrationManager {
                             IO.println(student);
                         }
                     }
-                    break;
+
                 case 7:
-                    IO.println("Display Registered Students selected.");
+                    // Display registered students
+                    if (CompletedRegistrations.isEmpty()) {
+
+                        IO.println("No registered students.");
+
+                    } else {
+
+                        IO.println("Registered Students:");
+
+                        for (String student : CompletedRegistrations) {
+                            IO.println(student);
+                        }
+                    }
                     break;
 
                 case 8:

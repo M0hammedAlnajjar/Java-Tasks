@@ -68,6 +68,17 @@ public class CustomerQueueManager {
                         System.out.println("Customer not found.");
                     }
                     break;
+
+
+                case 5:
+                    if (customerQueue.isEmpty()) {
+                        System.out.println("No customers in the queue.");
+                    } else {
+                        for (String customer : customerQueue) {
+                            System.out.println(customer);
+                        }
+                    }
+                    break;
             }
 
 

@@ -19,6 +19,16 @@ public class SmartParkingGarage {
         if (licensePlates.contains(license)) {
             System.out.println("Vehicle already exists. License plate must be unique.");
         }
+        else {
+            // Add new license plate
+            licensePlates.add(license);
 
-    }
+            // Check parking capacity
+            if (parkedVehicles.size() < maximum) {
+                parkedVehicles.push(license);
+                System.out.println("Vehicle parked successfully.");
+            }
+
+
+        }
 }

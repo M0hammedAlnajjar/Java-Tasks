@@ -291,10 +291,10 @@ public class SmartParkingGarage {
 
                     break;
 
-
                 case 13:
-                    System.out.println("Exiting Smart Parking Garage...");
-                    return;
+                    System.out.println("Thank you for using Smart Parking Garage.");
+                    System.exit(0);
+                    break;
 
 
                 default:

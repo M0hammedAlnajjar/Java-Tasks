@@ -263,10 +263,32 @@ public class SmartParkingGarage {
 
                     break;
                 case 12:
-                    waitingVehicles.clear();
-                    parkedVehicles.clear();
-                    licensePlates.clear();
-                    System.out.println("Entire system reset.");
+                    String confirm = IO.readln(
+                            "Are you sure you want to reset the entire system? (Y/N): "
+                    );
+
+                    if (confirm.equalsIgnoreCase("Y")) {
+
+                        // Clear waiting queue
+                        waitingVehicles.clear();
+
+                        // Clear parking stack
+                        parkedVehicles.clear();
+
+                        // Clear stored vehicle records
+                        licensePlates.clear();
+
+                        // Reset statistics
+                        totalParked = 0;
+                        totalDeparted = 0;
+
+                        System.out.println("System successfully reset.");
+                    }
+
+                    else {
+                        System.out.println("System reset cancelled.");
+                    }
+
                     break;
 
 

@@ -244,11 +244,24 @@ public class SmartParkingGarage {
 
 
                 case 11:
-                    parkedVehicles.clear();
-                    System.out.println("Parking garage cleared.");
+                    String confirm = IO.readln(
+                            "Are you sure you want to clear the parking garage? (Y/N): "
+                    );
+
+                    if (confirm.equalsIgnoreCase("Y")) {
+
+                        // Remove all parked vehicles
+                        parkedVehicles.clear();
+
+                        System.out.println("Parking garage cleared successfully.");
+                        System.out.println("Occupied spaces reset to 0.");
+                    }
+
+                    else {
+                        System.out.println("Clear parking garage cancelled.");
+                    }
+
                     break;
-
-
                 case 12:
                     waitingVehicles.clear();
                     parkedVehicles.clear();

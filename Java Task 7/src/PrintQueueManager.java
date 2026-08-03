@@ -48,6 +48,15 @@ public class PrintQueueManager {
                         jobname.offer(newJob);
                         IO.println("Print job added successfully.");
                         break;
+                    // Process the next print job
+                    case 2:
+                        if (jobname.isEmpty()) {
+                            IO.println("No print jobs in the queue.");
+                        } else {
+                            String processedJob = jobname.poll();
+                            IO.println("Processed print job: " + processedJob);
+                        }
+                        break;
 
 
 

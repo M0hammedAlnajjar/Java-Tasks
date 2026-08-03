@@ -48,8 +48,18 @@ public class TicketQueueManager {
 
                             IO.println("Customer added successfully.");
                             break;
+
                         case 2:
-                            IO.println("Serve Customer selected.");
+                            // Check if the queue is empty
+                            if (CustomerNames.isEmpty()) {
+                                IO.println("Queue is empty.");
+                            } else {
+                                // Remove the first customer using remove()
+                                String servedCustomer = CustomerNames.remove();
+
+                                // Display the served customer
+                                IO.println("Served customer: " + servedCustomer);
+                            }
                             break;
 
                         case 3:

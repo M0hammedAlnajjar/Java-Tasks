@@ -144,9 +144,30 @@ public class StudentRegistrationManager {
                     break;
 
                 case 8:
-                    IO.println("Display Statistics selected.");
-                    break;
+                    // Display statistics
+                    IO.println("\n----- Registration Statistics -----");
 
+                    IO.println("Total waiting students: " + StudentsWaiting.size());
+
+                    IO.println("Total registered students: " + CompletedRegistrations.size());
+
+                    if (StudentsWaiting.isEmpty()) {
+                        IO.println("Next student waiting: None");
+                    } else {
+                        IO.println("Next student waiting: " + StudentsWaiting.element());
+                    }
+
+                    if (CompletedRegistrations.isEmpty()) {
+                        IO.println("Last registered student: None");
+                    } else {
+                        IO.println("Last registered student: " + CompletedRegistrations.peek());
+                    }
+
+                    IO.println("Queue is empty: " + StudentsWaiting.isEmpty());
+
+                    IO.println("Stack is empty: " + CompletedRegistrations.isEmpty());
+
+                    break;
                 case 9:
                     IO.println("Exiting Student Registration System.");
                     break;

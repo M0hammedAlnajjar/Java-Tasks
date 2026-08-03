@@ -101,7 +101,43 @@ public class NumberStackAnalyzer {
                         break;
 
                     case 5:
-                        IO.println("Analyze Numbers");
+
+                        if (stack.isEmpty()) {
+
+                            IO.println("Stack is empty.");
+
+                        } else {
+
+                            int sum = 0;
+                            int evenCount = 0;
+                            int oddCount = 0;
+
+                            for (int number : stack) {
+
+                                sum += number;
+
+                                if (number % 2 == 0) {
+
+                                    evenCount++;
+
+                                } else {
+
+                                    oddCount++;
+
+                                }
+
+                            }
+
+                            double average = (double) sum / stack.size();
+
+                            IO.println("Total numbers: " + stack.size());
+                            IO.println("Sum: " + sum);
+                            IO.println("Average: " + average);
+                            IO.println("Even numbers: " + evenCount);
+                            IO.println("Odd numbers: " + oddCount);
+
+                        }
+
                         break;
 
                     case 6:

@@ -57,6 +57,17 @@ public class CustomerQueueManager {
                         System.out.println("Next Customer: " + customerQueue.peek());
                     }
                     break;
+
+
+                case 4:
+                    String search = IO.readln("Enter customer name to search");
+
+                    if (customerQueue.contains(search)) {
+                        System.out.println("Customer found.");
+                    } else {
+                        System.out.println("Customer not found.");
+                    }
+                    break;
             }
 
 

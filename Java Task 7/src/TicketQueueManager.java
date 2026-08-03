@@ -9,5 +9,9 @@ public class TicketQueueManager {
         String  customers =IO.readln("Enter the number of customers : ");
         int number =Integer.parseInt(customers);
 
+
+        if (number<=0){
+            IO.println("Invalid number of customers");
+        }
     }
 }

@@ -188,7 +188,6 @@ public class SmartParkingGarage {
                         System.out.println("Vehicle " + searchVehicle
                                 + " is waiting in queue.");
                     }
-
                     // Check if vehicle is parked
                     else if (parkedVehicles.contains(searchVehicle)) {
                         System.out.println("Vehicle " + searchVehicle

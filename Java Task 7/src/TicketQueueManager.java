@@ -12,6 +12,11 @@ public class TicketQueueManager {
 
         if (number<=0){
             IO.println("Invalid number of customers");
+        }else {
+            for (int i=0 ; i<number ; i++ ){
+            String jobName = IO.readln("Enter customer name  : ");
+            CustomerNames.offer(jobName);
+
         }
     }
-}
+}}

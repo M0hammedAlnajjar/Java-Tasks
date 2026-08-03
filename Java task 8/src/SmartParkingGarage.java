@@ -29,6 +29,16 @@ public class SmartParkingGarage {
                 System.out.println("Vehicle parked successfully.");
             }
 
+            else {
+                waitingVehicles.add(license);
+                System.out.println("Parking full. Vehicle added to waiting queue.");
+            }
+        }
+
+        System.out.println("Parked vehicles: " + parkedVehicles);
+        System.out.println("Waiting vehicles: " + waitingVehicles);
+    }
+
 
         }
 }

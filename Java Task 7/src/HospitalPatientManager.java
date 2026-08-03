@@ -74,7 +74,15 @@ public class HospitalPatientManager {
                         }
                         break;
                     case 3:
-                        IO.println("View Next Patient selected.");
+                        // View next patient in queue
+                        if (PatientNames.isEmpty()) {
+
+                            IO.println("No patients available.");
+
+                        } else {
+
+                            IO.println("Next patient: " + PatientNames.peek());
+                        }
                         break;
 
                     case 4:

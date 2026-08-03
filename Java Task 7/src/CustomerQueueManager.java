@@ -79,6 +79,28 @@ public class CustomerQueueManager {
                         }
                     }
                     break;
+
+                case 6:
+                    System.out.println("Queue Statistics:");
+
+                    System.out.println("Total number of customers: " + customerQueue.size());
+
+                    if (customerQueue.isEmpty()) {
+                        System.out.println("First customer in the queue: None");
+                        System.out.println("Last customer in the queue: None");
+                    } else {
+                        System.out.println("First customer in the queue: " + customerQueue.peek());
+
+                        String lastCustomer = "";
+                        for (String customer : customerQueue) {
+                            lastCustomer = customer;
+                        }
+
+                        System.out.println("Last customer in the queue: " + lastCustomer);
+                    }
+
+                    System.out.println("Queue is empty: " + customerQueue.isEmpty());
+                    break;
             }
 
 

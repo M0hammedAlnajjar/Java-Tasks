@@ -49,7 +49,12 @@ public class HospitalPatientManager {
                 switch (option) {
 
                     case 1:
-                        IO.println("Add Patient selected.");
+                        // Add patient to waiting queue
+                        String newPatient = IO.readln("Enter patient name: ");
+
+                        PatientNames.offer(newPatient);
+
+                        IO.println("Patient added successfully.");
                         break;
 
                     case 2:

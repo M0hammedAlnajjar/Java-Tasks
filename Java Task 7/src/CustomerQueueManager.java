@@ -38,7 +38,19 @@ public class CustomerQueueManager {
                     customerQueue.offer(name);
                     System.out.println("Customer added successfully.");
                     break;
+
+
+                case 2:
+                    if (customerQueue.isEmpty()) {
+                        System.out.println("No customers in the queue.");
+                    } else {
+                        String servedCustomer = customerQueue.poll();
+                        System.out.println("Served Customer: " + servedCustomer);
+                    }
+                    break;
             }
+
+
 
 
         } while (option != 7);

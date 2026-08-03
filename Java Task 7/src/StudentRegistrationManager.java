@@ -73,7 +73,13 @@ public class StudentRegistrationManager {
                     break;
 
                 case 3:
-                    IO.println("View Next Student selected.");
+                    // View next student
+                    if (StudentsWaiting.isEmpty()) {
+                        IO.println("No students in the queue.");
+                    } else {
+
+                        IO.println("Next student: " + StudentsWaiting.element());
+                    }
                     break;
 
                 case 4:

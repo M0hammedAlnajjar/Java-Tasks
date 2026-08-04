@@ -231,7 +231,7 @@ public class SmartParkingGarage {
 
                     else {
 
-                        String searchVehicle = IO.readln("Enter vehicle number to search: ").trim();
+                        String searchVehicle = IO.readln("Enter vehicle number to search: ").trim().toUpperCase();
 
 
                         if (searchVehicle.isEmpty()) {

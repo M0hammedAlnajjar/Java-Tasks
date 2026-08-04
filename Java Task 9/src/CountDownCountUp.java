@@ -2,14 +2,19 @@ public class CountDownCountUp {
 
     static void count(int n) {
         if (n == 0) {
+            // Base case
             IO.println(n);
             return;
         }
-        IO.println(n);
+        // Count down part
+        IO.println("Counting down: " + n);
 
+        // Recursive call
         if (n>1) {
             count(n - 1);
-            IO.println(n);
+
+            // Count up part (runs when recursion returns)
+            IO.println("Counting up: " + n);
 
         }
     }

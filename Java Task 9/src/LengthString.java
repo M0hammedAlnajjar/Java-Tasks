@@ -14,6 +14,11 @@ public class LengthString {
     static void main() {
 
         IO.println("=== Length of a String ===");
+        String text = IO.readln("Enter a word: ");
+
+        int result = Length(text);
+
+        IO.println("Length of the string: " + result);
 
     }
 }

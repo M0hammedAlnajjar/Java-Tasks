@@ -53,7 +53,7 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        plate = IO.readln("Enter vehicle number: ").trim();
+                        plate = IO.readln("Enter vehicle number: ").trim().toUpperCase();
 
                         if (plate.isEmpty()) {
                             IO.println("Error: Vehicle number cannot be empty.");

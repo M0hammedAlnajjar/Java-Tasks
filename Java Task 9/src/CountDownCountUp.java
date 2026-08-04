@@ -18,6 +18,7 @@ public class CountDownCountUp {
             String countdown=IO.readln("Enter your number : ");
             int number=Integer.parseInt(countdown);
 
+            IO.println("Counting down and then back up:");
             count(number);
 
         }

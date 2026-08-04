@@ -1,9 +1,14 @@
 public class Multiply {
-    static int multiply(int n){
+    static int multiply(int n) {
+        // Base case
+        if (n < 10) {
+            return 1;
 
-        return n;
+        }
+
+        // Remove the last digit and count it
+        return 1 + multiply(n / 10);
     }
-}
 
 
     static void main() {

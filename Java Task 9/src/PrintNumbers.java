@@ -6,6 +6,12 @@ public class PrintNumbers {
 
     }
 
+        // Print smaller numbers first
+        printNumbers(n - 1);
+
+        // Then print current number
+        IO.println(n);
+
     }
 
 

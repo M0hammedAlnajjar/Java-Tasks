@@ -1,6 +1,9 @@
 public class CountDownCountUp {
 
-    static void main(String[] args) {
+    static void count(int n)  {
+        if (n==1){
+            return;
+        }
 
     }
 }

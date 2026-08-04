@@ -5,6 +5,10 @@ import java.util.LinkedList;
 
 public class SmartParkingGarage {
 
+    private static String normalizePlate(String plate) {
+        return plate == null ? "" : plate.trim().toUpperCase();
+    }
+
     public static void main(String[] args) {
 
         int totalParked = 0;
@@ -53,22 +57,25 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        plate = IO.readln("Enter vehicle number: ").trim().toUpperCase();
+                        plate = normalizePlate(
+                                IO.readln("Enter vehicle number: ")
+                        );
 
                         if (plate.isEmpty()) {
+
                             IO.println("Error: Vehicle number cannot be empty.");
-                        }
 
-                        else if (licensePlates.contains(plate)) {
+                        } else if (licensePlates.contains(plate)) {
+
                             IO.println("Error: Vehicle already exists.");
-                        }
 
-                        else {
+                        } else {
 
                             waitingVehicles.add(plate);
                             licensePlates.add(plate);
 
-                            IO.println("Vehicle " + plate + " added to waiting queue successfully.");
+                            IO.println("Vehicle " + plate +
+                                    " added to waiting queue successfully.");
 
                             break;
                         }
@@ -84,15 +91,11 @@ public class SmartParkingGarage {
 
                         IO.println("No vehicles in waiting queue.");
 
-                    }
-
-                    else if (parkedVehicles.size() >= maximum) {
+                    } else if (parkedVehicles.size() >= maximum) {
 
                         IO.println("Parking garage is full.");
 
-                    }
-
-                    else {
+                    } else {
 
                         String vehicle = waitingVehicles.remove();
 
@@ -106,23 +109,19 @@ public class SmartParkingGarage {
                     break;
 
 
-
                 case 3:
 
                     if (parkedVehicles.isEmpty()) {
 
                         IO.println("No parked vehicles to remove.");
 
-                    }
-
-                    else {
+                    } else {
 
                         String removedVehicle = parkedVehicles.pop();
 
                         totalDeparted++;
 
                         licensePlates.remove(removedVehicle);
-
 
                         IO.println("Vehicle removed from garage: "
                                 + removedVehicle);
@@ -135,13 +134,14 @@ public class SmartParkingGarage {
 
                             parkedVehicles.push(nextVehicle);
 
-
-                            IO.println("Next waiting vehicle parked automatically: " + nextVehicle);
+                            IO.println(
+                                    "Next waiting vehicle parked automatically: "
+                                            + nextVehicle
+                            );
                         }
                     }
 
                     break;
-
 
 
                 case 4:
@@ -150,11 +150,10 @@ public class SmartParkingGarage {
 
                         IO.println("No vehicles are waiting.");
 
-                    }
+                    } else {
 
-                    else {
-
-                        IO.println("Next waiting vehicle: " + waitingVehicles.peek());
+                        IO.println("Next waiting vehicle: "
+                                + waitingVehicles.peek());
                     }
 
                     break;
@@ -166,15 +165,13 @@ public class SmartParkingGarage {
 
                         IO.println("No parked vehicles.");
 
-                    }
+                    } else {
 
-                    else {
-
-                        IO.println("Last parked vehicle: " + parkedVehicles.peek());
+                        IO.println("Last parked vehicle: "
+                                + parkedVehicles.peek());
                     }
 
                     break;
-
 
 
                 case 6:
@@ -183,18 +180,16 @@ public class SmartParkingGarage {
 
                         IO.println("No vehicles are waiting.");
 
-                    }
+                    } else {
 
-                    else {
+                        IO.println("Waiting vehicles: "
+                                + waitingVehicles);
 
-                        IO.println("Waiting vehicles: " + waitingVehicles);
-
-                        IO.println("Total waiting vehicles: " + waitingVehicles.size());
+                        IO.println("Total waiting vehicles: "
+                                + waitingVehicles.size());
                     }
 
                     break;
-
-
 
                 case 7:
 
@@ -202,57 +197,62 @@ public class SmartParkingGarage {
 
                         IO.println("No vehicles are parked.");
 
-                    }
+                    } else {
 
-                    else {
-
-                        IO.println("Parked vehicles (Newest to Oldest): " + parkedVehicles);
+                        IO.println("Parked vehicles (Newest to Oldest): "
+                                + parkedVehicles);
 
                         IO.println("Garage Capacity: " + maximum);
 
-                        IO.println("Occupied Spaces: " + parkedVehicles.size());
+                        IO.println("Occupied Spaces: "
+                                + parkedVehicles.size());
 
-                        IO.println("Available Spaces: " + (maximum - parkedVehicles.size()));
+                        IO.println("Available Spaces: "
+                                + (maximum - parkedVehicles.size()));
                     }
 
                     break;
 
 
-
-
-
                 case 8:
 
-                    if (waitingVehicles.isEmpty() && parkedVehicles.isEmpty()) {
+                    if (waitingVehicles.isEmpty()
+                            && parkedVehicles.isEmpty()) {
 
-                        IO.println("System is empty. No vehicles to search.");
+                        IO.println(
+                                "System is empty. No vehicles to search."
+                        );
 
-                    }
+                    } else {
 
-                    else {
-
-                        String searchVehicle = IO.readln("Enter vehicle number to search: ").trim().toUpperCase();
+                        String searchVehicle = normalizePlate(
+                                IO.readln(
+                                        "Enter vehicle number to search: "
+                                )
+                        );
 
 
                         if (searchVehicle.isEmpty()) {
 
-                            IO.println("Error: Vehicle number cannot be empty.");
+                            IO.println(
+                                    "Error: Vehicle number cannot be empty."
+                            );
 
-                        }
+                        } else if (waitingVehicles.contains(searchVehicle)) {
 
-                        else if (waitingVehicles.contains(searchVehicle)) {
+                            IO.println(
+                                    "Vehicle " + searchVehicle
+                                            + " is waiting in queue."
+                            );
 
-                            IO.println("Vehicle " + searchVehicle + " is waiting in queue.");
+                        } else if (parkedVehicles.contains(searchVehicle)) {
 
-                        }
+                            IO.println(
+                                    "Vehicle " + searchVehicle
+                                            + " is parked."
+                            );
 
-                        else if (parkedVehicles.contains(searchVehicle)) {
-
-                            IO.println("Vehicle " + searchVehicle + " is parked.");
-
-                        }
-
-                        else {
+                        } else {
 
                             IO.println("Vehicle not found.");
                         }
@@ -264,26 +264,34 @@ public class SmartParkingGarage {
 
                 case 9:
 
-                    int occupancy = (parkedVehicles.size() * 100) / maximum;
+                    int occupancy =
+                            (parkedVehicles.size() * 100) / maximum;
 
 
                     IO.println("\n========= Garage Statistics =========");
 
                     IO.println("Maximum Capacity: " + maximum);
 
-                    IO.println("Currently Parked: " + parkedVehicles.size());
+                    IO.println("Currently Parked: "
+                            + parkedVehicles.size());
 
-                    IO.println("Waiting Vehicles: " + waitingVehicles.size());
+                    IO.println("Waiting Vehicles: "
+                            + waitingVehicles.size());
 
-                    IO.println("Available Spaces: " + (maximum - parkedVehicles.size()));
+                    IO.println("Available Spaces: "
+                            + (maximum - parkedVehicles.size()));
 
-                    IO.println("Vehicles Parked Today: " + totalParked);
+                    IO.println("Vehicles Parked Today: "
+                            + totalParked);
 
-                    IO.println("Vehicles Departed Today: " + totalDeparted);
+                    IO.println("Vehicles Departed Today: "
+                            + totalDeparted);
 
-                    IO.println("Total Vehicles Processed: " + (totalParked + totalDeparted));
+                    IO.println("Total Vehicles Processed: "
+                            + (totalParked + totalDeparted));
 
-                    IO.println("Occupancy: " + occupancy + "%");
+                    IO.println("Occupancy: "
+                            + occupancy + "%");
 
                     break;
 
@@ -295,13 +303,14 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        confirm = IO.readln("Clear waiting queue? (Y/N): ").trim();
+                        confirm = IO.readln(
+                                "Clear waiting queue? (Y/N): "
+                        ).trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
 
                             break;
-
                         }
 
                         IO.println("Please enter Y or N.");
@@ -310,13 +319,18 @@ public class SmartParkingGarage {
 
                     if (confirm.equalsIgnoreCase("Y")) {
 
+                        for (String plate : waitingVehicles) {
+                            licensePlates.remove(plate);
+                        }
+
                         waitingVehicles.clear();
 
-                        IO.println("Waiting queue cleared successfully.");
+                        IO.println(
+                                "Waiting queue cleared successfully."
+                        );
 
-                    }
+                    } else {
 
-                    else {
                         IO.println("Operation cancelled.");
                     }
 
@@ -331,7 +345,9 @@ public class SmartParkingGarage {
 
                     while (true) {
 
-                        confirm = IO.readln("Clear parking garage? (Y/N): ").trim();
+                        confirm = IO.readln(
+                                "Clear parking garage? (Y/N): "
+                        ).trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
@@ -345,29 +361,32 @@ public class SmartParkingGarage {
 
                     if (confirm.equalsIgnoreCase("Y")) {
 
+                        for (String plate : parkedVehicles) {
+                            licensePlates.remove(plate);
+                        }
+
                         parkedVehicles.clear();
 
-                        IO.println("Parking garage cleared successfully.");
+                        IO.println(
+                                "Parking garage cleared successfully."
+                        );
 
-                    }
-
-                    else {
+                    } else {
 
                         IO.println("Operation cancelled.");
                     }
 
                     break;
                 }
-
-
-
                 case 12: {
 
                     String confirm;
 
                     while (true) {
 
-                        confirm = IO.readln("Reset entire system? (Y/N): ").trim();
+                        confirm = IO.readln(
+                                "Reset entire system? (Y/N): "
+                        ).trim();
 
                         if (confirm.equalsIgnoreCase("Y")
                                 || confirm.equalsIgnoreCase("N")) {
@@ -382,18 +401,22 @@ public class SmartParkingGarage {
                     if (confirm.equalsIgnoreCase("Y")) {
 
                         waitingVehicles.clear();
+
                         parkedVehicles.clear();
+
                         licensePlates.clear();
 
+
                         totalParked = 0;
+
                         totalDeparted = 0;
 
 
-                        IO.println("System successfully reset.");
+                        IO.println(
+                                "System successfully reset."
+                        );
 
-                    }
-
-                    else {
+                    } else {
 
                         IO.println("Operation cancelled.");
                     }
@@ -405,7 +428,9 @@ public class SmartParkingGarage {
 
                 case 13:
 
-                    IO.println("Thank you for using Smart Parking Garage.");
+                    IO.println(
+                            "Thank you for using Smart Parking Garage."
+                    );
 
                     System.exit(0);
 
@@ -415,7 +440,9 @@ public class SmartParkingGarage {
 
                 default:
 
-                    IO.println("Invalid option. Choose between 1-13.");
+                    IO.println(
+                            "Invalid option. Choose between 1-13."
+                    );
             }
         }
     }

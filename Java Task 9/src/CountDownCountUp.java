@@ -24,9 +24,15 @@ public class CountDownCountUp {
             String countdown=IO.readln("Enter your number : ");
             int number=Integer.parseInt(countdown);
 
-            IO.println("Counting down and then back up:");
-            count(number);
+            if (number <= 0) {
+                IO.println("Please enter a positive number!");
+            } else {
+                IO.println("\nStarting count...\n");
 
+                count(number);
+
+                IO.println("\n Finished counting!");
         }
     }
+}
 

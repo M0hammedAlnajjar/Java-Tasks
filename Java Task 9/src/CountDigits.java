@@ -5,7 +5,9 @@ public class CountDigits {
             return 1;
 
     }
-        return n;
+
+        // Count one digit + count the remaining digits
+        return 1 + countDigits(n / 10);
     }
 
     static void main(String[] args) {

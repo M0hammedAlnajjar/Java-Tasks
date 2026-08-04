@@ -21,6 +21,14 @@ public class PrintNumbers {
         String input = IO.readln("Enter a positive number: ");
         int number = Integer.parseInt(input);
 
+        if (number <= 0) {
+            IO.println("Please enter a positive number!");
+        } else {
+            IO.println("\nNumbers from 1 to " + number + ":");
+            printNumbers(number);
+            IO.println("\nProgram finished!");
+        }
+
 
 
     }

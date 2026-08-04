@@ -6,7 +6,6 @@ public class CountDownCountUp {
         }
         IO.println(n);
 
-
         count(n - 1);
         IO.println(n);
 

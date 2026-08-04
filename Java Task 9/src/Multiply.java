@@ -17,6 +17,12 @@ public class Multiply {
         String input = IO.readln("Enter a positive number: ");
         int number = Integer.parseInt(input);
 
+        if (number <= 0) {
+            IO.println("Please enter a positive number!");
+        } else {
+            int digits = multiply(number);
+            IO.println("Number of digits: " + digits);
+        }
     }
 
 

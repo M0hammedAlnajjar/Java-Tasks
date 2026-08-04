@@ -1,11 +1,15 @@
 public class LengthString {
-    static int Length(int n) {
+
+
+    static int Length(String n) {
         // Base case
-        if (n < 10) {
-            return 1;
+        if (n.equals("")) {
+            return 0;
 
         }
-        return n;
+
+        // Count one character + the rest of the string
+        return 1 + Length(n.substring(1));
     }
     static void main() {
 

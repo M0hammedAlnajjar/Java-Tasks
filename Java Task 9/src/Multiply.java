@@ -14,6 +14,9 @@ public class Multiply {
     static void main() {
         IO.println("=== Count Digits in a Number ===");
 
+        String input = IO.readln("Enter a positive number: ");
+        int number = Integer.parseInt(input);
+
     }
 
 

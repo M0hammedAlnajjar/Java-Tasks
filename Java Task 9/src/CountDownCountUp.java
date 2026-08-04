@@ -1,7 +1,8 @@
 public class CountDownCountUp {
 
     static void count(int n) {
-        if (n == 1) {
+        if (n == 0) {
+            IO.println(n);
             return;
         }
         IO.println(n);
@@ -12,7 +13,10 @@ public class CountDownCountUp {
 
     }
         public static void main(String[] args) {
-            count(3);
+
+            String countdown=IO.readln("Enter your number ");
+            int number=Integer.parseInt(countdown);
+
         }
     }
 

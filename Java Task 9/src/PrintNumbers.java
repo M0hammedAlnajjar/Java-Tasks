@@ -16,6 +16,12 @@ public class PrintNumbers {
 
 
     static void main() {
+        IO.println("=== Print Numbers from 1 to N ===");
+
+        String input = IO.readln("Enter a positive number: ");
+        int number = Integer.parseInt(input);
+
+
 
     }
 }

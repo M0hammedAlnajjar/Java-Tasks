@@ -19,6 +19,7 @@ public class CountDownCountUp {
         }
     }
         public static void main(String[] args) {
+            IO.println("=== Count Down & Count Up Program ===");
 
             String countdown=IO.readln("Enter your number : ");
             int number=Integer.parseInt(countdown);

@@ -1,7 +1,20 @@
 public class Vowels {
 
     static int countVowels(String text){
+        // Base case
+        if (text == null || text.length() == 0) {
+            return 0;
+        }
 
+
+        // Check first character
+        char ch = Character.toLowerCase(text.charAt(0));
+
+        int count = 0;
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            count = 1;
+        }
     }
 
 

@@ -5,6 +5,8 @@ public class StringReverse {
 
         }
         printReverse(str.substring(1));
+
+        IO.println(str.charAt(0));
     }
 
 

@@ -4,6 +4,9 @@ public class DisplayNumbers {
         if (n == 0) {
             return;
         }
+
+        // Recursive call
+        printUp(n - 1);
     }
     static void main(String[] args) {
 

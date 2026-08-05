@@ -5,6 +5,12 @@ public class SumEvenNumbers {
         if (n == 0) {
             return 0;
         }
+        // Check if the current number is even
+        if (n % 2 == 0) {
+            // Add n and continue with the previous number
+            return n + sumEven(n - 1);
+        }
+        else {
 
     }
     static void main(String[] args) {

@@ -19,11 +19,13 @@ public class SumArray {
             IO.println("Sum = 0");
             return;
 
-    }
+        }
         String[] parts = input.split(" ");
 
         int[] numbers = new int[parts.length];
 
         for (int i = 0; i < parts.length; i++) {
-            numbers[i] = Integer.parseInt(parts[i])
-}
+            numbers[i] = Integer.parseInt(parts[i]);
+        }
+        IO.println("Sum = " + sumArray(numbers, 0));
+    }}

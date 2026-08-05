@@ -13,6 +13,7 @@ public class DisplayNumbers {
         IO.println(n);
     }
     static void main(String[] args) {
+        IO.println("=== Print Numbers from 1 to N ===");
 
     }
 }

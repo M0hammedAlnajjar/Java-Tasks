@@ -1,6 +1,6 @@
 public class Vowels {
 
-    static int countVowels(String text){
+    static int countVowels(String text) {
         // Base case
         if (text == null || text.length() == 0) {
             return 0;
@@ -15,6 +15,8 @@ public class Vowels {
         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
             count = 1;
         }
+        // Recursive case
+        return count + countVowels(text.substring(1));
     }
 
 

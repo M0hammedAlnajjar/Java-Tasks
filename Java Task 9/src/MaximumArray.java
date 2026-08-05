@@ -21,5 +21,7 @@ public class MaximumArray {
             IO.println("Array is empty!");
             return;
         }
+        String[] parts = input.split(" ");
+
     }
 }

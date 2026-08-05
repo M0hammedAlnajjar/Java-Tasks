@@ -15,6 +15,9 @@ public class SumArray {
 
         String input = IO.readln("Enter numbers separated by spaces: ");
 
+        if (input == null || input.isEmpty()) {
+            IO.println("Sum = 0");
+            return;
 
     }
 }

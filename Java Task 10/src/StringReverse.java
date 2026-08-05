@@ -3,6 +3,8 @@ public class StringReverse {
         if (str.isEmpty()) {
             return;
 
+        }
+        printReverse(str.substring(1));
     }
 
 

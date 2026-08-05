@@ -4,6 +4,9 @@ public class CheckNum {
         if (n == 0) {
             return true;
         }
+        if (n == 1) {
+            return false;
+        }
     }
 
     static void main(String[] args) {

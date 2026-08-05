@@ -19,6 +19,7 @@ public class SumEvenNumbers {
     static void main(String[] args) {
 
         IO.println("=== Sum of Even Numbers from 1 to N ===");
+        int n = Integer.parseInt(IO.readln("Enter a number: "));
 
     }
 }

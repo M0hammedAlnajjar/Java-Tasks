@@ -6,12 +6,16 @@ public class MaximumArray {
             return numbers[index];
         }
 
-        // Recursive case: find max of the rest of the array
+        // Base case: last element is the maximum for now
         int maxRest = findMax(numbers, index + 1);
 
         return Math.max(numbers[index], maxRest);
     }
     static void main(String[] args) {
+
+
+        IO.println("=== Find Maximum in an Array ===");
+
 
     }
 }

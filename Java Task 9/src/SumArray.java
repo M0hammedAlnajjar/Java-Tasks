@@ -21,4 +21,6 @@ public class SumArray {
 
     }
         String[] parts = input.split(" ");
+
+        int[] numbers = new int[parts.length];
 }

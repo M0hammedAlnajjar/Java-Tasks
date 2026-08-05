@@ -17,6 +17,9 @@ public class WordPalindrome {
 
         IO.println("=== Check if a Word is a Palindrome ===");
 
+        String word = IO.readln("Enter a word: ");
+
+        IO.println("Is palindrome? " + isPalindrome(word));
 
     }
 }

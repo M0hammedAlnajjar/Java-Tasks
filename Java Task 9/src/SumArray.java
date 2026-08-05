@@ -23,4 +23,7 @@ public class SumArray {
         String[] parts = input.split(" ");
 
         int[] numbers = new int[parts.length];
+
+        for (int i = 0; i < parts.length; i++) {
+            numbers[i] = Integer.parseInt(parts[i])
 }

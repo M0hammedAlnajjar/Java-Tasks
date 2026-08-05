@@ -7,6 +7,9 @@ public class CheckNum {
         if (n == 1) {
             return false;
         }
+
+        // Recursive case
+        return isEven(n - 2);
     }
 
     static void main(String[] args) {

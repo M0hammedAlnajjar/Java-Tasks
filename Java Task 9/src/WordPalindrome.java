@@ -10,6 +10,8 @@ public class WordPalindrome {
             return false;
         }
 
+        // Recursive case
+        return isPalindrome(text.substring(1, text.length() - 1));
     }
     static void main(String[] args) {
 

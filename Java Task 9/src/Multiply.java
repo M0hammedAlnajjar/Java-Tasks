@@ -1,29 +1,22 @@
 public class Multiply {
-    static int multiply(int n) {
+
+    static int multiply(int a, int b) {
         // Base case
-        if (n < 10) {
-            return 1;
-
+        if (b == 0) {
+            return 0;
         }
 
-        // Remove the last digit and count it
-        return 1 + multiply(n / 10);
+        // Recursive case
+        return a + multiply(a, b - 1);
     }
 
+    public static void main(String[] args) {
 
-    static void main() {
-        IO.println("=== Count Digits in a Number ===");
+        IO.println("=== Multiply Two Numbers ===");
 
-        String input = IO.readln("Enter a positive number: ");
-        int number = Integer.parseInt(input);
+        int a = Integer.parseInt(IO.readln("Enter first number: "));
+        int b = Integer.parseInt(IO.readln("Enter second number: "));
 
-        if (number <= 0) {
-            IO.println("Please enter a positive number!");
-        } else {
-            int digits = multiply(number);
-            IO.println("Number of digits: " + digits);
-        }
+        IO.println("Result = " + multiply(a, b));
     }
-
-
 }

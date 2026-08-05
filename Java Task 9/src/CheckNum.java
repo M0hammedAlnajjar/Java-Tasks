@@ -16,5 +16,9 @@ public class CheckNum {
 
         IO.println("=== Check if Number is Even ===");
 
+        int number = Integer.parseInt(IO.readln("Enter a number: "));
+
+        IO.println("Is even? " + isEven(number));
+
     }
 }

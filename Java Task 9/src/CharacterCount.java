@@ -4,6 +4,13 @@ public class CharacterCount {
         if (text.length() == 0) {
             return 0;
         }
+
+        // Check first character and add result of the rest
+        int count = 0;
+
+        if (text.charAt(0) == letter) {
+            count = 1;
+        }
     }
 
     static void main(String[] args) {

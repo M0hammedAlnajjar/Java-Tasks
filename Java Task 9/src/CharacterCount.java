@@ -19,6 +19,8 @@ public class CharacterCount {
 
         IO.println("=== Count a Character in a String ===");
 
+        String text = IO.readln("Enter a word: ");
+        String inputLetter = IO.readln("Enter a letter: ");
 
 
     }

@@ -20,4 +20,5 @@ public class SumArray {
             return;
 
     }
+        String[] parts = input.split(" ");
 }

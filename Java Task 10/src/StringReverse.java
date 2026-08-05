@@ -13,6 +13,8 @@ public class StringReverse {
     static void main(String[] args) {
         IO.println("=== Print String in Reverse ===");
 
+        String text = IO.readln("Enter a word: ");
+
 
     }
 }

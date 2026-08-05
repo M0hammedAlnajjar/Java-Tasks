@@ -12,6 +12,9 @@ public class SumEvenNumbers {
         }
         else {
 
+                // Ignore odd numbers and continue recursion
+                return sumEven(n - 1);
+            }
     }
     static void main(String[] args) {
 

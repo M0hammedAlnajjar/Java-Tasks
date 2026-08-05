@@ -1,20 +1,19 @@
 public class SumoDigits {
-    static int sumDigits(Integer n) {
-        // Base case
+
+    static int sumDigits(int n) {
         if (n == 0) {
             return 0;
         }
-
-        // Recursive case
         return (n % 10) + sumDigits(n / 10);
     }
 
-    static void main() {
-        IO.println(5);;
-        IO.println(123);;
-        IO.println(sumDigits(999));
-        IO.println(4021);;
+    public static void main(String[] args) {
+
+        IO.println("=== Sum of Digits ===");
+
+        String input = IO.readln("Enter a number: ");
+        int number = Integer.parseInt(input);
+
+        IO.println("Sum of digits = " + sumDigits(number));
     }
-
-
 }

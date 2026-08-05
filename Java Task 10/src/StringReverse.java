@@ -20,6 +20,9 @@ public class StringReverse {
             IO.println("Input cannot be empty.");
 
     }
+        else if (text.matches(".*\\d.*")) {
+            IO.println("Numbers are not allowed.");
+        }
 
         else {
             IO.println("Reverse of the word:");

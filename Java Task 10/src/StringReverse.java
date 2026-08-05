@@ -20,4 +20,9 @@ public class StringReverse {
             IO.println("Input cannot be empty.");
 
     }
-}
+
+        else {
+            IO.println("Reverse of the word:");
+            printReverse(text);
+        }
+}}

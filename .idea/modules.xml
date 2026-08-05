@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1/1.iml" filepath="$PROJECT_DIR$/1/1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Task 1/Java Task 1.iml" filepath="$PROJECT_DIR$/Java Task 1/Java Task 1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Java Task 9/Java Task 10/Java Task 10.iml" filepath="$PROJECT_DIR$/Java Task 9/Java Task 10/Java Task 10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java Task 10 New/Java Task 10 New.iml" filepath="$PROJECT_DIR$/Java Task 10 New/Java Task 10 New.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Task 2/Java Task 2.iml" filepath="$PROJECT_DIR$/Java Task 2/Java Task 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Task 3/Java Task 3.iml" filepath="$PROJECT_DIR$/Java Task 3/Java Task 3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Task 4/Java Task 4.iml" filepath="$PROJECT_DIR$/Java Task 4/Java Task 4.iml" />
@@ -16,7 +16,6 @@
       <module fileurl="file://$PROJECT_DIR$/Java task 8/Java task 8.iml" filepath="$PROJECT_DIR$/Java task 8/Java task 8.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Tasks.iml" filepath="$PROJECT_DIR$/.idea/Java-Tasks.iml" />
       <module fileurl="file://$PROJECT_DIR$/ts/ts.iml" filepath="$PROJECT_DIR$/ts/ts.iml" />
-      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>
 </project>

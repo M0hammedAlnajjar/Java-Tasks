@@ -16,5 +16,8 @@ public class StringReverse {
         String text = IO.readln("Enter a word: ");
 
 
+        if (text.isEmpty()) {
+            IO.println("Input cannot be empty.");
+
     }
 }

@@ -20,9 +20,6 @@ public class Vowels {
     }
 
 
-
-
-
     static void main(String[] args) {
 
         IO.println("=== Number of Vowels in a String ===");
@@ -30,5 +27,12 @@ public class Vowels {
         String text = IO.readln("Enter a word: ");
 
 
+        if (text == null || text.isEmpty()) {
+            IO.println("Please enter a word!");
+            return;
+        }
+
+        IO.println("Number of vowels = " + countVowels(text));
     }
+
 }

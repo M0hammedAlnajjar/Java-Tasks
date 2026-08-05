@@ -11,6 +11,8 @@ public class CharacterCount {
         if (text.charAt(0) == letter) {
             count = 1;
         }
+        // Recursive case
+        return count + countChar(text.substring(1), letter);
     }
 
     static void main(String[] args) {

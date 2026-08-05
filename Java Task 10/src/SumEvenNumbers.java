@@ -21,5 +21,13 @@ public class SumEvenNumbers {
         IO.println("=== Sum of Even Numbers from 1 to N ===");
         int n = Integer.parseInt(IO.readln("Enter a number: "));
 
+        if (n < 0) {
+            IO.println("Negative numbers are not allowed.");
+        }
+        else {
+            int result = sumEven(n);
+
+            IO.println("Sum of even numbers from 1 to " + n + " is: " + result);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class MaximumArray {
 
 
         IO.println("=== Find Maximum in an Array ===");
-
+        String input = IO.readln("Enter numbers separated by spaces: ");
 
     }
 }

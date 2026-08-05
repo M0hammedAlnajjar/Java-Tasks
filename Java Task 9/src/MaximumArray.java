@@ -28,5 +28,6 @@ public class MaximumArray {
         for (int i = 0; i < parts.length; i++) {
             numbers[i] = Integer.parseInt(parts[i]);
         }
+        IO.println("Maximum = " + findMax(numbers, 0));
     }
 }

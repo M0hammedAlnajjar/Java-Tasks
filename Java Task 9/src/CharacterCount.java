@@ -22,6 +22,9 @@ public class CharacterCount {
         String text = IO.readln("Enter a word: ");
         String inputLetter = IO.readln("Enter a letter: ");
 
+        char letter = inputLetter.charAt(0);
+
+        IO.println("Count = " + countChar(text, letter));
 
     }
 }

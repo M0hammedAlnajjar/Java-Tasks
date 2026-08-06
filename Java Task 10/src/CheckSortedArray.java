@@ -22,5 +22,10 @@ public class CheckSortedArray {
         IO.println("=== Check if an Array is Sorted ===");
         int size = Integer.parseInt(IO.readln("Enter the number of elements: "));
         int[] arr = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = Integer.parseInt(IO.readln("Enter element " + i + ": "));
+        }
+
     }
 }

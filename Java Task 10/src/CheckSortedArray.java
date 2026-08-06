@@ -20,7 +20,7 @@ public class CheckSortedArray {
     static void main(String[] args) {
 
         IO.println("=== Check if an Array is Sorted ===");
-
+        int size = Integer.parseInt(IO.readln("Enter the number of elements: "));
 
     }
 }

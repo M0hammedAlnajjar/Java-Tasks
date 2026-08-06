@@ -8,6 +8,13 @@ public class CountDigitRecursive {
             if (number < 10) {
                 return (number == digit) ? 1 : 0;
             }
+
+            // Check the last digit and recurse on the remaining digits
+            if (number % 10 == digit) {
+                return 1 + countDigit(number / 10, digit);
+            } else {
+                return countDigit(number / 10, digit);
+            }
     }
 
     static void main(String[] args) {

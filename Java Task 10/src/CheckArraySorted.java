@@ -14,5 +14,9 @@ public class CheckArraySorted {
     }
     static void main(String[] args) {
 
+
+            IO.println("=== Check if an Array is Sorted ===");
+        }
+
     }
 }

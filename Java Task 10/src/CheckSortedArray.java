@@ -21,6 +21,6 @@ public class CheckSortedArray {
 
         IO.println("=== Check if an Array is Sorted ===");
         int size = Integer.parseInt(IO.readln("Enter the number of elements: "));
-
+        int[] arr = new int[size];
     }
 }

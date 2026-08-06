@@ -20,6 +20,9 @@ public class CountDigitRecursive {
     static void main(String[] args) {
 
             IO.println("=== Count Occurrences of a Digit in a Number ===");
+
+        int number = IO.readInt("Enter a number: ");
+        int digit = IO.readInt("Enter the digit to count: ");
         }
 
     }

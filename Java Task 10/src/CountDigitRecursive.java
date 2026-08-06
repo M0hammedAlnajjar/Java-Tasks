@@ -15,15 +15,20 @@ public class CountDigitRecursive {
             } else {
                 return countDigit(number / 10, digit);
             }
-        }
-    }
+        }}
+
     static void main(String[] args) {
 
             IO.println("=== Count Occurrences of a Digit in a Number ===");
 
         int number = IO.readInt("Enter a number: ");
         int digit = IO.readInt("Enter the digit to count: ");
-        }
+
+        int result = countDigit(number, digit);
+
+        IO.println("The digit " + digit + " appears " + result + " time(s) in the number.");
 
     }
-}
+
+    }
+

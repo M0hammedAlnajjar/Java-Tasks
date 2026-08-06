@@ -10,8 +10,12 @@ public class CheckSortedArray {
         if (arr[index] > arr[index + 1]) {
             return false;
         }
-
+        // Recursive call
+        return isSorted(arr, index + 1);
     }
+
+
+
 
     static void main(String[] args) {
 

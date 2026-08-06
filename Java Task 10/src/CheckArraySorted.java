@@ -5,6 +5,10 @@ public class CheckArraySorted {
         if (index >= arr.length - 1) {
             return true;
 
+            // If current element is greater than the next, array is not sorted
+            if (arr[index] > arr[index + 1]) {
+                return false;
+            }
     }
     static void main(String[] args) {
 

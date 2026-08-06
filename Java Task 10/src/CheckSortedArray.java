@@ -27,5 +27,7 @@ public class CheckSortedArray {
             arr[i] = Integer.parseInt(IO.readln("Enter element " + i + ": "));
         }
 
+        boolean result = isSorted(arr, 0);
+
     }
 }

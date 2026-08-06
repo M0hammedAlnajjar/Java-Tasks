@@ -28,6 +28,12 @@ public class CheckSortedArray {
         }
 
         boolean result = isSorted(arr, 0);
+        if (result) {
+            IO.println("The array is sorted.");
+        } else {
+            IO.println("The array is not sorted.");
+        }
+
 
     }
 }

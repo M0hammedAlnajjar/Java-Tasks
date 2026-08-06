@@ -4,6 +4,10 @@ public class CountDigitRecursive {
         if (number == 0) {
             return (digit == 0) ? 1 : 0;
 
+            // Base case
+            if (number < 10) {
+                return (number == digit) ? 1 : 0;
+            }
     }
 
     static void main(String[] args) {

@@ -43,22 +43,23 @@ public class Magazine implements LibraryItem {
         this.month = month;
     }
 
+    @Override
+    public void printAllInfo() {
+        System.out.println(
+                "Magazine: " + name +
+                        " | Issue " + issueNumber +
+                        " | " + month
+        );
+    }
 
     @Override
     public String getLabel() {
-        return "";
+        return "Magazine: " + name;
     }
 
     @Override
     public String getShelfCode() {
-        return "";
-    }
-
-    public Magazine() {
-    }
-
-    @Override
-    public void printAllInfo() {
-
+        return "M-01";
     }
 }
+

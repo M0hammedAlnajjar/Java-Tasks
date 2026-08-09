@@ -7,7 +7,7 @@ public class CountZeros {
 
         if (number < 10) { return 0; }
 
-
+        int lastDigit = number % 10;
     }
 
     static void main(String[] args) {

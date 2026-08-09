@@ -21,5 +21,8 @@ public class removeChar {
 
         String str = IO.readln("Enter a string: ");
 
+        if (!str.isEmpty()) {
+
+
     }
 }

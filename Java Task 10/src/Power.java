@@ -6,6 +6,7 @@ public class Power {
         int half = power(base, exponent / 2);
 
         if (exponent % 2 == 0) {
+            return half * half;
 
         }
 

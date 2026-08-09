@@ -12,6 +12,8 @@ public class ToBinary {
     static void main(String[] args) {
 
         IO.println("=== Convert a Number to Binary ===");
+        String numberInput = IO.readln("Enter a number: ");
+
 
 
     }

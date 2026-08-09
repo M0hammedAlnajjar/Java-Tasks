@@ -5,6 +5,8 @@ public class CountZeros {
             return 1;
         }
 
+        if (number < 10) { return 0; }
+
 
     }
 

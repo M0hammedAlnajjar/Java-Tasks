@@ -26,8 +26,13 @@ public class removeChar {
 
             String result = removeChar(str, ch);
             IO.println("Result: " + result);
+
         }
+        else {
 
-
+            // Display a message if the string is empty
+            IO.println("String cannot be empty.");
+        }
     }
-}
+
+

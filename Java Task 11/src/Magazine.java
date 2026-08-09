@@ -1,5 +1,11 @@
 public class Magazine implements LibraryItem {
 
+
+    private String name;
+    private int issueNumber;
+    private String month;
+
+
     @Override
     public String getLabel() {
         return "";
@@ -8,6 +14,9 @@ public class Magazine implements LibraryItem {
     @Override
     public String getShelfCode() {
         return "";
+    }
+
+    public Magazine() {
     }
 
     @Override

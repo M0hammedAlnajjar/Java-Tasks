@@ -13,6 +13,9 @@ public class ContainsCharacter {
 
         String text = IO.readln("Enter a string: ");
 
+        String characterInput = IO.readln("Enter a character: ");
+
+
 
 
     }

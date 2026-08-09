@@ -23,6 +23,8 @@ public class Book implements LibraryItem{
 
     @Override
     public String getLabel() {
+
+
         return "";
     }
 

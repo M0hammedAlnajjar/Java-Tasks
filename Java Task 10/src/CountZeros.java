@@ -25,6 +25,11 @@ public class CountZeros {
         String numberInput = IO.readln("Enter a number: ");
         int number = Integer.parseInt(numberInput);
 
+        int result = countZeros(number);
+        IO.println("Number of zeros: " + result);
+
+
+
 
     }
 }

@@ -11,5 +11,9 @@ public class SumEvenIndex {
 
 
         IO.println("=== Sum of Array Elements at Even Indexes ===");
+
+        String sizeInput = IO.readln("Enter the size of the array: ");
+        int size = Integer.parseInt(sizeInput);
+
     }
 }

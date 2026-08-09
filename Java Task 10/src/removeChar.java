@@ -1,16 +1,21 @@
 public class removeChar {
     static String removeChar(String str, char ch) {
 
+        // Base case: if the string is empty, return an empty string
         if (str.isEmpty()) {
             return "";
         }
+
+        // Check if the first character is the character to remove
         if (str.charAt(0) == ch) {
 
+            // Skip the first character and continue recursively
+            return removeChar(str.substring(1), ch);
         }
-        return removeChar(str.substring(1), ch);
 
+        // Keep the first character and process the rest recursively
+        return str.charAt(0) + removeChar(str.substring(1), ch);
     }
-
     static void main(String[] args) {
 
     }

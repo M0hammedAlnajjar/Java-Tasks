@@ -14,5 +14,8 @@ public class CountUpper {
     static void main(String[] args) {
 
         IO.println("=== Count Uppercase Letters ===");
+
+        String text = IO.readln("Enter a string: ");
+
     }
 }

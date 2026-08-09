@@ -5,6 +5,22 @@ public class Magazine implements LibraryItem {
     private int issueNumber;
     private String month;
 
+
+    public String getName() {
+        return name;
+    }
+
+
+    public void setName(String name) {
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Name cannot be empty");
+        }
+    }
+
+
+
     public int getIssueNumber() {
         return issueNumber;
     }

@@ -4,7 +4,7 @@ public interface LibraryItem {
 
     int getPages();
 
-
+    void printAllInfo();
 
 
 }

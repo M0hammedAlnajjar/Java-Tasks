@@ -11,6 +11,9 @@ public class ContainsCharacter {
 
         IO.println("=== Check if a String Contains a Character ===");
 
+        String text = IO.readln("Enter a string: ");
+
+
 
     }
 }

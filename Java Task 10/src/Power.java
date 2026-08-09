@@ -22,5 +22,9 @@ public class Power {
 
         String baseInput = IO.readln("Enter the base: ");
 
-    }
+        if (!baseInput.isEmpty()) {
+
+
+
+        }
 }

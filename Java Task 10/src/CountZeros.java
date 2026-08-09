@@ -11,6 +11,9 @@ public class CountZeros {
 
         int remainingNumber = number / 10;
 
+        if (lastDigit == 0) { return 1 + countZeros(remainingNumber); }
+
+
     }
 
     static void main(String[] args) {

@@ -17,6 +17,6 @@ public class removeChar {
         return str.charAt(0) + removeChar(str.substring(1), ch);
     }
     static void main(String[] args) {
-
+        IO.println("=== Remove a Character from a String ===");
     }
 }

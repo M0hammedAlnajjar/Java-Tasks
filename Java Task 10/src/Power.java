@@ -19,5 +19,8 @@ public class Power {
     static void main(String[] args) {
 
         IO.println("=== Raise a Number to a Power ===");
+
+        String baseInput = IO.readln("Enter the base: ");
+
     }
 }

@@ -23,6 +23,8 @@ public class CountZeros {
         IO.println("=== Count Zeros in a Number ===");
 
         String numberInput = IO.readln("Enter a number: ");
+        int number = Integer.parseInt(numberInput);
+
 
     }
 }

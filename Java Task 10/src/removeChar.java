@@ -7,7 +7,7 @@ public class removeChar {
         if (str.charAt(0) == ch) {
 
         }
-
+        return removeChar(str.substring(1), ch);
 
     }
 

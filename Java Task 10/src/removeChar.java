@@ -25,6 +25,8 @@ public class removeChar {
             char ch = IO.readln("Enter the character to remove: ").charAt(0);
 
             String result = removeChar(str, ch);
+            IO.println("Result: " + result);
+        }
 
 
     }

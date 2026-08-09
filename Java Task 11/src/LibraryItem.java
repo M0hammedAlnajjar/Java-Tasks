@@ -1,10 +1,6 @@
 public interface LibraryItem {
 
-    String getTitle();
-
-    int getPages();
-
+    String getLabel();
+    String getShelfCode();
     void printAllInfo();
-
-
 }

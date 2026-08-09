@@ -16,6 +16,10 @@ public class ContainsCharacter {
         String characterInput = IO.readln("Enter a character: ");
 
 
+        char character = characterInput.charAt(0);
+
+
+
 
 
     }

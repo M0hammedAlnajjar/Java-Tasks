@@ -4,7 +4,9 @@ public class removeChar {
         if (str.isEmpty()) {
             return "";
         }
+        if (str.charAt(0) == ch) {
 
+        }
 
 
     }

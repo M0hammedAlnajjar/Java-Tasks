@@ -4,6 +4,8 @@ public class ContainsCharacter {
         if (text.length() == 0) { return false; }
 
         if (text.charAt(0) == character) { return true; }
+
+        return contains(text.substring(1), character);
     }
     static void main(String[] args) {
 

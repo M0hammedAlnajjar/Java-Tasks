@@ -18,5 +18,8 @@ public class removeChar {
     }
     static void main(String[] args) {
         IO.println("=== Remove a Character from a String ===");
+
+        String str = IO.readln("Enter a string: ");
+
     }
 }

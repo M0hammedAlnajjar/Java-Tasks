@@ -10,8 +10,15 @@ public class Magazine implements LibraryItem {
     }
 
     public void setIssueNumber(int issueNumber) {
-        this.issueNumber = issueNumber;
+        if (issueNumber >= 1 && issueNumber <= 500) {
+            this.issueNumber = issueNumber;
+        } else {
+            System.out.println("Invalid issue number");
+        }
     }
+
+
+
 
     public String getMonth() {
         return month;

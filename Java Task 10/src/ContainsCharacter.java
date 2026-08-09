@@ -20,6 +20,9 @@ public class ContainsCharacter {
 
         boolean result = contains(text, character);
 
+        IO.println("Contains character: " + result);
+
+
 
 
 

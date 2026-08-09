@@ -16,6 +16,7 @@ public class removeChar {
         // Keep the first character and process the rest recursively
         return str.charAt(0) + removeChar(str.substring(1), ch);
     }
+
     static void main(String[] args) {
         IO.println("=== Remove a Character from a String ===");
 
@@ -27,12 +28,10 @@ public class removeChar {
             String result = removeChar(str, ch);
             IO.println("Result: " + result);
 
-        }
-        else {
+        } else {
 
-            // Display a message if the string is empty
             IO.println("String cannot be empty.");
         }
     }
-
+}
 

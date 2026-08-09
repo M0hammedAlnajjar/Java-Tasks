@@ -17,5 +17,9 @@ public class CountUpper {
 
         String text = IO.readln("Enter a string: ");
 
+        int result = countUpper(text);
+
+        IO.println("Number of uppercase letters: " + result);
+
     }
 }

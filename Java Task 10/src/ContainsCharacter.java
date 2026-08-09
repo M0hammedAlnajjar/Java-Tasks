@@ -18,6 +18,9 @@ public class ContainsCharacter {
 
         char character = characterInput.charAt(0);
 
+        boolean result = contains(text, character);
+
+
 
 
 

@@ -18,6 +18,11 @@ public class SumEvenIndex {
 
         int[] numbers = new int[size];
 
+        for (int i = 0; i < numbers.length; i++) {
+            String numberInput = IO.readln("Enter element " + i + ": ");
+            numbers[i] = Integer.parseInt(numberInput);
+        }
+
 
 
     }

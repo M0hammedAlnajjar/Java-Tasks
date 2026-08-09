@@ -38,9 +38,15 @@ public class Power {
 
                 IO.println("Exponent cannot be empty.");
             }
+            else {
+
+                IO.println("Base cannot be empty.");
+            }
+
+
+
 
 
         }
-
-        }
+    }
 }

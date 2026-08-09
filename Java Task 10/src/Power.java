@@ -9,9 +9,14 @@ public class Power {
             return half * half;
 
         }
+        else {
 
-
+            // If the exponent is odd, multiply by the base once more
+            return base * half * half;
+        }
     }
+
+
     static void main(String[] args) {
 
     }

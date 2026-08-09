@@ -22,6 +22,9 @@ public class removeChar {
         String str = IO.readln("Enter a string: ");
 
         if (!str.isEmpty()) {
+            char ch = IO.readln("Enter the character to remove: ").charAt(0);
+
+            String result = removeChar(str, ch);
 
 
     }

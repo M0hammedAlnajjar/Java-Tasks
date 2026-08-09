@@ -13,7 +13,7 @@ public class ToBinary {
 
         IO.println("=== Convert a Number to Binary ===");
         String numberInput = IO.readln("Enter a number: ");
-
+        int number = Integer.parseInt(numberInput);
 
 
     }

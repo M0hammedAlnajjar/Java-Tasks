@@ -23,6 +23,9 @@ public class SumEvenIndex {
             numbers[i] = Integer.parseInt(numberInput);
         }
 
+        int result = sumEvenIndex(numbers, 0);
+
+        IO.println("Sum of elements at even indexes: " + result);
 
 
     }

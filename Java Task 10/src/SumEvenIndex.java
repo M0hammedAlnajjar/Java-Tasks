@@ -15,5 +15,10 @@ public class SumEvenIndex {
         String sizeInput = IO.readln("Enter the size of the array: ");
         int size = Integer.parseInt(sizeInput);
 
+
+        int[] numbers = new int[size];
+
+
+
     }
 }

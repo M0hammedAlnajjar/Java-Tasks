@@ -24,7 +24,7 @@ public class Power {
 
         if (!baseInput.isEmpty()) {
             int base = Integer.parseInt(baseInput);
-
+            String exponentInput = IO.readln("Enter the exponent: ");
 
         }
 }

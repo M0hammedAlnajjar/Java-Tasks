@@ -10,6 +10,14 @@ public class Book implements LibraryItem{
     }
 
     public void setTitle(String title) {
+
+            if (title == null || title.trim().isEmpty()) {
+                System.out.println("Title cannot be empty.");
+                return;
+            }
+
+            this.title = title;
+
         this.title = title;
     }
 

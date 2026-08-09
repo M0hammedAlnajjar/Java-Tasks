@@ -5,6 +5,14 @@ public class Book implements LibraryItem{
     private int pages;
 
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     @Override
     public String getLabel() {
         return "";

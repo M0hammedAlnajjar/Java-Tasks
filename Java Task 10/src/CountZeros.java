@@ -14,12 +14,15 @@ public class CountZeros {
         if (lastDigit == 0) { return 1 + countZeros(remainingNumber); }
 
 
+        return lastDigit;
     }
+}
 
     static void main(String[] args) {
 
+        IO.println("=== Count Zeros in a Number ===");
 
-
+        String numberInput = IO.readln("Enter a number: ");
 
     }
 }

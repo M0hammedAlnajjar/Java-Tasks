@@ -11,7 +11,6 @@ public class Power {
         }
         else {
 
-            // If the exponent is odd, multiply by the base once more
             return base * half * half;
         }
     }
@@ -19,5 +18,6 @@ public class Power {
 
     static void main(String[] args) {
 
+        IO.println("=== Raise a Number to a Power ===");
     }
 }

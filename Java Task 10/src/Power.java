@@ -34,8 +34,13 @@ public class Power {
 
 
             }
+            else {
 
+                IO.println("Exponent cannot be empty.");
             }
+
+
+        }
 
         }
 }

@@ -3,6 +3,8 @@ public class Power {
         if (exponent == 0) {
             return 1;
         }
+        int half = power(base, exponent / 2);
+
 
 
 

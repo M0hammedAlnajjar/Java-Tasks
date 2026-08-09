@@ -28,6 +28,10 @@ public class Power {
             if (!exponentInput.isEmpty()) {
 
                 int exponent = Integer.parseInt(exponentInput);
+                int result = power(base, exponent);
+                IO.println("Result: " + result);
+
+
 
             }
 

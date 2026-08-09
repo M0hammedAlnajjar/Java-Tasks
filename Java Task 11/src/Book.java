@@ -55,4 +55,22 @@ public class Book implements LibraryItem {
     public String getShelfCode() {
         return "B-01";
     }
+
+    public static Book addBook() {
+
+        Book book = new Book();
+
+        String title = IO.readln("Enter title: ");
+        String author = IO.readln("Enter author: ");
+
+        int pages = Integer.parseInt(
+                IO.readln("Enter pages: ")
+        );
+
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setPages(pages);
+
+        return book;
+    }
 }

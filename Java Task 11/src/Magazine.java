@@ -61,5 +61,25 @@ public class Magazine implements LibraryItem {
     public String getShelfCode() {
         return "M-01";
     }
+
+    public static Magazine addMagazine() {
+
+        Magazine magazine = new Magazine();
+
+        String name = IO.readln("Enter magazine name: ");
+
+        int issueNumber = Integer.parseInt(
+                IO.readln("Enter issue number: ")
+        );
+
+        String month = IO.readln("Enter month: ");
+
+        magazine.setName(name);
+        magazine.setIssueNumber(issueNumber);
+        magazine.setMonth(month);
+
+        return magazine;
+    }
+
 }
 

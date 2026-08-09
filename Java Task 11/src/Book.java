@@ -35,5 +35,15 @@ public class Book implements LibraryItem{
     public void printAllInfo() {
 
     }
+
+    public void setPages(int pages) {
+        if (pages <= 0) {
+            System.out.println("Pages must be above 0.");
+            this.pages = 0;
+            return;
+        }
+
+        this.pages = pages;
+    }
 }
 

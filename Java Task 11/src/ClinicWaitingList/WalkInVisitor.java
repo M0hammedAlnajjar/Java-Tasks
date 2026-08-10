@@ -53,16 +53,18 @@ public class WalkInVisitor  implements Attendable{
 
     @Override
     public void printAllInfo() {
-
+        IO.println("Name: " + name);
+        IO.println("Age: " + age);
+        IO.println("Arrival Order: " + arrivalOrder);
     }
 
     @Override
     public String getPriority() {
-        return "";
+        return "WalkInVisitor";
     }
 
     @Override
     public int getWaitMinutes() {
-        return 0;
+        return (int) (arrivalOrder *15);
     }
 }

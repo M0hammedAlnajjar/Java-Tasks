@@ -30,6 +30,11 @@ public class Product  implements Sellable{
     @Override
     public void printAllInfo() {
 
+        IO.println("Name: " + getName());
+        IO.println("Price: " + getPrice());
+        IO.println("Quantity: " + getQuantity());
+
+
     }
 
     public double getPrice() {
@@ -38,7 +43,7 @@ public class Product  implements Sellable{
 
     @Override
     public String getCategory() {
-        return "";
+        return "Product";
     }
 
     public void setPrice(double price) {

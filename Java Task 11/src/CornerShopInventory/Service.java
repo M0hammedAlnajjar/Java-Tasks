@@ -26,7 +26,13 @@ public class Service {
     }
 
     public void setMinutes(double minutes) {
-        this.minutes = minutes;
+       if (minutes < 0) {
+           this.minutes = minutes;
+
+       } else
+           this.minutes = 0;
+
+
     }
 }
 

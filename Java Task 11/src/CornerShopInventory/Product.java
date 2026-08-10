@@ -1,6 +1,6 @@
 package CornerShopInventory;
 
-public class Product {
+public class Product  implements Sellable{
     private String name;
     private double price;
     private int quantity;
@@ -15,8 +15,18 @@ public class Product {
     }
 
 
+    @Override
+    public void printAllInfo() {
+
+    }
+
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String getCategory() {
+        return "";
     }
 
     public void setPrice(double price) {

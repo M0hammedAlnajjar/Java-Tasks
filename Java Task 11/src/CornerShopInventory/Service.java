@@ -10,7 +10,12 @@ public class Service {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()){
+            this.name = name;
+        }else  {
+            IO.println("Name cannot be empty");
+        }
+
     }
 
     public double getPrice() {

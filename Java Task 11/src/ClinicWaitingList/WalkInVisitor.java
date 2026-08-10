@@ -1,8 +1,9 @@
 package ClinicWaitingList;
 
 
+import CornerShopInventory.Sellable;
 
-public class WalkInVisitor {
+public class WalkInVisitor  implements Attendable{
 
 
     private String name ;
@@ -36,5 +37,20 @@ public class WalkInVisitor {
 
     public void setArrivalOder(double arrivalOder) {
         this.arrivalOder = arrivalOder;
+    }
+
+    @Override
+    public void printAllInfo() {
+
+    }
+
+    @Override
+    public String getPriority() {
+        return "";
+    }
+
+    @Override
+    public int getWaitMinutes() {
+        return 0;
     }
 }

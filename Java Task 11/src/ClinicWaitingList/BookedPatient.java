@@ -13,7 +13,11 @@ public class BookedPatient implements Attendable{
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        }else
+            IO.println("Name is required ");
+
     }
 
     public int getAge() {

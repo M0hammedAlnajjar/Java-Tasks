@@ -26,8 +26,11 @@ public class WalkInVisitor  implements Attendable{
     }
 
     public void setAge(int age) {
-        this.age = age;
-
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Name is required");
+        }
 
     }
 

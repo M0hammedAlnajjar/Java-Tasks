@@ -21,7 +21,11 @@ public class BookedPatient implements Attendable{
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age >= 0 && age <=120 ) {
+            this.age = age;
+        }else
+                IO.print("Invalid age");
+
     }
 
     public double getSlotTime() {

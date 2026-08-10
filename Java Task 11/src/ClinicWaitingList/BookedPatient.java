@@ -33,6 +33,7 @@ public class BookedPatient implements Attendable{
     }
 
     public double getSlotTime() {
+
         return slotTime;
     }
 
@@ -47,11 +48,11 @@ public class BookedPatient implements Attendable{
 
     @Override
     public String getPriority() {
-        return "";
+        return "Booked";
     }
 
     @Override
     public int getWaitMinutes() {
-        return 0;
+        return 10;
     }
 }

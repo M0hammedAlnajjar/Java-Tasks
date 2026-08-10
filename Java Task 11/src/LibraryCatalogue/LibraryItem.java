@@ -1,3 +1,5 @@
+package LibraryCatalogue;
+
 public interface LibraryItem {
 
     String getLabel();

@@ -1,3 +1,5 @@
+package LibraryCatalogue;
+
 public class Book implements LibraryItem {
 
     private String title;

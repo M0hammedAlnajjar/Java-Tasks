@@ -1,3 +1,5 @@
+package LibraryCatalogue;
+
 public class Magazine implements LibraryItem {
 
 

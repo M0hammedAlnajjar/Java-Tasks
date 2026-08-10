@@ -42,6 +42,10 @@ public class Product  implements Sellable{
     }
 
     public void setPrice(double price) {
+        if (price >= 0 || price <= 1000) {
+            IO.println("Invalid price");
+        }else
+            IO.println("Price out of range  ");
         this.price = price;
     }
 

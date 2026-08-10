@@ -54,6 +54,10 @@ public class Product  implements Sellable{
     }
 
     public void setQuantity(int quantity) {
+
+        if (quantity >= 1 && quantity <= 100) {
+            IO.println("Quantity must be 1 to 100");
+        }
         this.quantity = quantity;
     }
 }

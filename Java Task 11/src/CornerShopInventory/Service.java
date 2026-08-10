@@ -20,6 +20,9 @@ public class Service implements Sellable {
 
     @Override
     public void printAllInfo() {
+        IO.println("Name: " + name);
+        IO.println("Price: " + price);
+        IO.println("Minutes: " + minutes);
 
     }
 

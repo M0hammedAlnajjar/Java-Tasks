@@ -18,7 +18,11 @@ public class WalkInVisitor  implements Attendable{
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (age >= 0 && age <=120 ) {
+            this.name = name;
+        }else
+            IO.print("Name is required  ");
+
     }
 
     public int getAge() {
@@ -29,7 +33,7 @@ public class WalkInVisitor  implements Attendable{
         if (name != null && !name.trim().isEmpty()) {
             this.name = name;
         } else {
-            System.out.println("Name is required");
+            System.out.println("Invalid age");
         }
 
     }

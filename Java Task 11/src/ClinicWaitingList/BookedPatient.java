@@ -8,6 +8,9 @@ public class BookedPatient implements Attendable{
     private int age ;
     private double slotTime;
 
+    public BookedPatient(String time) {
+    }
+
     public String getName() {
         return name;
     }

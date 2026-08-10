@@ -14,6 +14,8 @@ public class ClinicWaitingList {
 
     private void run() {
         List<Attendable> queue = new ArrayList<>();
+        IO.println("--- Single item created at startup ---");
 
+            BookedPatient patient = new BookedPatient("8:00");
     }
 }

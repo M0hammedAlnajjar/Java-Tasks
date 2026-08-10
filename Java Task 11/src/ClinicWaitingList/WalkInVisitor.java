@@ -8,7 +8,7 @@ public class WalkInVisitor  implements Attendable{
 
     private String name ;
     private  int age ;
-    private double arrivalOder;
+    private double arrivalOrder;
 
 
 
@@ -32,11 +32,16 @@ public class WalkInVisitor  implements Attendable{
     }
 
     public double getArrivalOder() {
-        return arrivalOder;
+        return arrivalOrder;
     }
 
-    public void setArrivalOder(double arrivalOder) {
-        this.arrivalOder = arrivalOder;
+    public void setArrivalOrder(double arrivalOder) {
+        if (arrivalOder > 0){
+            this.arrivalOrder = arrivalOder;
+        }
+        else
+                this.arrivalOrder=1;
+
     }
 
     @Override

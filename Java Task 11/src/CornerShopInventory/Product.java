@@ -6,6 +6,14 @@ public class Product  implements Sellable{
     private int quantity;
 
 
+
+    public Product(String name, double price, int quantity) {
+        setName(name);
+        setPrice(price);
+        setQuantity(quantity);
+    }
+
+
     public String getName() {
         return name;
     }

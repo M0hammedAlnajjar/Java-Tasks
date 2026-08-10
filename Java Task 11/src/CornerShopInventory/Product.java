@@ -19,7 +19,11 @@ public class Product  implements Sellable{
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Name cannot be empty");
+        }
     }
 
 

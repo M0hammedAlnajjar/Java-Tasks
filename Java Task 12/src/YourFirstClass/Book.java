@@ -10,9 +10,4 @@ public class Book {
         IO.println(author);
     }
 
-
-
-
-
-
 }

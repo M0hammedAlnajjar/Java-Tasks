@@ -17,7 +17,7 @@ public class Main {
 
         b.printInfo();
         book2.printInfo();
-
+        book3.printInfo();
     }
 
 

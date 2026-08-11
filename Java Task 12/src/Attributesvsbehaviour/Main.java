@@ -18,7 +18,7 @@ public class Main {
         car.plate = sc.nextLine();
 
         car.drive();
-        car.brake();
+//        car.brake();
 
         sc.close();
 

@@ -6,5 +6,6 @@ public class Main {
 
         Car car = new Car();
         car.colour = "Red";
+        car.plate = "12345";
     }
 }

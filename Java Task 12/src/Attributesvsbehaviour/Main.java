@@ -15,6 +15,7 @@ public class Main {
         car.colour = sc.nextLine();
 
         System.out.println("Enter plate:");
+        car.plate = sc.nextLine();
 
         car.drive();
         car.brake();

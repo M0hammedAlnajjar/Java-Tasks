@@ -16,6 +16,8 @@ public class Main {
         book3.author = "Salim";
 
         b.printInfo();
+        book2.printInfo();
+
     }
 
 

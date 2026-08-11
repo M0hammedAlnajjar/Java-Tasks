@@ -1,11 +1,21 @@
 package VehicleRentalDesk;
 
-public class Car {
+public class Car implements Rentable {
 
     private String plateNumber;
     private double dailyRate;
     private int rentalDays;
     private int seats;
+
+    @Override
+    public void printAllInfo() {
+
+    }
+
+    @Override
+    public double costFor(int days) {
+        return 0;
+    }
 
     public String getPlateNumber() {
         return plateNumber;

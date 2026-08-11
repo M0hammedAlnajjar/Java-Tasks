@@ -5,7 +5,7 @@ public class Car {
     String plate;
 
     void drive(){
-        System.out.println("The car is driving.");
+        System.out.println("The "+ colour+"car is driving.");
     }
 
 //    void brake() {

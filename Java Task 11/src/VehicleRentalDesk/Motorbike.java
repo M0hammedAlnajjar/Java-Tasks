@@ -37,8 +37,15 @@ public class Motorbike {
     }
 
     public void setRentalDays(int rentalDays) {
-        this.rentalDays = rentalDays;
-    }
+
+        if (rentalDays >= 1 && rentalDays <= 30) {
+            this.rentalDays = rentalDays;
+        } else {
+            System.out.println(
+                    "Rental days must be from 1 to 30"
+            );
+        }
+}
 
     public int getEngineSize() {
         return engineSize;

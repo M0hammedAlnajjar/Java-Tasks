@@ -5,6 +5,6 @@ public class Car {
     String plate;
 
     void drive(){
-
+        System.out.println("The car is driving.");
     }
 }

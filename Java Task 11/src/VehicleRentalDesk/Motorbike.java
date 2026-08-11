@@ -1,11 +1,26 @@
 package VehicleRentalDesk;
 
-public class Motorbike {
+public class Motorbike implements Rentable {
 
     private String plateNumber;
     private double dailyRate;
     private int rentalDays;
     private int engineSize;
+
+    @Override
+    public void printAllInfo() {
+        System.out.println("Plate Number: " + plateNumber);
+        System.out.println("Daily Rate: " + dailyRate);
+        System.out.println("Rental Days: " + rentalDays);
+        System.out.println("Engine Size: " + engineSize);
+        System.out.println(costFor(rentalDays));
+
+    }
+
+    @Override
+    public double costFor(int days) {
+        return 0;
+    }
 
     public String getPlateNumber() {
         return plateNumber;

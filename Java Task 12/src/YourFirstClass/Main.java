@@ -8,7 +8,7 @@ public class Main {
         b.author = "Ishaq";
 
         Book book2 = new Book();
-
+        book2.title = "OOP Fundamentals";
 
         b.printInfo();
     }

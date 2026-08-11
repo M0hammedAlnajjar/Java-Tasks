@@ -5,10 +5,10 @@ public class Book {
     String title;
     String author;
 
-    static void main() {
-
+    public void printInfo() {
+        IO.println(title);
+        IO.println(author);
     }
-
 
 
 

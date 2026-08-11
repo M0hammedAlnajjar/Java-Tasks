@@ -12,7 +12,16 @@ public class Motorbike {
     }
 
     public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
+        if (plateNumber != null && !plateNumber.trim().isEmpty()) {
+
+            this.plateNumber = plateNumber;
+
+        } else {
+
+            System.out.println(
+                    "Plate number cannot be empty"
+            );
+        }
     }
 
     public double getDailyRate() {

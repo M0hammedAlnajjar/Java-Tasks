@@ -7,6 +7,9 @@ public class Main {
 //      b.author = " Maryam ";
         b.author = "Ishaq";
 
+        Book book2 = new Book();
+
+
         b.printInfo();
     }
 

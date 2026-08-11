@@ -9,5 +9,6 @@ public class Main {
         car.plate = "12345";
 
         car.drive();
+
     }
 }

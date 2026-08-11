@@ -8,8 +8,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Car car = new Car();
-        car.colour = "Red";
-        car.plate = "12345";
+//        car.colour = "Red";
+//        car.plate = "12345";
+
+        IO.println("Enter car colour:");
 
         car.drive();
         car.brake();

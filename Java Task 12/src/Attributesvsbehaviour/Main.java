@@ -1,4 +1,5 @@
 package src.Attributesvsbehaviour;
+import java.util.Scanner;
 
 public class Main {
 

@@ -19,7 +19,7 @@ public class Motorbike implements Rentable {
 
     @Override
     public double costFor(int days) {
-        return 0;
+        return dailyRate* days;
     }
 
     public String getPlateNumber() {

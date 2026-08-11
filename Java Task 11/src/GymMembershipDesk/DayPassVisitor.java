@@ -24,8 +24,25 @@ public class DayPassVisitor implements Payable {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
+        if (age < 14) {
+
+            System.out.println(
+                    "Too young to register"
+            );
+
+        } else if (age <= 90) {
+
+            this.age = age;
+
+        } else {
+
+            System.out.println(
+                    "Age must be between 14 and 90"
+            );
+        }
+
+
+}
 
     @Override
     public void printAllInfo() {

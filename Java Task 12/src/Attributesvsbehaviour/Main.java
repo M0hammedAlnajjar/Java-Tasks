@@ -20,5 +20,7 @@ public class Main {
         car.drive();
         car.brake();
 
+        sc.close();
+
     }
 }

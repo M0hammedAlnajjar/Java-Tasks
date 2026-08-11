@@ -5,6 +5,8 @@ public class Main {
         Book b = new Book();
         b.title = "Java Basics ";
         b.author = " Maryam ";
+
+        b.printInfo();
     }
 
 

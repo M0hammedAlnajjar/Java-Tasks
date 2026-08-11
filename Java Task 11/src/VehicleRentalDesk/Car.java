@@ -9,12 +9,18 @@ public class Car implements Rentable {
 
     @Override
     public void printAllInfo() {
+    IO.println(plateNumber);
+    IO.println(dailyRate);
+    IO.println(seats);
+    IO.println(rentalDays);
+    IO.println(costFor(rentalDays));
 
     }
 
     @Override
     public double costFor(int days) {
-        return 0;
+
+        return  days * rentalDays + 5000 ;
     }
 
     public String getPlateNumber() {

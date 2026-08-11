@@ -1,4 +1,8 @@
 package src.Attributesvsbehaviour;
 
 public class Main {
+
+    static void main(String[] args) {
+
+    }
 }

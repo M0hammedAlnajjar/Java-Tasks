@@ -31,7 +31,14 @@ public class Car {
     }
 
     public void setDailyRate(double dailyRate) {
-        this.dailyRate = dailyRate;
+        if (dailyRate > 0 && dailyRate <= 200) {
+            this.dailyRate = dailyRate;
+        } else {
+            System.out.println(
+                    "Daily rate must be above 0 and not more than 200"
+            );
+
+        }
     }
 
     public int getRentalDays() {
